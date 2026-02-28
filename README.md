@@ -21,7 +21,7 @@
 
 | Bölüm | Açıklama |
 |-------|----------|
-| [**Guidelines**](Guidelines/README.md) | 18 dokümanlık kod yazma rehberi (VBA temelleri, nesne modeli, makro kayıt, hata yakalama, örnek projeler, resmi kurallar) |
+| [**Guidelines**](Guidelines/README.md) | 19 dokümanlık kod yazma rehberi (VBA temelleri, nesne modeli, makro kayıt, hata yakalama, örnek projeler, resmi kurallar, isimlendirme) |
 | [**VBA API Referansı**](VBA_API_REFERENCE.md) | Sık kullanılan API imzaları + açıklamalar; tam liste `Help/VBA_CALL_LIST.txt` ve `Help/text/` |
 | [**Examples**](Examples/README.md) | Çalıştırılabilir örnek makrolar (`.bas`); rehberle uyumlu |
 | [**Help**](Help/) | Ham API (`VBA_CALL_LIST.txt`), özet (`SIK_KULLANILAN_API.txt`), arama rehberi (`ARAMA_REHBERI.md`), `text/` |
@@ -54,7 +54,7 @@
 ├── VBA_API_REFERENCE.md      ← API referansı (sık kullanılan imzalar + Help kaynakları)
 ├── .gitignore
 ├── LICENSE
-├── Guidelines/                ← Kod yazma rehberi (18 doküman + önceki/sonraki gezinme)
+├── Guidelines/                ← Kod yazma rehberi (19 doküman + önceki/sonraki gezinme)
 │   ├── README.md
 │   ├── 01-Giris…md … 18-Sik-Hatalar…md
 │   └── VBA-Kod-Checklist.md   ← Teslim öncesi mutlaka kontrol et

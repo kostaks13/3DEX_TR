@@ -147,7 +147,7 @@ Rehber özeti ve tüm doküman listesi için [README](README.md).
 - Küçük bir görev seçip (ör. “bir parametreyi okuyup mesajla göster”) makroyu yazın, çalıştırın; gerekirse 9. dokümandaki debug yöntemleriyle hatayı bulun.  
 - **Erişim/kullanım** için [13-Erisim-ve-Kullanim-Rehberi.md](13-Erisim-ve-Kullanim-Rehberi.md); **Excel** için [14-VBA-ve-Excel-Etkilesimi.md](14-VBA-ve-Excel-Etkilesimi.md); **dosya seç/kaydet diyaloğu** için [15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md); **iyileştirme önerileri** için [16-Iyilestirme-Onerileri.md](16-Iyilestirme-Onerileri.md); **sık hatalar ve dikkat edilecekler** için [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md) kullanın.
 
-Bu rehber, 3DExperience VBA ile sıfırdan kod yazmaya başlamanız için 18 dokümanlık bir guideline setidir; her doküman bir sonrakine bağlanır ve hepsi 3DExperience VBA’ye özeldir.
+Bu rehber, 3DExperience VBA ile sıfırdan kod yazmaya başlamanız için 19 dokümanlık bir guideline setidir; her doküman bir sonrakine bağlanır ve hepsi 3DExperience VBA’ye özeldir.
 
 ════════════════════════════════════════════════════════════════════════════════
 

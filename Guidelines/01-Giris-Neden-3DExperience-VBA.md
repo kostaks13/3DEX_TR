@@ -124,7 +124,7 @@ Bu örnekte görülen yapı: **Uygulama al → Aktif belge al → Kontrol et →
 
 ## Rehberin yapısı
 
-Rehber **18 dokümanlıdır**. Tam liste, özet ve bağlantılar **[README](README.md)** sayfasındaki tabloda yer alır. Temel akış 1–10’dur; 11–18 kurallar, servisler, erişim rehberi, Excel, dosya diyalogları, iyileştirme önerileri, Help kullanımı ve sık hatalar/dikkat noktaları için ek dokümanlardır.
+Rehber **19 dokümanlıdır**. Tam liste, özet ve bağlantılar **[README](README.md)** sayfasındaki tabloda yer alır. Temel akış 1–10’dur; 11–19 kurallar, servisler, erişim rehberi, Excel, dosya diyalogları, iyileştirme önerileri, Help kullanımı, sık hatalar ve isimlendirme rehberi için ek dokümanlardır.
 
 ════════════════════════════════════════════════════════════════════════════════
 
