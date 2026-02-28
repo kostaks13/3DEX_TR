@@ -6,7 +6,7 @@
 ╚══════════════════════════════════════════════════════════════════════════════╝
 ```
 
-3DExperience VBA makrolarını **yazarken**, **teslim etmeden önce** veya **kod incelemesinde** kullanabileceğiniz detaylı kontrol listesi. Her bölümde **zorunlu (✓)** ve **önerilen (○)** maddeler ayrılmıştır. Bkz. [11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md), [16-Iyilestirme-Onerileri.md](16-Iyilestirme-Onerileri.md). **Help dosyalarını ne zaman/nasıl kullanacağınız:** [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md). **Sık hatalar ve dikkat edilecekler:** [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md).
+3DExperience VBA makrolarını **yazarken**, **teslim etmeden önce** veya **kod incelemesinde** kullanabileceğiniz detaylı kontrol listesi. Her bölümde **zorunlu (✓)** ve **önerilen (○)** maddeler ayrılmıştır. Bkz. [11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md), [16-Iyilestirme-Onerileri.md](16-Iyilestirme-Onerileri.md), [19-Isimlendirme-Rehberi.md](19-Isimlendirme-Rehberi.md). **Help:** [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md). **Sık hatalar:** [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md).
 
 ════════════════════════════════════════════════════════════════════════════════
 
@@ -73,6 +73,21 @@
 | 5.3 | Tekrarlayan bloklar (Application al, Part al, log yaz) **ortak Sub/Function**’a taşınmış. | ○ | GetActivePart(), LogSatir(). |
 | 5.4 | **Girinti** 4 boşluk; yorumlar `'` ile yazılmış. | ○ | Help: kod sunum. |
 | 5.5 | Her Sub/Function için kısa **başlık yorumu** (amaç, parametreler, dönüş) var. | ○ | Help önerisi. |
+
+### 5.A İsimlendirme özeti (detay: [19-Isimlendirme-Rehberi.md](19-Isimlendirme-Rehberi.md))
+
+| Ne | Kural | Örnek |
+|----|--------|--------|
+| Değişken | Önek (b,d,s,i,o,c) + anlamlı ad, mixed case | oPart, sPartName, iCount, dLength |
+| Sabit (Const) | BÜYÜK_HARF_ALT_CIZGI | MAX_ITERATION, LOG_PATH, ERR_PARAM_NOT_FOUND |
+| Sub/Function | Fiil veya fiil ifadesi; PascalCase | GetActivePart, UpdateParameterValue |
+| Modül adı | İşlevi yansıtan, boşluksuz, kelime başları büyük | ParametreIslemleri, AppHelpers |
+| .bas dosyası | ProjeAdi_Islev veya ModulAdi; tire/alt çizgi | Acme_ParametreListesi.bas |
+| Parametre | Anlamlı; nesne için o öneki uygun | oPart, sParamName, iMaxCount |
+| Hata etiketi | Kısa, anlamlı, sonunda `:` | HataYakala:, CikisTemiz: |
+
+- **Kaçınılacak:** Anlamsız kısaltma (x, tmp, obj1); döngü dışında tek harf; gereksiz Variant.
+- **Integer/Long:** Sayac/indeks için Long tercih edin (Count vb. Long döner). Önek `i` her ikisi için kullanılır.
 
 ════════════════════════════════════════════════════════════════════════════════
 
@@ -224,4 +239,4 @@ Aşağıdakilerin **hepsi** işaretli olmalı:
 
 ════════════════════════════════════════════════════════════════════════════════
 
-**İlgili dokümanlar:** [11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) (TAMAM/HAZIR, kod sunum) · [16-Iyilestirme-Onerileri.md](16-Iyilestirme-Onerileri.md) (iyileştirme önerileri + **§9 ek geliştirme önerileri**: şablon, CHANGELOG, senaryo listesi, proje yapısı) · [09-Hata-Yakalama-ve-Debug.md](09-Hata-Yakalama-ve-Debug.md) (On Error, log). **Tüm rehber:** [README](README.md).
+**İlgili dokümanlar:** [11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) (TAMAM/HAZIR, kod sunum) · [19-Isimlendirme-Rehberi.md](19-Isimlendirme-Rehberi.md) (isimlendirme özeti) · [16-Iyilestirme-Onerileri.md](16-Iyilestirme-Onerileri.md) (iyileştirme + §9 geliştirme önerileri) · [09-Hata-Yakalama-ve-Debug.md](09-Hata-Yakalama-ve-Debug.md) (On Error, log). **Tüm rehber:** [README](README.md).

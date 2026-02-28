@@ -101,6 +101,8 @@ Dassault Systèmes **Automation Development Guidelines** dokümanında VBA/VBScr
 
 Sabitler için: Tamamı **büyük harf**, bileşenler **alt çizgi** ile ayrılır. Örnek: `MAX_VALUE`, `LOG_PATH`, `DEFAULT_BODY_NAME`.
 
+**Tüm isimlendirme kuralları (modül, dosya, Sub/Function, parametre, etiket) tek yerde:** [19-Isimlendirme-Rehberi.md](19-Isimlendirme-Rehberi.md).
+
 ════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Basit hesaplama

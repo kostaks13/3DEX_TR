@@ -6,6 +6,8 @@
 
 3DExperience’ta her şey **nesne** (object) hiyerarşisi içindedir. Makro yazarken önce **uygulama**ya, sonra **açık belge**ye, oradan **parça**, **montaj** veya **çizim** nesnelerine ulaşırsınız. Bu dokümanda bu yapıyı öğreneceksiniz.
 
+**Bu dokümanda:** Application → ActiveDocument → Part/Product/Drawing; GetObject; FileSystem; hiyerarşi ağacı; örnek makro iskeleti.
+
 ════════════════════════════════════════════════════════════════════════════════
 
 ## Hiyerarşi özeti

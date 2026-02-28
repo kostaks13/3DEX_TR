@@ -2,7 +2,7 @@
 
 ```
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║  18 dokümanlık rehber seti  |  Help uyumlu                                   ║
+║  19 dokümanlık rehber seti  |  Help uyumlu                                   ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 ```
 
@@ -34,6 +34,7 @@ Kodlamaya **yeni başlayan** biri için, **3DExperience VBA** ile makro yazmayı
 | 16 | [16-Iyilestirme-Onerileri.md](16-Iyilestirme-Onerileri.md) | **İyileştirme önerileri** — Kod kalitesi, performans, bakım, test, kullanıcı deneyimi, dağıtım; isteğe bağlı kontrol listesi |
 | 17 | [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md) | **Help içindeki dosyaları ne zaman ve nasıl kullanacaksınız** — Help klasörü yapısı, hangi dosya ne işe yarar, aşamaya göre kullanım, arama yöntemleri |
 | 18 | [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md) | **Sık yapılan hatalar ve dikkat edilmesi gereken özel noktalar** — Nothing/Update/On Error, V5 API, InputBox iptal, locale, servis sırası, özet tablo |
+| 19 | [19-Isimlendirme-Rehberi.md](19-Isimlendirme-Rehberi.md) | **İsimlendirme rehberi** — Değişken önekleri, Const, Sub/Function, modül, .bas dosyası, parametre, hata etiketi; özet tablo ve kaçınılacaklar |
 
 ════════════════════════════════════════════════════════════════════════════════
 
@@ -42,11 +43,12 @@ Kodlamaya **yeni başlayan** biri için, **3DExperience VBA** ile makro yazmayı
 - **Sıfırdan başlıyorsanız:** 1. dokümandan başlayıp sırayla 10’a kadar ilerleyin; kurumsal standartlar için 11’i, servisler ve işlem detayı için 12’yi okuyun.  
 - **Belirli konu arıyorsanız:** Yukarıdaki tablodan ilgili dokümanı açın. **“Buna nereden erişirim, bunu nasıl kullanırım?”** için **13. doküman**; **VBA’dan Excel’e veri yazma/okuma** için **14. doküman**; **dosya seçtirme / kaydetme diyaloğu** için **15. doküman**; **kod ve süreç iyileştirme önerileri** için **16. doküman** kullanın.  
 - **Resmi kurallar ve fazlar:** Help’e dayalı özet ve kontrol listeleri için **11. doküman** kullanın.  
-- **VBA kodu checklist (detaylı):** Teslim veya kod incelemesi öncesi **[VBA-Kod-Checklist.md](VBA-Kod-Checklist.md)** dosyasındaki maddeleri işaretleyin.  
+- **VBA kodu checklist (detaylı):** Teslim veya kod incelemesi öncesi **mutlaka** **[VBA-Kod-Checklist.md](VBA-Kod-Checklist.md)** dosyasındaki zorunlu ve önerilen maddeleri işaretleyin (Option Explicit, Nothing, tek Update, başlık, On Error).  
 - **API detayı için:** Proje kökündeki **VBA_API_REFERENCE.md** (varsa) veya **Help/VBA_CALL_LIST.txt** ve **Help/text/** klasöründeki metinleri kullanın.
 - **Çalıştırılabilir örnek makrolar:** Proje kökündeki **[Examples/](../Examples/README.md)** klasöründe `.bas` dosyaları bulunur.  
 - **Help dosyalarını ne zaman/nasıl kullanacağınız:** **[17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md)** — Help klasörü yapısı, hangi dosyayı hangi aşamada açacağınız, arama yöntemleri.  
 - **Sık hatalar ve dikkat edilecekler:** **[18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md)** — Option Explicit, Nothing/Update, On Error, V5 API, InputBox iptal, locale, servis sırası vb.
+- **İsimlendirme (değişken, Sub/Function, modül, dosya):** **[19-Isimlendirme-Rehberi.md](19-Isimlendirme-Rehberi.md)** — Özet tablo, önekler, kaçınılacaklar, kontrol listesi.
 
 Tüm dokümanlar **3DExperience VBA** özelinde yazılmıştır; örnekler ve terimler bu platforma göredir. Help klasöründeki PDF’ler (Automation Development Guidelines, 3DEXPERIENCE MACRO HAZIRLIK YÖNERGESİ, Native Apps Automation vb.) tam ve güncel referanstır.
 

@@ -2,7 +2,7 @@
 
 **Anahtar kelimeler:** 3DExperience, VBA, macro, Dassault Systèmes, CATIA, automation, 3DEX, makro rehberi.
 
-**Rehber sürümü:** v1.0 (Guidelines 18 doküman + örnek kod + Help özeti).
+**Rehber sürümü:** v1.1 — [CHANGELOG.md](CHANGELOG.md) içinde sürüm notları.
 
 ```
 ██████╗ ██████╗ ███████╗██╗  ██╗     ████████╗██████╗ 
@@ -25,6 +25,10 @@
 | [**VBA API Referansı**](VBA_API_REFERENCE.md) | Sık kullanılan API imzaları + açıklamalar; tam liste `Help/VBA_CALL_LIST.txt` ve `Help/text/` |
 | [**Examples**](Examples/README.md) | Çalıştırılabilir örnek makrolar (`.bas`); rehberle uyumlu |
 | [**Help**](Help/) | Ham API (`VBA_CALL_LIST.txt`), özet (`SIK_KULLANILAN_API.txt`), arama rehberi (`ARAMA_REHBERI.md`), `text/` |
+| [**QUICK_START**](QUICK_START.md) | İlk 5 dakikada tek sayfa hızlı başlangıç |
+| [**Terimler**](GLOSSARY.md) | Sözlük (Part, Parameter, Nothing, Update, Editor/Session-level vb.) |
+| [**SSS / FAQ**](FAQ.md) | Sık sorulan sorular |
+| [**Sorun giderme**](TROUBLESHOOTING.md) | Hata senaryoları ve çözüm önerileri |
 
 ---
 
@@ -33,6 +37,7 @@
 1. **Rehberi takip et:** [Guidelines/README.md](Guidelines/README.md) → 1. dokümandan başlayıp sırayla ilerleyin.
 2. **API’ye bak:** [VBA_API_REFERENCE.md](VBA_API_REFERENCE.md) (varsa) veya `Help/VBA_CALL_LIST.txt`, `Help/text/` içindeki dosyalar.
 3. **Sık hataları özetle:** [Guidelines/18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](Guidelines/18-Sik-Hatalar-ve-Dikkat-Edilecekler.md).
+4. **Teslim / kod incelemesi öncesi:** [Guidelines/VBA-Kod-Checklist.md](Guidelines/VBA-Kod-Checklist.md) dosyasındaki zorunlu ve önerilen maddeleri mutlaka kontrol edin (Option Explicit, Nothing, tek Update, başlık, On Error).
 
 ---
 
@@ -41,13 +46,18 @@
 ```
 .
 ├── README.md                 ← Bu dosya (proje sayfası)
+├── QUICK_START.md            ← İlk 5 dakika hızlı başlangıç
+├── GLOSSARY.md               ← Terimler sözlüğü
+├── FAQ.md                    ← Sık sorulan sorular
+├── TROUBLESHOOTING.md        ← Sorun giderme
+├── CHANGELOG.md              ← Sürüm notları
 ├── VBA_API_REFERENCE.md      ← API referansı (sık kullanılan imzalar + Help kaynakları)
 ├── .gitignore
 ├── LICENSE
 ├── Guidelines/                ← Kod yazma rehberi (18 doküman + önceki/sonraki gezinme)
 │   ├── README.md
 │   ├── 01-Giris…md … 18-Sik-Hatalar…md
-│   └── VBA-Kod-Checklist.md
+│   └── VBA-Kod-Checklist.md   ← Teslim öncesi mutlaka kontrol et
 ├── Examples/                  ← Örnek makrolar (.bas)
 │   ├── README.md
 │   └── *.bas

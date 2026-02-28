@@ -2,6 +2,8 @@
 
 3DExperience VBA makrolarından **Excel**’e bağlanıp çalışma kitabı açma, hücre okuma/yazma, kaydetme ve kapatma yapabilirsiniz. Bu dokümanda erişim yolları ve kullanım örnekleri verilir.
 
+**Bu dokümanda:** Excel CreateObject/GetObject; hücre okuma/yazma; Part parametrelerini Excel'e yazma, Excel'den Part'a yazma.
+
 ════════════════════════════════════════════════════════════════════════════════
 
 ## 1. Excel’e nereden erişilir?
