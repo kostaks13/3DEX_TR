@@ -1,0 +1,221 @@
+--- PAGE 1 ---
+
+Design Review Object Model MapSee AlsoLegend
+Displaying Inertia Data
+This use case shows how to compute the inertia data and the bounding box of a part.
+Before you begin: 
+lYou should first launch CATIA. 
+lImport as reference the CAAScdVPMUcInertia.3dxml file from the folderInstallRootFolder\CAADoc\Doc\English\CAAScdVPMDigitalReview where InstallRootFolder is the folder where the API CD-ROM is installed. 
+lIn the Navigation Experience tab, right click Root_product A.1, and click Open. 
+lIn the Root_product A.1 tab, select Root_product A.1 in the tree.Note that you can also select the 3D part instance (3DPart A.1), the part body (PartBody), or the pad feature (Pad.1) 
+lLaunch the following macro: 
+Where to find the macro:
+lDisplay: CAAScdVPMUcInertiaSource.htm
+lRun: CAAScdVPMUcInertia.CATScript in InstallRootFolder\CAADoc\Doc\English\CAAScdVPMDigitalReview. Refer to Launchingan Automation Use Case.
+Related TopicsDesign Review Object Model Map
+Fig.1: The Part to Analyze
+Page 1 of 9Design Review Object Model Map
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hh7DD4.htm
+
+--- PAGE 2 ---
+
+This use case can be divided in three steps:
+1.Retrieving the Inertia Object2.Computing the Inertia Data3.Displaying the Inertia Data
+1.Retrieving the Inertia Objects
+First, the macro retrieves the active editor and the selection.
+Dim theEditor As EditorSet theEditor = CATIA.ActiveEditor.ActiveEditor
+Dim theSelection As SelectionSet theSelection = theEditor.Selection...
+Then, it retrieves the selected object from the selection.
+...If theSelection.Count2 <> 0 ThenDim theElement As AnyObjectSet theElement = theSelection.Item2(1).Value  ...
+It retrieves the inertia services from the editor.
+   ...Dim theInertiaService As InertiaServiceSet theInertiaService = theEditor.GetService("InertiaService") Dim theInertiaBoxService As InertiaBoxServiceSet theInertiaBoxService = theEditor.GetService("InertiaBoxService")   ...
+It retrieves the inertia and the inertia box from the inertia services.
+   ...Dim theInertiaElement As InertiaSet theInertiaElement = theInertiaService.GetInertiaElement(theElement) Dim theInertiaBoxElement As InertiaBoxSet theInertiaBoxElement = theInertiaBoxService.GetInertiaBoxElement(theElement)   ...
+2.Computing the Inertia Data
+First, the macro requests to compute the inertia data from the main body only.
+   ...  theInertiaElement.OnlyMainBody  ...
+Then it computes the area, the volume, the mass, and the coordnates of the center of gravity.
+   ...Dim theArea As Double  theArea = theInertiaElement.GetArea 
+Dim theVolume As Double
+Page 2 of 9Design Review Object Model Map
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hh7DD4.htm
+
+--- PAGE 3 ---
+
+Represents a service for measuring purposes.
+The MeasurableService object lets you retrieve a MeasurableInContext object from the selection.
+Retrieving the MeasurableService Object
+Refer to the Service Object.
+Using the MeasurableService Object
+Use theMeasurableService object to retrieve theMeasurableInContext object you need. For example, to retrieve aMeasurableCurve object from the selection:
+Dim oMeasurableService As MeasurableServiceSet oMeasurableService = CATIA.ActiveEditor.GetService("MeasurableService")Dim oMeasurableCurve As MeasurableCurve
+  theVolume = theInertiaElement.GetVolume
+Dim theMass As Double  theMass = theInertiaElement.GetMass
+Dim theCOG(2) As Double  theInertiaElement.GetCOGPosition theCOG(0), theCOG(1), theCOG(2)   ...
+It computes the inertia matrix, the inertia principle axes, and the inertia moments.
+   ...Dim theMatrix(8) As Double  theArea = theInertiaElement.GetInertiaMatrix theMatrix
+Dim theAxes(8) As Double  theAxes = theInertiaElement.GetPrincipalAxes theAxes
+Dim theMoments(2) As Double  theMoments = theInertiaElement.GetPrincipalMoments theMoments  ...
+It then computes the bounding box, that is the coordinates of bounding box origin and the lenghes of its sides.
+   ...Dim theBoundingBoxOrigin(2) As DoubleDim theBoundingBoxLengths(2) As Double  theInertiaBoxElement.GetBoundingBox theBoundingBoxOrigin, theBoundingBoxLengths  ...
+3.Displaying the Inertia Data
+The macro uses the computed inertia data to display it in a message box.
+In Short
+This use case shows how to retrieve theInertiaService and InertiaBoxService objects from the active Editor object. Then it shows you how to retrieve the InertiaandInertiaBox objects from these service objects. Finally it shows you how to compute the inertia data and the bounding box of the part selected.
+Fig.2: The Inertia Data
+MeasurableService ObjectSee AlsoLegendUse CasesPropertiesMethods
+Page 3 of 9Design Review Object Model Map
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hh7DD4.htm
+
+--- PAGE 4 ---
+
+Set oMeasurableCurve = oMeasurableService.GetMeasurable(oSelection, CAAMeasurableCurve)
+Represents a measurable object.
+TheMeasurableInContext object lets you measure or retrieve data from the selected object. Depending on this selected object type, use the that object deriving from the MeasurableInContext object that match either its type or the data you want to measure or retrieve.
+Use:
+lThe MeasurableAxisSystem object to retrieve the coordinates of the origin and the components of the vectors of the selected coordinate system expressed in the absolute coordinate system 
+lThe MeasurableBetween object to retrieve the angle or the minimum distance between the selected object and another object or a point 
+lThe MeasurableCurve object to retrieve the length or the characteristic points of the selected curve 
+lTheMeasurableCircle object to retrieve the angle, the axis (normal), the center, or the radius of the selected circle 
+lTheMeasurableLine object to retrieve the origin and the direction of the selected line 
+lThe MeasurablePoint object to retrieve the coordinates of the selected point 
+lTheMeasurableSurface object to retrieve the area, the center of gravity, and the perimeter of the selected surface 
+lTheMeasurableCone object to retrieve the angle, the axis, or the two limit points of the selected cone 
+lTheMeasurableCylinder object to retrieve the axis, the radius, or the two limit points of the selected cylinder 
+lTheMeasurablePlane object to retrieve to retrieve the coordinates of the origin and the components of the vectors expressed in the absolute coordinate system of the selected plane 
+lTheMeasurableSphere object to retrieve the center and the radius of the selected sphere 
+lThe MeasurableVolume object to retrieve the area, the center of gravity, and the volume of the selected object. 
+Retrieving the MeasurableInContext Object
+Use theMeasurableService object to retrieve theMeasurableInContext object you need. For example, to retrieve aMeasurablePoint object:
+Dim oMeasurableService As MeasurableServiceSet oMeasurableService = CATIA.ActiveEditor.GetService("MeasurableService")Dim oMeasurablePoint As MeasurablePointSet oMeasurablePoint = oMeasurableService.GetMeasurable(oSelection, CAAMeasurablePoint)
+Using the MeasurableInContext Object
+Use theMeasurablePoint object retrieved above to retrieve the coordinates of the selected point.
+Dim oMeasurablePoint As MeasurablePointSet oMeasurablePoint = ...Dim XCoordinate As DoubleDim YCoordinate As DoubleDim ZCoordinate As DoubleoMeasurablePoint.GetPoint XCoordinate, YCoordinate, ZCoordinate
+Represents a service for measuring purposes.
+The MeasureService object lets you retrieve aMeasureBetween object to measure between two sets of selected objects, or the MeasureItem object to measure a set of selected objects.
+Retrieving the MeasureService Object
+Refer to the Service Object.
+MeasurableInContext ObjectSee AlsoLegendUse CasesPropertiesMethods
+MeasureService ObjectSee AlsoLegendUse CasesPropertiesMethods
+Page 4 of 9Design Review Object Model Map
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hh7DD4.htm
+
+--- PAGE 5 ---
+
+Using the MeasureService Object
+Use theMeasureService object to retrieve theMeasureBetween object:
+Dim oMeasureService As MeasureServiceSet oMeasureService = CATIA.ActiveEditor.GetService("MeasureService")Dim oMeasureBetween As MeasureBetweenSet oMeasureBetween = oMeasureService.GetMeasureBetween(oSelection1, oSelection2)...oMeasureBetween.Compute
+Represents a service for sectioning purposes.
+The SectionService object lets you create and manage Section objects.
+Retrieving the SectionService Object
+Refer to the Service Object.
+Using the SectionService Object
+Use theAdd method of the SectionService object to create a Section object.
+Dim oSectionService As SectionServiceSet oSectionService = CATIA.ActiveEditor.GetService("SectionService")Dim oSection As SectionSet oSection = oSectionService.Add
+To Add a Section, the Product must have a Markup.
+Represents a section object.
+TheSection object lets you create a section plane sectioning the space. You can retrieve and set the sectioning plane, and export the curves created by the sectioned objects to a 3D part.
+Creating a Section Object
+Use the Add method of theSectionService object to create a Section object.
+Dim oSectionService As SectionServiceSet oSectionService = CATIA.ActiveEditor.GetService("SectionService")Dim oSection As SectionSet oSection = oSectionService.Add
+To Add a Section, the Product must have a Markup.
+Positioning the Section Object Plane
+Use the SetPosition method of the oSectionSection object to set the sectioning plane.
+Dim aPositioningMatrix(11) As DoubleaPositioningMatrix(0)  = 1.0    'X-axis 1st componentaPositioningMatrix(1)  = 0.0    'X-axis 2nd componentaPositioningMatrix(2)  = 0.0    'X-axis 3rd componentaPositioningMatrix(3)  = 0.0    'Y-axis 1st componentaPositioningMatrix(4)  = 1.0    'Y-axis 2nd componentaPositioningMatrix(5)  = 0.0    'Y-axis 3rd componentaPositioningMatrix(6)  = 0.0    'Normal axis 1st componentaPositioningMatrix(7)  = 0.0    'Normal axis 2nd componentaPositioningMatrix(8)  = 1.0    'Normal axis 3rd componentaPositioningMatrix(9)  = 0.0    'Origin X coordinateaPositioningMatrix(10) = 0.0    'Origin Y coordinateaPositioningMatrix(11) = 100.0  'Origin Z coordinate
+oSection.SetPosition aPositioningMatrix
+SectionService ObjectSee AlsoLegendUse CasesPropertiesMethods
+Section ObjectSee AlsoLegendUse CasesPropertiesMethods
+Page 5 of 9Design Review Object Model Map
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hh7DD4.htm
+
+--- PAGE 6 ---
+
+The sectioning plane is defined by two vectors and an origin making up its own coordinate system, and a normal vector.
+The sectioning plane is parallel to the XY plane, because its two director vectors are parallel to the X and Y vectors of the absolute coordinate system, and its normal vector is parallel to the Z vector of the absolute coordinate system. Its origin is located at the z position 100.
+The VOCServices object lets you create a Volume from a Reference.
+Retrieving the VOCServices Object
+To retrieve the VOCServices Object, you need to call the Service from the Representation Reference of a Part.
+Dim myPart As Part Set myPart = oEditor.ActiveObject Dim MyVPMRepRef As VPMRepReference Set MyVPMRepRef = myPart.Parent 
+Dim myVOCServices ' As VOCServices Set myVOCServices = MyVPMRepRef.GetItem("VOCServices") 
+Using the VOCServices Object
+Use theVOCServices object to create VOCVolumes. For example, to create an Offset Volume of the Root Occurence of an Assembly :
+Dim oRootOcc As VPMRootOccurrence Set oRootOcc = ...
+Dim oObjVPMReference As VPMReference Set oObjVPMReference = oRootOcc.ReferenceRootOccurrenceOf 
+ReDim MyInputProducts(0) MyInputProducts = Array(oRootOcc) 
+' Creates a new 3DShapeDim oNewService As PLMNewService Set oNewService = CATIA.GetSessionService("PLMNewService") 
+Dim oEditor As Editor oNewService.PLMCreate "3DShape", oEditor 
+' Gets the Part Dim myPart As Part Set myPart = oEditor.ActiveObject Dim MyVPMRepRef As VPMRepReference Set MyVPMRepRef = myPart.Parent
+' Gets the VOC ServicesDim myVOCServices ' As VOCServices Set myVOCServices = MyVPMRepRef.GetItem("VOCServices") 
+' Creates the offset VolumemyVOCServices.CreateOffset MyInputProducts, ObjVPMReference, 2# 
+The VOCSilhouetteService object lets you create a Silhouette from a Reference.
+Retrieving the VOCSilhouetteService Object
+To retrieve the VOCSilhouetteService Object, you need to call the Service from the Representation Reference of a Part.
+Dim myPart As Part Set myPart = oEditor.ActiveObject Dim MyVPMRepRef As VPMRepReference Set MyVPMRepRef = myPart.Parent 
+Dim myVOCServices ' As VOCSilhouetteService Set myVOCServices = MyVPMRepRef.GetItem("VOCSilhouetteService") 
+Using the VOCSilhouetteService Object
+Use theVOCSilhouetteService object to create Silhouette Volumes. To create an Silhouette Volume of the Root Occurence of an Assembly :
+Dim oRootOcc As VPMRootOccurrence Set oRootOcc = ...
+Dim oObjVPMReference As VPMReference 
+VOCServices ObjectSee AlsoLegendUse CasesPropertiesMethods
+VOCSilhouetteService ObjectSee AlsoLegendUse CasesPropertiesMethods
+Page 6 of 9Design Review Object Model Map
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hh7DD4.htm
+
+--- PAGE 7 ---
+
+Set oObjVPMReference = oRootOcc.ReferenceRootOccurrenceOf 
+ReDim MyInputProducts(0) MyInputProducts = Array(oRootOcc) 
+' Gets the current View PointDim oViewer As Viewer3D Set oViewer = CATIA.ActiveWindow.ActiveViewer Dim viewPoint(0) Set viewPoint(0) = oViewer.Viewpoint3D
+' Creates a new 3DShapeDim oNewService As PLMNewService Set oNewService = CATIA.GetSessionService("PLMNewService") 
+Dim oEditor As Editor oNewService.PLMCreate "3DShape", oEditor 
+' Gets the Part Dim myPart As Part Set myPart = oEditor.ActiveObject Dim MyVPMRepRef As VPMRepReference Set MyVPMRepRef = myPart.Parent
+' Gets the VOC Silhouette ServiceDim myVOCServices ' As VOCServices Set myVOCServices = MyVPMRepRef.GetItem("VOCSilhouetteService") 
+' Creates the Silhouette VolumemyVOCServices.CreateASilhouette MyInputProducts, ObjVPMReference, viewPoint, 2, 1 
+Design Synthesis Object Model MapSee AlsoLegend
+Creating an Interference Simulation and Processing the Results
+This use case primarily focuses on the methodology to create an interference simulation and analyze the results. 
+Before you begin :
+lYou should first launch CATIA and import theSkateBoardITF.3dxml file supplied in folderInstallRootFolder\CAADoc\Doc\English\CAAScdITFCheck\samples\ where InstallRootFolder is the directory where the CAA CD-ROM is installed. 
+Where to find the macro : CAAScdITFUcITFSimCreationSource.htm
+This use case:
+1.Creating the Simulation2.Setting the Interferences Groups3.Executing the Simulation and Computing the Interferences Results4.Processing the Results
+1.Creating the Simulation
+' Gets the Root Reference Dim RootOcc As VPMRootOccurrence Set RootOcc = CATIA.ActiveEditor.ActiveObject 
+Dim RootRef As VPMReference Set RootRef = RootOcc.ReferenceRootOccurrenceOf 
+' Gets the Interference Service Dim ITFServices As InterferenceServices Set ITFServices = CATIA.ActiveEditor.GetService("InterferenceServices") 
+' Creates the Simulation and sets its Specification Type and its Interference Groups Computation Type Dim SpecificationType As CatInterferenceSpecificationType SpecificationType = catInterferenceSpecificationTypeClash 
+Dim GroupCmpType2 As CatInterferenceGroupComputationType2 GroupCmpType2 = catInterferenceGroupComputationTypeGroupAgainstGroup 
+Dim ITFSimu As InterferenceSimulation 
+Page 7 of 9Design Review Object Model Map
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hh7DD4.htm
+
+--- PAGE 8 ---
+
+ITFServices.CreateInterferenceSimulation2 RootRef, GroupCmpType2, ITFSimu 
+ ITFSimu.InterferenceSpecificationType = SpecificationType ...
+2.Setting the Interferences Groups
+ ...' Gets the SkateBody Occurence Dim occSkateBody As VPMOccurrence Set occSkateBody = RootOcc.Occurrences.Item(1) 
+' Sets the Skate Body Group Dim boardGroup As InterferenceGroupObjects ITFSimu.GetGroupObjects 1, boardGroup 
+boardGroup.Add2 occSkateBody 
+' Gets the TruckWheels Occurences Dim occTruckWheel(1) As VPMOccurrence Set occTruckWheel(0) = RootOcc.Occurrences.Item(2) Set occTruckWheel(1) = RootOcc.Occurrences.Item(3) 
+' Sets the Truck Group Dim truckGroup As InterferenceGroupObjects ITFSimu.GetGroupObjects 2, truckGroup 
+' Creates the Wheel Group Dim wheelGroup As InterferenceGroupObjects ITFSimu.AddGroupObjects wheelGroup 
+' Gets the Trucks Occurrences and the Wheels Occurrences and Adds them to their GroupDim occTruck As VPMOccurrence Dim occWheel(1) As VPMOccurrence 
+For i = 0 To 1 ' Adds the Truck to the Truck Group Set occTruck = occTruckWheel(i).Occurrences.Item(1)   truckGroup.Add2 occTruck 
+' Adds the Wheels to the Wheel Group Set occWheel(0) = occTruckWheel(i).Occurrences.Item(2)   wheelGroup.Add2 occWheel(0) Set occWheel(1) = occTruckWheel(i).Occurrences.Item(3)   wheelGroup.Add2 occWheel(1) Next...
+The Simulation is created by default with two empty groups. To create the SkateBody Group and the Truck Group, the empty Group are used with the method GetGroupObjects. To create the Wheel Group, the method AddGroupObjects is used.
+3.Executing the Simulation and Computing the Interferences Results
+...ITFSimu.Execute...
+4.Processing the Results
+' Gets the Interference ResultsDim ListInterferences As InterferenceResults Set ListInterferences = ITFSimu.InterferenceResults 
+' Analizes each ResultDim oInterference As InterferenceResult 
+For i = 1 To ListInterferences.Count Set oInterference = ListInterferences.Item(i) 
+If oInterference.Type = catInterferenceResultTypeContact Then     oInterference.UserType = catInterferenceResultUserTypeContact      oInterference.AnalysisStatus = catInterferenceResultStatusOK      oInterference.UserComment = "No problem" Else     oInterference.UserType = catInterferenceResultUserTypeUndefined      oInterference.AnalysisStatus = catInterferenceResultStatusKO      oInterference.UserComment = "Problem" End If Next...
+Fig.1: The Generated Interference Simulation
+Page 8 of 9Design Review Object Model Map
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hh7DD4.htm
+
+--- PAGE 9 ---
+
+Page 9 of 9Design Review Object Model Map
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hh7DD4.htm

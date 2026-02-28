@@ -1,0 +1,401 @@
+--- PAGE 1 ---
+
+Foundation Object Model Map
+See AlsoLegend
+Page 1 of 15Foundation Object Model Map
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hh1A11.htm
+
+--- PAGE 2 ---
+
+Represents the entire current application and its frame window.
+TheApplication object is the root object for all the other objects you can use and access from scripts. It corresponds to both the application itself and to its frame window. It directly aggregates four collections:
+1. The editor collection represented by theEditors collection object.This collection contains all the editors currently managed by the application. Use theEditors property to return the Editors collection object. 2. The printer collection represented by thePrinters collection object.This collection contains all the printers accessible from the application. Use thePrinters property to return the Printerscollection object. 3. The setting controller collection represented by theSettingControllers collection object.This collection contains a generic setting controller for each setting repository managed using an XML file, and some specific setting controllers. Use theSettingControllers property to return theSettingControllers collection object. 4. The window collection represented by the Windows collection object.This collection contains all the windows currently opened by the application, each window displaying objects managed by an editor. Use theWindows property to return the Windows collection object. 
+In addition to these four collections, theApplication object also aggregates:
+l AnEditor object: at any time, an Editor object among those managed by the application is active and associated with theobjects displayed in the active window, that is, the window the end-user is currently working in. This active editor gives access to the objects visible in the active window and to the set of operations that can be applied to those objects. This editor sets the available menus and toolbars that make it possible to edit the objects it controls, according to the root object type. Use the ActiveEditor property to return the active editor.
+l A FileSystem object that enables you to manipulate folders and files. Use the FileSystem property to return the file system object 
+l A Printer object: the active printer. Use the ActivePrinter property to return the active printer
+l A Service object: object-independent session-levelService objects can be retrieved from theApplication object thanks to theGetSessionService method. A Service object has methods that can execute whatever the objects managed by the active editor. For example, creating and running a search in the database does not depend on the objects managed by the active editor in the active window. It ismade possible using a method of the session-levelSearchService object. 
+l ASystemConfiguration object, providing access to system or configuration dependent resources, such as the operating system, the current version, release, and service pack, and the available licensed products. Use the SystemConfigurationproperty to return theSystemConfiguration object 
+l ASystemService object, providing information about the system environment, and services to run a script or a process. For example, theEnviron method retrieves the value of a given environment variable. Note that the SystemServiceobject is not aService object, that is, is retrieved thanks to theSystemService property of the Application object, while a Service object is retrieved using theGetSessionService method. 
+l A Window object: the active window. Use the ActiveWindow property to return the active window. 
+l A Workbench object that you can retrieve thanks to its workbench identifier using theGetWorkbenchId method. 
+TheApplication object has other properties, such asLocalCache to return the local cache path, andCacheSize to return the local cache size. As the application represents the frame window, you can retrieve or set the frame dimensions and location 
+Application Object
+See AlsoLegendUse CasesPropertiesMethods
+Page 2 of 15Foundation Object Model Map
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hh1A11.htm
+
+--- PAGE 3 ---
+
+using the properties Width, Height,Left, and Top respectively, with values expressed in screen pixels.
+Remarks
+When you create or use macros for in-process access, always refer to the Application object as CATIA. For example, to retrieve the Windows collection from the Application object, refer to theApplication object as follows: 
+Dim cWins As WindowsSet cWins = CATIA.Windows
+Using the Application Object
+Use the ActiveEditor property to retrieve the active editor
+Dim oActEditor As EditorSet oActEditor = CATIA.ActiveEditor
+Use theGetSessionService method to return a Service object. This example returns the VisuServices object.
+Dim oService As ServiceSet oService = CATIA.GetSessionService("VisuServices")
+Represents a collection of cameras.
+Returning the Cameras Collection Object
+Use theCameras property of the VisuServices object to return the Cameras collection object.
+Dim cCameras As CamerasSet cCameras = oVisuServices.Cameras
+Represents a camera.
+A camera is the persistent form of a viewpoint. 
+You can create a camera from the current viewpoint using the NewCamera method of theViewer object. 
+The camera name is assigned by CATIA:Camera00, Camera01, and so forth, and the created camera is placed at the end of the camera collection and is displayed in the Named Views dialog box of the View menu. 
+You can rename the cameras you create with your own names using the Name property.
+Cameras Collection Object
+See AlsoLegendUse CasesPropertiesMethods
+Camera Object
+See AlsoLegendUse CasesPropertiesMethods
+Page 3 of 15Foundation Object Model Map
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hh1A11.htm
+
+--- PAGE 4 ---
+
+A created camera can then be assigned to a viewer to make its own viewpoint change to this of the camera. 
+Two kinds of cameras exist: theCamera2D object for 2D viewpoints, that is for Drawing Representation objects, and the Camera3D object for 3D viewpoints representing the real world, that is for 3D Shape Representation and Product objects. 
+A Camera2D object stores aViewpoint2D object and a Camera3D object stores a Viewpoint3D object.
+Creating a Camera
+Use the NewCamera method of theViewer object to create a Camera object.
+Dim oViewer As ViewerSet oViewer = CATIA.ActiveWindows.ActiveViewer
+Dim oCamera As CameraSet oCamera = oViewer.NewCamera()
+The created camera is added to the camera collection.
+Note : Created Camera for 3DPart scenario is no more located under the 3DShape.
+Retrieving an Existing Camera
+Use the VisuServices object to retrieve a Cameras collection object.
+Dim oVisuServices As VisuServicesSet oVisuServices = CATIA.GetSessionService("VisuServices")
+Dim cCameras As CamerasSet cCameras = oVisuServices.Cameras
+From this collection, you can either retrieve a built-in camera representing a standard view, or a camera you have created. 
+Dim oCamera As CameraSet oCamera = cCameras.Item("Camera05")
+This retrieves the front camera.
+A collection of the Editor objects that are currently held by the application.
+Retrieving the Editors Collection Object
+Use theEditors property of the Application object to return the Editors collection object.
+Dim cEditors As EditorsSet cEditors = CATIA.Editors
+Using the Editors Collection Object 
+Use the Item method of theEditors collection object to return an editor among the ones hold by the Application object.
+Dim oEditor As EditorSet oEditor = CATIA.Editors.Item(2)
+Editors Collection Object
+See AlsoLegendUse CasesPropertiesMethods
+Page 4 of 15Foundation Object Model Map
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hh1A11.htm
+
+--- PAGE 5 ---
+
+Represents an editor.
+In the Model View Controller paradigm, the editor plays the Controller role. The editor federates all the objects that can be interactively edited in the same window. It holds the current workbench and thus maintains the list of all the commands that canbe launched from menus and toolbars when this window is active to edit the objects it controls according to the root object PLM type.
+The active editor is the editor associated with the current window, whatever the active object in that window.
+Retrieving the Editor Object
+Use theActiveEditor property of the Application object to return the active editor.
+Dim oActiveEditor As EditorSet oActiveEditor = CATIA.ActiveEditor
+Use the Item method of the Editors collection to return an editor among the ones hold by the Application object.
+Dim oEditor As EditorSet oEditor = CATIA.Editors.Item(2)
+Using the Editor Object
+Use the ActiveObject property to return the active object associated with the active Editor object. The active object is the root of the data being currently edited. Depending on this data, it can be a Part object, aDrawingRoot object, or a VPMReferenceobject.
+Dim oActiveObject As AnyObjectSet oActiveObject = CATIA.ActiveEditor.ActiveObject
+Use the Selection property to return the Selection object associated with the active Editor object.
+Dim oSelection As SelectionSet oSelection = CATIA.ActiveEditor.Selection
+Use the GetService method to return a Service object applying to the Editor. Refer to the Service Object.
+Represents a file.
+TheFile object is operating system independent. Using it instead of those available with the platform you use makes your macro portable.
+Editor Object
+See AlsoLegendUse CasesPropertiesMethods
+File Object
+See AlsoLegendUse CasesPropertiesMethods
+Page 5 of 15Foundation Object Model Map
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hh1A11.htm
+
+--- PAGE 6 ---
+
+The File object derives from theFileComponent object from which it inherits thePath property. It aggregates:
+l AFolder object: its parent folder accessible using theParentFolder property also inherited from theFileComponentobject 
+l A TextStream object that represents the file contents as a text stream, returned thanks to theOpenAsTextStreammethod. 
+Retrieving the File Object
+Use the GetFile method of theFileSystem object, returned thanks to theFileSystem property of the Application object, to return an existing file.
+Dim oFile As FileSet oFile = CATIA.FileSystem.GetFile("C:\tmp\myFile.txt")
+In the same way, use the other properties and methods of theFileSystem object to create, copy, delete, and check for theexistence of a file.
+Using the File Object
+Use theSize property to return the size of a file. The size is expressed in bytes.
+Dim oSize As LongSet oSize = oFile.Size
+Represents a folder.
+TheFolder object derives from the FileComponent object from which it inherits the Path property. It aggregates:
+l A Files collection object: it contains its files, returned thanks to the Files property. 
+l AFolder object: its parent folder accessible using theParentFolder property also inherited from theFileComponentobject. 
+l A Folders collection object: it contains its subfolders, returned thanks to theSubFolders property. 
+Retrieving the Folder Object
+Use the GetFolder method of theFileSystem object, returned thanks to theFileSystem property of the Application object, to return an existing folder.
+Dim oFolder As FolderSet oFolder = CATIA.FileSystem.GetFolder("C:\tmp")
+In the same way, use the other properties and methods of theFileSystem object to create, copy, delete, and check for theexistence of a folder.
+Using the Folder Object
+Use theFiles property to return the Files collection object containing the files in the folder.
+Dim cFiles As Files
+Folder Object
+See AlsoLegendUse CasesPropertiesMethods
+Page 6 of 15Foundation Object Model Map
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hh1A11.htm
+
+--- PAGE 7 ---
+
+Set cFiles = oFolder.FilesFor Each oFile In cFiles  msgbox "File path: " & oFile.Path & _         "File type: " & oFile.Type & _         "File size: " & oFile.Size Next
+Represents the parent object of a PLM object either in the database or in session.
+Retrieving a PLMEntity Object
+A PLMEntity object is retrieved either:
+l From the PLMEntities collection object that is itself retrieved from either Search Results. In this case, any kinds of PLMEntity objects can be retrieved, depending on what is searched. You can get the properties of these objects, but not set them as long as they are not opened in session. 
+l From thePLMOccurrence object, that is either theVPMRootOccurrence or a VPMOccurrence object that both enable you to handle the occurrence model, to which it is aggregated in the product model. In this case, the possible kinds ofPLMEntity objects are VPMInstance,VPMPublication, VPMReference,VPMRepInstance, and VPMRepReference objects. These objects enable you to manipulate the instance-reference model. You can get/set the properties of these objects, since they are already opened in session. See Product Modeler Overview. 
+Use the Results property of the DatabaseSearch object to return aPLMEntities collection object as a Search Results, from which you can retrieve one or several PLMEntity objects.
+Dim cPLMEntities As PLMEntities Set cPLMEntities = oDBSearch.Results
+For i = 1 To cPLMEntities.CountDim oPLMEntity As PLMEntitySet oPLMEntity = cPLMEntities.Item(i)  MsgBox "This PLMEntity object name is: " & oPLMEntity.GetAttributeValue("PLM_ExternalID")
+PLMEntity Object
+See AlsoLegendUse CasesPropertiesMethods
+Page 7 of 15Foundation Object Model Map
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hh1A11.htm
+
+--- PAGE 8 ---
+
+Next
+Use the PLMEntity property of the VPMRootOccurrence or aVPMOccurrence object, inherited from thePLMOccurrenceobject, to return the PLMEntity object aggregated to it in a product model.
+Dim oVPMOccurrence As VPMOccurrence... 'Navigate the product model to find the appropriate objectDim oPLMEntity As PLMEntity Set oPLMEntity = oVPMOccurrence.PLMEntity...
+Refer to Navigating Product Structure and to Browsing Occurrence Model.
+Using a PLMEntity Object
+EachPLMEntity derived object shares with the others the methods inherited from the PLMEntity object.
+Use theGetAttributeValue and SetAttributeValue to get/set the value of a PLM attribute.
+Dim oPLMEntity As PLMEntity... 'Retrieve the PLMEntity object as described aboveMsgBox "This PLMEntity object title is: " & oPLMEntity.GetAttributeValue("V_Name")oPLMEntity.SetAttributeValue("V_Name") = "New Title"
+Use the GetCustomType to return the actual customization, type of aPLMEntity object.
+Dim oPLMEntity As PLMEntity... 'Retrieve the PLMEntity object as described aboveMsgBox "This PLMEntity object customization type is: " & oPLMEntity.GetCustomType
+Refer to each PLMEntity derived object to know its own properties and methods.
+Represents the parent object of the occurrence model objects.
+The PLMOccurrence object enables you to manipulate the occurrence model. See Product Modeler Overview.
+Retrieving a PLMOccurrence Object
+You can retrieve aPLMOccurrence object through its derived objects only. See VPMRootOccurrence Object and VPMOccurrence Object.
+Using a PLMOccurrence Object
+Use thePLMEntity property to return the instance/reference model object associated with the current PLMOccurrenceobject..
+Dim oPLMOccurrence As PLMOccurrence... 'Retrieve either the VPMRootOccurrence or a VPMOccurrence objectDim oPLMEntity As PLMEntitySet oPLMEntity = oPLMOccurrence.PLMEntity
+ThePLMOccurrences property returns thePLMOccurrences collection object aggregated to thePLMOccurrence object. This collection object contains all thePLMOccurrence objects that are children of thePLMOccurrence object. lf this collection object is empty, thePLMOccurrence object is a leaf node in the occurrence model tree. Prefer using the Occurrences properties of either the VPMRootOccurrence Object and the VPMOccurrence Object to navigate the occurrence model. 
+PLMOccurrence Object
+See AlsoLegendUse CasesPropertiesMethods
+Page 8 of 15Foundation Object Model Map
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hh1A11.htm
+
+--- PAGE 9 ---
+
+Represents the selection.
+Retrieving the Selection Object
+Use the Selection property to return the Selection object associated with the activeEditor object.
+Dim oSelection As SelectionSet oSelection = CATIA.ActiveEditor.Selection
+Using the Selection Object
+Refer to the Selection object.
+Selection Object
+See AlsoLegendUse CasesPropertiesMethods
+Service Object
+See AlsoLegendUse CasesPropertiesMethods
+Page 9 of 15Foundation Object Model Map
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hh1A11.htm
+
+--- PAGE 10 ---
+
+Represents a service.
+The Service object gives access to a set of object-independent operations, that either apply to the session and are editor and data independent, or globally apply to the objects controlled by the active editor and aggregated to the PLM root object. Because theService object is an abstract object, you can manipulate its derived objects only.
+A session-level service includes operations that either apply to any PLM type root object, or without any PLM root object active. On the opposite, an editor-level service applies only to a dedicated PLM type root object.
+l Session-level services:
+¡TheMATPLMService object to create materials, set or retrieves core or covering materials, remove applied materials, and retrieves all materials in session. 
+¡The OlpTranslatorHelper object used to access OLP data objects. 
+¡The PnOService object to access a person. 
+¡The PLMNewService object to create a PLM root object. 
+¡The PLMOpenService object to open a PLM root object. 
+¡The PLMPropagateService object to save changes held by the editor. 
+¡The PLMRefreshService object to manage the refresh operation. 
+¡ThePLMScriptService object to handle scripts stored in the database. 
+¡The ProductSessionService object that aggregates a collection of Shape3D objects. 
+¡TheSearchService object to to search for PLM objects. 
+¡TheSimInitializationService object to initialize the simulation. 
+¡The SIMPLMService object that managesSimulationReference and other Simulation objects. 
+¡TheVisuServices object dealing with layers, layer filters, windows and cameras. 
+l Editor-level services:
+¡TheDrawingGenService object and theDrawingService object that apply to a Drawing representation. 
+¡The FCBService object to create or retrieve flexible boards. 
+¡The FittingService object to create or manage tracks and Tpoints. 
+¡TheInertiaBoxService object to retrieve theInertiaBox object representing the bounding box of a givengeometric object. 
+¡The InertiaService object to retrieve the Inertia object for a given geometric object. 
+¡TheInterferenceServices object to create an interference simulation. 
+¡The KnowledgeServices object to return theUnits collection object or theKnowledgeCollection collection object. 
+¡TheMeasurableService object to return objects to measure curves and surfaces. 
+¡The MeasureService object to return objects to measure curves and surfaces. 
+¡ThePCBServices object to create Circuit Board Design objects.
+¡The PlayerServices object to use the play methods.
+¡The PLMProductService object that returns root objects from the Editor object. 
+¡The RfgService object to manage reference planes and surfaces. 
+¡TheSectionService object that manages Section objects from the current review. 
+¡TheSimComposeLinkServices object to create a link memory object. 
+¡The SimExecutionService object to perform simulation execution. 
+¡The SimPublicationServices object to manage publications. 
+¡The SimRepServices object to determine whether the representation reference is loaded, and to load it if it is not. 
+¡The SimLinkServices object to retrieve the occurrence, the representation instance, or the target of a link. 
+¡TheSimSimulationService object to return the root occurrence of the product referred by the simulation. 
+¡TheSrsInstantiateService object that manages Space Reference System objects. 
+¡The StrService object that applies to Structure objects. 
+¡The VALValidationService object that applies to validation objects. 
+Retrieving a Service Object
+Use the GetSessionService method of theApplication object to return a session-levelService object.
+Dim oVisuServices As VisuServicesSet oVisuServices = CATIA.GetSessionService("VisuServices")
+The table below lists the service identifier to pass to theGetSessionService method to return a session-level service.
+Service Identifier
+MATPLMServiceMATPLMService
+OlpTranslatorHelperOlpTranslatorHelper
+PnOService PnOService
+PLMNewServicePLMNewService
+PLMOpenServicePLMOpenService
+PLMPropagateServicePLMPropagateService
+Page 10 of 15Foundation Object Model Map
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hh1A11.htm
+
+--- PAGE 11 ---
+
+Use the GetService method of the Editor object to return an editor-level Service object.
+Dim oDrawingService As DrawingServiceSet oDrawingService = CATIA.ActiveEditor.GetService("CATDrawingService")
+The table below lists the service identifier to pass to theGetService method to return an editor-level service.
+Using a Service Object
+Refer to each derived Service object to know the proposed operations and how to use them.
+PLMRefreshServicePLMRefreshService
+PLMScriptServicePLMScriptService
+ProductSessionServiceProductSessionService
+SearchServicesSearch
+SimInitializationServiceSimInitializationService
+SIMPLMServiceSimPLMService
+VisuServices VisuServices
+Service Identifier
+DrawingGenServiceCATDrawingGenService
+DrawingServiceCATDrawingService
+FCBService FCBService
+FittingService FittingService
+InertiaBoxServiceInertiaBoxService
+InertiaService InertiaService
+InterferenceServicesInterferenceServices
+KnowledgeServicesKnowledgeServices
+MeasurableServiceMeasurableService
+MeasureServiceMeasureService
+PCBService PCBService
+PlayerServices PlayerServices
+PLMProductServicePLMProductService
+RfgService RfgService
+SectionService SectionService
+SimComposeLinkServicesSimComposeLinkServices
+SimExecutionServiceSimExecutionService
+SimLinkServicesSimLinkServices
+SimPublicationServicesSimPublicationServices
+SimRepServicesSimRepServices
+SimSimulationServiceSimSimulationService
+SrsInstantiateServiceSrsInstantiateService
+StrService StrService
+VALValidationServiceValidationService
+SettingController Object
+See AlsoLegendUse CasesPropertiesMethods
+Page 11 of 15Foundation Object Model Map
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hh1A11.htm
+
+--- PAGE 12 ---
+
+Represents a setting controller.
+TheSettingController object enables you to access the setting attributes stored in setting repository files, and arranged in the different property pages of the Options dialog box you can display thanks to theOptions command of the Tools menu. There are two kinds of setting controllers.
+1. TheSettingRepository object is the generic setting controller. It applies to any setting repository having an XML definition. Refer to Setting Repository Reference to have the list of such setting repositories 2. Specific setting controllers, each dedicated to a given setting repository that is not described using an XML file. For example, theDynLicenseSettingAtt object deals with the dynamic licensing setting repository that stores the list of available configurations and products for which you can request a dynamic license. 
+The generic setting controller and all of the specific ones share the five methods of theSettingController object to deal with the whole set, or a subset of the setting attributes of a setting repository:
+l Commit to make a memory copy of the setting attribute values 
+l Rollback to restore the last memory copy of the setting attribute values
+l ResetToAdminValues to restore the administered values of all the attributes 
+l ResetToAdminValuesByName to restore the administered values of a subset of the attributes
+l SaveRepository to make a persistent copy of the setting attribute values in a file. 
+Retrieving the Generic Setting Controller
+The generic setting controller can be retrieved for any of the setting repositories listed in Setting Repository Reference,provided the configuration or product it belongs to is installed on your computer. Use the SettingControllers property of theApplication object to return theSettingControllers collection. Then use itsItem method to return the generic setting controller applying to the GeneralGeneral setting repository.
+Dim cSettingCtrls As SettingControllersSet cSettingCtrls = CATIA.SettingControllersDim oSettingCtrl As SettingRepositorySet oSettingCtrl = cSettingCtrls.Item("GeneralGeneral")
+Using the Generic Setting Controller
+Use the GetAttr orPutAttr methods of the SettingRepository object to return or set the value of an attribute. The example below returns the value of the DragAndDrop attribute of the GeneralGeneral setting repository, and if this value is returned true, set it to false. 
+Dim oDragAndDrop As BooleanoDragAndDrop = oSettingCtrl.GetAttr("DragAndDrop")If oDragAndDrop Then  oSettingCtrl.PutAttr "DragAndDrop", FalseEnd If
+Retrieving a Specific Setting Controller
+Use the SettingControllers property of theApplication object to return theSettingControllers collection. Then use itsItemmethod with the appropriate identifier to return the specific DynLicenseSettingAtt object.
+Dim oSettingCtrls As SettingControllersSet oSettingCtrls = CATIA.SettingControllersDim oSettingCtrl As DLNameSettingAttSet oSettingCtrl = oSettingCtrls.Item("CATSysDynLicenseSettingCtrl")
+The names to pass to the Item method are:
+Using a Specific Setting Controller
+A specific setting controller manages the setting attributes located in a setting repository. A property and two methods enable you to manipulate each setting attribute:
+Setting Controller ObjectsIdentifiers to Pass to the Item Method
+DLNameSettingAttCATSysDLNameSettingCtrl
+DynLicenseSettingAttCATSysDynLicenseSettingCtrl
+LicenseSettingAttCATSysLicenseSettingCtrl
+MacrosSettingAttCATScriptMacrosSettingCtrl
+Page 12 of 15Foundation Object Model Map
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hh1A11.htm
+
+--- PAGE 13 ---
+
+1. A read-write property to return or set the setting attribute value 2. A method to retrieve information about the setting attribute:
+¡The level of administration of the setting attribute 
+¡The lock status of the setting attribute (Locked or Unlocked) 3. A method to set a lock onto the setting attribute 
+Depending on each setting attribute, when a property is not suitable, the read-write property can be replaced with a couple of methods. For example, a setting attribute managing a color must return or set three integer values. This cannot be performed by a property, and a method with three parameters must be used instead.
+Refer to each derived specificSettingController object to know the setting attributes it manages and how to manipulate them.
+Represents a viewer.
+A viewer is used to display a objects according to a given viewpoint and display options. Depending on the PLM type of the root object, the following viewers can be found in a window:
+l 3D Shape Representation: a Viewer3D object for the part 3D objects and/or a SpecsViewer object for the part specification tree 
+l Product: a Viewer3D object for the assembly 3D objects and/or a SpecsViewer object for the assembly specification tree 
+l Drawing Representation: aViewer2D object for the drawing sheets and/or aSpecsViewer object for the drawing specification tree.
+When the window displays both a Viewer3D object and a SpecsViewer object, or one or severalViewer2D objects and a SpecsViewer object , it is a SpecsAndGeomWindow object. You can activate a given viewer in a multi-viewer window, fit all the scene in the viewer, update the display, zoom in and out, and capture the contents of the viewer as an image file.
+Display options depend on the viewer type. All viewers share display options such as the background color and the display on the whole screen or in a smaller window. In addition, Viewer3D objects allow for different lighting modes and for modifying lighting intensity, and for depth effects, navigation styles, rendering modes, and clipping modes.
+Represents a 3D viewpoint.
+AViewpoint3D object is aggregated to theViewer3D object. It holds data to define how objects are seen to enable their display by a 3D viewer:
+l The eye location, also named the origin of the scene to display, expressed in model units 
+l The distance from the eye location to the target, that is, to the looked at point in the scene. 
+l The sight, up, and right directions, defining a 3D coordinate system with the eye location as origin. 
+l The projection type: perspective (conic) or parallel (cylindrical). 
+l The zoom factor to apply for display. 
+Viewer Object
+See AlsoLegendUse CasesPropertiesMethods
+Viewpoint3D Object
+See AlsoLegendUse CasesPropertiesMethods
+Page 13 of 15Foundation Object Model Map
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hh1A11.htm
+
+--- PAGE 14 ---
+
+The 3D viewpoint is the object that stores data which defines how your objects are seen to enable their display by a 3D viewer. This data includes namely the eye location, also named the origin, the distance from the eye to the target, that is to the looked at point in the scene, the sight, up, and right directions, defining a 3D axis system with the eye location as origin, the projection type chosen among perspective (conic) and parallel (cylindrical), and the zoom factor. The right direction is not exposed in aproperty, and is automatically computed from the sight and up directions.
+Represents a service for visualization purposes.
+The VisuServices object lets you manage:
+l The Cameras collection object. 
+l The layers and the layer filters. 
+l The hidden elements visibility. 
+l A new window for the data displayed in the active one. 
+Retrieving the VisuServices Object
+Refer to the Service Object.
+Using the VisuServices Object
+Use theCameras property to return the Cameras collection object.
+Dim cCameras As CamerasSet cCameras = oVisuServices.Cameras
+Use theNewWindow method to create a new Window object.
+Dim oWindow As WindowSet oWindow = oVisuServices.NewWindow()
+VisuServices Object
+See AlsoLegendUse CasesPropertiesMethods
+Windows Collection Object
+See AlsoLegendUse CasesPropertiesMethods
+Page 14 of 15Foundation Object Model Map
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hh1A11.htm
+
+--- PAGE 15 ---
+
+A collection of Window objects that represent of all the windows currently managed by the application.
+The Windows collection object gathersWindow objects which make the link with the windowing system and display objects in a viewable form, mainly in 3D or 2D modes, or as a specification tree in graph or tree mode. Windows of the collection can be arranged in the frame.
+Retrieving the Windows Collection
+Use theWindows property of the Application object to return the Windows collection object.
+Dim cWindows As Windows Set cWindows = CATIA.Windows
+Using the Windows Collection
+Use the Item method to return a window from the Windows collection object, namely below the third one.
+Dim oWindow As WindowsSet oWindow = CATIA.Windows.Item(3)
+Note that you can also use the window name in place of the window range. The example below returns the search window the name of which is "Name Like Part".
+Dim oWindow As WindowsSet oWindow = CATIA.Windows.Item("Name Like Part")
+Use the Arrange method to arrange the windows. You can arrange the windows, according to the values of the CatArrangeStyle enumeration:
+l As horizontal tiles.
+l As vertical tiles. 
+l As a cascade. 
+CATIA.Windows.Arrange(catArrangeCascade)
+Represents a window.
+AWindow object aggregates a Viewers collection object that enables the window to display the application data in theappropriate modes using viewers. A SpecsAndGeomWindow object features altogether a 2D or a 3D viewer and a specification tree viewer. A window can be activated, that is becomes the active one, using theActivate method. This implies that the editor that controls the objects displayed in this window is also activated if it was not, and that subsequent interactions will affect it until another window is activated instead. The Viewers property returns the aggregatedViewers collection object, and theActiveViewer property returns the active viewer in the window.
+Window Object
+See AlsoLegendUse CasesPropertiesMethods
+Page 15 of 15Foundation Object Model Map
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hh1A11.htm

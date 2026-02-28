@@ -1,0 +1,1119 @@
+--- PAGE 1 ---
+
+What Is New with 3DEXPERIENCE Platform Automation?
+Automation reflects the changes brought to 3DEXPERIENCE platform compared to V5.
+The main change in the data model consists in replacing the document-centric model relying on files with a product/representation model relying on a database and a client/server architecture. Main characteristics are:
+lThere are no Part, Product, Drawing, Material, or Analysis documents and files any longer. They are replaced with product references and instances. 
+lAll data models are specializations of the same PLM Core model that enables an non-semantic server-layer code to perform robust query and save operations on stateless servers, removing data mapping problems and data loss. 
+lThe Product model, as well as the other data models, is a unique entity-relation based model designed to reduce the storage size in the database, to allow for large assemblies in sessions and for perfect symmetry without data loss when back and forth loading and storing data. 
+lParts support the multi-representation thanks to isolation between the part reference and its shape. 
+lEach PLM entity is assigned a unique identifier whatever its type supporting any PLM operations, such as versioning, configuration, or replication. 
+Other changes are related to the user interface that offers the Bar and the Compass in addition to the 3D compass, for easy search, navigation, and real-time collaboration.
+How to Adopt 3DEXPERIENCE Platform Automation?
+Before modifying macros to take advantage of 3DEXPERIENCE platform architecture, a minimal understanding of PLM concepts, PLM objects customization and products is required and can be found in the product documentation. The following steps should then be considered:
+1.Choose target languages for 3DEXPERIENCE platform macros. 2.Understand main modifications that will have to be performed. 3.Assess3DEXPERIENCE platform functional level to understand which macros will run on the current level. 4.Define the structure of libraries that will allow macro persistency, create any required library and macro, and initialize macros with V5 content. 5.Review all macros. Modify what is required and test code using the Details of modifications on V5 modelers part of the Adoption section as a reference. 
+Those steps are described below in more details.
+Choose Target Language for 3DEXPERIENCE Platform Macros
+Of course CATScript, VBScript and VBA are still supported.
+Scripting languages supported in V5 are still supported: CATScript, Visual Basic for Application and Visual Basic Scripting Edition (VBScript) can be used, detailed levels are provided in the product Program Directory. 3DEXPERIENCE platform now integrates VSTA, meaning that C# and VB.NET are additional scripting languages to choose from. So it is possible either to keep the choices that were made in V5 or to take advantage of3DEXPERIENCE platform adoption to review those choices.
+For example CATScript files content is dynamically preprocessed into VBScript before being executed. This runtime cost could be avoided by removing any typing information from the V5 CATScript macros and storing the result in a catvbs macro. Migrating macros to C# of VB.NET could also be considered in the perspective of complying to a development language corporate strategy.
+Understand Main Modifications
+This approach is based on main V5 scenarios commonly used when creating macros and aims to understand which are the main modifications that will be required. The articles provided inMain Applications Patterns part of the Adoption section should be read first, they address:
+lAutomating Access to Settings.
+lWorking with Objects. 
+lBringing Objects into Session and Saving objects. 
+lAccessing Objects in Session. 
+lCreating Objects. 
+lAccessing Objects Through Generic Methods. 
+It is also recommended to read the article Product Changes in theDetails of modifications on V5 modelers part of the Adoption section.
+Assess 3DEXPERIENCE Platform Functional Level
+All V5 object and methods may not be available in the current3DEXPERIENCE platform level. As there is no explicit compilation of macro code for languages available in V5, this cannot be fully performed before the code modification phase but high level hints can be found:
+lIn the Object Reference part of theReference section that lists available 3DEXPERIENCE platform objects 
+lIn the Details of modifications on V5 modelers part of the Adoption section that described for V5 modelers available in the current 3DEXPERIENCE platform level, which thinner level functionality may not be available. 
+Define Macros Persistency
+Macros are saved and accessed in macro libraries stored in the PLM server database. This allows easy access from any client seat to corporate macros. Macro libraries must so be created first, typically their number and names will reflect language used by stored macros and any kind of logical gathering (processes where they should be used, functional domains, etc.).
+For each V5 macro that will be processed, a3DEXPERIENCE platform macro should be created in one of the libraries, and the code should copy/pasted from the V5 document they were saved in.
+lCATScript and catvbs files can be edited using any text editor.
+Overview of Adoption for AutomationTechnical Article
+Abstract
+This article explains how to transform your V5 Automation macros to take advantage of the3DEXPERIENCE platform.
+This article describes or points to articles describing the main new concepts and technologies you need to understand before looking at your Automation macros. Then a change methodology is explained along with where to find the appropriate information.
+Page 1 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm
+
+--- PAGE 2 ---
+
+lCATVBA files must be read first using a V5 session and should be exported as .bas files using the embedded VBA editor. This .bas file will then be imported using the VBA editor associated with a 3DEXPERIENCE platform session. 
+lMacros stored in non macro-specific V5 documents like CATPart or CATDrawing files, cannot be saved in their hosting representations in 3DEXPERIENCE platform. You can: 
+¡Store them in the database: import the V5 file. A dedicated representation is created to contain the macro. You can save this macro in a PLM macro librarycorresponding to the macro language (CATScript or VBScript). You can then recall the macro from its PLM macro library using the Macros dialog box ofthe Macro command in the Tools menu. Because the V5 automation model is not compliant with the 3DEXPERIENCE platform one, most of V5 macros cannot be used "As Is". To prevent problems, the FBDI process adds a string at the beginning of all imported macros to make them non-executable. Consult the article Macros File-based Design Import in the product documentation for more information. 
+¡Store them in files: extract them from the V5 documents using a V5 session first, and save them as text in text files. The content of this text file can then be pasted in a3DEXPERIENCE platform macro edited in a3DEXPERIENCE platform session. V5 Documents do not need to be modified, the File Based Design Import mechanism (FBDI), that allows you to import V5 documents into the PLM server, will remove the macros code when the V5 document will be imported in the PLM server database.
+Notes:
+1.Documents that were dedicated to store macros in V5 (files with the .CATBVA, .CATScript or .catvbs extension) are not handled by FBDI. 2.Macro code stored in Knowledgeware features is kept when importing the document containing those features. A warning pop-up is however added. Consult the article Knowledgeware File-based Design Import in the product documentation for more information. 
+Review, Modify, and Test Code
+Once main modifications have been understood, persistency defined and 3DEXPERIENCE platform macro code initialized with V5 content, actual code modification and test can take place. Here again the Details of modifications on V5 modelers part of the Adoption section should be used. It describes, for each V5 modeler available, which objects and methods have been changed and how.
+Each macro should at least be reviewed and any usage of Documents collection, Document object or any object whose types derives from Document should be replaced. 
+Note: A V5 macro should never be considered as acceptable for 3DEXPERIENCE platform if it has not at least been reviewed.
+What Is Not Possible in Current Level?
+Functionality involving links from representations to PLM object are not supported:
+lCreation of contextual design. 
+The way to access settings through Automation is simplified and can now be performed most of the time using the generic methods of theSettingRepository object relying on the XML-based description of the setting repositories and attributes.
+V5 setting attributes are each managed using a dedicated read/write property and two dedicated methods: one for locking/unlocking the setting attribute, and one for retrieving information about it. For each setting attribute, in addition to its name and role, the tab page where it is accessed interactively, you then need to know or find its setting controller object and the way to retrieve it, and the property and method names to manage the setting attribute.
+3DEXPERIENCE platform setting attributes are declared in XML files and managed using the set of six generic methods of the single SettingRepository object:
+lGetAttr and PutAttr to retrieve and set the value of a simple type setting attribute.
+lGetAttrArray and PutAttrArray to retrieve and set the value of an array type setting attribute. 
+lGetAttrInfo to retrieve information about a setting attribute: is it administrated, locked, modified at the current administration level? 
+lSetAttrLock to lock or unlock a setting attribute.
+To access a 3DEXPERIENCE platform setting attribute, you just need to know its name and in which setting repository it is stored.
+For example, the following pattern can be applied to retrieve a setting attribute value:
+In this example, the V5 drag & drop ability setting attribute is managed by a specific property (DragDrop) of the specific setting controller object(GeneralSessionSettingAtt) managing the underlying setting repository. Another setting attribute is managed using a different property of possibly a different setting controller if the setting attribute belongs to a different setting repository. With 3DEXPERIENCE platform, the setting repositories are handled using a single object (SettingRepository), and the value of any setting attribute of a simple type, that is, that is not an array, is retrieved thanks to the GetAttr method.
+For more information, consult the SettingController Object, that describes how to retrieve aSettingRepository object and details how to use it, and the Setting Repository Reference that describes and lists the setting repositories along with their setting attributes.
+Note that the following V5 setting controller objects still exist in 3DEXPERIENCE platform. The associated setting repositories cannot thus be managed using the generic setting controller:
+lDLNameSettingAtt
+lDynLicenseSettingAtt
+lLicenseSettingAtt
+Automating SettingsTechnical Article
+Abstract
+This article explains how to transform your V5 Automation macros to take advantage of the Open3DEXPERIENCE platform PLM infrastructure. It explains how to transform an application that was automating access to settings to make it 3DEXPERIENCE platform compliant.
+V5 Automation 3DEXPERIENCE platform Automation' Accessing the setting controller dedicated to ' the global session settings tab pageDim cSettingControllers As SettingControllersSet cSettingControllers = CATIA.SettingControllersDim oGeneralSessionSettingAtt As GeneralSessionSettingAttSet oGeneralSessionSettingAtt = _    cSettingControllers.Item("CATCafGeneralSessionSettingCtrl")
+' Determining if Drag & Drop is enabled' to Copy/Paste using a specific propertyDim bDragDropForCPPEnabledbDragDropForCPPEnabled = oGeneralSessionSettingAtt.DragDrop
+' Accessing a generic setting controller for' the global session settings tab pageDim cSettingControllers As SettingControllers Set cSettingControllers = CATIA.SettingControllersDim oSettingRepository As SettingRepositorySet oSettingRepository = _    cSettingControllers.Item("GeneralGeneral")
+' Determining if Drag & Drop is enabled' to Copy/Paste using the generic methodDim bDragDropForCPPEnabledbDragDropForCPPEnabled = oSettingRepository.GetAttr("DragAndDrop")
+Page 2 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm
+
+--- PAGE 3 ---
+
+lMacrosSettingAtt
+In addition, note that theFileAccessStatisticsSettingAtt object is removed in3DEXPERIENCE platform, since no files are used any longer.
+The Parent Property
+As in V5,3DEXPERIENCE platform object are aggregated by a parent object, itself being aggregated by its parent, this creating a tree whose root is theApplicationobject. The parent of an object can be obtained using its Parent property. Depending on the object, the behavior of the Parent property may have changed in3DEXPERIENCE platform. As a general rule:
+lThe behavior of non persistent objects (windows, viewers, etc.) does not changed.
+lObjects that persist inside 3DEXPERIENCE platform representation references like part or drawing data keep the same behavior, except when reaching the layer of PLM objects. For example:
+lPLM entities, meaning objects that can be queried through PLM queries in3DEXPERIENCE platform, like the V5 Product object, are replaced, even if the concept is kept. The way they are aggregated, and so the behavior of the Parent property, may have changed. Consult the Details of modifications on V5 modelers part of this Adoption section for more information. 
+The Name property
+The Name property allows you to identify objects, for example inside collections. Here again only the behavior of V5 objects that become 3DEXPERIENCE platformPLMEntity objects is changed, mainly becausePLMEntity objects are identified by a customizable set of PLM attribute values, called the PLM Identifier Set, and not anymore by a simple string. The most common usages of the Name property are described below.
+Adding Attributes to an Object
+Very often the name of a V5 document, for example, is made up of a concatenation of attributes, allowing you to classify and retrieve objects:
+<part number>_<responsible>.CATPart
+In3DEXPERIENCE platform those attributes are typical PLM attributes, defined on the PLM representation reference object.
+One specific type of attribute implemented this way is the extension of the document: retrieving all Product documents in a folder in V5 is performed through a query on product objects in 3DEXPERIENCE platform.
+Note: the Path property of the V5Document object is often used the same way. 
+Displaying a User Understandable Name
+For example, in a macro that performs checks on V5 documents, when a problem is discovered, the message must allow the end user to understand to which object it applies. In V5, the name of the document was the obvious information to provide. In3DEXPERIENCE platform this information could be part of, or the whole PLM Identifier Set and maybe specific attributes. In any case this heavily depends on the customization applied to PLM metadata, that itself aims to implement corporate processes.
+The GetItem Function
+The GetItem function allows you to retrieve an aggregated object from its name particularly when the aggregation is dynamic. For example, a Part object does notaggregate a Layout2DRoot object if the 2D Layout for 3D Design application was not used. Otherwise, theLayout2DRoot object is retrieved this way:
+Working with ObjectsTechnical Article
+Abstract
+This article explains how to transform your V5 Automation macros to take advantage of the Open3DEXPERIENCE platform PLM infrastructure. It focuses on generic methods inherited by most objects from theAnyObject object or the Collection object:
+V5 Automation 3DEXPERIENCE platform Automation' Accessing the parent of a Part objectSet oObject = oPart.Parent
+' This parent is a PartDocument objectmsgbox typeName (oObject)
+' Accessing the parent of a Part objectSet oObject = oPart.Parent
+' This parent is a VPMRepReference objectmsgbox typeName (oObject)
+V5 Automation' Accessing the 2D Layout rootDim o2DRoot As Layout2DRootSet o2DRoot = CATIA.ActiveDocument.Part.GetItem("CATLayout2DRoot")
+As for the Parent property, this may have changed depending on the objects with which it was used when PLM objects are involved. Consult theDetails of modifications on V5 modelers part of this Adoption section for more information.
+In V5 the Document object is the key object that allows persistency. Through the Documents collection objects, newDocument objects can be created as a repository for persistent data, modifications performed in session can be saved on disk, and existingDocument objects loaded data into session.
+In3DEXPERIENCE platform persistent data is stored in the PLM server, either as a PLM object and its attributes and links or as the black box content of a specific PLM objects: the representation references.
+This article explains how to bring objects into session, save objects, and related considerations. Creation of objects is described in the Creating Objects article.
+Bringing Objects into Session And Saving ObjectsTechnical Article
+Abstract
+This article explains how to transform your V5 Automation macros to take advantage of the Open3DEXPERIENCE platform PLM infrastructure. It explains how the V5 document centric model and more precisely theDocuments collection has been replaced to to accommodate database persistency.
+Page 3 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm
+
+--- PAGE 4 ---
+
+Bringing Objects into Session
+In V5, documents are stored on file systems and identified through a path. This path, including the document name, is often used to classify and add attributes on the document. TheOpen method of the Documents collection allows you to load a document in memory from its path. The content of the document can then be edited or browsed.
+In 3DEXPERIENCE platform, the PLM server contains PLM entities that can be queried against a set of PLM attributes, using the SearchService service object. The result of a query is a set of PLM entities that must be opened using thePLMOpen method of the PLMOpenServiceobject before being browsed or edited through specific editors.
+Note: depending on the query, the list of retrieved PLM entities may contain more than one object.
+Saving Objects
+In 3DEXPERIENCE platform, the save operation applies to all PLM objects opened in the active editor and is performed through the PLMPropagate method of thePLMPropagateService object.
+Using the File Selection Box
+TheFileSelectionBox property of the Application object allows to display a window where the path of a file can be selected. In3DEXPERIENCE platform, this can still be used to retrieve documents stored on a file system but PLM entities must be retrieved either through the SearchService service object, or using the interactive Search command.
+Accessing the Document and the Editor
+In V5 theDocument object gives access to persistent data loaded in session. This notion has been replaced in 3DEXPERIENCE platform by an Editor object. In the Model View Controller paradigm, the editor plays the Controller role. The editor federates all the objects that can be interactively edited in the same window. As for the V5Document object, the application object aggregates an activeEditor object and a collection of Editor objects. The following illustrates the modifications required to access a3DEXPERIENCE platform Editor object instead of a V5 Document object.
+Accessing Objects Edited through the Document and the Editor
+V5 Document objects are virtual objects that are specialized depending on their content, like for example thePartDocument or DrawingDocument objects. Most of the time a macro expects specific types of documents, the genericDocument object can so be replaced by a more specific object, like a DrawingDocument object, that provides dedicated methods to access its specific content. This is illustrated in the following macro that displays the number of sheets of a set of drawings.
+V5 Automation 3DEXPERIENCE platform Automation
+' A Product document is known by its pathsIdentifier="E:/myDocument.CATProduct"
+' Its content is loaded through the Documents collectionSet oProductDocument = CATIA.Documents.Open("sIdentifier')
+' Get the SearchService objectDim oSearchService As SearchServiceSet oSearchService = CATIA.GetSessionService("Search")
+' Create a query using the DatabaseSearch objectDim oDBSearch As DatabaseSearch Set oDBSearch = oSearchService.DatabaseSearch
+' Set the type of object to query, a criterion, and trigger the searchoDBSearch.BaseType = "VPMReference"oDBSearch.AddEasyCriteria "PLM_ExternalID", "Product*"
+' Launch the searchoSearchService.Search
+' Retrieve the listed entitiesDim cPLMEntities As PLMEntitiesSet cPLMEntities = oDBSearch.Results 
+' Get the PLMOpen service & Open the first retrieved entitySet oPLMOpenService = CATIA.GetSessionService("PLMOpenService") Set oEditor = oPLMOpenService.PLMOpen (cPLMEntities.Item(1))
+V5 Automation 3DEXPERIENCE platform Automation' Saving the active DocumentCATIA.ActiveDocument.Save' Saving All data in SessionCATIA.GetSessionService("PLMPropagateService").PLMPropagate
+Accessing and Editing Objects in SessionTechnical Article
+Abstract
+This article explains how to transform your V5 Automation macros to take advantage of the Open3DEXPERIENCE platform PLM infrastructure. It explains how the V5 document centric model is modified to provide access to objects in session.
+V5 Automation 3DEXPERIENCE platform Automation' Get the active DocumentSet oDocument1 = CATIA.ActiveDocument
+' Open a document using its Path and' access the associated Document objectSet cDocuments = CATIA.DocumentsSet oDocument2 = cDocuments.Open("xxx")
+' Get the active EditorSet oEditor1 = CATIA.ActiveEditor
+' Open a PLMEntity object and' access the associated Editor objectSet oPLMOpenService = CATIA.GetSessionService("PLMOpenService") Set oEditor2 = oPLMOpenService.PLMOpen oPLMEntity
+V5 Automation 3DEXPERIENCE platform Automation
+' Macro will process DrawingDocument objectsDim oDrawingDocument As DrawingDocument
+' Loop on the files of a folderSet oFolder = CATIA.FileSystem.GetFolder("E:\tmp")
+' Use the SearchService object to retrieve a set of ' VPMRepresentationReference objects that contain drawing dataDim oSearchService As SearchServiceSet oSearchService = CATIA.GetSessionService("Search")Dim oDBSearch As DatabaseSearch Set oDBSearch = oSearchService.DatabaseSearch' The type must be a Product Representation Reference type 
+Page 4 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm
+
+--- PAGE 5 ---
+
+For details on each type of V5 Document objects, consult the Details of modifications on V5 modelers part of this Adoption section.
+When V5 documents are already in session, the specialized type of the Document object allows to select a specific kind of document. Some objects may not be always present in the selected document. For example a PartDocument object will always contain aPart object but not always a Layout2DRoot object (2D Layout for 3D Design root object), so the type of theDocument object is not always discriminative. In3DEXPERIENCE platform, representation references may contain different types of data, so this last method is always required. The following example describes how to process all Layout2DRoot objects in session.
+Changed Capabilities Related to Editing Objects in Session
+Selection
+TheSelection object aggregation is moved from the V5Document object to the 3DEXPERIENCE platformEditor object:
+Cameras
+V5 Camera objects are aggregated under the V5 Document object.3DEXPERIENCE platform Camera objects are only available in representations references in 3DEXPERIENCE platform and should be accessed through a service on the Editor object: the VisuServices object.
+Commands and Workbenches
+Some V5 interactive commands can be launched from a macro using the StartCommand method of the Application object. This capability still exists in3DEXPERIENCE platform but the name and behavior of the commands may have changed, so each usage of this method must be considered independently, based on 3DEXPERIENCE platform commands interactive behavior.
+The same applies for interactive workbenches that can be accessed through the GetWorkbenchId and SetWorkbenchId methods of the Application object.
+The GetWorkbench Method
+TheGetWorkbench method of the Document object gives access, in V5, to a variety of objects, improperly called Workbench objects, that generally can't be seen as aggregated by another objects and offer access to edition contexts and creation or calculation services. Such V5 objects are not directly linked to the interactive notion of workbench described upper.
+In 3DEXPERIENCE platform such objects will be retrieved as Service objects either available at session level or at editor level. The list of V5 objects accessible through theGetWorkbench method is not listed here. For details on availability and name of the 3DEXPERIENCE platform object equivalent to a V5Workbenchobject, consult the Details of modifications on V5 modelers part of this Adoption section dedicated to the corresponding V5 modeler.
+Extracting a Consistent Set of Objects from the Database
+The SendToService object and itsCreateSendTo factory method of the Application object are removed. Extracting a consistent set of data to send to a partner or a 
+For each oFile in oFolder.Files
+' Select only drawing documentsIf ( Right(oFile.Path, 8) = ".CATDrawing") Then
+' Open the file: a DrawingDocument object is expectedSet oDrawingDocument = CATIA.Documents.Open(oFile.Path)
+' Retrieve the DrawingRoot object using a specific    ' method of the DrawingDocument objectSet oDrawingRoot = oDrawingDocument.DrawingRoot
+' Display the number of sheets       msgbox oDrawingRoot.Sheets.CountEnd IfNext
+' "PLMRepresentationDS" is available with the PLMProductDS customization. ' Use your own customization types.oDBSearch.BaseType = "PLMRepresentationDS"oDBSearch.AddEasyCriteria ...oSearchService.Search
+' Loop on found PLM entitiesFor each oPLMEntity in oDBSearch.Results
+' Open the entity: Editor object will have no specific typeSet oEditor = CATIA.GetSessionService("PLMOpenService").PLMOpen(oPLMEntity) ' The editor has no specific type, but drawing data is expected, so   ' the generic GetItem method is used to retrieve the DrawingRoot objectSet oDrawingRoot = oEditor.GetItem("DrawingRoot")
+' Display the number of sheets    msgbox oDrawingRoot.Sheets.CountNext
+V5 Automation 3DEXPERIENCE platform Automation' Macro processes edited documents containing 2D Layout dataDim oDocument As Document
+' Loop on all documents in sessionFor each oDoc in CATIA.Documents  ' Select only part documentsIf ( TypeName (oDoc) = "PartDocument" ) Then
+  ' Check if Documents contains a 2DLayoutRoot  Set oLayout2DRoot = NULL  On error resume next  Set oLayout2DRoot = oDoc.Part.GetItem("CATLayout2DRoot")  On error goto 0    ' Test whether a 2D Layout Root has been found  If not IsNull(oLayout2DRoot) Then      ...End If  End IfNext
+' Macro processes any editors editing 2D Layout dataDim oEditor As Editor
+' Loop on all editors  in sessionFor each oEditor in CATIA.Editors
+' Get The Active ObjectSet oObj = oEditor.ActiveObject
+ ' Test whether it is a 2D Layout Root If (Typename(oObj) = "Layout2DRoot") Then     ...End IfNext
+V5 Automation 3DEXPERIENCE platform Automation' Access Selection objectSet oSelection = CATIA.ActiveDocument.Selection' Access Selection objectSet oSelection = CATIA.ActiveEditor.Selection
+V5 Automation 3DEXPERIENCE platform Automation' Access the Cameras collection object' from the Document objectDim oPartDoc As PartDocumentSet oPartDoc = CATIA.ActiveDocument
+Set oCameras = oPartDoc.Cameras
+' Access the Cameras collection object from' the VisuServices objectDim oEditor As EditorSet oEditor = CATIA.ActiveEditor
+Dim oEditor As VisuServicesSet oEditor = Editor.GetService("VisuService")
+Set oCameras = oService.Cameras
+Page 5 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm
+
+--- PAGE 6 ---
+
+supplier should now be interactively done thanks to Export-Import 3DXML with authoring commands. Refer to VPM Multi-Discipline collaboration productdocumentation for details.
+In V5, the Document object is the key object that allows persistency. Through the Documents collection object, newDocument objects can be created as a repository for persistent data, modifications performed in session can be saved on disk, and existingDocument objects loaded into session.
+In3DEXPERIENCE platform, persistent data is stored in the PLM server, either as a PLM object and its attributes and links, or as the streamed (black box) content of a specific PLM objects: the representation references.
+This article focuses on object creation. Saving and retrieving objects is described in the Bringing Objects into Session And Saving Objects article. 
+Creating Objects
+For 3DEXPERIENCE platform object that are stored in reference representations. The creation mode has not changed, but PLM objects should be created using the PLMNewService object. This service should be used in three steps:
+1.Creating a template entity that will receive any required PLM attributes and their default values. 2.Modifying the template entity PLM attributes values if necessary. 3.Creating and editing actual PLM entities in session using the template entity.
+Note: Drawing representations are created with default values for standards and sheet style. See the Drafting Changes article for more information.
+Creating Objects as Copy of Existing Objects
+3DEXPERIENCE platform is no more document based, so the NewFrom method of the Documents collection object has no meaning anymore. No equivalent capability is currently provided.
+In V5 a variety of objects could be seen as aggregated or not by a parent object depending on the products that were available in the installation, for example aStrWorkbench object could be obtained from aProductDocument object if a product featuring structure design capability was installed and a SPAWorkbench object could be obtained if a product featuring space analysis capability was installed.
+Some of those objects were retrieved using two generic methods that have disappeared in 3DEXPERIENCE platform, the GetWorkbench method of the Documentobject and the GetTechnologicalObject method of the Product object, and a text string that described what object was to be retrieved. For example, the StrWorkbench object was retrieved the following way:
+The generic GetItem method of the AnyObject object still exists in 3DEXPERIENCE platform but may not allow anymore to retrieve all objects that were available in V5.
+How to retrieve objects currently available in 3DEXPERIENCE platform is described in the 3DEXPERIENCE platform Adoption documents related to each object. This purpose of this article is to provide a way to retrieve the same information starting from the V5 generic method for the most common objects.
+Creating ObjectsTechnical Article
+Abstract
+This article explains how to transform your V5 Automation macros to take advantage of the Open3DEXPERIENCE platform PLM infrastructure. It explains how the V5 document centric model and more precisely theDocuments collection object has been replaced to to accommodate creation of persistent objects in database.
+V5 Automation 3DEXPERIENCE platform Automation
+' Creating a new Document object in memoryDim newDoc As PartDocumentSet newDoc = CATIA.Documents.Add("Part")
+' Get the PLMNewServiceDim oNewService As PLMNewServiceSet oNewService = CATIA.GetSessionService("PLMNewService")
+' Create And Edit entityDim oEditor As EditorSet oEditor = oNewService.PLMCreate("3DShape")
+Accessing Objects Through Generic MethodsTechnical Article
+Abstract
+This article explains how to transform your V5 automation macros to take advantage of the Open3DEXPERIENCE platform PLM infrastructure. It explains howobjects that were accessed in V5 through generic methods, meaning methods allowing to retrieve more than one type of object, can be retrieved in3DEXPERIENCE platform.
+V5 Automation' Retrieving the StrWorkbench object associated with a Document using '   - the GetWorkbench generic method'   - a string identifying the object to be retrievedDim oStrWorkbench As StrWorkbenchSet oStrWorkbench = CATIA.ActiveDocument.GetWorkbench("StrWorkbench")'Set oNewDoc = CATIA.Documents.Add("Part")
+Objects Methods Strings RetrievedObjects Comments
+Page 6 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm
+
+--- PAGE 7 ---
+
+This table summarizes the V5 InfInterfaces Automation objects, properties, and methods that you may have used in your applications built on top of V5 and that do not exist any longer with 3DEXPERIENCE platform. For each of these:
+lIf the object still exists as in V5, but in a different framework, its 3DEXPERIENCE platform typelib is given. 
+lIf a one-to-one mapping exists to replacing objects, properties, or methods, links to these substitutes are listed and pointed to 
+lOtherwise, an adoption article is pointed to to explain how to replace or get rid of them.
+Changed Objects
+This table summarizes the V5 System Automation objects, properties, and methods that you may have used in your applications built on top of V5 and that do not existany longer with 3DEXPERIENCE platform. For each of these:
+lIf the object still exists as in V5, but in a different framework, its 3DEXPERIENCE platform typelib is given. 
+Product GetTechnologicalObjectCATAnnotationSetsAnnotationSetsIn 3DEXPERIENCE platform, Annotation Sets are only defined in a 3D Shape Representation Reference.Refer to 3D Functional Tolerancing & Annotation Changes.ProcessDocumentGetItem CATAnnotationSetsAnnotationSetsProductDocumentGetWorkbenchPCBWorkbenchPCBWorkbenchUse the PCBService object.
+ProductDocumentGetWorkbenchSPAWorkbenchSPAWorkbenchPart of the objects aggregated by the SPAWorkbench object are now ServiceObjects.Refer to Space Analysis Changes.
+InfInterfaces
+Objects Comments
+Application
+Still available with the following property or method changes. Properties or MethodsSignatures Comments
+CreateSendToCreateSendTo(CATIASendToService oMail)Refer to the following article: Accessing and Editing Objects in Session.
+Property ActiveDocument (Read) ActiveDocument(CATIADocument oDocument)Refer to the following article: Accessing and Editing Objects in Session.
+Property Documents (Read)Documents(CATIADocuments oDocuments)Refer to the following article: Accessing and Editing Objects in Session.
+Property FileSearchOrder (Read) FileSearchOrder(inCATBSTRoDefaultFilePathBSTR)Refer to the following article: Overview of3DEXPERIENCE platform Adoption for Automation.
+Property FileSearchOrder (Write) FileSearchOrder(CATBSTRiDefaultFilePathBSTR)Refer to the following article: Overview of3DEXPERIENCE platform Adoption for Automation.
+CGRAdhesionSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the CGRFormat setting repository. See the settings section inAutomating Settings. 
+Document Not supported any longer.Refer to the following article: Accessing and Editing Objects in Session.
+DocumentationSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the GeneralHelp setting repository. See the settings section in Automating Settings. 
+Documents Not supported any longer.Refer to the following article: Accessing and Editing Objects in Session.
+GeneralSessionSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the GeneralGeneral setting repository. See the settings section in Automating Settings.
+PrintersSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the CATPrintersSettings setting repository. See the settings section in Automating Settings.
+SearchSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the GeneralFind setting repository. See the settings section in Automating Settings. 
+SelectedElement
+Still available with the following property or method changes. Properties or MethodsSignatures Comments
+Property Document (Read)Document(CATIADocument oDocument)Refer to the following article: Accessing and Editing Objects in Session.
+SelectionSetsThis class or interface is out of the scope of the current release and is not currently supported.
+SendToServiceNot supported any longer.Refer to the following article: Accessing and Editing Objects in Session.
+TreeVizManipSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the Tree setting repository. See the settings section in Automating Settings. 
+VisualizationSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the VisualizationRepository setting repository. See the settings section in Automating Settings.
+VrmlSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the VrmlFormat setting repository. See the settings section in Automating Settings.
+System
+Page 7 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm
+
+--- PAGE 8 ---
+
+lIf a one-to-one mapping exists to replacing objects, properties, or methods, links to these substitutes are listed and pointed to 
+lOtherwise, an adoption article is pointed to to explain how to replace or get rid of them.
+Changed Objects
+The ProductDocument Object
+In V5, the repository for Product objects and composition of Product objects is the product document. In3DEXPERIENCE platform, this information is stored in the PLM server. Products are PLM objects that must be retrieved and brought in memory through by Search, Explore and Open operations like described in Bringing Objects into Session And Saving Objects. 
+Objects Comments
+AccesslogStatisticsSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the CATStatisticsAudit setting repository. See the settings section in Automating Settings.CacheSettingAttNot supported any longer.
+CommandStatisticsSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the CATStatisticsCommand setting repository. See the settings section in Automating Settings.
+DisconnectionSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the Disconnection setting repository. See the settings section in Automating Settings.
+ErrorlogStatisticsSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the CATStatisticsErrorlog setting repository. See the settings section in Automating Settings.
+FileAccessStatisticsSettingAttNot supported any longer.Refer to the following article: Automating Settings.
+GeneralStatisticsSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the CATStatisticsGlobal setting repository. See the settings section in Automating Settings.
+GlobalStatisticsSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the CATStatisticsGlobal setting repository. See the settings section in Automating Settings.
+LicenseSettingAtt
+Properties or Methods SignaturesComments
+GetDemoModeInfoGetDemoModeInfo(inCATBSTR ioAdminLevel,inout CATBSTR ioLocked,out boolean oModified)
+GetGrantedLicensesListGetGrantedLicensesList(long iDefaultLicenses,CATSafeArrayVariant oTabDLName)
+SetDemoModeLockSetDemoModeLock(boolean iLock)
+Property DemoMode (Read)DemoMode(boolean oDemoMode)
+Property DemoMode (Write)DemoMode(boolean iDemoMode)
+MemoryWarningSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the CATMemWarning setting repository. See the settings section in Automating Settings.
+PCSStatisticsSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the CATStatisticsPCS setting repository. See the settings section in Automating Settings.
+ServerStatisticsSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the CATStatisticsActivity setting repository. See the settings section in Automating Settings.
+SessionStatisticsSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the CATStatisticsSession setting repository. See the settings section in Automating Settings.
+WorkbenchStatisticsSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the CATStatisticsWorkbench setting repository. See the settings section in Automating Settings. 
+Product ChangesTechnical Article
+Abstract
+This article explains how to transform your V5 automation macros to take advantage of the Open3DEXPERIENCE platform PLM infrastructure. If focuses on how the API has been modified to comply to the new3DEXPERIENCE platform product model.
+V5 Automation 3DEXPERIENCE platform Automation' Get the Search ServiceDim oSearchService As SearchService
+Page 8 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm
+
+--- PAGE 9 ---
+
+To access product objects in memory, a specific service has been provided on the Editor object: the PLMProductService service object. Here is a typical example of how to retrieve the root product of a product structure.
+The Product Object and the Products Collection
+Instance and References
+The V5 Product object, that represents both concepts of instance and reference of a product, is split in3DEXPERIENCE platform into a VPMReference object, retrieved in the previous sample, and a VPMInstance object. The collection of Product objects that allowed to retrieved the instances aggregated by a product reference is so replaced in3DEXPERIENCE platform by a collection ofVPMInstance objects that contains the position information and points on its reference:
+ThePosition object allows you to retrieve and modify the position of the instance.
+Representations
+As the V5 Product object, the 3DEXPERIENCE platform VPMReference object has representations that are instances of representation object, represented by the VPMRepInstance andVPMRepReference objects.
+User Properties
+Properties that can be associated to a V5 Product reference are in 3DEXPERIENCE platform attributes of thePLMEntity objects, parent class of all PLM objects. In V5 properties can be dynamically added to any reference while in3DEXPERIENCE platform  attributes must be declared, for a specific type of product, during the customization stage of the installation of the PLM server.  Their values can then be accessed or modified:
+Publications and Connection
+' A Product document is known by its pathsIdentifier="E:/myDocument.CATProduct"
+' Its content is loaded through the Documents collection
+Set oProductDocument = CATIA.Documents.Open("sIdentifier')
+Set oSearchService = CATIA.GetSessionService("Search")
+' Instantiate a DatabaseSearch object
+Dim oDBSearch As DatabaseSearch Set oDBSearch = oSearchService.DatabaseSearch
+' Set the type of object to query and criteria & triggers the searchoDBSearch.BaseType = "VPMReference"oDBSearch.AddEasyCriteria "PLM_ExternalID", "Product*"oSearchService.Search
+' Retrieve the listed entitiesDim cPLMEntities As PLMEntities Set cPLMEntities = oDBSearch.Results
+' Get the PLMOpen service & Open the first retrieved entitySet oPLMOpenService = CATIA.GetSessionService("PLMOpenService") Set oEditor = oPLMOpenService.PLMOpen(cPLMEntities.Item(1)) 
+V5 Automation 3DEXPERIENCE platform Automation
+' Retrieving the root Product object of the edited product documentDim oProduct As ProductSet oProduct = oProductDocument.Product
+' Retrieving the PLMProductService object as a service associated with the editorDim oPLMProductService As PLMProductServiceSet oPLMProductService = oEditor.GetService("PLMProductService") 
+' Retrieving the collection of root entities edited in the editorDim cPLMEntities2 As PLMEntities Set cPLMEntities2 = oPLMProductService.EditedContent 
+' Retrieving the root product from the Editor' as the first edited PLMEntityDim oVPMReference As VPMReferenceSet oVPMReference = cPLMEntities2.Item(1) 
+V5 Automation 3DEXPERIENCE platform Automation' Loop on instances of the previously retrieved productDim oPosition As PositionDim oReferenceOfInstance As Product
+Dim oInstance As ProductFor each oInstance In oProduct.Products' Retrieve the position of the instanceSet oPosition = oInstance.Position
+' Retrieve the reference of this instanceSet oReferenceOfInstance = oInstance.ReferenceProduct  Next
+' Loop on instances of the previously retrieved productDim oPosition As PositionDim oReferenceOfInstance As VPMReference
+Dim oInstance As VPMInstanceFor each oInstance In oVPMReference.Instances' Retrieve the position of the instanceSet oPosition = oInstance.Position
+' Retrieve the reference of this instanceSet oReferenceOfInstance = oInstance.ReferenceInstanceOf  Next
+V5 Automation 3DEXPERIENCE platform Automation
+' Retrieve the Part representation of the previously retrieved productDim oReferenceOfInstance As Product
+Dim oPartDocument As PartDocumentSet oPartDocument = oReferenceOfInstance.GetMasterShapeRepresentation(False)
+' Loop on representations of the previously retrieved productDim oReferenceOfRepInstance As VPMReference
+Dim oRepInstance As VPMRepInstanceFor each oRepInstance In oReferenceOfInstance.RepInstances' Retrieve the reference of this instanceSet oReferenceOfRepInstance = oRepInstance.ReferenceInstanceOf  Next
+V5 Automation 3DEXPERIENCE platform Automation' Acces the supplier property of a product referenceDim oReference As ProductSet oReference = ...
+' Properties are accessed as a collection of Parameter objectsDim oProperties As ParametersSet oProperties = oReference.ParametersDim oProperty As ParameterSet oProperty = oParameters.Item("V_Supplier")sStringSupplier = oProperty.ValueAsString
+' Acces the supplier attribute of a product referenceDim oReference As VPMReferenceSet oReference = ...
+' Attributes are accessed through the GetAttributeValue' method inherited from the PLMEntity objectsStringSupplier = oReference.GetAttributeValue("V_Supplier")
+Page 9 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm
+
+--- PAGE 10 ---
+
+There is currently no access to the equivalent3DEXPERIENCE platform functionality.
+References
+There is currently no access to the equivalent 3DEXPERIENCE platform functionality.
+Access to Knowledgeware Parameters and Relations
+In V5 theProduct object offers two collections to access parameters and relations. In 3DEXPERIENCE platform, theKnowledgeServices service object should be retrieved from theEditor object.
+The GetTechnologicalObject Method
+The V5 GetTechnologicalObject method provides access to a variety of objects linked to a product. For details on availability and name of the 3DEXPERIENCE platform object equivalent to such a V5 object, consult either the Accessing Objects Through Generic Methods article or the Details of modifications on V5 modelerspart of this Adoption section dedicated to the V5 modeler corresponding to the object.
+This table summarizes the V5 ProductStructureInterfaces Automation objects, properties, and methods that you may have used in your applications built on top of V5 and that do not exist any longer with 3DEXPERIENCE platform. For each of these:
+lIf the object still exists as in V5, but in a different framework, its 3DEXPERIENCE platform typelib is given. 
+lIf a one-to-one mapping exists to replacing objects, properties, or methods, links to these substitutes are listed and pointed to
+lOtherwise, an adoption article is pointed to to explain how to replace or get rid of them. 
+Changed Objects
+Two V5 Knowledge Advisor Automation objects do not exist any longer with3DEXPERIENCE platform:
+lTheFeatureGenerator object 
+This object is exposed in V5, but without any implementation. So it cannot be used in V5, should not be found in V5 macros, and is removed in 3DEXPERIENCEplatform.
+lThe Loop object 
+As a specialization of the KnowledgeActivateObject object, it does not provide any properties or methods in V5. If you used it in V5, you can replace it with this object. 
+The setting objects are replaced with the generic one and XML files. Refer to KnowledgeInterfaces changed objects for details, and to Automating Settings to know how to use the generic setting object.
+This table summarizes the V5 KnowledgeInterfaces Automation objects, properties, and methods that you may have used in your applications built on top of V5 and that do not exist any longer with 3DEXPERIENCE platform. For each of these:
+lIf the object still exists as in V5, but in a different framework, its 3DEXPERIENCE platform typelib is given. 
+lIfa one-to-one mapping exists to replacing objects, properties, or methods, links to these substitutes are listed and pointed to 
+lOtherwise, an adoption article is pointed to to explain how to replace or get rid of them.
+Moved Objects
+This table summarizes the V5 KnowledgeInterfaces objects that still exist in 3DEXPERIENCE platform, but that are located in other frameworks. You can use this table to get their typelib.
+ProductStructureInterfaces
+Objects Comments
+Analyze Not supported any longer.Refer to the following article: 3DEXPERIENCE platform Adoption Patterns.
+AssemblyConvertorNot supported any longer.Refer to the following article: 3DEXPERIENCE platform Adoption Patterns.
+Product Not supported any longer.Refer to the following article: Product Changes.
+ProductDocumentNot supported any longer.Refer to the following article: 3DEXPERIENCE platform Adoption Patterns.
+Products Not supported any longer.Refer to the following article: 3DEXPERIENCE platform Adoption Patterns.
+PublicationNot supported any longer.Refer to the following article: 3DEXPERIENCE platform Adoption Patterns.
+PublicationsNot supported any longer.Refer to the following article: 3DEXPERIENCE platform Adoption Patterns.
+Knowledge Advisor ChangesTechnical Article
+Abstract
+This article explains how to transform your V5 Automation macros to take advantage of the Open3DEXPERIENCE platform PLM 2.0 infrastructure. It focuses on Knowledge Advisor.
+KnowledgeInterfaces
+Objects V5 Typelibs3DEXPERIENCE platform Frameworks3DEXPERIENCE platform TypelibsConstraintSatisfactionKnowledgewareTypeLibOptimizationIDLItfOptimizationTLB
+Page 10 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm
+
+--- PAGE 11 ---
+
+Changed Objects
+This table summarizes the V5 CATIAV4Interfaces Automation objects, properties, and methods that you may have used in your applications built on top of V5 and thatdo not exist any longer with 3DEXPERIENCE platform. For each of these:
+lIf the object still exists as in V5, but in a different framework, its 3DEXPERIENCE platform typelib is given. 
+lIf a one-to-one mapping exists to replacing objects, properties, or methods, links to these substitutes are listed and pointed to 
+lOtherwise, an adoption article is pointed to to explain how to replace or get rid of them.
+Changed Objects
+FreeParameterKnowledgewareTypeLibOptimizationIDLItfOptimizationTLBFreeParametersKnowledgewareTypeLibOptimizationIDLItfOptimizationTLBOptimizationKnowledgewareTypeLibOptimizationIDLItfOptimizationTLBOptimizationConstraintKnowledgewareTypeLibOptimizationIDLItfOptimizationTLBOptimizationConstraintsKnowledgewareTypeLibOptimizationIDLItfOptimizationTLBOptimizationsKnowledgewareTypeLibOptimizationIDLItfOptimizationTLB
+Objects Comments
+DesignTable
+Still available in another framework: KnowledgeIDLItf and from the KnowledgewareTypeLib typelib.Some properties or methods are changed: Properties or MethodsSignatures Comments
+Property FilePath (Read)FilePath(inCATBSTR oFilePath)
+Not supported any longer.1 replacing method FrameworksTypelibsObjectsMethodsKnowledgeIDLItfKnowledgewareTypeLibDesignTableSheetRepRef
+Property FilePath (Write)FilePath(CATBSTR iFilePath)
+Not supported any longer.1 replacing method FrameworksTypelibsObjectsMethodsKnowledgeIDLItfKnowledgewareTypeLibDesignTableSheetRepRef
+FeatureGeneratorNot supported any longer.Refer to the following article: Knowledge Advisor Changes.
+KnowledgeSheetSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the Knowledge setting repository. See the settings section inAutomating Settings. 
+LanguageSheetSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the KnowledgeLanguage setting repository. See the settings section in Automating Settings.
+Loop Not supported any longer.Refer to the following article: Knowledge Advisor Changes.
+Relations
+Still available in another framework: KnowledgeIDLItf and from the KnowledgewareTypeLib typelib.Some properties or methods are changed: Properties or MethodsSignatures Comments
+CreateDesignTable
+CreateDesignTable(CATBSTR iName,in CATBSTR iComment,in boolean iCopyMode,in CATBSTR iSheetPath,CATIADesignTable oDesignTable)
+Not supported any longer.1 replacing method FrameworksTypelibsObjects MethodsKnowledgeIDLItfKnowledgewareTypeLibRelationsCreateDesignTableWithRepRef
+CreateHorizontalDesignTable
+CreateHorizontalDesignTable(CATBSTR iName,in CATBSTR iComment,in boolean iCopyMode,in CATBSTR iSheetPath,CATIADesignTable oDesignTable)
+Not supported any longer.1 replacing method FrameworksTypelibsObjects MethodsKnowledgeIDLItfKnowledgewareTypeLibRelationsCreateHorizontalDesignTableWithRepRef
+Property Optimizations (Read) Optimizations(inCATIAOptimizationsoOptimizations)
+Not supported any longer.1 replacing methodFrameworksTypelibs Objects MethodsKnowledgeIDLItfKnowledgewareTypeLibKnowledgeObjectsGetKnowledgeRootSet
+ReportGenerationSheetSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the Report setting repository. See the settings section in Automating Settings. 
+ToleranceSheetSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the CkeTolerance setting repository. See the settings section in Automating Settings. 
+UnitsSheetSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the NumberDisplay setting repository. See the settings section in Automating Settings.
+CATIAV4Interfaces
+Objects Comments
+InteropSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the Interoperability setting repository. 
+Page 11 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm
+
+--- PAGE 12 ---
+
+This table summarizes the V5 CATIdeSettingsInterfaces Automation objects, properties, and methods that you may have used in your applications built on top of V5 and that do not exist any longer with 3DEXPERIENCE platform. For each of these:
+lIf the object still exists as in V5, but in a different framework, its 3DEXPERIENCE platform typelib is given. 
+lIf a one-to-one mapping exists to replacing objects, properties, or methods, links to these substitutes are listed and pointed to 
+lOtherwise, an adoption article is pointed to to explain how to replace or get rid of them. 
+Changed Objects
+This table summarizes the V5 CATSdeSettingInterfaces Automation objects, properties, and methods that you may have used in your applications built on top of V5 and that do not exist any longer with 3DEXPERIENCE platform. For each of these:
+lIf the object still exists as in V5, but in a different framework, its 3DEXPERIENCE platform typelib is given. 
+lIf a one-to-one mapping exists to replacing objects, properties, or methods, links to these substitutes are listed and pointed to 
+lOtherwise, an adoption article is pointed to to explain how to replace or get rid of them. 
+Changed Objects
+The PartDocument Object
+The PartDocument object is in V5 the key object to access Part objects. In3DEXPERIENCE platform, those objects persist in the 3DShape representation of the Product modeler. In the following example, such a representation, whose type always derives from VPMRepReference, is retrieved through a set of attributes. Any kind of representation can be retrieved this way. No predefined attribute shows that the retrieved object is actually a 3DShape. Generally, company processes allow to identify 3DShapes by defining standard values for specific attributes. Content can also be tested using the GetItem method of the retrievedPLMEntity object.
+See the settings section in Automating Settings.MigrBatchSettingAtt
+SpecV4SettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the SpecV4 setting repository. See the settings section in Automating Settings. V4MasterModelThis class or interface is out of the scope of the current release and is not currently supported.
+V4V5SpaceSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the V4V5Space setting repository. See the settings section inAutomating Settings. 
+V4WritingSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the V4Writing setting repository. See the settings section inAutomating Settings.
+CATIdeSettingsInterfaces
+Objects Comments
+IgesSettingAtt
+Not supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. 
+Use it with the IGES setting repository. See the settings section in Automating Settings.
+CATSdeSettingInterfaces
+Objects Comments
+StepSettingAtt
+Not supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. 
+Use it with the STEP setting repository. See the settings section in Automating Settings.
+Mechanical Modeler and Part Applications ChangesTechnical Article
+Abstract
+This article explains how to transform your V5 Automation macros to take advantage of the Open3DEXPERIENCE platform PLM infrastructure. It focuses on how the Part object and objects related to Part Applications can be retrieved.
+V5 Automation 3DEXPERIENCE platform Automation
+' The PartDocument is known by its pathsPart = "myPart.CATPart"
+' Use the SearchService object to retrieve a VPMRepresentationReference' from its identification attributesDim oSearchService As SearchServiceSet oSearchService = CATIA.GetSessionService("Search")Dim oDBSearch As DatabaseSearch Set oDBSearch = oSearchService.DatabaseSearchoDBSearch.BaseType = "VPMRepReference"oDBSearch.AddEasyCriteria "PLM_ExternalID", "myPart" oSearchService.Search
+' Get the first found PLM entity (other versions may exist)Set oEntity = oDBSearch.Results.Item(1)' Open the file: a Part DocumentDim oPartDocument As PartDocumentSet oPartDocument = CATIA.Documents.Open(sPart)' Open the entity: the Editor object has no specific type  Set oEditor = CATIA.GetSessionService("PLMOpenService").PLMOpen(oEntity)
+' Retrieve the Part objectSet oPart = oPartDocument.Part' The editor has no specific type, but part data is expected, so to 
+' retrieve the Part object one can use:
+Page 12 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm
+
+--- PAGE 13 ---
+
+More information on how to replace usage of the Document object is described in Accessing and Editing Objects in Session.
+The Product property of the PartDocument Object
+In V5, a Product object is contained in each Part document. In3DEXPERIENCE platform, this is not true anymore. V5 scenarios retrieving the Product object contained in the Part Document generally aimed at identifying which product is a Part when exploring a product structure, to process data inside the Part document:
+Note that in V5, references and instances have the same Product type, while in3DEXPERIENCE platform, they have distinct types: VPMReference and VPMInstance.
+Objects Related to Part Applications
+Retrieving a Part object is described above. Objects that are retrieved from the Part object in V5, likeSketch objects, Shape objects,Body objects, HybridShapeobjects, orLayout2DRoot objects are retrieved the same way in3DEXPERIENCE platform:
+This table summarizes the V5 MecModInterfaces Automation objects, properties, and methods that you may have used in your applications built on top of V5 and thatdo not exist any longer with 3DEXPERIENCE platform. For each of these:
+lIf the object still exists as in V5, but in a different framework, its 3DEXPERIENCE platform typelib is given. 
+lIf a one-to-one mapping exists to replacing objects, properties, or methods, links to these substitutes are listed and pointed to 
+lOtherwise, an adoption article is pointed to to explain how to replace or get rid of them.
+Moved Objects
+This table summarizes the V5 MecModInterfaces objects that still exist in 3DEXPERIENCE platform, but that are located in other frameworks. You can use this table to get their typelib.
+Changed Objects
+This table summarizes the V5 CATAssemblyInterfaces Automation objects, properties, and methods that you may have used in your applications built on top of V5 and
+' - either the ActiveObject property (illustrated here)' - or the generic GetItem method (illustrated in next example)  Set oPart = oEditor.ActiveObject
+V5 Automation 3DEXPERIENCE platform AutomationDim oProduct As ProductSet oProduct = ... Dim oVPMReference As VPMReferenceSet oVPMReference = ...' Loop on instances attached to this referenceDim oChildProduct As ProductFor each oChildProduct In oProduct.Products
+' Loop on instances attached to this referenceDim oInstance As VPMInstanceFor each oInstance In oVPMReference.Instances  ' Retrieve the reference of the considered instance  Dim oRefOfInstance As Product  Set oRefOfInstance = oChildProduct.ReferenceProduct
+  ' Retrieve the reference of the considered instance  Dim oRefOfInstace As VPMReference  Set oRefOfInstance = oInstance.ReferenceInstanceOf  ' Retrieve first associated representationSet oRepInstance = oRefOfInstance.RepInstances.Item(1)
+  ' Retrieve as the e RepReference of the RepInstance   Set oRefOfRepInstance = oRepInstance.ReferenceInstanceOf  ' Identify which product of a structure is a Part:If (typename (oReference.Parent) = "PartDocument") Then    ' Use the PartDocument to retrieve the Part    msgbox oReference.Parent.Part.NameEnd If
+  ' Identify if it is a 3DShape: see above  If (...)  Then     ' Use VPMRepReference to retrieve the Part    msgbox oRefOfRepInstance.GetItem("Part").NameEnd IfNext Next
+V5 Automation 3DEXPERIENCE platform Automation' Retrieve the main Body objectSet oBody = oPart.MainBody
+' Retrieve the 2D Layout RootSet o2DLayoutRoot = oPart.GetItem("CATLayoutRoot")
+' Retrieve the main Body objectSet oBody = oPart.MainBody
+' Retrieve the 2D Layout RootSet o2DLayoutRoot = oPart.GetItem("CATLayoutRoot")
+MecModInterfaces
+ObjectsV5 Typelibs3DEXPERIENCE platform Frameworks3DEXPERIENCE platform TypelibsPartMECMODCATMmrAutomationInterfacesCATOpnsSectionIDL
+Objects CommentsFixTogether This class or interface is out of the scope of the current release and is not currently supported.FixTogethersThis class or interface is out of the scope of the current release and is not currently supported.
+InstanceFactory
+Still available in another framework: CATMmrAutomationInterfaces and from the MECMOD typelib.Some properties or methods are changed: Properties or Methods Signatures Comments
+BeginInstanceFactory
+BeginInstanceFactory(CATBSTRiNameOfReference,in CATBSTR iNameOfDocument)
+Not supported any longer.1 replacing method FrameworksTypelibsObjects MethodsCATMmrAutomationInterfacesMECMODInstanceFactoryBeginInstanceFactory
+PartDocumentNot supported any longer.Refer to the following article: Mechanical Modeler and Part Applications Changes.
+PartInfrastructureSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the 3DShapeInfrastructure3DShape setting repository. See the settings section in Automating Settings. 
+CATAssemblyInterfaces
+Page 13 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm
+
+--- PAGE 14 ---
+
+that do not exist any longer with 3DEXPERIENCE platform. For each of these:
+lIf the object still exists as in V5, but in a different framework, its 3DEXPERIENCE platform typelib is given. 
+lIf a one-to-one mapping exists to replacing objects, properties, or methods, links to these substitutes are listed and pointed to 
+lOtherwise, an adoption article is pointed to to explain how to replace or get rid of them. 
+Changed Objects
+Opening a DrawingDocument Object
+TheDrawingDocument object is the V5 key object to access Drawing objects. In 3DEXPERIENCE platform, those objects persist in the Drawing representation of the Product modeler. In the following example, such a representation, whose type will always derive fromVPMRepReference, is retrieved through a set of attributes. Any kind of representation can be retrieved this way. No predefined attribute shows that the retrieved object is a Drawing. Generally, company processes allow Drawings to be identified by defining standard values for specific attributes. Content can also be tested using the GetItem method of the retrieved PLMEntity object. 
+If the Drawing representation is retrieved from navigating a product structure in session, its content can be directly accessed using the GetItem method:
+More information on how to replace the usage of the V5 Document object is described in Accessing and Editing Objects in Session.
+Creating a DrawingDocument Object
+Objects Comments
+AsmConstraintSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the AssemblyDesign setting repository. See the settings section in Automating Settings.
+AsmGeneralSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the AssemblyDesign setting repository. See the settings section in Automating Settings.AssemblyBooleanThis class or interface is out of the scope of the current release and is not currently supported.AssemblyFeatureThis class or interface is out of the scope of the current release and is not currently supported.AssemblyFeaturesThis class or interface is out of the scope of the current release and is not currently supported.AssemblyHoleThis class or interface is out of the scope of the current release and is not currently supported.AssemblyPocketThis class or interface is out of the scope of the current release and is not currently supported.AssemblySplitThis class or interface is out of the scope of the current release and is not currently supported.
+Drafting ChangesTechnical Article
+Abstract
+This article explains how to transform your V5 Automation macros to take advantage of the Open3DEXPERIENCE platform PLM 2.0 infrastructure. It focuses on how Drawing objects can be accessed.
+V5 Automation 3DEXPERIENCE platform Automation
+' The Drawing document is known by its pathsDrawing = "myDrawing.CATDrawing"
+' Use a SearchService object to retrieve a VPMRepReference' object from its identification attributesDim oSearchService As SearchServiceSet oSearchService = CATIA.GetSessionService("Search")Dim oDBSearch As DatabaseSearch Set oDBSearch = oSearchService.DatabaseSearchoDBSearch.BaseType = "VPMRepReference"' To retrieve the Drawing by its Title, use V_Name attribute' To retrieve the Drawing by its Name, use PLM_ExternalID attributeoDBSearch.AddEasyCriteria "V_Name", "myDrawing" oSearchService.Search
+' Get, for example, the first found PLM entityDim oEntity As PLMEntitySet oEntity = oDBSearch.Results.Item(1)' Open the file: a Drawing documentDim oDrawingDocument As DrawingDocumentSet oDrawingDocument = CATIA.Documents.Open(sDrawing)
+' Open the entity: the Editor object has no specific typeDim oEditor As EditorCATIA.GetSessionService("PLMOpenService").PLMOpen oEntity,oEditor' Retrieve the DrawingRoot objectDim oDrawingRoot As DrawingRootSet oDrawingRoot = oDrawingDocument.DrawingRoot
+' Retrieve the DrawingRoot objectDim oDrawingRoot As DrawingRootSet oDrawingRoot = oEditor.ActiveObject
+V5 Automation 3DEXPERIENCE platform AutomationDim oVPMReference As VPMReferenceSet oVPMReference = ...
+' ---- Not a V5 scenario ----' Loop on instances attached to this referenceDim oInstance As VPMInstanceFor each oInstance In oVPMReference.Instances' Retrieve the reference of the considered instanceDim oRefOfInstance As VPMReferenceSet oRefOfInstance = oInstance.ReferenceInstanceOf' Retrieve the first associated representationDim oRepInstance As VPMRepInstanceSet oRepInstance = oRefOfInstance.RepInstances.Item(1)' Retrieve the RepReference of the RepInstance Dim oRefOfRepInstance As VPMRepReferenceSet oRefOfRepInstance = oRepInstance.ReferenceInstanceOf' Identify if it is a Drawing representation: see aboveDim oDrawingRoot As DrawingRootIf (...)  Then ' Use the VPMRepReference object to retrievethe Drawing Root referenceSet oDrawingRoot = oRefOfRepInstance.GetItem("CATDrawingAccess")End IfNext
+Page 14 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm
+
+--- PAGE 15 ---
+
+In V5, Drawing documents are created through the collection of documents. In3DEXPERIENCE platform, a PLMNewService object should be used as explained in the Creating Objects article. For drawing representations, the standard and Sheet style are set with a default value when creating the representation, and if required can be re-set after creation:
+Setting the Drawing Standard
+In V5, the drawing standard is represented by values of an enum, allowing to set only a predefined set of standards. In 3DEXPERIENCE platform, corporate standardscan be defined and the VB APIs allows to reference such standards by name. The type of the 3DEXPERIENCE platform Standard property is so now a string and the DrawingService service allows you to get the list of available standards.
+Setting the Drawing Sheet Style
+In V5, a sheet style can be set using interactive commands but Automation only allows you to set values of each part of the style individually. In 3DEXPERIENCEplatform, it is still possible to individually set each part of a sheet style, like the paper orientation,  but it is also possible to globally set predefined or customer defined styles associated with a standard.
+Creating Interactive Views
+New objects and methods to create interactive views are proposed to replace no more accessible methods of the GenerativeViewBehavior object.
+Creating a Front View
+V5 Automation 3DEXPERIENCE platform Automation
+' Create a new DrawingDocument object in memoryDim newDoc As DrawingDocumentSet newDoc = CATIA.Documents.Add("Drawing")
+' Get the PLMNewService
+Dim oNewService As PLMNewServiceSet oNewService = CATIA.GetSessionService("PLMNewService")
+' Create a drawing representationDim oEditor As EditoroNewService.PLMCreate "Drawing", oEditor
+' Get the drawing root from the Editor Dim oDrawingRoot As DrawingRootSet oDrawingRoot = oEditor.ActiveObject
+' Set the drawing standard oDrawingRoot.Standard = "myStandard"
+' Set the sheet style to the automatically created sheet oDrawingRoot.ActiveSheet.SheetStyle = "mySheetStyle"
+V5 Automation 3DEXPERIENCE platform AutomationDim oDrawingRoot As DrawingRootSet oDrawingRoot = ...' V5 way
+Dim oDrawingRoot As DrawingRootSet oDrawingRoot = ...' 3DEXPERIENCE platform way
+' Possible standard values are described by an enumDim enumStd As catDrawingStandardenumStd = catISO
+' Standards can be defined by customers and referred to by a nameDim stdName As String
+' Get a standard name from the list of available standardsDim oDrawingService As DrawingServiceSet oDrawingService = CATIA.ActiveEditor.GetService("CATDrawingService")
+Dim iNbStd As IntegeriNbStd = myDrawingService.NumberOfStandardsReDim arrayOfStdNames(iNbStd - 1)oDrawingService.StandardNamesList arrayOfStdNames
+stdName = arrayOfStdNamestd(1)
+' Set the standard to the DrawingmyDrwRoot.Standard = stdName
+V5 Automation 3DEXPERIENCE platform AutomationDim oDrawingSheet As DrawingSheetSet oDrawingSheet = ... ' V5 way
+Dim oDrawingSheet As DrawingSheetSet oDrawingSheet = ... ' 3DEXPERIENCE platform way' Possible styles can be defined by customer and referred by nameDim styleName As String
+' Getting a standard name from the list of available standardsDim oDrawingService As DrawingServiceSet oDrawingService = CATIA.ActiveEditor.GetService("CATDrawingService")
+Dim iNbStyles As IntegeriNbStyles = oDrawingService.NumberOfSheetStylesReDim arrayOfStyleNames(iNbStyles - 1)oDrawingService.SheetStyleNamesList "myStandard", arrayOfStyleNames
+styleName = arrayOfStyleNames(1)' Set paper orientation usingthe PageSetup object linked to the SheetoDrawingSheet.PageSetup.Orientation catPaperLandscape
+' Set paper size using a property of the sheetoDrawingSheet.PaperSize = catPaperA4
+' Set the sheet style as a wholeoDrawingSheet.SheetStyle = stringStyle
+' Overriding values is still possible through the Sheet object propertiesoDrawingSheet.PaperSize = catPaperA4
+V5 Automation 3DEXPERIENCE platform Automation' Get a DrawingViews collectionDim cViews As DrawingViewsSet cViews = ...
+' Get a DrawingViews collectionDim cViews As DrawingViewsSet cViews = ...
+' Create the DrawingView object firstDim oFrontView As DrawingViewSet oFrontView = cViews.Add("Front View")
+' Get a DrawingViewGenerativeBehavior object
+Page 15 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm
+
+--- PAGE 16 ---
+
+Creating a Projection View
+The same way, theAddProjectionView method of the DrawingViews collection object should be used.
+Creating an Isometric View
+The same way, theAddIsometricView method of the DrawingViews collection object should be used.
+Accessing the View Projection Plane
+In V5, methods of the GenerativeViewBehavior object allow you to retrieve or set the view projection plane. In 3DEXPERIENCE platform, they are available with the DrawingView object.
+In V5, methods of the GenerativeViewLinks object allow you to add a link or to retrieve the 3D link from the Generative View. In 3DEXPERIENCE platform, they are available with the DrawingGenView object.
+So, both methods to retrieve GenerativeViewLinks (get_GenerativeLinks) or GenerativeViewBehavior (get_GenerativeBehavior) from theDrawingView are useless.
+Creating, Managing and Modifying a Generative View
+In V5 generative views are accessed through theGenerativeViewBehavior object. In 3DEXPERIENCE platform, this object is replaced with several objects. The different usage scenarios are described below.
+Creating Generative Views
+TheDrawingDefineGenView object contains all methods to create generative views. It can be retrieved from the 3DEXPERIENCE platform DrawingDefineGenViewproperty of theDrawingViews object. The following examples show the creation of a generative view in V5 and in 3DEXPERIENCE platform.
+Managing Generative View Properties
+TheDrawingGenViewPropertiesobject should be used. It can be retrieved from the 3DEXPERIENCE platformDrawingGenViewProp property if the DrawingService object. Default values are initialized from generative view settings.
+Modifying the Generative View
+TheDrawingGenViewobject should be used. This object proposes methods to add a breakout, create a break view, etc. It can be retrieved from the 3DEXPERIENCE platformDrawingGenView property of the DrawingView object.
+Example
+The following example shows how to create a generative front view where hidden lines are drawn.
+' from the DrawingView object' even if the View is not generativeDim oViewGenB As DrawingViewGenerativeBehaviorSet oViewGenB = oFrontView.GenerativeBehavior' View Anchor point
+oFrontView.x = 10.oFrontView.y = 10.
+' Vectors defining the view projection planeDim iX1, iY1, iZ1, iX2, iY2, iZ2 As doubleiX1 = 1.iY1 = 0.iZ1 = 0.iX2 = 0.iY2 = 1.iZ2 = 0.
+' Define it a a front view
+oViewGenB.DefineFrontView _           iX1, iX2, iX3, iY1, iY2, iY3
+' View Anchor pointDim xPos, yPos As doublexPos = 10.yPos = 10.
+' Vectors defining the view projection planeDim iX1, iY1, iZ1, iX2, iY2, iZ2 As doubleiX1 = 1.iY1 = 0.iZ1 = 0.iX2 = 0.iY2 = 1.iZ2 = 0.
+' Directly create the front view with all required dataDim oFrontView As DrawingViewSet oFrontView = cViews.AddFrontView( _        iX, iY, "MyViewName", _        iX1, iY1, iZ1, iX2, iY2, iZ2)
+V5 Automation 3DEXPERIENCE platform Automation' Get a DrawingView objectDim oView As DrawingViewSet oView = ...
+' Get a DrawingView objectDim oView As DrawingViewSet oView = ...' Get a GenerativeViewBehavior object' from the DrawingView objectDim oViewGenB As DrawingViewGenerativeBehaviorSet oViewGenB = oView.GenerativeBehavior' No need of the GenerativeViewBehavior object
+' Get the View Projection PlaneDim  iX1, iY1, iZ1, iX2, iY2, iZ2 As doubleoViewGenB.GetProjectionPlane _               iX1, iY1 ,iZ1, iX2, iY2, iZ2
+' Set the View Projection PlaneoViewGenB.SetProjectionPlane _               iX1, iY1 ,iZ1, iX2, iY2, iZ2
+' Get the View Projection PlaneDim  iX1, iY1, iZ1, iX2, iY2, iZ2 As doubleoView.GetProjectionPlane _               iX1, iY1 ,iZ1, iX2, iY2, iZ2
+' Set the View Projection PlaneoView.SetProjectionPlane _               iX1, iY1 ,iZ1, iX2, iY2, iZ2
+V5 Automation 3DEXPERIENCE platform Automation' Create a viewDim cViews As DrawingViewsSet cViews = ...
+Dim oView as DrawingViewSet oView = cViews.Add("FrontView")
+' Create a viewDim cViews As DrawingViewsSet cViews = ...
+Dim oView as DrawingView
+' Get a DrawingViweGenerativeBehavior object' from the DrawingView object' Get the DefineGenView object from' the DrawingViews collection object
+Page 16 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm
+
+--- PAGE 17 ---
+
+Mapping Table between the V5 GenerativeViewLinks Object and the 3DEXPERIENCE platform DrawingGenView Object
+Mapping Table between the V5 GenerativeViewBehavior Object and3DEXPERIENCE platform Objects
+Dim oViewGenB As DrawingViewGenerativeBehaviorSet oViewGenB = oView.GenerativeBehaviorDim oDefGenView As DrawingDefineGenViewSet oDefGenView = cViews.DrawingDefineGenView' Retrieve the drawing generative service object from' the CATIA serviceDim oDrwGenServ As DrawingGenServiceSet oDrwGenServ = _  CATIA.ActiveEditor.GetService("CATDrawingGenService")
+' Retrieve a Generative View PropertiesDim oGenViewProp As DrawingGenViewPropertiesSet oGenViewProp = oDrwGenServ.DrawingGenViewProp' Activate the hidden line modeoViewGenB.HiddenLineMode = catHLRModeOn' Activate the hidden line modeoGenViewProp.HiddenLineMode = catHLRModeOn
+' Get the part to draw a Part documentDim oPartToDraw As PartDocumentSet oPartToDraw = ...
+' Get the 3D to draw: 
+' - To draw the complete product structure get a VPMRootOccurrence'   from the root product.'   For example, suppose the window containing the 3D is the first'   opened window in the CATIA.Dim o3DPLMToDraw As VPMRootOccurrenceSet o3DPLMToDraw = CATIA.Editors.Item(1).ActiveObject
+'      OR ...
+' - To draw a sub part number numinst of the product structure'   get a VPMInstance to identify the sub product.Dim oPLMRootOcc As VPMRootOccurrenceSet oPLMRootOcc= CATIA.Editors.Item(1).ActiveObjectDim oPLMRef As VPMReferenceSet oPLMRef= oPLMRootOcc.ReferenceRootOccurrenceOfDim o3DPLMToDraw As VPMInstanceSet o3DPLMToDraw = oPLMRef.Instances.item(numInst)
+' Assign it as an item of a listDim myListOfPLMInst(0) As CATSafeArrayVariantmyListOfPLMInst(0) = o3DPLMToDraw' Define the View anchor point
+oViewGenB.x = 10.oViewGenB.y = 10.
+' Define the View anchor pointDim xPos, yPos as doublexPos = 10.yPos = 10.' Define this view as a front view, with the' XY plane (in oPartToDraw) as projection planeoViewGenB.DefineFrontView 1, _                          0, _                          0, _                          0, _                          1, _                          0
+' Define the View projection planeDim myProjPlane(5)myProjPlane(0) = 1myProjPlane(1) = 0myProjPlane(2) = 0myProjPlane(3) = 0myProjPlane(4) = 1myProjPlane(5) = 0
+' Declare the part to draw in this front viewoViewGenB.Document = oPartToDraw' Define this view as a front viewSet oView = oDefGenView.DefineFrontView xPos, yPos, _   myListOfPLMInst, myProjPlane, ″″, True, oGenViewProp 
+V5 IDL interfacesMethods/Properties3DEXPERIENCE platform IDL interfacesMethods/PropertiesGenerativeViewLinksAddLink DrawingGenView PutLinks (Write)GenerativeViewLinksFirstLink DrawingGenView GetLink (Read)GenerativeViewLinksNextLinkDrawingGenView GetLink (Read)GenerativeViewLinksRemoveAllLinksDrawingGenView RemoveLink (Write)GenerativeViewLinksCopyLinksToDrawingGenView PutLinks (R/W)
+V5 IDL interfacesMethods/Properties3DEXPERIENCE platform IDL interfacesMethods/PropertiesGenerativeViewBehaviorDocument (Read) DrawingGenView GetAssociatedRootProductGenerativeViewBehaviorDocument (Write) Not ReplacedGenerativeViewBehaviorSetProjectionPlaneDrawingGenView ModifyViewPlaneGenerativeViewBehaviorGetProjectionPlaneDrawingView GetProjectionPlaneGenerativeViewBehaviorGetProjectionPlaneNormalNot replacedGenerativeViewBehaviorDefineFrontViewDrawingDefineGenViewDefineFrontViewGenerativeViewBehaviorDefineIsometricViewDrawingDefineGenViewDefineIsometricViewGenerativeViewBehaviorDefineProjectionViewDrawingDefineGenViewDefineProjectionViewGenerativeViewBehaviorDefineSectionViewDrawingDefineGenViewDefineSectionViewGenerativeViewBehaviorDefineCircularDetailViewDrawingDefineGenViewDefineCircularDetailViewGenerativeViewBehaviorDefinePolygonalDetailViewDrawingDefineGenViewDefinePolygonalDetailViewGenerativeViewBehaviorDefineAuxiliaryViewDrawingDefineGenViewDefineAuxiliaryViewGenerativeViewBehaviorDefineUnfoldedViewDrawingDefineGenViewDefineUnfoldedViewGenerativeViewBehaviorDefineStandAloneSectionDrawingDefineGenViewDefineStandAloneSectionGenerativeViewBehaviorDefineTPSSectionViewNot ReplacedGenerativeViewBehaviorDefineBrokenViewDrawingGenView AddBrokenViewGenerativeViewBehaviorDefineBox3DViewDrawingGenView AddClippingBoxGenerativeViewBehaviorUnBreak DrawingGenView UnBreakGenerativeViewBehaviorUnClip DrawingGenView UnClipGenerativeViewBehaviorUnBreakout DrawingGenView UnBreakoutGenerativeViewBehaviorUnBreakoutNumNot replacedGenerativeViewBehaviorApplyBreakoutToDrawingGenView ApplyBreakoutToGenerativeViewBehaviorDefineBreakoutDrawingGenView AddBreakoutGenerativeViewBehaviorDefineCircularClippingViewDrawingGenView AddClippingWithCircle
+Page 17 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm
+
+--- PAGE 18 ---
+
+This table summarizes the V5 DraftingInterfaces Automation objects, properties, and methods that you may have used in your applications built on top of V5 and thatdo not exist any longer with 3DEXPERIENCE platform. For each of these:
+lIf the object still exists as in V5, but in a different framework, its 3DEXPERIENCE platform typelib is given. 
+lIf a one-to-one mapping exists to replacing objects, properties, or methods, links to these substitutes are listed and pointed to 
+lOtherwise, an adoption article is pointed to to explain how to replace or get rid of them.
+Moved Objects
+This table summarizes the V5 DraftingInterfaces objects that still exist in 3DEXPERIENCE platform, but that are located in other frameworks. You can use this table to get their typelib.
+Changed Objects
+GenerativeViewBehaviorDefineCircularExactClippingDrawingGenView AddClippingWithCircleGenerativeViewBehaviorDefinePolygonalClippingViewDrawingGenView AddClippingWithProfileGenerativeViewBehaviorDefinePolygonalExactClippingDrawingGenView AddClippingWithProfileGenerativeViewBehaviorUpdate DrawingGenView UpdadeGenerativeViewBehaviorForceUpdate DrawingGenView ForceUpdateGenerativeViewBehaviorget_ParentViewDrawingGenView get_ParentViewGenerativeViewBehaviorSetAxisSystemeDrawingGenView SetAxisSystemeGenerativeViewBehaviorGetAxisSystemeDrawingGenView GetAxisSystemeGenerativeViewBehaviorColorInheritanceModeDrawingGenViewPropertiesColorInheritanceModeGenerativeViewBehaviorPointsProjectionModeDrawingGenViewPropertiesPointsProjectionModeGenerativeViewBehaviorPointsSymbol DrawingGenViewPropertiesPointsSymbolGenerativeViewBehaviorRepresentationModeDrawingGenViewPropertiesRepresentationMode
+GenerativeViewBehaviorSetGPSName Not replaced.This information is mentionedduring the view creation
+GenerativeViewBehaviorGetGPSNameNot replaced.This information is mentionedduring the view creationGenerativeViewBehaviorImageViewModeDrawingGenViewPropertiesImageViewModeGenerativeViewBehaviorLimitBoundingBoxDrawingGenViewPropertiesLimitBoundingBoxGenerativeViewBehaviorHiddenLineModeDrawingGenViewPropertiesHiddenLineModeGenerativeViewBehaviorFilletRepresentationDrawingGenViewPropertiesFilletRepresentation
+DraftingInterfaces
+ObjectsV5 Typelibs3DEXPERIENCE platform Frameworks3DEXPERIENCE platform TypelibsDrawingArrowDRAFTINGITFCATAnnotationIDLItfCATANNOTITFDrawingArrowsDRAFTINGITFCATAnnotationIDLItfCATANNOTITFDrawingDimExtLineDRAFTINGITFCATAnnotationIDLItfCATANNOTITFDrawingDimLineDRAFTINGITFCATAnnotationIDLItfCATANNOTITFDrawingDimValueDRAFTINGITFCATAnnotationIDLItfCATANNOTITFDrawingDimensionDRAFTINGITFCATAnnotationIDLItfCATANNOTITFDrawingDimensionsDRAFTINGITFCATAnnotationIDLItfCATANNOTITFDrawingLeaderDRAFTINGITFCATAnnotationIDLItfCATANNOTITFDrawingLeadersDRAFTINGITFCATAnnotationIDLItfCATANNOTITFDrawingTableDRAFTINGITFCATAnnotationIDLItfCATANNOTITFDrawingTablesDRAFTINGITFCATAnnotationIDLItfCATANNOTITFDrawingTextDRAFTINGITFCATAnnotationIDLItfCATANNOTITFDrawingTextPropertiesDRAFTINGITFCATAnnotationIDLItfCATANNOTITFDrawingTextRangeDRAFTINGITFCATAnnotationIDLItfCATANNOTITFDrawingTextsDRAFTINGITFCATAnnotationIDLItfCATANNOTITFDrawingWeldingDRAFTINGITFCATAnnotationIDLItfCATANNOTITFDrawingWeldingsDRAFTINGITFCATAnnotationIDLItfCATANNOTITF
+Objects Comments
+DraftingSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the DraftingOptions setting repository. See the settings section in Automating Settings.
+DrawingDocumentNot supported any longer.Refer to the following article: Drafting Changes.
+DrawingRoot
+Still available in another framework: DraftingIDLItf and from the DRAFTINGITF typelib.Some properties or methods are changed:Properties or MethodsSignatures Comments
+Property Standard (Read)Standard(CatDrawingStandard oStandard)Refer to the following article: Drafting Changes.
+Property Standard (Write)Standard(CatDrawingStandard iStandard)Refer to the following article: Drafting Changes.
+DrawingView
+Still available in another framework: DraftingIDLItf and from the DRAFTINGITF typelib.Some properties or methods are changed:Properties or Methods Signatures Comments
+Property GenerativeBehavior (Read)GenerativeBehavior(CATIAGenerativeViewBehavior oGenerativeBehavior)Refer to the following article: Drafting Changes
+Property GenerativeLinks (Read)GenerativeLinks(CATIAGenerativeViewLinks oGenerativeLinks)Refer to the following article: Drafting Changes
+Page 18 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm
+
+--- PAGE 19 ---
+
+DrawingViewGenerativeBehavior
+Does not exist any longer, but its methods are replaced.Properties or Methods Signatures Comments
+ApplyBreakoutToApplyBreakoutTo(CATIAGenerativeViewBehavioriParentView)
+Not supported any longer.1 replacing methodFrameworksTypelibsObjectsMethodsDraftingIDLItfDRAFTINGITFDrawingGenViewApplyBreakoutTo
+DefineAuxiliaryView
+DefineAuxiliaryView(double iXStartPoint,in double iYStartPoint,in double iXEndPoint,in double YEndPoint,in short iSideToDraw,in CATIAGenerativeViewBehavioriParentViewGenerativeBehavior)
+Not supported any longer.1 replacing method FrameworksTypelibs ObjectsDraftingIDLItfDRAFTINGITFDrawingDefineGenView
+DefineBox3DViewDefineBox3DView(CATIABase iBoxableObject)
+Not supported any longer.1 replacing methodFrameworksTypelibsObjectsMethodsDraftingIDLItfDRAFTINGITFDrawingGenViewAddClippingBox
+DefineBreakout DefineBreakout(CATSafeArrayVariant iProfil,in CATSafeArrayVariant iPlane1,in CATSafeArrayVariant iPlane2)
+Not supported any longer.1 replacing methodFrameworksTypelibsObjectsMethodsDraftingIDLItfDRAFTINGITFDrawingGenViewAddBreakout
+DefineBrokenView
+DefineBrokenView(CATSafeArrayVariantiBrokenLinesExtremities,in double iXDirection,in double iYDirection)
+Not supported any longer.1 replacing methodFrameworksTypelibsObjectsMethodsDraftingIDLItfDRAFTINGITFDrawingGenViewAddBrokenView
+DefineCircularClippingViewDefineCircularClippingView(double XCenter,in double YCenter,in double Radius)
+Not supported any longer.1 replacing method FrameworksTypelibsObjectsDraftingIDLItfDRAFTINGITFDrawingGenViewAddClippingWithCircle
+DefineCircularDetailView
+DefineCircularDetailView(double iXCenter,in double iYCenter,in double iRadius,in CATIAGenerativeViewBehavioriParentViewGenerativeBehavior)
+Not supported any longer.1 replacing method FrameworksTypelibs ObjectsDraftingIDLItfDRAFTINGITFDrawingDefineGenView
+DefineCircularExactClippingViewDefineCircularExactClippingView(double XCenter,in double YCenter,in double Radius)
+Not supported any longer.1 replacing method FrameworksTypelibsObjectsDraftingIDLItfDRAFTINGITFDrawingGenViewAddClippingWithCircle
+DefineFrontView
+DefineFrontView(double iX1,in double iY1,in double iZ1,in double iX2,in double iY2,in double iZ2)
+Not supported any longer.1 replacing methodFrameworksTypelibs ObjectsDraftingIDLItfDRAFTINGITFDrawingDefineGenView
+DefineIsometricView
+DefineIsometricView(double iX1,in double iY1,in double iZ1,in double iX2,in double iY2,in double iZ2)
+Not supported any longer.1 replacing methodFrameworksTypelibs ObjectsDraftingIDLItfDRAFTINGITFDrawingDefineGenView
+DefinePolygonalClippingViewDefinePolygonalClippingView(CATSafeArrayVariant profil)
+Not supported any longer.1 replacing method FrameworksTypelibsObjectsDraftingIDLItfDRAFTINGITFDrawingGenViewAddClippingWithProfile
+DefinePolygonalDetailViewDefinePolygonalDetailView(CATSafeArrayVariant iProfile,in CATIAGenerativeViewBehavioriParentViewGenerativeBehavior)
+Not supported any longer.1 replacing method FrameworksTypelibs ObjectsDraftingIDLItfDRAFTINGITFDrawingDefineGenView
+DefinePolygonalExactClippingViewDefinePolygonalExactClippingView(CATSafeArrayVariant profil)
+Not supported any longer.1 replacing method FrameworksTypelibsObjectsDraftingIDLItfDRAFTINGITFDrawingGenViewAddClippingWithProfile
+DefineProjectionViewDefineProjectionView(CATIAGenerativeViewBehavioriParentViewGenerativeBehavior,in CatProjViewType iType)
+Not supported any longer.1 replacing method FrameworksTypelibs ObjectsDraftingIDLItfDRAFTINGITFDrawingDefineGenView
+DefineSectionView
+DefineSectionView(CATSafeArrayVariant iProfile,in CATBSTR iSectionType,in CATBSTR iProfileType,in short iSideToDraw,in CATIAGenerativeViewBehavioriParentViewGenerativeBehavior)
+Not supported any longer.1 replacing method FrameworksTypelibs ObjectsDraftingIDLItfDRAFTINGITFDrawingDefineGenView
+DefineStandAloneSectionDefineStandAloneSection(CATSafeArrayVariant profil,in CATBSTR type_of_section,in CATBSTR type_of_profile,
+Not supported any longer.1 replacing method FrameworksTypelibs Objects
+Page 19 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm
+
+--- PAGE 20 ---
+
+in CATSafeArrayVariant iPlane,in short iSide) DraftingIDLItfDRAFTINGITFDrawingDefineGenView
+DefineTPSSectionView
+DefineTPSSectionView(CATSafeArrayVariant iProfile,in CATBSTR iSectionType,in CATBSTR iProfileType,in short iSideToDraw,in CATIAGenerativeViewBehavioriParentViewGenerativeBehavior)
+Refer to the following article: Drafting Changes.
+DefineUnfoldedView
+DefineUnfoldedView(double iX1,in double iY1,in double iZ1,in double iX2,in double iY2,in double iZ2)
+Not supported any longer.1 replacing methodFrameworksTypelibs ObjectsDraftingIDLItfDRAFTINGITFDrawingDefineGenView
+ForceUpdate ForceUpdate()
+Not supported any longer.1 replacing method FrameworksTypelibsObjectsMethodsDraftingIDLItfDRAFTINGITFDrawingGenViewForceUpdate
+GetAxisSystemeGetAxisSysteme(CATIABase oProduct,out CATIABase oAxisSysteme)
+Not supported any longer.1 replacing method FrameworksTypelibsObjectsMethodsDraftingIDLItfDRAFTINGITFDrawingGenViewGetAxisSystem
+GetGPSName GetGPSName(inCATBSTR ioGPSName)Refer to the following article: Drafting Changes.
+GetProjectionPlane
+GetProjectionPlane(double oX1,out double oY1,out double oZ1,out double oX2,out double oY2,out double oZ2)
+Not supported any longer.1 replacing method FrameworksTypelibsObjectsMethodsDraftingIDLItfDRAFTINGITFDrawingViewGetProjectionPlane
+GetProjectionPlaneNormalGetProjectionPlaneNormal(double oXNormal,out double oYNormal,out double oZNormal)Refer to the following article: Drafting Changes.
+SetAxisSysteme SetAxisSysteme(CATIABase iProduct,in CATIABase iAxisSysteme)
+Not supported any longer.1 replacing method FrameworksTypelibsObjectsMethodsDraftingIDLItfDRAFTINGITFDrawingGenViewSetAxisSystem
+SetGPSName SetGPSName(CATBSTR iGPSName)Refer to the following article: Drafting Changes.
+SetProjectionPlane
+SetProjectionPlane(double iX1,in double iY1,in double iZ1,in double iX2,in double iY2,in double iZ2)
+Not supported any longer.1 replacing methodFrameworksTypelibsObjectsDraftingIDLItfDRAFTINGITFDrawingGenViewModifyProjectionPlane
+UnBreak UnBreak()
+Not supported any longer.1 replacing method FrameworksTypelibsObjectsMethodsDraftingIDLItfDRAFTINGITFDrawingGenViewUnBreak
+UnBreakout UnBreakout()
+Not supported any longer.1 replacing method FrameworksTypelibsObjectsMethodsDraftingIDLItfDRAFTINGITFDrawingGenViewUnBreakout
+UnBreakoutNumUnBreakoutNum(short iBreakoutNumber)Refer to the following article: Drafting Changes.
+UnClip UnClip()
+Not supported any longer.1 replacing method FrameworksTypelibsObjectsMethodsDraftingIDLItfDRAFTINGITFDrawingGenViewUnClip
+Update Update()
+Not supported any longer.1 replacing method FrameworksTypelibsObjectsMethodsDraftingIDLItfDRAFTINGITFDrawingGenViewUpdate
+Property ColorInheritanceMode(Read) ColorInheritanceMode(Cat3DColorInheritanceModeoMode)
+Not supported any longer.1 replacing method FrameworksTypelibs ObjectsDraftingIDLItfDRAFTINGITFDrawingGenViewProperties
+Property Document (Read)Document(CATIABase oDocument)
+Not supported any longer.1 replacing method FrameworksTypelibsObjectsDraftingIDLItfDRAFTINGITFDrawingGenViewGetAssociatedRootProduct
+Property FilletRepresentation(Read) FilletRepresentation(CatFilletRepresentation oRep)
+Not supported any longer.1 replacing method FrameworksTypelibs ObjectsDraftingIDLItfDRAFTINGITFDrawingGenViewProperties
+Not supported any longer.
+Page 20 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm
+
+--- PAGE 21 ---
+
+This table summarizes the V5 Drafting2DLInterfaces Automation objects, properties, and methods that you may have used in your applications built on top of V5 andthat do not exist any longer with 3DEXPERIENCE platform. For each of these:
+lIf the object still exists as in V5, but in a different framework, its 3DEXPERIENCE platform typelib is given. 
+lIf a one-to-one mapping exists to replacing objects, properties, or methods, links to these substitutes are listed and pointed to 
+lOtherwise, an adoption article is pointed to to explain how to replace or get rid of them. 
+Changed Objects
+Property HiddenLineMode (Read)HiddenLineMode(CatHiddenLineMode oMode)
+1 replacing method FrameworksTypelibs ObjectsDraftingIDLItfDRAFTINGITFDrawingGenViewProperties
+Property ImageViewMode (Read)ImageViewMode(CatImageViewMode oMode)
+Not supported any longer.1 replacing method FrameworksTypelibs ObjectsDraftingIDLItfDRAFTINGITFDrawingGenViewProperties
+Property LimitBoundingBox (Read)LimitBoundingBox(double oMode)
+Not supported any longer.1 replacing method FrameworksTypelibs ObjectsDraftingIDLItfDRAFTINGITFDrawingGenViewProperties
+Property ParentView (Read)ParentView(CATIADrawingViewoParentView)
+Not supported any longer.1 replacing methodFrameworksTypelibsObjectsMethodsDraftingIDLItfDRAFTINGITFDrawingGenViewParentView
+Property PointsProjectionMode(Read) PointsProjectionMode(CatPointsProjectionMode oMode)
+Not supported any longer.1 replacing method FrameworksTypelibs ObjectsDraftingIDLItfDRAFTINGITFDrawingGenViewProperties
+Property PointsSymbol (Read)PointsSymbol(short oSymbol)
+Not supported any longer.1 replacing method FrameworksTypelibs ObjectsDraftingIDLItfDRAFTINGITFDrawingGenViewProperties
+Property RepresentationMode(Read) RepresentationMode(CatRepresentationMode oMode)
+Not supported any longer.1 replacing method FrameworksTypelibs ObjectsDraftingIDLItfDRAFTINGITFDrawingGenViewProperties
+Property ColorInheritanceMode(Write) ColorInheritanceMode(Cat3DColorInheritanceModeiMode)
+Not supported any longer.1 replacing method FrameworksTypelibs ObjectsDraftingIDLItfDRAFTINGITFDrawingGenViewProperties
+Property Document (Write)Document(CATIABase iDocument)Refer to the following article: Drafting Changes.
+Property FilletRepresentation(Write) FilletRepresentation(CatFilletRepresentation iRep)
+Not supported any longer.1 replacing method FrameworksTypelibs ObjectsDraftingIDLItfDRAFTINGITFDrawingGenViewProperties
+Property HiddenLineMode (Write)HiddenLineMode(CatHiddenLineMode iMode)
+Not supported any longer.1 replacing method FrameworksTypelibs ObjectsDraftingIDLItfDRAFTINGITFDrawingGenViewProperties
+Property ImageViewMode (Write)ImageViewMode(CatImageViewMode iMode)
+Not supported any longer.1 replacing method FrameworksTypelibs ObjectsDraftingIDLItfDRAFTINGITFDrawingGenViewProperties
+Property LimitBoundingBox (Write)LimitBoundingBox(double iMode)
+Not supported any longer.1 replacing method FrameworksTypelibs ObjectsDraftingIDLItfDRAFTINGITFDrawingGenViewProperties
+Property PointsProjectionMode(Write) PointsProjectionMode(CatPointsProjectionMode iMode)
+Not supported any longer.1 replacing method FrameworksTypelibs ObjectsDraftingIDLItfDRAFTINGITFDrawingGenViewProperties
+Property PointsSymbol (Write)PointsSymbol(short iSymbol)
+Not supported any longer.1 replacing method FrameworksTypelibs ObjectsDraftingIDLItfDRAFTINGITFDrawingGenViewProperties
+Property RepresentationMode(Write) RepresentationMode(CatRepresentationMode iMode)
+Not supported any longer.1 replacing method FrameworksTypelibs ObjectsDraftingIDLItfDRAFTINGITFDrawingGenViewProperties
+DrawingViewGenerativeLinks
+Not supported any longer.1 replacing object.FrameworksTypelibsObjectsDraftingIDLItfDRAFTINGITFDrawingGenView
+Drafting2DLInterfaces
+Page 21 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm
+
+--- PAGE 22 ---
+
+Annotation Sets
+In V5, 3D Functional Tolerancing & Annotations objects are obtained through the AnnotationSets collection object, retrieved:
+lIn a CATPart document 
+Directly under the Part object:
+Set cAnnotationSets = oPart.AnnotationSets
+lIn a CATProduct document: 
+Through the GetTechnologicalObject method of a Product object:
+Set cAnnotationSets = oProductDocument.Product.GetTechnologicalObject("CATAnnotationSets")
+lIn a CATProcess document: 
+Through the GetItem method of aProcessDocument object:
+Set cAnnotationSets = oProcesstDocument.GetItem("CATAnnotationSets")
+In3DEXPERIENCE platform, annotation Sets is only defined in a 3D Shape representation reference. The AnnotationSets collection object is retrieved by using the AnnotationSets property of thePart object.
+Hereunder the script create a dimension of a hole. The surface of the hole is selected before launching the macro.
+Below is the script to create anAnnotationSet object from the Part object.
+Objects Comments
+Layout2DSettingAtt
+Not supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. 
+Use it with the CAT2DLToolsOptions setting repository. See the settings section in Automating Settings.
+3D Functional Tolerancing & Annotation ChangesTechnical Article
+Abstract
+This article explains how to transform your V5 Automation macros to take advantage of the Open3DEXPERIENCE platform PLM2.0 infrastructure. It focuses on how 3D Functional Tolerancing & Annotation objects can be accessed and created.
+V5 Automation 3DEXPERIENCE platform Automation' A Part Document is the active document in the sessionDim oPartDocument As PartDocumentSet oPartDocument = CATIA.Documents.ActiveDocument
+' Get the Part objectDim oPart As PartSet oPart = oPartDocument.Part
+' Get the SelectionDim oSel As SelectionSet oSel = oPartDocument.Selection
+' A Representation is opened in the session.' The Part object can be retrieved' from the active editor.
+' Get the Part objectDim oPart As PartSet oPart = CATIA.ActiveEditor.ActiveObject
+' Get the SelectionDim oSel As SelectionSet oSel = CATIA.ActiveEditor.SelectionV5 and 3DEXPERIENCE platform Automation' Get the AnnotationSet from the part featureDim oAnnotSet As AnnotationSetSet oAnnotSet = oPart.AnnotationSets.Item(1)
+' Get the collection of UserSurfacesDim cUserSurfs As ObjectSet cUserSurfs = oPart.UserSurfaces
+' Get the Annotation FactoryDim oAnnotFact As AnnotationFactorySet oAnnotFact = oAnnotSet.AnnotationFactory
+' The dimensioned surface must be selectedIf (oSel.Count = 1) Then
+' Create the hole dimensionDim myRef1 As ReferenceSet myRef1 = mySel.Item(1).Reference
+Dim myUserSurf1 As UserSurfaceSet myUserSurf1 = cUserSurfs.Generate(myRef1)
+Dim myDim3DForHole As AnnotationSet myDim3DForHole = _    oAnnotFact.CreateSemanticDimension(myUserSurf1, 1, 1)
+End If
+V5 Automation 3DEXPERIENCE platform Automation' A Part Document is the active document in the sessionDim oPartDocument As PartDocumentSet oPartDocument = CATIA.Documents.ActiveDocument
+' Get the Part objectDim oPart As PartSet oPart = oPartDocument.Part
+' A Representation is opened in the session.' The Part object can be retrieved' from the active editor.
+' Get the Part objectDim oPart As PartSet oPart = CATIA.ActiveEditor.ActiveObjectV5 and 3DEXPERIENCE platform Automation
+Page 22 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm
+
+--- PAGE 23 ---
+
+Note: Only one AnnotationSet object can be aggregated by thePart object.
+This table summarizes the V5 CATTPSInterfaces Automation objects, properties, and methods that you may have used in your applications built on top of V5 and thatdo not exist any longer with 3DEXPERIENCE platform. For each of these:
+lIf the object still exists as in V5, but in a different framework, its 3DEXPERIENCE platform typelib is given. 
+lIf a one-to-one mapping exists to replacing objects, properties, or methods, links to these substitutes are listed and pointed to 
+lOtherwise, an adoption article is pointed to to explain how to replace or get rid of them.
+Changed Objects
+This table summarizes the V5 CATSmInterfaces Automation objects, properties, and methods that you may have used in your applications built on top of V5 and thatdo not exist any longer with 3DEXPERIENCE platform. For each of these:
+lIf the object still exists as in V5, but in a different framework, its 3DEXPERIENCE platform typelib is given. 
+lIf a one-to-one mapping exists to replacing objects, properties, or methods, links to these substitutes are listed and pointed to 
+lOtherwise, an adoption article is pointed to to explain how to replace or get rid of them.
+Changed Objects
+' Get the Annotation Set collection from the Part featureDim cAnnotSets As AnnotationSetsSet cAnnotSets = oPart.AnnotationSets
+' Create an Annotation SetDim oAnnotSet As AnnotationSetSet oAnnotSet = cAnnotSets.Add("ISO_3D)
+CATTPSInterfaces
+Objects Comments
+AnnotationSetTransformIntoAssemblySet
+Properties or Methods Signatures Comments
+TransformTransform(CATBSTRiAssemblyannotationSetName)This method is out of the scope of the current release and is not currently supported.
+AnnotationSets
+Still available in another framework: CATTPSIDLItf and from the AnnotationTypeLib typelib.Some properties or methods are changed:Properties or Methods Signatures Comments
+AddInAProduct
+AddInAProduct(CATIAProduct iProduct,in CATBSTR iStandard,CATIAAnnotationSetoSet)
+Refer to the following article: 3D Functional Tolerancing & Annotation Changes.
+DMUTolSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the CATTPSEditor setting repository. See the settings section in Automating Settings. 
+FTAInfraSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the CATTPSEditor setting repository. See the settings section in Automating Settings. 
+FTASettingAtt Not supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the CATTPSEditor setting repository. See the settings section in Automating Settings. 
+UserSurface
+Still available in another framework: CATTPSIDLItf and from the AnnotationTypeLib typelib.Some properties or methods are changed:Properties or MethodsSignatures Comments
+AddReferenceInAProductCtxAddReferenceInAProductCtx(CATIAProduct iProdInst,in CATIAReference iSupport)
+Refer to the following article: 3D Functional Tolerancing & Annotation Changes.
+UserSurfaces
+Still available in another framework: CATTPSIDLItf and from the AnnotationTypeLib typelib.Some properties or methods are changed:Properties or MethodsSignatures Comments
+GenerateInAProductCtx
+GenerateInAProductCtx(CATIAProduct iProduct,in CATIAProduct iProdInst,in CATIAReference iSupport,CATIAUserSurface oUserSurf)
+Refer to the following article: 3D Functional Tolerancing & Annotation Changes.
+CATSmInterfaces
+Objects Comments
+CatalogSHMObjectSettingAtt
+Not supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. 
+Use it with the AerospaceSheetmetalDesign setting repository. See the settings section in Automating Settings.
+ViewCharacteristicCurvesSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. 
+Page 23 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm
+
+--- PAGE 24 ---
+
+Working with Sections
+Part of the functionality accessible by the V5 Section object is available in the current release.Section objects were retrieved in V5: 
+leither through the SPAWorkbench object that aggregated a collection of all section objects of the active document 
+lor through theGetItem method applied to the root Product object of a Product document, that allowed to retrieve the same collection.
+In 3DEXPERIENCE platform, theSectionService objects behaves like a collection and allows to retrieve any Section object visible in the editor on which theSectionService object has been requested.
+On the Section object itself, the GetPosition and theSetPosition methods remain the same, theExport method now creates curve in a 3DShape representationidentified by its Part object, instead of aPartDocument object in V5, and the CutMode property has been renamed into a SceneRender property.
+Working with Measures
+The Measurable object allowed to analyze dimensions related to an objects or between two objects. AMeasurable object was obtained from an object throughGetMeasurable method of the SPAWorkbench object. Depending on the measured object, methods of theMeasurable object worked or not. For example theGetDirection method worked when the underlying object could be seen as a line and failed otherwise
+In 3DEXPERIENCE platform, a Measurable object from a predefined type can be retrieved through the GetMeasurable method of theMeasurableService object. For example aMeasurableLine object has to be requested on an object in order to use the GetDirection method. If the underlying object cannot be seen as a line, the GetMeasurable method will fail.
+TheGeometryName property allowed, by returning aCATMeasurableName enumerated value, to retrieved how to the underlying object was seen by the Measurable object:CatMeasurableLine for lines,CatMeasurablePlane for planes and so on.
+In3DEXPERIENCE platform equivalent values have been provided as arguments of the GetMeasurable method:CAAMeasurableLine for lines,CAAMeasurablePlane for planes and so on. The measure type is so now requested by the programmer and not anymore deduced by the API, the property has so been removed. This has three consequences:
+1.There is no equivalent to the CatMeasurableUnknown V5 value that was returned when underlying object was not measurable. If an object does not support the requested measure, the GetMeasurable method fails2.GetGeometryName cannot be used anymore in3DEXPERIENCE platform to determine how the object will be seen by the Measurable object. This is however still possible by requesting alternatively all possible measures on the object and processing failures3.Methods available in V5 on the Measurable object have been dispatched in3DEXPERIENCE platform in the different types of measurable objects. The names have sometimes been slightly changed to homogeneity purpose. 
+The following array give a correspondence between the V5 methods of the Measurable object and the available 3DEXPERIENCE platform methods.
+Use it with the AerospaceSheetmetalDesign setting repository. See the settings section in Automating Settings. 
+Space Analysis ChangesTechnical Article
+Abstract
+This article explains how to transform your V5 automation macros to take advantage of the Open3DEXPERIENCE platform PLM2.0 infrastructure. If focuses on how macros using V5 measures and sections should be modified to accommodate the new 3DEXPERIENCE platform object model.
+V5 Automation 3DEXPERIENCE platform Automation' Retrieve the Sections collection from the active documentDim cSections As SectionsSet cSections = _     CATIA.ActiveDocument.Product.GetTechnologicalObject("Sections")
+' Retrieve the first Section objectDim oSection As SectionSet oSection = cSections.Item(1)
+' Retrieve the SectionService from the active editorDim oSectionService As SectionServiceSet oSectionService = _    CATIA.ActiveEditor.GetService("SectionService")
+' Retrieve the first Section objectDim oSection As SectionSet oSection = oSectionService.Item(1)
+V5 Automation 3DEXPERIENCE platform Automation' Retrieve the SPA workbenchDim oSPAWorkbench As SPAWorkbenchSet oSPAWorkbench = _    CATIA.ActiveDocument.GetWorkbench("SPAWorkbench")
+' Get a Reference object from a Line objectDim oReferenceOnLine As ReferenceSet oReferenceOnLine = part1.CreateReferenceFromObject(oMyLine)
+' Get a Measurable object on this line through the referenceDim oMeasurable As MeasurableSet oMeasurable = oSPAWorkbench.GetMeasurable(oReferenceOnLine)
+' Get the direction of the line as an array of coordinatesDim aDirection (2)Set oMeasurable.GetDirection aDirection
+' Retrieve the MeasurableService from the active editorDim oMeasurableService As MeasurableServiceSet oMeasurableService = _     CATIA.ActiveEditor.GetService("MeasurableService")
+' Get a MeasurableLine object from a Line objectDim oMeasurableLine As MeasurableLineSet oMeasurableLine = _    oMeasurableService.GetMeasurable(oMyLine, CAAMeasurableLine)
+' Get the direction of the line as an array of coordinatesDim aDirection (2)Set oMeasurableLine.GetDirection aDirection
+V5 ObjectsV5 Methods or PropertiesApplied to GeometryName3DEXPERIENCE platform Methods3DEXPERIENCE platform ObjectsGeometryNameany None NoneGetAngleBetweenany AngleTo CATIAMeasurableBetweenGetMinimumDistanceany DistanceMinTo CATIAMeasurableBetweenGetMinimumDistancePointsany
+GetAngle CatMeasurableCircleGetAngle CATIAMeasurableCircleCatMeasurableCone CATIAMeasurableCone
+Area catMeasurableSurfaceGetArea CATIAMeasurableSurfaceCatMeasurableVolume CATIAMeasurableVolumeCatMeasurableAxisSystem CATIAMeasurableAxisSystem
+Page 24 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm
+
+--- PAGE 25 ---
+
+Working with Distances.
+The V5 Distance object and its associated collection, allowed to calculate distances betweenProduct objects or groups of Product. Only the first one is available in 3DEXPERIENCE platform. It has been extended to any measurable object and has been provided thought a specific type of measurable: the MeasurableBetween object. 
+The V5 Distances collection wat aggregated by the SPAWorkbench object. See upper how to retrieve a measurable object in 3DEXPERIENCE platform through the MeasurableService object.
+The table below shows which V5 methods are supported in the current3DEXPERIENCE platform release.
+This table summarizes the V5 SpaceAnalysisInterfaces Automation objects, properties, and methods that you may have used in your applications built on top of V5 andthat do not exist any longer with 3DEXPERIENCE platform. For each of these:
+lIf the object still exists as in V5, but in a different framework, its 3DEXPERIENCE platform typelib is given. 
+lIf a one-to-one mapping exists to replacing objects, properties, or methods, links to these substitutes are listed and pointed to 
+lOtherwise, an adoption article is pointed to to explain how to replace or get rid of them. 
+Changed Objects
+CATIAMeasurable
+GetAxisSystemCatMeasurableCircleGetAxis CATIAMeasurableCircleCatMeasurableCone CATIAMeasurableConecatMeasurableCylinder CATIAMeasurableCylinder
+GetCenter CatMeasurableCircleGetCenter CATIAMeasurableCircleCatMeasurableSphere CATIAMeasurableSphere
+GetCOG catMeasurableSurfaceGetCOfG CATIAMeasurableSurfaceCatMeasurableVolume CATIAMeasurableVolumeGetDirectionCatMeasurableLineGetDirection CATIAMeasurableLineLength CatMeasurableCurveGetLength CATIAMeasurableCurveCatMeasurableLineGetOrigin CATIAMeasurableLinePerimeter catMeasurableSurfaceGetPerimeter CATIAMeasurableSurfaceGetPlane CatMeasurablePlaneGetPlane CATIAMeasurablePlane
+GetPoint CatMeasurableConeGetPoint CATIAMeasurableConecatMeasurableCylinder CATIAMeasurableCylinderCatMeasurablePoint CATIAMeasurablePointGetPointsOnCurveCatMeasurableCurveGetPoints CATIAMeasurableCurve
+GetPointsOnAxisCatMeasurableCone CATIAMeasurableConecatMeasurableCylinder CATIAMeasurableCylinder
+Radius CatMeasurableCircleGetRadius CATIAMeasurableCirclecatMeasurableCylinder CATIAMeasurableCylinderCatMeasurableSphere CATIAMeasurableSphereVolume CatMeasurableVolumeGetVolume CATIAMeasurableVolume
+V5 ObjectV5 Methods orProperties3DEXPERIENCE platform Methods3DEXPERIENCE platform Objects Comments
+CATIADistance
+ComputationTypenone none Only the functionality equivalent toCatDistanceMeasureType::catDistanceMeasureTypeMinimum value issupported
+MethodTypenone none Only the functionality equivalent toCatDistanceComputationMode::catDistanceComputationTypeInsideOne value is supportedMinimumDistanceDistanceMinToPointCATIAMeasurableBetween
+Computenone none Now useless. In 3DEXPERIENCE platform computation is launched at each method call.All other Methodsnone none Not Supported yet
+SpaceAnalysisInterfaces
+Objects CommentsClash This class or interface is out of the scope of the current release and is not currently supported.ClashResultThis class or interface is out of the scope of the current release and is not currently supported.ClashResultsThis class or interface is out of the scope of the current release and is not currently supported.Clashes This class or interface is out of the scope of the current release and is not currently supported.Conflict This class or interface is out of the scope of the current release and is not currently supported.Conflicts This class or interface is out of the scope of the current release and is not currently supported.
+Distance Not supported any longer.Refer to the following article: Space Analysis Changes.
+DistancesNot supported any longer.Refer to the following article: Space Analysis Changes.Inertia This class or interface is out of the scope of the current release and is not currently supported.Inertias This class or interface is out of the scope of the current release and is not currently supported.
+MeasurableNot supported any longer.Refer to the following article: Space Analysis Changes.
+MeasureSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the MeasureSettings setting repository. See the settings section in Automating Settings.
+SPAWorkbenchNot supported any longer.Refer to the following article: Space Analysis Changes.Still available in another framework: CATOpnsSectionIDLItf and from the CATOpnsSectionIDL typelib.Some properties or methods are changed: 
+Page 25 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm
+
+--- PAGE 26 ---
+
+This table summarizes the V5 KinematicsInterfaces Automation objects, properties, and methods that you may have used in your applications built on top of V5 and that do not exist any longer with 3DEXPERIENCE platform. For each of these:
+lIf the object still exists as in V5, but in a different framework, its 3DEXPERIENCE platform typelib is given. 
+lIf a one-to-one mapping exists to replacing objects, properties, or methods, links to these substitutes are listed and pointed to 
+lOtherwise, an adoption article is pointed to to explain how to replace or get rid of them.
+Changed Objects
+Section
+Properties or MethodsSignatures Comments
+Export Export(CATIADocument oDocument)
+Not supported any longer.Refer to the following article: Space Analysis Changes.1 replacing method FrameworksTypelibsObjectsMethodsCATOpnsSectionIDLItfCATOpnsSectionIDLSectionExport
+IsEmpty IsEmpty(long oIndicator) This method is out of the scope of the current release and is not currently supported.
+Property AnnotatedViews (Read) AnnotatedViews(CATIAAnnotatedViewsoAnnotatedViews)This method is out of the scope of the current release and is not currently supported.
+Property Behavior (Read)Behavior(CatSectionBehavior oBehavior)This method is out of the scope of the current release and is not currently supported.
+Property CutMode (Read)CutMode(long oMode) This method is out of the scope of the current release and is not currentlysupported.
+Property Group (Read)Group(CATIAGroup oGroup)This method is out of the scope of the current release and is not currently supported.
+Property Height (Read)Height(double oHeight) This method is out of the scope of the current release and is not currentlysupported.Property Marker3Ds (Read) Marker3Ds(CATIAMarker3Ds oMarker3Ds)This method is out of the scope of the current release and is not currently supported.
+Property Thickness (Read)Thickness(double oThickness) This method is out of the scope of the current release and is not currently supported.
+Property Type (Read)Type(CatSectionType oType)This method is out of the scope of the current release and is not currently supported.
+Property Width (Read)Width(double oWidth) This method is out of the scope of the current release and is not currentlysupported.
+Property Behavior (Write)Behavior(CatSectionBehavior iBehavior)This method is out of the scope of the current release and is not currently supported.
+Property CutMode (Write)CutMode(long iMode) This method is out of the scope of the current release and is not currentlysupported.
+Property Group (Write)Group(CATIAGroup iGroup)This method is out of the scope of the current release and is not currently supported.
+Property Height (Write)Height(double iHeight) This method is out of the scope of the current release and is not currently supported.
+Property Thickness (Write)Thickness(double iThickness) This method is out of the scope of the current release and is not currently supported.
+Property Type (Write)Type(CatSectionType iType)This method is out of the scope of the current release and is not currently supported.
+Property Width (Write)Width(double iWidth) This method is out of the scope of the current release and is not currentlysupported.
+SectioningSettingAttNot supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. Use it with the SectioningSettings setting repository. See the settings section in Automating Settings.
+Sections Not supported any longer.Refer to the following article: Space Analysis Changes.
+KinematicsInterfaces
+Objects CommentsDressup This class or interface is out of the scope of the current release and is not currently supported.Dressups This class or interface is out of the scope of the current release and is not currently supported.
+Joint
+Not supported any longer.1 replacing object.FrameworksTypelibs ObjectsCATEngConnectionIDLItfCATEngConnectionIDLEngConnection
+Joints
+Not supported any longer.1 replacing object.FrameworksTypelibsObjectsCATKinMechanismIDLItfCATKinMechanismIDLKinJointsKinematicsWorkbench
+Mechanism
+Not supported any longer.1 replacing object.FrameworksTypelibs ObjectsCATKinMechanismIDLItfCATKinMechanismIDLKinMechanism
+MechanismCommand
+Not supported any longer.1 replacing object.FrameworksTypelibsObjectsCATKinMechanismIDLItfCATKinMechanismIDLKinCommand
+Not supported any longer.
+Page 26 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm
+
+--- PAGE 27 ---
+
+V5 Business Process Knowledge Template is changed to Automated Design Process in3DEXPERIENCE platform. Since the objects handled are operations, the objects are renamed as follows:
+TheBehavior objects are accessed in V5 from the object they extend using the BehaviorExtension object retrieved thanks to calling the GetItem method against this extended object. TheBehaviorExtension object aggregates a Behavior object that aggregates a Behaviors collection object where the Behavior objects associated to the extended object can be used.
+This model changes with 3DEXPERIENCE platform. TheDPCOperations collection object can directly be retrieved from the extended object still thanks to the GetItem method. As a consequence: 
+lThe Behavior object propertyBehaviors that returned the child Behaviors collection object is removed from the DPCOperation object.
+lThe BehaviorExtension object is removed. It has one property and one method. Use the DPCOperations collection object to replace it, as follows: 
+¡ExtensionClass propertyReplace a call to this property, such asoBehaviorExtension.ExtensionClass, with 
+Dim cOperations As DPCOperations...Dim sExtension As StringSet sExtension = cOperations.Parent.Name
+¡SelectBehavior methodReplace a call to this method, such asoBehaviorExtension.SelectBehavior("BehaviorName"), with 
+Dim cOperations As DPCOperations...Dim oOperation As DPCOperationSet oOperation = cOperations.Operate("BehaviorName")
+If the BehaviorExtension object is used in a script launched by a BehaviorVBScript operation object (behavior) to get the operation itself, use in 3DEXPERIENCE platform the first argument of the macro, which is the operation, as the argument of the Operate method.
+Refer to DPCOperations Collection Object to retrieve such an object.
+In addition:
+lThe methods Activate andDeactivate of the Behavior object are removed. The best way to control the activity of an operation is to act on its "Activity" parameter. This can be done either through an EKL operation or through a VB launched by the VBScript Operation: 1.EKL: Compute the state of the targeted operation and directly valuate its "Activity" parameter. 2.VB: Compute the state of the targeted operation and valuate an output variable ("ActivateOrNot" for example) of the VBScript Operation. The "Activity" parameter of the targeted operation must be linked to "ActivateOrNot". 
+lThe methods Start,Done, Suspend, and Cancel of theBehaviorVBScript object are removed from theDPCOperationVBScript object. They have empty implementations in V5, and can safely be removed from your macros in3DEXPERIENCE platform, if you still call them. 
+In addition to object renaming and model changes, some properties or methods of theBehavior object are mapped to properties and methods of theDPCOperationVBScript object. Refer to CATBehaviorInterfaces changed objects for details.
+This table summarizes the V5 CATBehaviorInterfaces Automation objects, properties, and methods that you may have used in your applications built on top of V5 andthat do not exist any longer with 3DEXPERIENCE platform. For each of these:
+lIf the object still exists as in V5, but in a different framework, its 3DEXPERIENCE platform typelib is given. 
+lIf a one-to-one mapping exists to replacing objects, properties, or methods, links to these substitutes are listed and pointed to 
+lOtherwise, an adoption article is pointed to to explain how to replace or get rid of them. 
+Changed Objects
+MechanismCommands1 replacing object.FrameworksTypelibsObjectsCATKinMechanismIDLItfCATKinMechanismIDLKinCommandsMechanisms
+Business Process Knowledge Template ChangesTechnical Article
+Abstract
+This article explains how to transform your V5 Automation macros to take advantage of the Open3DEXPERIENCE platform PLM2.0 infrastructure. It focuses on Business Process Knowledge Template.
+V5 Objects3DEXPERIENCE platform ObjectsBehaviorDPCOperationBehaviorExtensionNot supported any longerBehaviorVBScriptDPCOperationVBScriptBehaviorsDPCOperations
+CATBehaviorInterfaces
+Objects CommentsStill available in another framework: CATBehaviorIDLItf and from the DPCOperationsTypeLib typelib.Some properties or methods are changed: Properties or MethodsSignatures CommentsActivate Activate() Refer to the following article: Business Process Knowledge Template Changes.Deactivate Deactivate() Refer to the following article: Business Process Knowledge Template Changes.
+GetInput GetInput(CATBSTR pName,
+Not supported any longer.1 replacing methodFrameworksTypelibs ObjectsMethods
+Page 27 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm
+
+--- PAGE 28 ---
+
+This table summarizes the V5 CATOBMInterfaces Automation objects, properties, and methods that you may have used in your applications built on top of V5 and thatdo not exist any longer with 3DEXPERIENCE platform. For each of these:
+lIf the object still exists as in V5, but in a different framework, its 3DEXPERIENCE platform typelib is given. 
+lIf a one-to-one mapping exists to replacing objects, properties, or methods, links to these substitutes are listed and pointed to 
+lOtherwise, an adoption article is pointed to to explain how to replace or get rid of them.
+Changed Objects
+This table summarizes the V5 GenKnowledgeInterfaces Automation objects, properties, and methods that you may have used in your applications built on top of V5 andthat do not exist any longer with 3DEXPERIENCE platform. For each of these:
+lIf the object still exists as in V5, but in a different framework, its 3DEXPERIENCE platform typelib is given. 
+lIf a one-to-one mapping exists to replacing objects, properties, or methods, links to these substitutes are listed and pointed to 
+lOtherwise, an adoption article is pointed to to explain how to replace or get rid of them. 
+Changed Objects
+This table summarizes the V5 PCBoardBase Automation objects, properties, and methods that you may have used in your applications built on top of V5 and that do notexist any longer with 3DEXPERIENCE platform. For each of these:
+lIf the object still exists as in V5, but in a different framework, its 3DEXPERIENCE platform typelib is given. 
+lIf a one-to-one mapping exists to replacing objects, properties, or methods, links to these substitutes are listed and pointed to 
+lOtherwise, an adoption article is pointed to to explain how to replace or get rid of them.
+Moved Objects
+Behavior
+CATIABase oValue)CATBehaviorIDLItfDPCOperationsTypeLibDPCOperationVBScriptGetInput
+GetOutput GetOutput(CATBSTR pName,CATIABase oValue)
+Not supported any longer.1 replacing methodFrameworksTypelibs ObjectsMethodsCATBehaviorIDLItfDPCOperationsTypeLibDPCOperationVBScriptGetOutput
+PutOutput PutOutput(CATBSTR pName,in CATIABase oValue)
+Not supported any longer.1 replacing method FrameworksTypelibs ObjectsMethodsCATBehaviorIDLItfDPCOperationsTypeLibDPCOperationVBScriptPutOutput
+TestInput TestInput(CATBSTR pName,long iExist)
+Not supported any longer.1 replacing methodFrameworksTypelibs ObjectsMethodsCATBehaviorIDLItfDPCOperationsTypeLibDPCOperationVBScriptTestInput
+TestOutput TestOutput(CATBSTR pName,long iExist)
+Not supported any longer.1 replacing methodFrameworksTypelibs ObjectsMethodsCATBehaviorIDLItfDPCOperationsTypeLibDPCOperationVBScriptTestOutput
+Property Behaviors (Read)Behaviors(CATIABehaviors oBehaviors)Refer to the following article: Business Process Knowledge Template Changes.
+BehaviorExtensionNot supported any longer.Refer to the following article: Business Process Knowledge Template Changes.
+BehaviorVBScript
+Still available in another framework: CATBehaviorIDLItf and from the DPCOperationsTypeLib typelib.Some properties or methods are changed: Properties or MethodsSignatures CommentsCancel Cancel()Refer to the following article: Business Process Knowledge Template Changes.Done Done()Refer to the following article: Business Process Knowledge Template Changes.Start Start()Refer to the following article: Business Process Knowledge Template Changes.Suspend Suspend()Refer to the following article: Business Process Knowledge Template Changes.
+CATOBMInterfaces
+Objects Comments
+BehaviorSettingAtt
+Not supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. 
+Use it with the CATBehaviorCATFct setting repository. See the settings section in Automating Settings.
+GenKnowledgeInterfaces
+Objects Comments
+ExpertRuleBaseRuntime
+Still available in another framework: KnowHowIDLItf and from the GenKwe typelib.Some properties or methods are changed:Properties or MethodsSignaturesComments
+ImportFromFileImportFromFile(CATBSTR iPath,in boolean iForce)
+ImportWithLinkImportWithLink(CATIABase iRoot,in boolean iForce)
+PCBoardBase
+Page 28 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm
+
+--- PAGE 29 ---
+
+This table summarizes the V5 PCBoardBase objects that still exist in 3DEXPERIENCE platform, but that are located in other frameworks. You can use this table to get their typelib.
+Changed Objects
+This table summarizes the V5 DNBDeviceInterfaces Automation objects, properties, and methods that you may have used in your applications built on top of V5 and that do not exist any longer with 3DEXPERIENCE platform. For each of these:
+lIf the object still exists as in V5, but in a different framework, its 3DEXPERIENCE platform typelib is given. 
+lIf a one-to-one mapping exists to replacing objects, properties, or methods, links to these substitutes are listed and pointed to 
+lOtherwise, an adoption article is pointed to to explain how to replace or get rid of them.
+Changed Objects
+This table summarizes the V5 DNBRobotInterfaces Automation objects, properties, and methods that you may have used in your applications built on top of V5 and that do not exist any longer with 3DEXPERIENCE platform. For each of these:
+lIf the object still exists as in V5, but in a different framework, its 3DEXPERIENCE platform typelib is given. 
+lIf a one-to-one mapping exists to replacing objects, properties, or methods, links to these substitutes are listed and pointed to 
+lOtherwise, an adoption article is pointed to to explain how to replace or get rid of them.
+Changed Objects
+ObjectsV5 Typelibs3DEXPERIENCE platform Frameworks3DEXPERIENCE platform TypelibsPCBArea CATPCBoardIDLItfPCBITFPCBComponentCATPCBoardIDLItfPCBITFPCBHoleAndPatternCATPCBoardIDLItfPCBITF
+Objects Comments
+PCBWorkbench
+Not supported any longer.1 replacing object.FrameworksTypelibsObjectsCATPCBoardIDLItfPCBITFPCBService
+DNBDeviceInterfaces
+Objects Comments
+DevAnalysisSettingAtt
+Not supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. 
+Use it with the DNBDeviceBase setting repository. See the settings section in Automating Settings.
+DNBRobotInterfaces
+Objects Comments
+RRSSettingAtt
+Not supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. 
+Use it with the DNBRRSSettings setting repository. See the settings section in Automating Settings.
+RobAnalysisSettingAtt
+Not supported any longer.This is a setting interface, replaced with the generic one: SettingRepository. 
+Use it with the DNBRobotBase setting repository. See the settings section in Automating Settings.
+Page 29 of 29Overview of Adoption for Automation
+07/07/2025file:///C:/Users/Tarik/AppData/Local/Temp/~hhA36C.htm

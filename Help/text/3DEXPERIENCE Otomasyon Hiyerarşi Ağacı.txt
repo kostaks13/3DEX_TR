@@ -1,0 +1,163 @@
+--- PAGE 1 ---
+
+CATIA (Application)
+├── Editors
+│   ├── Item(i): Editor
+│   ├── ActiveEditor
+│   │   ├── ActiveWindow
+│   │   │   ├── ActiveViewer
+│   │   │   │   ├── Viewpoint2D / Viewpoint3D
+│   │   │   │   ├── LightSources
+│   │   │   │   └── PageSetup
+│   │   │   └── WindowState
+│   │   ├── ActiveObject
+│   │   │   ├── Part
+│   │   │   │   ├── HybridBodies
+│   │   │   │   │   ├── Item(name): HybridBody
+│   │   │   │   │   │   ├── HybridShapes
+│   │   │   │   │   │   │   └── Item(name): HybridShapeXYZ (250+ tür)
+│   │   │   │   │   │   └── AppendHybridShape(obj)
+│   │   │   │   │   └── Count
+│   │   │   │   ├── Bodies (OrderedGeometricalSets)
+│   │   │   │   │   └── Item(name)
+│   │   │   │   ├── Parameters (ParameterSet)
+│   │   │   │   │   ├── Item(name): IntParam / RealParam / StrParam / BoolParam / 
+EnumParam
+│   │   │   │   │   └── Count
+│   │   │   │   ├── Relations (Relations koleksiyonu)
+│   │   │   │   │   └── Item(name): Relation
+│   │   │   │   ├── ShapeFactory
+│   │   │   │   │   ├── AddNewPad
+│   │   │   │   │   ├── AddNewPocket
+│   │   │   │   │   ├── AddNewShaft
+│   │   │   │   │   └── (20+ komut)
+│   │   │   │   ├── HybridShapeFactory
+│   │   │   │   │   ├── AddNewPlaneOffset
+│   │   │   │   │   ├── AddNewPointCoord
+│   │   │   │   │   ├── AddNewLinePtPt
+│   │   │   │   │   └── (100+ komut)
+│   │   │   │   ├── CreateReferenceFromObject(obj)
+│   │   │   │   ├── InWorkObject = obj
+│   │   │   │   ├── Update
+│   │   │   │   └── Parent → VPMRepReference
+│   │   │   ├── Product (VPMReference)
+│   │   │   │   ├── GetItem("CATEngConnections") → EngConnections
+│   │   │   │   │   ├── Add(type, items)
+│   │   │   │   │   └── AssemblyConstraints
+│   │   │   │   │       ├── Add(distance, geometries)
+
+--- PAGE 2 ---
+
+│   │   │   │   │       ├── Add(distance, geometries)
+│   │   │   │   │       └── Count
+│   │   │   │   ├── RepInstances → VPMRepInstances
+│   │   │   │   └── Occurrences → VPMOccurrences (Root + others)
+│   │   │   ├── DrawingRoot (DrawingRoot)
+│   │   │   │   ├── Sheets → DrawingSheet
+│   │   │   │   │   ├── Views → DrawingView
+│   │   │   │   │   └── Dimensions
+│   │   │   │   ├── Tables → DrawingTable
+│   │   │   │   └── GDT
+│   │   ├── Selection (Count, Item2(i))
+│   │   ├── GetService("InertiaService")
+│   │   │   ├── GetInertiaElement(obj)
+│   │   │   └── GetInertiaMatrix(arr)
+│   │   ├── GetService("MeasureService")
+│   │   │   ├── GetMeasureBetween(sel1, sel2)
+│   │   │   └── Compute
+│   │   ├── GetService("MeasurableService")
+│   │   │   ├── GetMeasurable(sel, type)
+│   │   │   └── (Axis, Curve, Surface, V olume…)
+│   │   ├── GetService("SectionService")
+│   │   │   ├── Add → Section
+│   │   │   └── Section.SetPosition(matrix)
+│   │   ├── GetService("CompositesServices")
+│   │   │   └── (oPart.GetItem("CompositesServices") ile al)
+│   │   └── GetService("PLMProductService")
+│   │       ├── RootOccurrence
+│   │       └── (Edit, Save, Load)
+│   ├── GetService("SearchService")
+│   │   └── Search(criteria) → DatabaseSearch
+│   │       └── Results → PLMEntities
+│   └── … (5+ diğer editor-level servisler)
+│
+├── Windows (Count, Item(i))
+├── Printers (Count, Item(i))
+├── SettingControllers
+│   ├── Item(name): SettingController
+│   │   ├── GetItem("RepositoryName") → SettingRepository
+│   │   │   ├── GetAttr(name)
+│   │   │   └── PutAttr(name, value)
+│   │   └── Count
+│   └── …
+│
+├── GetSessionService(name)
+│   ├── "PLMNewService"
+│   │   └── PLMCreate(type, editor)
+
+--- PAGE 3 ---
+
+│   │   └── PLMCreate(type, editor)
+│   ├── "SearchService"
+│   ├── "MaterialService"
+│   │   └── AssignMaterial(obj, material)
+│   ├── "OlpTranslationHelper"
+│   │   ├── MacroDownload
+│   │   ├── MacroUpload
+│   │   ├── AstRoot
+│   │   ├── CreateParser()
+│   │   └── (ExpressionFixer, IDFixer…)
+│   ├── "SystemService"
+│   │   ├── Environ(var)
+│   │   └── ConcatenatePaths(p1, p2)
+│   ├── "SystemConﬁguration"
+│   │   ├── Version
+│   │   └── LicensedProducts
+│   └── … (10+ session-level servisler)
+│
+├── FileSystem
+│   ├── GetFolder(path)
+│   ├── GetFile(path)
+│   ├── Exists(path)
+│   └── (Copy, Delete, Create…)
+│
+├── CompositesServices
+│   ├── GetItem("CompositesServices") → CompositesServices
+│   ├── ExplodeComposite()
+│   └── (3DEXPERIENCE PLM custom methods)
+│
+├── VOCServices
+│   ├── CreateOffset(input, ref, value)
+│   └── (Silhouette, Draft, Optimize…)
+│
+├── PLM Modeler (PPR Hub)
+│   ├── PLMEntity
+│   ├── PLMAttribute
+│   ├── PLMReference
+│   └── (Versioning, Conﬁguration…)
+│
+├── Knowledge Services
+│   ├── KnowledgeFactory
+│   │   ├── CreateParameterSet()
+│   │   ├── CreateRelation()
+│   │   └── CreateExpertRuleBase()
+│   ├── Parameters
+│   ├── Relations
+
+--- PAGE 4 ---
+
+│   ├── Relations
+│   └── Optimizations
+│
+├── Simulation Services
+│   ├── ScenarioRepresentation
+│   │   └── ScenarioManager
+│   └── ResultRepresentation
+│       └── ResultManager
+│
+└── Automation Core
+    ├── Sub DoItBetter()
+    ├── Option Explicit
+    ├── On Error Resume Next / GoTo 0
+    ├── Dim … As Object
+    └── Naming Conventions (b, d, s preﬁxes; MAX_V ALUE; 80-char limit)
