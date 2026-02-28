@@ -2,7 +2,7 @@
 
 ```
 ================================================================================
-  Sik yapilan hatalar + dikkat edilmesi gereken ozel noktalar (3DExperience VBA)
+  Sık yapılan hatalar + dikkat edilmesi gereken özel noktalar (3DExperience VBA)
 ================================================================================
 ```
 

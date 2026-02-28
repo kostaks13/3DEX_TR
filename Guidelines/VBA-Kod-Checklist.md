@@ -2,7 +2,7 @@
 
 ```
 ================================================================================
-  Teslim / kod incelemesi oncesi: zorunlu ve onerilen maddeler (12 bolum + ozet)
+  Teslim / kod incelemesi öncesi: zorunlu ve önerilen maddeler (12 bölüm + özet)
 ================================================================================
 ```
 

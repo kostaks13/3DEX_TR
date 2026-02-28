@@ -2,13 +2,13 @@
 
 ```
 ================================================================================
-  18 dokümanlik rehber seti  |  Konsolide: Rehber-Konsolide.md  |  Help uyumlu
+  18 dokümanlık rehber seti  |  Help uyumlu
 ================================================================================
 ```
 
 Kodlamaya **yeni başlayan** biri için, **3DExperience VBA** ile makro yazmayı adım adım anlatan **18 dokümanlık** rehber seti. **Proje sayfası (GitHub/GitLab):** repository kökündeki [README.md](../README.md). İçerik, proje kökündeki **Help** klasöründeki resmi dokümanlarla (**Help-Automation Development Guidelines**, **3DEXPERIENCE MACRO HAZIRLIK YÖNERGESİ**, **Help-Native Apps Automation** vb.) uyumlu ve genişletilmiştir.
 
-**Tüm rehber tek dosyada:** Tüm bölümleri tek belgede okumak veya arama yapmak için **[Rehber-Konsolide.md](Rehber-Konsolide.md)** dosyasını kullanın (İçindekiler ile bölüm atlama desteklenir). Aşağıdaki liste, bölüm bölüm ilerlemek isteyenler içindir.
+**Nasıl ilerlenir:** Aşağıdaki tablodan dokümanları **sırayla** (01 → 18) takip edin; belirli bir konu arıyorsanız doğrudan ilgili dokümana atlayabilirsiniz.
 
 ------------------------------------------------------------
 
@@ -43,7 +43,7 @@ Kodlamaya **yeni başlayan** biri için, **3DExperience VBA** ile makro yazmayı
 - **Belirli konu arıyorsanız:** Yukarıdaki tablodan ilgili dokümanı açın. **“Buna nereden erişirim, bunu nasıl kullanırım?”** için **13. doküman**; **VBA’dan Excel’e veri yazma/okuma** için **14. doküman**; **dosya seçtirme / kaydetme diyaloğu** için **15. doküman**; **kod ve süreç iyileştirme önerileri** için **16. doküman** kullanın.  
 - **Resmi kurallar ve fazlar:** Help’e dayalı özet ve kontrol listeleri için **11. doküman** kullanın.  
 - **VBA kodu checklist (detaylı):** Teslim veya kod incelemesi öncesi **[VBA-Kod-Checklist.md](VBA-Kod-Checklist.md)** dosyasındaki maddeleri işaretleyin.  
-- **API detayı için:** Proje kökündeki **VBA_API_REFERENCE.md** ve **Help/text/** klasöründeki metinleri kullanın.  
+- **API detayı için:** Proje kökündeki **VBA_API_REFERENCE.md** (varsa) veya **Help/VBA_CALL_LIST.txt** ve **Help/text/** klasöründeki metinleri kullanın.  
 - **Help dosyalarını ne zaman/nasıl kullanacağınız:** **[17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md)** — Help klasörü yapısı, hangi dosyayı hangi aşamada açacağınız, arama yöntemleri.  
 - **Sık hatalar ve dikkat edilecekler:** **[18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md)** — Option Explicit, Nothing/Update, On Error, V5 API, InputBox iptal, locale, servis sırası vb.
 

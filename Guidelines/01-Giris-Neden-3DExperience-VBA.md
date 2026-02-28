@@ -2,7 +2,7 @@
 
 ```
 ================================================================================
-  Bu rehber: 3DExperience VBA ile makro yazmayi adim adim anlatan baslangic rehberi
+  Bu rehber: 3DExperience VBA ile makro yazmayı adım adım anlatan başlangıç rehberi
 ================================================================================
 ```
 
@@ -37,7 +37,7 @@ Bu rehber, kodlamaya yeni başlayan biri için **3DExperience platformunda VBA i
 
 Yani tekrarlayan, kuralı belli işleri **makro** ile otomatikleştirirsiniz. **Servisler** ve **yapılabilecek işlemlerin** detaylı listesi için **12. doküman:** [12-Servisler-ve-Yapilabilecek-Islemler.md](12-Servisler-ve-Yapilabilecek-Islemler.md). **“Buna nereden erişirim, bunu nasıl kullanırım?”** sorusunun tek sayfa cevabı için **13. doküman:** [13-Erisim-ve-Kullanim-Rehberi.md](13-Erisim-ve-Kullanim-Rehberi.md); **Excel** için [14-VBA-ve-Excel-Etkilesimi.md](14-VBA-ve-Excel-Etkilesimi.md); **dosya seç/kaydet diyaloğu** için [15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md). **Help dosyalarını ne zaman/nasıl kullanacağınız** için **17. doküman:** [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md).
 
----------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------
 
 ## Örnek senaryolar – Ne otomatikleştirilebilir?
 
@@ -151,13 +151,11 @@ Automation Development Guidelines’da **Language** alanı için geçerli değer
 
 Bu rehberde yalnızca **VBA** kullanımı anlatılmaktadır; diğer dillerde de benzer nesne modeli ve API’ler kullanılır.
 
----------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------
 
 ## Bölgesel ayarlar uyarısı
 
 Help’e göre: Belirli bir **locale** (bölgesel ayar) için kaydedilen veya yazılan makrolar, başka bir locale’de **çalışmayabilir**. Etkileşimli ürün dokümantasyonunda anlatılan dil adlarını kullanın (örn. English (United States), French (France)). Makroyu paylaşırken veya dokümante ederken hangi bölgesel ayarda test edildiğini belirtin.
-
-------------------------------------------------------------
 
 ------------------------------------------------------------
 
@@ -223,7 +221,7 @@ Yeni bir işlemde hangi API’nin kullanıldığını bilmiyorsanız: (1) Makro 
 
 Bu rehber **VBA** odaklıdır çünkü: (1) 3DExperience ile birlikte gelir, ek kurulum gerektirmez. (2) Makro kaydı doğrudan VBA kodu üretir; öğrenme hızlanır. (3) Tek bir makinede, etkileşimli kullanım için hızlı geliştirme yapılır. C# veya Python ile otomasyon da mümkündür; ancak COM/API erişimi, ayrı IDE ve dağıtım modeli farklıdır. Kurumsal ve toplu (batch) senaryolarda C#/Python tercih edilebilir; başlangıç için VBA yeterlidir.
 
----------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------
 
 ## Örnek: Rehberdeki dokümanların birbirine bağlantısı
 
@@ -240,4 +238,4 @@ Bu sıra takip edildiğinde adım adım 3DExperience VBA ile makro yazma beceris
 
 ## Sonraki adım
 
-**2. doküman:** [02-Ortam-Kurulumu.md](02-Ortam-Kurulumu.md) — 3DExperience'ı açıp VBA editörüne girmeyi ve ilk makroyu çalıştırmayı öğreneceksiniz. **Sık hatalar ve dikkat edilecekler:** [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md)..
+**2. doküman:** [02-Ortam-Kurulumu.md](02-Ortam-Kurulumu.md) — 3DExperience'ı açıp VBA editörüne girmeyi ve ilk makroyu çalıştırmayı öğreneceksiniz. **Sık hatalar ve dikkat edilecekler:** [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md).

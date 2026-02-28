@@ -1,7 +1,7 @@
 # 3. VBA Temelleri – Değişkenler ve Veri Tipleri
 
 ```
-  Konu: Dim, Set, veri tipleri, Option Explicit, onekler (b, d, s, i, o, c), Const
+  Konu: Dim, Set, veri tipleri, Option Explicit, önekler (b, d, s, i, o, c), Const
 ```
 
 Kod yazarken bilgiyi geçici olarak saklamak için **değişken** kullanırız. Bu dokümanda değişken tanımlama ve veri tiplerini 3DExperience VBA bağlamında öğreneceksiniz.
@@ -207,8 +207,6 @@ End Sub
 ```
 
 Log dosyası veya rapor başlığında tarih/saat yazarken bu yapı kullanılır.
-
-------------------------------------------------------------
 
 ------------------------------------------------------------
 

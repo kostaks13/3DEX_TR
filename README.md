@@ -1,5 +1,13 @@
 # 3DExperience VBA Macro – Rehber ve Referans
 
+```
+   ###   ##    ###   #   #         #####  ###
+     #   #  #   #     # #            #    #  #
+   ###   #  #   ###    #            #    ###
+     #   #  #   #     # #            #    #  #
+   ###   ##    ###   #   #  _____   #    #   #
+```
+
 **3DExperience** (Dassault Systèmes) platformunda **VBA ile makro** yazmak için sıfırdan rehber, API referansı ve yardımcı dokümanlar. Yeni başlayanlar için adım adım anlatım, sık kullanılan kalıplar ve resmi Help dokümanlarıyla uyumlu içerik.
 
 ---
@@ -9,7 +17,7 @@
 | Bölüm | Açıklama |
 |-------|----------|
 | [**Guidelines**](Guidelines/README.md) | 18 dokümanlık kod yazma rehberi (VBA temelleri, nesne modeli, makro kayıt, hata yakalama, örnek projeler, resmi kurallar) |
-| [**VBA API Referansı**](VBA_API_REFERENCE.md) | Çağrılabilir API listesi ve kısa açıklamalar (proje kökünde) |
+| [**VBA API Referansı**](VBA_API_REFERENCE.md) | Çağrılabilir API listesi (varsa); yoksa `Help/VBA_CALL_LIST.txt` ve `Help/text/` kullanın |
 | [**Help**](Help/) | Ham API listesi (`VBA_CALL_LIST.txt`), rapor (`API_REPORT.csv`) ve PDF’lerden çevrilmiş metin dosyaları (`text/`) |
 
 ---
@@ -27,19 +35,18 @@
 ```
 .
 ├── README.md                 ← Bu dosya (proje sayfası)
-├── VBA_API_REFERENCE.md      ← API referansı (varsa)
+├── VBA_API_REFERENCE.md      ← API referansı (isteğe bağlı; yoksa Help/ kullanın)
 ├── .gitignore
+├── LICENSE
 ├── Guidelines/               ← Kod yazma rehberi (18 doküman + checklist)
 │   ├── README.md             ← Rehber giriş ve doküman listesi
-│   ├── 01-Giris-Neden-3DExperience-VBA.md
-│   ├── ...
-│   ├── 18-Sik-Hatalar-ve-Dikkat-Edilecekler.md
+│   ├── 01-Giris-Neden-3DExperience-VBA.md … 18-Sik-Hatalar-ve-Dikkat-Edilecekler.md
 │   └── VBA-Kod-Checklist.md
-├── Help/                     ← Referans ve ham veri
-│   ├── VBA_CALL_LIST.txt
-│   ├── API_REPORT.csv
-│   └── text/                 ← PDF’lerden çevrilmiş metin dosyaları
-└── scripts/                  ← Yardımcı scriptler (varsa)
+└── Help/                     ← Referans ve ham veri
+    ├── VBA_CALL_LIST.txt      ← Çağrılabilir API listesi
+    ├── API_REPORT.csv
+    ├── *.pdf                  ← Resmi Help PDF’leri (Automation, Native Apps, Common Services vb.)
+    └── text/                  ← Aynı içeriğin metin (.txt) versiyonları
 ```
 
 ---

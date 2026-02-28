@@ -2,7 +2,7 @@
 
 ```
 ================================================================================
-  Ortam: 3DExperience, VBA editoru, makro guvenligi, ilk makroyu yazip calistirma
+  Ortam: 3DExperience, VBA editörü, makro güvenliği, ilk makroyu yazıp çalıştırma
 ================================================================================
 ```
 
@@ -170,8 +170,6 @@ Bunu modülünüzün en üstüne (Option Explicit’ten hemen sonra veya başlı
 - Makro dağıtımı için konum örneği: **%CATStartupPath%\Macros\** (veya kurulumunuzdaki makro kök dizini).
 - Dağıtım notunu kod başlığına veya ayrı bir “Dağıtım” bölümüne yazın: “Bu makro şu klasöre kopyalanacak: …”
 - Kullanıcıya **3 satırlık kullanım** yönergesi verin: Örn. “GSD aktifken çalıştır → Part güncel → ‘Done’ mesajı görünce işlem tamamlandı.”
-
-------------------------------------------------------------
 
 ------------------------------------------------------------
 

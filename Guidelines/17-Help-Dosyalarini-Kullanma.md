@@ -1,6 +1,6 @@
-# 17. Help Icerideki Dosyalari Ne Zaman ve Nasil Kullanacaksiniz?
+# 17. Help İçindeki Dosyaları Ne Zaman ve Nasıl Kullanacaksınız?
 
-Bu dokuman, proje kokundeki **Help** klasorundeki dosyalarin **ne ise yaradigini**, **hangi asamada** ve **nasil** kullanilacagini ozetler. Rehberdeki diger dokumanlar (01-18) sik sik "Help'e bakin", "VBA_API_REFERENCE.md ve Help/text/" der; burada hepsini tek yerde topluyoruz.
+Bu doküman, proje kökündeki **Help** klasöründeki dosyaların **ne işe yaradığını**, **hangi aşamada** ve **nasıl** kullanılacağını özetler. Rehberdeki diğer dokümanlar (01-18) sık sık "Help'e bakın", "VBA_API_REFERENCE.md ve Help/text/" der; burada hepsini tek yerde topluyoruz.
 
 ------------------------------------------------------------
 
@@ -55,7 +55,7 @@ Proje kökünde ayrıca **VBA_API_REFERENCE.md** vardır; Help ve VBA_CALL_LIST/
 - Proje kökündeki **VBA_API_REFERENCE.md** dosyası sınıf ve metodları listeler; her biri için kısa amaç ve örnek VBA çağrısı vardır.
 - **Ne zaman:** Belirli bir nesne veya metodun tam adını ve örnek kullanımı görmek istediğinizde. Help/text/ içinde detay aramak yerine önce buradan bakın; yetersizse Help metinlerinde arama yapın.
 
-### 3. Hangi asamada hangi dosya?
+### 3. Hangi aşamada hangi dosya?
 
 | Rehber adımı / Aşama | Açın / Kullanın |
 |----------------------|------------------|
