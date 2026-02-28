@@ -319,6 +319,27 @@ Kayıt sırasında sadece bir öğe seçildiyse kod `Item(1)` veya `Item(2)` gib
 
 ════════════════════════════════════════════════════════════════════════════════
 
+════════════════════════════════════════════════════════════════════════════════
+
+## Uygulamalı alıştırma – Yaparak öğren
+
+**Amaç:** Makro kaydı yapmak, üretilen kodu bulmak ve sadeleştirmek.  
+**Süre:** Yaklaşık 20 dakika. **Gereksinim:** 3DExperience açık, bir Part belgesi açık (en az bir parametre içersin).
+
+| Adım | Ne yapacaksınız | Kontrol |
+|------|------------------|--------|
+| **1** | 3DExperience’ta **Tools → Macro → Record** (veya eşdeğeri) ile kaydı başlatın. Makro adı verin (örn. `KayitParametreOku`). | Kayıt penceresi açıldı mı? |
+| **2** | Part Design’da **Parameters** (veya benzeri) ile bir parametreye tıklayıp değerini okuyun veya sadece parametre listesini açıp kapatın. Kaydı durdurun. | Tek, basit işlem kaydedildi mi? |
+| **3** | VBA editöründe yeni oluşan modülü bulun; **Project Explorer**’da çift tıklayıp açın. İlk satırlarda `GetObject`, `ActiveDocument`, `Part` veya `Parameters` geçen satırları bulun. | Kayıt kodu görünüyor mu? |
+| **4** | Modülün en üstüne `Option Explicit` ekleyin. Derleyin (Debug → Compile). Varsa tip uyarılarını giderin (örn. `Dim oPart As Object`). | Kod derleniyor mu? |
+| **5** | Uzun tek satırlı zincir varsa (örn. `...ActiveDocument.Part.Parameters.Item(1)`) bunu `oApp`, `oDoc`, `oPart`, `oParams` gibi değişkenlere bölün; her `Set` sonrası `If ... Is Nothing Then Exit Sub` ekleyin. | Nothing kontrolleri eklendi mi? |
+| **6** | Sabit `Item(1)` varsa ve siz “tüm parametreler” istiyorsanız `For i = 1 To oParams.Count` … `Item(i)` döngüsüne çevirmeyi deneyin (8. dokümanda örnek var). | Döngü eklendi mi? |
+| **7** | F5 ile makroyu çalıştırın (Part açıkken). Hata alırsanız hata satırına kesme noktası koyup F8 ile adım adım ilerleyin. | Kayıttan üretilen makro çalışıyor mu? |
+
+**Beklenen sonuç:** Kayıt kodu bulundu, Option Explicit ve tipler eklendi, zincir sadeleştirildi ve makro Part açıkken hatasız çalışıyor.
+
+════════════════════════════════════════════════════════════════════════════════
+
 ## Kontrol listesi
 
 - [ ] Makro kaydını başlatıp durdurabiliyorum  

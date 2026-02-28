@@ -1,26 +1,46 @@
 # Sorun Giderme (Troubleshooting)
 
-Makro yazarken sık karşılaşılan hata veya davranış senaryoları ve olası nedenler / adımlar. Detay için [Guidelines/18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](Guidelines/18-Sik-Hatalar-ve-Dikkat-Edilecekler.md) ve [Guidelines/09-Hata-Yakalama-ve-Debug.md](Guidelines/09-Hata-Yakalama-ve-Debug.md) kullanın.
+```
+┌──────────────────────────────────────────────────────────────────────────────┐
+│  Sık hatalar · Nothing · GetItem · Update · Makro listede görünmüyor         │
+└──────────────────────────────────────────────────────────────────────────────┘
+```
+
+Makro yazarken **sık karşılaşılan hata ve davranış senaryoları** ile olası nedenler ve adımlar. Detay için [Guidelines/18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](../Guidelines/18-Sik-Hatalar-ve-Dikkat-Edilecekler.md) ve [Guidelines/09-Hata-Yakalama-ve-Debug.md](../Guidelines/09-Hata-Yakalama-ve-Debug.md) kullanın.
+
+**İçindekiler:** [Makro çalışmıyor](#makro-hiç-çalışmıyor--sub-or-function-not-defined) · [Listede görünmüyor](#makro-listede-görünmüyor--çalıştıramıyorum) · [Nothing hatası](#object-variable-not-set--nothing-hatası) · [GetItem Part](#getitempart-part-bulamıyor--hata-veriyor) · [Update sonrası](#update-çağırdım-ama-ekranda-değişiklik-görünmüyor) · [Parametre bulunamadı](#parametre-bulunamadı--parametre-adı-yanlış) · [Dosya yazma](#dosyaya-yazarken-hata-permission-denied--path-not-found)
 
 ---
 
 ## Makro hiç çalışmıyor / “Sub or Function not defined”
 
+> **Hızlı kontrol:** Makro güvenliği açık mı? Kodu doğru modüle mi yapıştırdınız? Tüm değişkenler `Dim` ile tanımlı mı?
+
 | Olası neden | Ne yapmalı |
-|-------------|------------|
+| :--- | :--- |
 | Makro güvenlik ayarı | 3DExperience içinde makro çalıştırmaya izin verin (Tools → Options → makro güvenliği). |
 | Modül yanlış / kod yanlış yerde | Kodu doğru modüle yapıştırdığınızdan ve Sub adının tam yazıldığından emin olun. |
 | Option Explicit + tanımsız değişken | Tüm değişkenleri `Dim` ile tanımlayın; yazım hatası (typo) varsa düzeltin. |
 
 ---
 
-## “Object variable not set” / Nothing hatası
+## Makro listede görünmüyor / Çalıştıramıyorum
+
+| Olası neden | Ne yapmalı |
+|-------------|------------|
+| **Private Sub** kullanıldı | Makro listesinde sadece **Public** Sub'lar görünür. Çalıştırmak istediğiniz Sub'u `Public Sub` yapın veya başka bir Public Sub'dan çağırın. |
+| Yanlış modül seçili | Proje ağacında doğru modülü (içinde kodunuz olan) açtığınızdan emin olun. |
+| Sub adı değişti / yazım hatası | Run ile çalıştırırken listedeki Sub adının koddaki ile aynı olduğunu kontrol edin. |
+
+---
+
+## "Object variable not set" / Nothing hatası
 
 | Olası neden | Ne yapmalı |
 |-------------|------------|
 | 3DExperience kapalı | Önce 3DExperience’ı açın; sonra makroyu çalıştırın. |
 | Açık belge yok | `ActiveDocument` Nothing döner. Kullanıcıya “Önce bir belge açın” mesajı verin; `If oDoc Is Nothing Then Exit Sub` ekleyin. |
-| Aktif belge Part değil | Çizim veya montaj açıkken `GetItem("Part")` Nothing dönebilir. Part kontrolü yapın; örnek: [Examples/SadecePartKontrol.bas](Examples/SadecePartKontrol.bas). |
+| Aktif belge Part değil | Çizim veya montaj açıkken `GetItem("Part")` Nothing dönebilir. Part kontrolü yapın; örnek: [Examples/SadecePartKontrol.bas](../Examples/SadecePartKontrol.bas). |
 | Koleksiyon boş | `Parameters.Count = 0` veya `Shapes.Item(1)` boş koleksiyonda hata verir. `Count > 0` kontrolü ekleyin. |
 
 ---
@@ -65,6 +85,10 @@ Makro yazarken sık karşılaşılan hata veya davranış senaryoları ve olası
 
 ## Daha fazla yardım
 
-- **Hata yakalama ve debug:** [Guidelines/09-Hata-Yakalama-ve-Debug.md](Guidelines/09-Hata-Yakalama-ve-Debug.md)  
-- **Sık hatalar ve dikkat noktaları:** [Guidelines/18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](Guidelines/18-Sik-Hatalar-ve-Dikkat-Edilecekler.md)  
+- **Hata yakalama ve debug:** [Guidelines/09-Hata-Yakalama-ve-Debug.md](../Guidelines/09-Hata-Yakalama-ve-Debug.md)  
+- **Sık hatalar ve dikkat noktaları:** [Guidelines/18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](../Guidelines/18-Sik-Hatalar-ve-Dikkat-Edilecekler.md)  
 - **Kısa soru–cevap:** [FAQ.md](FAQ.md)
+
+---
+
+**İlgili:** [FAQ.md](FAQ.md) · [CHEATSHEET.md](CHEATSHEET.md) · [Guidelines/18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](../Guidelines/18-Sik-Hatalar-ve-Dikkat-Edilecekler.md)

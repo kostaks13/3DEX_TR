@@ -1,0 +1,11 @@
+{
+  "name": "3dexperience-macro-guide",
+  "private": true,
+  "description": "3DExperience VBA Macro rehberi – dokümantasyon",
+  "scripts": {
+    "check-links": "bash scripts/check-links.sh"
+  },
+  "devDependencies": {
+    "markdown-link-check": "^3.11.0"
+  }
+}

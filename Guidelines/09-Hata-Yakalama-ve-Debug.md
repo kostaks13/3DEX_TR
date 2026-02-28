@@ -417,6 +417,25 @@ End Sub
 
 ════════════════════════════════════════════════════════════════════════════════
 
+════════════════════════════════════════════════════════════════════════════════
+
+## Uygulamalı alıştırma – Yaparak öğren
+
+**Amaç:** On Error GoTo kullanmak, kesme noktası ve Immediate ile debug yapmak.  
+**Süre:** Yaklaşık 15 dakika.
+
+| Adım | Ne yapacaksınız | Kontrol |
+|------|------------------|--------|
+| **1** | Sub `HataYakalamaAlistirma`: En üste `On Error GoTo HataYakala`. `Dim oDoc As Object`, `Set oDoc = GetObject(, "CATIA.Application").ActiveDocument`. 3DExperience’ı **kapatıp** bu makroyu çalıştırın. Hata penceresi yerine kendi mesajınız çıkmalı: `HataYakala: MsgBox "Hata: " & Err.Number & " " & Err.Description`. | Kendi hata mesajınız görünüyor mu? |
+| **2** | Aynı Sub’ta `Exit Sub` ekleyin (HataYakala’dan hemen önce). 3DExperience’ı **açıp** belge açın; makroyu tekrar çalıştırın. Bu sefer hata olmadan çıkmalı; HataYakala bloğuna düşmemeli. | Exit Sub ile normal çıkış çalışıyor mu? |
+| **3** | Yeni Sub: `KesmeNoktasiAlistirma`. İçinde `Dim i As Long`, `For i = 1 To 5`: bir satırda `Debug.Print i`. For satırının solundaki boşluğa tıklayıp **kesme noktası** (kırmızı nokta) koyun. F5 ile çalıştırın; kod kesme noktasında durur. F8 ile tek tek ilerleyin; **Ctrl+G** ile Immediate’ı açıp `? i` yazın. | i değeri Immediate’da görünüyor mu? |
+| **4** | `On Error Resume Next` deneyin: `Dim oPart As Object`, `Set oPart = oDoc.GetItem("YanlisItem")`. Sonraki satırda `If Err.Number <> 0 Then MsgBox "Beklenen hata: " & Err.Number`. `On Error GoTo 0`. Part açıkken “YanlisItem” olmadığı için hata oluşur; mesajınızla yakalanmalı. | Resume Next + Err kontrolü çalışıyor mu? |
+| **5** | HataYakala bloğuna `[Konum]` ekleyin: Örn. her Nothing kontrolünde `MsgBox "[1] Uygulama yok"`, `[2] Belge yok` vb. Böylece hangi adımda hata olduğunu görürsünüz. | Konum etiketleri anlamlı mı? |
+
+**Beklenen sonuç:** Uygulama kapalıyken özel hata mesajı; açıkken normal çıkış; kesme noktası ve Immediate ile değişken inceleme; Resume Next ile kontrollü hata.
+
+════════════════════════════════════════════════════════════════════════════════
+
 ## Kontrol listesi
 
 - [ ] On Error GoTo etiket ile hata yakalayabiliyorum  

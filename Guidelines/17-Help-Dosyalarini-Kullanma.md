@@ -25,7 +25,7 @@ Help/
     3DEXPERIENCE Otomasyon Hiyerarşi Ağacı.txt
 ```
 
-Proje kökünde ayrıca **VBA_API_REFERENCE.md** vardır; Help ve VBA_CALL_LIST/API_REPORT'tan üretilmiş, okunaklı API referansıdır.
+Proje **docs** klasöründe **VBA_API_REFERENCE.md** vardır; Help ve VBA_CALL_LIST/API_REPORT'tan üretilmiş, okunaklı API referansıdır.
 
 ════════════════════════════════════════════════════════════════════════════════
 
@@ -83,8 +83,24 @@ Proje kökünde ayrıca **VBA_API_REFERENCE.md** vardır; Help ve VBA_CALL_LIST/
 
 ════════════════════════════════════════════════════════════════════════════════
 
+## Uygulamalı alıştırma – Yaparak öğren
+
+**Amaç:** Help klasöründe arama yapıp ilgili dosyayı bulmak.  
+**Süre:** Yaklaşık 10 dakika.
+
+| Adım | Ne yapacaksınız | Kontrol |
+|------|------------------|--------|
+| **1** | Proje kökündeki `Help/text/` klasörüne gidin. “Parameter” veya “Parameters” geçen dosyaları bulun (grep: `rg -l "Parameters" Help/text/` veya dosya içi arama). Hangi dosyada Parameters anlatılıyor not alın. | Dosya bulundu mu? |
+| **2** | `Help/VBA_CALL_LIST.txt` (varsa) veya `docs/VBA_API_REFERENCE.md` açın. “GetItem” veya “Update” araması yapın. İlgili satırı okuyun. | API imzası bulundu mu? |
+| **3** | Bu dokümandaki “Hangi dosyayı ne zaman kullanacaksınız?” tablosuna bakın. “Belirli bir sınıf/metod imzası” ihtiyacı için hangi dosya öneriliyor? O dosyayı açıp bir arama yapın. | Doğru kaynak seçildi mi? |
+| **4** | [Help/ARAMA_REHBERI.md](../Help/ARAMA_REHBERI.md) içindeki grep örneklerinden birini terminalde veya editörde çalıştırın. | Arama rehberi kullanıldı mı? |
+
+**Beklenen sonuç:** Help veya VBA_CALL_LIST’te en az bir arama yapıldı; ilgili dosya/satır bulundu.
+
+════════════════════════════════════════════════════════════════════════════════
+
 ## İlgili dokümanlar
 
-**Tüm rehber:** [README](README.md). **Resmi kurallar özeti:** [11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md). **Nesne modeli / erişim:** [06-3DExperience-Nesne-Modeli.md](06-3DExperience-Nesne-Modeli.md), [13-Erisim-ve-Kullanim-Rehberi.md](13-Erisim-ve-Kullanim-Rehberi.md). **Sık hatalar ve dikkat edilecekler:** [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md). **API listesi (proje kökü):** [VBA_API_REFERENCE.md](../VBA_API_REFERENCE.md).
+**Tüm rehber:** [README](README.md). **Resmi kurallar özeti:** [11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md). **Nesne modeli / erişim:** [06-3DExperience-Nesne-Modeli.md](06-3DExperience-Nesne-Modeli.md), [13-Erisim-ve-Kullanim-Rehberi.md](13-Erisim-ve-Kullanim-Rehberi.md). **Sık hatalar ve dikkat edilecekler:** [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md). **API listesi (docs):** [VBA_API_REFERENCE.md](../docs/VBA_API_REFERENCE.md).
 
 **Gezinme:** Önceki: [16-Iyilestirme](16-Iyilestirme-Onerileri.md) | [Rehber listesi](README.md) | Sonraki: [18-Sik-Hatalar](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md) →

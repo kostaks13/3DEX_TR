@@ -326,6 +326,23 @@ End Sub
 
 ════════════════════════════════════════════════════════════════════════════════
 
+## Uygulamalı alıştırma – Yaparak öğren
+
+**Amaç:** Excel’i başlatıp bir hücreye yazmak; (isteğe bağlı) Part parametresini Excel’e yazmak.  
+**Süre:** Yaklaşık 15 dakika. **Gereksinim:** Excel kurulu; isteğe bağlı: Part açık.
+
+| Adım | Ne yapacaksınız | Kontrol |
+|------|------------------|--------|
+| **1** | Yeni Sub: `ExcelAlistirma`. `Set oExcel = CreateObject("Excel.Application")`, `oExcel.Visible = True`. `Set oWb = oExcel.Workbooks.Add`, `Set oWs = oWb.Sheets(1)`. | Excel penceresi açıldı mı? |
+| **2** | `oWs.Range("A1").Value = "3DExperience VBA"`, `oWs.Cells(2, 1).Value = 42`. Çalıştırın. A1 ve A2’de metin ve sayı görünmeli. | Hücrelere yazıldı mı? |
+| **3** | Okuma deneyin: `Dim sVal As String`, `sVal = oWs.Range("A1").Value`, `MsgBox "A1: " & sVal`. | Okuma çalışıyor mu? |
+| **4** | (İsteğe bağlı) Part açıkken tek bir parametre değerini okuyup Excel’e yazın: oPart → Parameters.Item("Length.1") → Value; bu değeri oWs.Range("B1").Value’a yazın. | Part → Excel akışı çalışıyor mu? |
+| **5** | İş bitince `oWb.Close False`, `oExcel.Quit` ile Excel’i kapatın (veya kullanıcıya bırakın). | Excel düzgün kapatıldı mı? |
+
+**Beklenen sonuç:** Excel açıldı, hücreye yazıldı/okundu; isteğe bağlı Part → Excel.
+
+════════════════════════════════════════════════════════════════════════════════
+
 ## İlgili dokümanlar
 
 **Tüm rehber:** [README](README.md). İlgili: [13](13-Erisim-ve-Kullanim-Rehberi.md) (erişim), [15](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md) (dosya seç/kaydet diyaloğu), [10](10-Ornek-Proje-Bastan-Sona-Bir-Makro.md) (parametre → dosya örnekleri).

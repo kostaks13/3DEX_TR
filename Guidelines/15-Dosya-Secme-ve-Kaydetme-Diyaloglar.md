@@ -389,6 +389,21 @@ End Sub
 
 ════════════════════════════════════════════════════════════════════════════════
 
+## Uygulamalı alıştırma – Yaparak öğren
+
+**Amaç:** FileDialog veya InputBox ile dosya/klasör yolu almak.  
+**Süre:** Yaklaşık 10 dakika.
+
+| Adım | Ne yapacaksınız | Kontrol |
+|------|------------------|--------|
+| **1** | Dokümandaki “FileDialog ile dosya seçtirme” örneğini kopyalayıp yeni Sub’a yapıştırın. Filtreyi `"Metin (*.txt)|*.txt"` yapın. Çalıştırın; bir .txt seçin veya İptal’e basın. Seçilen yolu MsgBox ile gösterin. | Diyalog açılıyor, yol veya iptal alınıyor mu? |
+| **2** | “InputBox ile basit yol girişi” örneğini deneyin. Varsayılan `C:\Temp` verin. İptal (boş) kontrolü yapın; boşsa Exit Sub. | InputBox iptal kontrolü çalışıyor mu? |
+| **3** | (İsteğe bağlı) FileDialog ile **klasör** seçme örneğini çalıştırın. Seçilen klasör yolunu log veya mesajda kullanın. | Klasör seçimi çalışıyor mu? |
+
+**Beklenen sonuç:** Dosya veya klasör yolu alındı; iptal durumu kontrol edildi.
+
+════════════════════════════════════════════════════════════════════════════════
+
 ## İlgili dokümanlar
 
 **Tüm rehber:** [README](README.md). İlgili: [13](13-Erisim-ve-Kullanim-Rehberi.md) (erişim, FileSystem), [14](14-VBA-ve-Excel-Etkilesimi.md) (Excel, SaveAs).

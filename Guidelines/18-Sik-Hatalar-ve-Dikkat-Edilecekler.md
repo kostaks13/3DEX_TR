@@ -291,6 +291,22 @@ Const LOG_PATH As String = "C:\Temp\macro_log.txt"
 
 ════════════════════════════════════════════════════════════════════════════════
 
+## Uygulamalı alıştırma – Yaparak öğren
+
+**Amaç:** Sık hatalardan birini bilerek yapıp sonra düzeltmek.  
+**Süre:** Yaklaşık 10 dakika.
+
+| Adım | Ne yapacaksınız | Kontrol |
+|------|------------------|--------|
+| **1** | Kısa bir Sub yazın: GetObject ile oApp alın; **Nothing kontrolü yapmayın**. 3DExperience’ı **kapatıp** makroyu çalıştırın. “Object variable not set” veya benzeri hata görmelisiniz. | Hata alındı mı? |
+| **2** | Aynı Sub’a `If oApp Is Nothing Then MsgBox "Uygulama yok": Exit Sub` ekleyin. Tekrar 3DExperience kapalıyken çalıştırın. Bu sefer kendi mesajınız çıkmalı; makro çökmemeli. | Nothing kontrolü eklendi mi? |
+| **3** | Başka bir Sub’ta Option Explicit’i **kaldırın** (veya yorum satırı yapın). Bir yerde `dim x` (küçük d) yazın; sonra `x = 5` ve `MsgBox x`. Derleyin; VBA yeni değişken kabul edebilir. Sonra Option Explicit’i geri ekleyip aynı kodu derleyin; tip uyarısı almalısınız. | Option Explicit farkı görüldü mü? |
+| **4** | “Özet tablo: Hata / Dikkat noktası → Ne yapmalı?” (bölüm 3) tablosunu açın. Kendi makronuzda “Update döngü içinde mi?” sorusunu kontrol edin. Varsa döngü dışına alın. | Update tek sefer mi? |
+
+**Beklenen sonuç:** Nothing ve Option Explicit ile hata/çözüm deneyimlendi; özet tablo kullanıldı.
+
+════════════════════════════════════════════════════════════════════════════════
+
 ## İlgili dokümanlar
 
 **Hata yakalama ve debug:** [09-Hata-Yakalama-ve-Debug.md](09-Hata-Yakalama-ve-Debug.md). **Resmi kurallar ve kontrol listesi:** [11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md). **Detaylı checklist:** [VBA-Kod-Checklist.md](VBA-Kod-Checklist.md). **İyileştirme önerileri:** [16-Iyilestirme-Onerileri.md](16-Iyilestirme-Onerileri.md). **Help dosyalarını kullanma:** [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md). **Tüm rehber:** [README](README.md).

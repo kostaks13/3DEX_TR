@@ -8,7 +8,7 @@
 
 Kodlamaya **yeni başlayan** biri için, **3DExperience VBA** ile makro yazmayı adım adım anlatan **19 dokümanlık** rehber seti. **Proje sayfası (GitHub/GitLab):** repository kökündeki [README.md](../README.md). İçerik, proje kökündeki **Help** klasöründeki resmi dokümanlarla (**Help-Automation Development Guidelines**, **3DEXPERIENCE MACRO HAZIRLIK YÖNERGESİ**, **Help-Native Apps Automation** vb.) uyumlu ve genişletilmiştir.
 
-**Nasıl ilerlenir:** Aşağıdaki tablodan dokümanları **sırayla** (01 → 19) takip edin; belirli bir konu arıyorsanız doğrudan ilgili dokümana atlayabilirsiniz.
+> **Nasıl ilerlenir:** Aşağıdaki tablodan dokümanları **sırayla** (01 → 19) takip edin; belirli bir konu arıyorsanız doğrudan ilgili dokümana atlayabilirsiniz. **02–19** numaralı dokümanların her birinde **"Uygulamalı alıştırma – Yaparak öğren"** bölümü vardır.
 
 ════════════════════════════════════════════════════════════════════════════════
 
@@ -61,7 +61,7 @@ Yukarıdaki tablodan ilgili dokümanı açın veya aşağıdaki eşleşmeyi kull
 | İhtiyaç | Bağlantı |
 |---------|----------|
 | Teslim / kod incelemesi öncesi checklist | [VBA-Kod-Checklist.md](VBA-Kod-Checklist.md) (Option Explicit, Nothing, tek Update, başlık, On Error) |
-| API imzaları ve detay | Proje kökü: `VBA_API_REFERENCE.md` · `Help/VBA_CALL_LIST.txt` · `Help/text/` |
+| API imzaları ve detay | Proje kökü: `docs/VBA_API_REFERENCE.md` · `Help/VBA_CALL_LIST.txt` · `Help/text/` |
 | Çalıştırılabilir örnek makrolar | [Examples/](../Examples/README.md) (`.bas` dosyaları) |
 | Help dosyalarını ne zaman/nasıl kullanacağınız | [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md) |
 | Sık hatalar ve dikkat edilecekler | [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md) |
@@ -69,6 +69,9 @@ Yukarıdaki tablodan ilgili dokümanı açın veya aşağıdaki eşleşmeyi kull
 
 ---
 
+**Gezinme:** [Ana sayfa](../README.md) · [Docs](../docs/README.md) · [Örnek makrolar](../Examples/README.md)
+
+---
 
 Tüm dokümanlar **3DExperience VBA** özelinde yazılmıştır; örnekler ve terimler bu platforma göredir. Help klasöründeki PDF’ler (Automation Development Guidelines, 3DEXPERIENCE MACRO HAZIRLIK YÖNERGESİ, Native Apps Automation vb.) tam ve güncel referanstır.
 
@@ -156,4 +159,4 @@ Toplamda **150’den fazla** ayrı örnek veya kod blokları rehberde yer alır;
 - **Başlık örnekleri:** Language, Release, Purpose, Assumptions, Copyright.  
 - **Kullanım yönergeleri:** 3 satırlık talimat, dağıtım notu, sonraki adım önerileri.
 
-Tüm bu içerikler 3DExperience VBA bağlamında yazılmıştır; API isimleri sürüme göre **VBA_API_REFERENCE.md** ve **Help/text/** ile doğrulanmalıdır.
+Tüm bu içerikler 3DExperience VBA bağlamında yazılmıştır; API isimleri sürüme göre **docs/VBA_API_REFERENCE.md** ve **Help/text/** ile doğrulanmalıdır.

@@ -320,6 +320,25 @@ End Sub
 
 ════════════════════════════════════════════════════════════════════════════════
 
+════════════════════════════════════════════════════════════════════════════════
+
+## Uygulamalı alıştırma – Yaparak öğren
+
+**Amaç:** Değişken tanımlama, önek kullanımı ve `Set` ile nesne atamayı uygulamak.  
+**Süre:** Yaklaşık 10 dakika.
+
+| Adım | Ne yapacaksınız | Kontrol |
+|------|------------------|--------|
+| **1** | Yeni bir modül açın (veya mevcut modülde yeni Sub). Aşağıdaki kodu **satır satır** yazın (kopyala-yapıştır yapmayın); her satırda değişken adı ve tipi düşünün. | |
+| **2** | `Option Explicit` yazın. `Sub DegiskenAlistirmasi()` yazın. İçinde `Dim sParcaAdi As String`, `Dim dUzunluk As Double`, `Dim iAdet As Long` tanımlayın. | Önekler s, d, i kullanıldı mı? |
+| **3** | `sParcaAdi = "Deneme_01"`, `dUzunluk = 100.5`, `iAdet = 5` atayın. Sonra `MsgBox "Parca: " & sParcaAdi & ", Uzunluk: " & dUzunluk & ", Adet: " & iAdet` yazın. F5 ile çalıştırın. | Mesajda üç değer görünüyor mu? |
+| **4** | Aynı Sub’ta `Dim oTest As Object` ekleyin. Sonra `Set oTest = Nothing` yazın (şimdilik nesne yok). `If oTest Is Nothing Then MsgBox "Nesne yok"` ekleyip tekrar F5 ile çalıştırın. | “Nesne yok” mesajı çıkıyor mu? |
+| **5** | Modülün en üstüne `Const MAX_ADIM As Long = 10` ekleyin. Sub içinde `MsgBox "Maksimum adim: " & MAX_ADIM` ile gösterin. | Sabit değer doğru mu? |
+
+**Beklenen sonuç:** Mesajda parça adı, uzunluk ve adet; ardından “Nesne yok”; son olarak “Maksimum adim: 10” görünmeli.
+
+════════════════════════════════════════════════════════════════════════════════
+
 ## Kontrol listesi
 
 - [ ] `Dim degiskenAdi As Tip` ile değişken tanımlayabiliyorum  

@@ -1,5 +1,11 @@
 # 4. VBA Temelleri – Koşullar ve Döngüler
 
+```
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  If / Select Case  |  For / For Each / Do  |  Nothing kontrolü  |  Döngü örnekleri ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+```
+
 **Bu dokümanda:** If, Select Case; For, For Each, Do; Nothing kontrolü; 3DExperience'a uyarlanmış döngü örnekleri.
 
 Programda “eğer şu olursa bunu yap” ve “bir işi N kez tekrarla” demek için **koşul** ve **döngü** yapılarını kullanırız. 3DExperience makrolarında sık karşılaşacaksınız.
@@ -420,6 +426,25 @@ End Sub
 - **MsgBox** yerine hata durumunda **Err.Raise** kullanırsanız, test framework’ü hatayı “hata” olarak tanır. Örnek: `If iShape > cShapes.Count Then Err.Raise 9999, "MyMacro", "Shape numarası çok büyük"`.
 
 Bu sayede makrolarınız hem elle hem otomatik test suite’lerde daha tutarlı çalışır.
+
+════════════════════════════════════════════════════════════════════════════════
+
+════════════════════════════════════════════════════════════════════════════════
+
+## Uygulamalı alıştırma – Yaparak öğren
+
+**Amaç:** If, For ve Do döngülerini tek bir makroda uygulamak.  
+**Süre:** Yaklaşık 15 dakika.
+
+| Adım | Ne yapacaksınız | Kontrol |
+|------|------------------|--------|
+| **1** | Yeni Sub: `KosulVeDonguAlistirmasi`. İçinde `Dim iSecim As Long`: `iSecim = 2` atayın. `If iSecim = 1 Then MsgBox "Parça" ElseIf iSecim = 2 Then MsgBox "Montaj" Else MsgBox "Diger" End If` yazın. F5 ile çalıştırın. | “Montaj” mesajı çıkıyor mu? |
+| **2** | Aynı Sub’ta `Select Case iSecim` bloğu ekleyin: Case 1 → “Parça”, Case 2 → “Montaj”, Case Else → “Bilinmiyor”. Önce If’i yorum satırı yapın (`'`), sadece Select Case kalsın. Çalıştırın. | Select Case doğru dalı gösteriyor mu? |
+| **3** | Yeni bir Sub: `ForDonguAlistirmasi`. `Dim i As Long` ve `For i = 1 To 3` … `MsgBox "Adim " & i` … `Next i` yazın. F5 ile çalıştırın; 3 mesaj (Adim 1, 2, 3) göreceksiniz. | Üç mesaj sırayla geldi mi? |
+| **4** | Aynı modülde `DoDonguAlistirmasi`: `Dim sayac As Long: sayac = 0`. `Do While sayac < 2`: içinde `sayac = sayac + 1`, `MsgBox "Sayac: " & sayac`, `Loop`. Çalıştırın. | İki mesaj (Sayac: 1, Sayac: 2) görünüyor mu? |
+| **5** | 3DExperience’ta bir Part belgesi açın. `KosulVeDonguAlistirmasi` içinde `iSecim = 2` yerine `iSecim = 1` yapıp “Parça” mesajını görün. | Koşul değişince mesaj değişiyor mu? |
+
+**Beklenen sonuç:** If/Select Case ile seçime göre mesaj; For ile 3 adım; Do While ile 2 sayac mesajı.
 
 ════════════════════════════════════════════════════════════════════════════════
 

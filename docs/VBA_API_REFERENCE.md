@@ -14,11 +14,11 @@ Bu sayfa **3DExperience VBA** makro geliştirirken kullanılan API’lere yönle
 
 | Kaynak | Açıklama |
 |--------|----------|
-| [**Help/VBA_CALL_LIST.txt**](Help/VBA_CALL_LIST.txt) | Çağrılabilir API listesi (method imzaları, VBA karşılıkları) |
-| [**Help/SIK_KULLANILAN_API.txt**](Help/SIK_KULLANILAN_API.txt) | Sık kullanılan API özet listesi |
-| [**Help/API_REPORT.csv**](Help/API_REPORT.csv) | API raporu (ek kaynak) |
-| [**Help/text/**](Help/text/) | Resmi Help dokümanlarından üretilmiş metin dosyaları |
-| [**Help/ARAMA_REHBERI.md**](Help/ARAMA_REHBERI.md) | Help ve VBA_CALL_LIST içinde grep/arama örnekleri |
+| [**Help/VBA_CALL_LIST.txt**](../Help/VBA_CALL_LIST.txt) | Çağrılabilir API listesi (method imzaları, VBA karşılıkları) |
+| [**Help/SIK_KULLANILAN_API.txt**](../Help/SIK_KULLANILAN_API.txt) | Sık kullanılan API özet listesi |
+| [**Help/API_REPORT.csv**](../Help/API_REPORT.csv) | API raporu (ek kaynak) |
+| [**Help/text/**](../Help/text/) | Resmi Help dokümanlarından üretilmiş metin dosyaları |
+| [**Help/ARAMA_REHBERI.md**](../Help/ARAMA_REHBERI.md) | Help ve VBA_CALL_LIST içinde grep/arama örnekleri |
 
 ---
 
@@ -49,7 +49,7 @@ Bu sayfa **3DExperience VBA** makro geliştirirken kullanılan API’lere yönle
 | Shapes döngüsü | `For i = 1 To oPart.Shapes.Count` … `Set oSh = oPart.Shapes.Item(i)` |
 | Editor servis | `Set oEditor = oApp.ActiveEditor` → `Set oSvc = oEditor.GetService("InertiaService")` |
 
-Tam imzalar ve sürüme özel API adları için **Help/VBA_CALL_LIST.txt** ve **Help/text/** içinde arama yapın; [Help/ARAMA_REHBERI.md](Help/ARAMA_REHBERI.md) ile grep örneklerini kullanabilirsiniz.
+Tam imzalar ve sürüme özel API adları için **Help/VBA_CALL_LIST.txt** ve **Help/text/** içinde arama yapın; [Help/ARAMA_REHBERI.md](../Help/ARAMA_REHBERI.md) ile grep örneklerini kullanabilirsiniz.
 
 ---
 
@@ -124,10 +124,12 @@ Aşağıdaki tabloda günlük makro yazarken en çok ihtiyaç duyacağınız API
 
 ## Rehberle ilişki
 
-- **Nesne modeli ve erişim:** [Guidelines/06-3DExperience-Nesne-Modeli.md](Guidelines/06-3DExperience-Nesne-Modeli.md), [Guidelines/13-Erisim-ve-Kullanim-Rehberi.md](Guidelines/13-Erisim-ve-Kullanim-Rehberi.md)
-- **Sık kullanılan API örnekleri:** [Guidelines/08-Sik-Kullanilan-APIler.md](Guidelines/08-Sik-Kullanilan-APIler.md)
-- **Help dosyalarını ne zaman/nasıl kullanacağınız:** [Guidelines/17-Help-Dosyalarini-Kullanma.md](Guidelines/17-Help-Dosyalarini-Kullanma.md)
+- **Nesne modeli ve erişim:** [Guidelines/06-3DExperience-Nesne-Modeli.md](../Guidelines/06-3DExperience-Nesne-Modeli.md), [Guidelines/13-Erisim-ve-Kullanim-Rehberi.md](../Guidelines/13-Erisim-ve-Kullanim-Rehberi.md)
+- **Sık kullanılan API örnekleri:** [Guidelines/08-Sik-Kullanilan-APIler.md](../Guidelines/08-Sik-Kullanilan-APIler.md)
+- **Help dosyalarını ne zaman/nasıl kullanacağınız:** [Guidelines/17-Help-Dosyalarini-Kullanma.md](../Guidelines/17-Help-Dosyalarini-Kullanma.md)
 
 ---
+
+**Gezinme:** [Docs](README.md) · [Rehber](../Guidelines/README.md) · [Örnek makrolar](../Examples/README.md) · [Arama rehberi](../Help/ARAMA_REHBERI.md)
 
 *API isimleri 3DExperience sürümüne göre değişir; güncel referans için Help klasöründeki dosyaları kullanın.*

@@ -1,0 +1,11 @@
+{
+  "replacementPatterns": [],
+  "ignorePatterns": [
+    { "pattern": "^#" },
+    { "pattern": "^mailto:" },
+    { "pattern": "^https?://" }
+  ],
+  "timeout": "5s",
+  "retryOn429": true,
+  "aliveStatusCodes": [200, 206, 403, 999]
+}

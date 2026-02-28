@@ -101,6 +101,21 @@ Kodunuzu teslim etmeden veya paylaşmadan önce aşağıdakilerden ihtiyacınız
 
 ════════════════════════════════════════════════════════════════════════════════
 
+## Uygulamalı alıştırma – Yaparak öğren
+
+**Amaç:** Mevcut bir makroda iyileştirme kontrol listesini uygulamak.  
+**Süre:** Yaklaşık 10 dakika.
+
+| Adım | Ne yapacaksınız | Kontrol |
+|------|------------------|--------|
+| **1** | Yazdığınız bir makroyu açın. Bu dokümandaki “Özet kontrol listesi”ni (bölüm 8) açın. Kalite, performans, bakım maddelerinden en az 3’ünü makronuzda kontrol edin (Const kullanımı, yorum, tek Update vb.). | Eksikler listelendi mi? |
+| **2** | Uzun tek Sub varsa (50+ satır) bir yardımcı Sub veya Function’a taşıyabileceğiniz blok belirleyin (örn. “Part al” veya “log yaz”). Taşımayı yapın veya not alın. | Modülerleştirme adımı atıldı mı? |
+| **3** | Kullanıcı deneyimi: Uzun süren işlemde (10+ saniye) başta “X öğe işlenecek” mesajı ekleyin veya mevcut mesajları somutlaştırın (örn. “12 parametre güncellendi”). | Mesajlar somut mu? |
+
+**Beklenen sonuç:** En az bir iyileştirme uygulandı veya planlandı.
+
+════════════════════════════════════════════════════════════════════════════════
+
 ## İlgili dokümanlar
 
 **Tüm rehber:** [README](README.md). İlgili: [11](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) (zorunlu kurallar, TAMAM/HAZIR), [09](09-Hata-Yakalama-ve-Debug.md) (On Error, log), [10](10-Ornek-Proje-Bastan-Sona-Bir-Makro.md) (rollback, kod kalıpları).

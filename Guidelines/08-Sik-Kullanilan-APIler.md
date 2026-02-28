@@ -608,6 +608,25 @@ End Sub
 
 ════════════════════════════════════════════════════════════════════════════════
 
+════════════════════════════════════════════════════════════════════════════════
+
+## Uygulamalı alıştırma – Yaparak öğren
+
+**Amaç:** Part’tan parametre okumak, tek parametre yazmak ve Shapes sayısını göstermek.  
+**Süre:** Yaklaşık 20 dakika. **Gereksinim:** 3DExperience açık, en az bir parametre içeren Part belgesi açık.
+
+| Adım | Ne yapacaksınız | Kontrol |
+|------|------------------|--------|
+| **1** | Yeni Sub: `ParametreOkuAlistirma`. GetObject → ActiveDocument → GetItem("Part") zinciri ile oPart alın; Nothing kontrolleri ekleyin. `Set oParams = oPart.Parameters`. `If oParams Is Nothing Or oParams.Count = 0 Then MsgBox "Parametre yok": Exit Sub`. | Part ve Parameters alındı mı? |
+| **2** | Parametre adını bilmiyorsanız: `For i = 1 To oParams.Count` döngüsünde `Set oParam = oParams.Item(i)`, `Debug.Print oParam.Name & " = " & oParam.Value`. F5 çalıştırıp **Ctrl+G** (Immediate) ile çıktıyı görün. İlk parametre adını (örn. Length.1) not alın. | Parametre adları listelendi mi? |
+| **3** | Bir parametre değerini mesajla gösterin: `Set oParam = oParams.Item("Length.1")` (veya not aldığınız ad). `If oParam Is Nothing Then MsgBox "Parametre yok": Exit Sub`. `MsgBox oParam.Name & " = " & oParam.Value`. | Tek parametre değeri görünüyor mu? |
+| **4** | Yeni Sub: `ParametreYazAlistirma`. oPart alın. `Set oParam = oParams.Item("Length.1")`. Eski değeri bir değişkende saklayın: `dEski = oParam.Value`. `oParam.Value = dEski + 10` (veya sabit bir değer). **Döngü dışında** `oPart.Update` çağırın. MsgBox ile “Güncellendi” deyin. Çalıştırın; modelde değişiklik görmelisiniz. | Update tek sefer, döngü dışında mı? |
+| **5** | Yeni Sub: `ShapesSayisiAlistirma`. oPart alın. `Set oShapes = oPart.Shapes` (veya MainBody.Shapes; sürüme göre). `If oShapes Is Nothing Then MsgBox "Shapes yok": Exit Sub`. `MsgBox "Shapes sayisi: " & oShapes.Count`. Çalıştırın. | Shapes sayısı doğru mu? |
+
+**Beklenen sonuç:** Parametre listesi Immediate’da; tek parametre değeri mesajda; bir parametre güncellenip Update ile uygulandı; Shapes sayısı mesajda.
+
+════════════════════════════════════════════════════════════════════════════════
+
 ## Kontrol listesi
 
 - [ ] Part, Shapes, Parameters erişimini biliyorum  

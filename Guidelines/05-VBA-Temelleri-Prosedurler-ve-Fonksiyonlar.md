@@ -342,6 +342,27 @@ End Function
 
 ════════════════════════════════════════════════════════════════════════════════
 
+════════════════════════════════════════════════════════════════════════════════
+
+## Uygulamalı alıştırma – Yaparak öğren
+
+**Amaç:** Sub/Function tanımlamak, parametre geçmek ve Optional kullanmak.  
+**Süre:** Yaklaşık 15 dakika.
+
+| Adım | Ne yapacaksınız | Kontrol |
+|------|------------------|--------|
+| **1** | `Sub AnaSub()` yazın. İçinde `MsgBox "Basladi"`, sonra `YardimciSub` (çağrı), sonra `MsgBox "Bitti"`. Ayrıca `Sub YardimciSub()` ve içinde `MsgBox "Yardimci calisti"` yazın. F5 ile `AnaSub` çalıştırın. | Üç mesaj sırayla (Basladi, Yardimci calisti, Bitti) görünüyor mu? |
+| **2** | `Function Topla(a As Long, b As Long) As Long` yazın: içinde `Topla = a + b`. Başka bir Sub’ta `MsgBox "3+5 = " & Topla(3, 5)` yazıp çalıştırın. | “3+5 = 8” çıkıyor mu? |
+| **3** | `Sub MesajGoster(ByVal sMetin As String)` yazın; içinde `MsgBox sMetin`. Ana Sub’tan `MesajGoster "Parametre gectim"` çağırın. | Parametre mesaj kutusunda görünüyor mu? |
+| **4** | `Sub DosyaAdi(Optional ByVal sAd As String = "Varsayilan.catpart")` yazın; içinde `MsgBox "Dosya: " & sAd`. Önce `DosyaAdi` (parametresiz), sonra `DosyaAdi "Ozel.catpart"` çağırın. | Önce “Varsayilan.catpart”, sonra “Ozel.catpart” görünüyor mu? |
+| **5** | `YardimciSub`’u `Private Sub YardimciSub()` yapın. Makro listesinde sadece `AnaSub` görünmeli; çalıştırınca yine “Yardimci calisti” mesajı gelmeli. | Private Sub makro listesinde görünmüyor mu? |
+
+**Beklenen sonuç:** Sub çağrısı, Function dönüş değeri, parametreli Sub, Optional varsayılan ve Private görünürlük uygulanmış olmalı.
+
+════════════════════════════════════════════════════════════════════════════════
+
+## Kontrol listesi
+
 - [ ] Sub tanımlayıp başka Sub’dan çağırabiliyorum  
 - [ ] Function yazıp dönüş değerini kullanabiliyorum  
 - [ ] Parametreli Sub/Function yazabiliyorum  

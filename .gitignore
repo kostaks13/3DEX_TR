@@ -26,6 +26,9 @@ venv/
 *.tmp
 ~$*
 
+# Node (link kontrolü için npm install)
+node_modules/
+
 # Build / Output
 dist/
 build/

@@ -140,9 +140,27 @@ Rehber özeti ve tüm doküman listesi için [README](README.md).
 
 ════════════════════════════════════════════════════════════════════════════════
 
+## Uygulamalı alıştırma – Sırayla yapın
+
+**Amaç:** Bu dokümandaki örnekleri sırayla kopyalayıp çalıştırarak baştan sona makro yazma pratiği.  
+**Süre:** Her örnek 5–15 dakika. **Gereksinim:** 3DExperience açık, Part belgesi açık.
+
+| Sıra | Yapacağınız | Dokümandaki bölüm | Beklenen sonuç |
+|------|-------------|-------------------|----------------|
+| **1** | “Tam örnek makro (iskelet)” kodu (AktifParcaBilgisi) kopyalayıp yeni modüle yapıştırın. F5 ile çalıştırın. | Yukarıda *Tam örnek makro* | Belge adı, tam yol, Shapes sayısı mesajda |
+| **2** | “İkinci örnek: Parametre oku ve mesajla göster” (ParametreOkuVeGoster) kodunu ekleyin. Çalıştırıp parametre adı girin (örn. Length.1). | *İkinci örnek* | Parametre değeri mesajda |
+| **3** | “Üçüncü örnek: Parametre yaz” (ParametreYaz) kodunu ekleyin. Parametre adı ve yeni değer girin. | *Üçüncü örnek* | Modelde değer değişir, “güncellendi” mesajı |
+| **4** | GetActivePart + AnaParametreListesi örneğini ekleyin. AnaParametreListesi’ni çalıştırın. | *Modüler yapı / GetActivePart* | Tüm parametreler mesajda listelenir |
+| **5** | Parametre listesini dosyaya yazan örneği ekleyin; `C:\Temp` varsa çalıştırın. | *Parametre listesini dosyaya yaz* | Dosyada Parametre;Değer satırları |
+| **6** | VBA-Kod-Checklist’i açın; yazdığınız makroları madde madde kontrol edin (Option Explicit, Nothing, tek Update, başlık). | [VBA-Kod-Checklist.md](VBA-Kod-Checklist.md) | Eksikleri tamamlayın |
+
+**Beklenen sonuç:** En az 4–5 farklı makro çalıştırıldı; checklist ile zorunlu maddeler karşılandı.
+
+════════════════════════════════════════════════════════════════════════════════
+
 ## Sonraki adımlar
 
-- Projedeki **VBA_API_REFERENCE.md** dosyasında ihtiyacınız olan sınıf ve metodu bulun.  
+- Proje **docs/VBA_API_REFERENCE.md** dosyasında ihtiyacınız olan sınıf ve metodu bulun.  
 - **Help/text/** altındaki metinlerde ilgili bölümleri okuyun (hangi dosyayı ne zaman açacağınız için **17. doküman:** [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md)).  
 - Küçük bir görev seçip (ör. “bir parametreyi okuyup mesajla göster”) makroyu yazın, çalıştırın; gerekirse 9. dokümandaki debug yöntemleriyle hatayı bulun.  
 - **Erişim/kullanım** için [13-Erisim-ve-Kullanim-Rehberi.md](13-Erisim-ve-Kullanim-Rehberi.md); **Excel** için [14-VBA-ve-Excel-Etkilesimi.md](14-VBA-ve-Excel-Etkilesimi.md); **dosya seç/kaydet diyaloğu** için [15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md); **iyileştirme önerileri** için [16-Iyilestirme-Onerileri.md](16-Iyilestirme-Onerileri.md); **sık hatalar ve dikkat edilecekler** için [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md) kullanın.

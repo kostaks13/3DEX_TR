@@ -9,7 +9,11 @@
 
 Bu rehber, kodlamaya yeni başlayan biri için **3DExperience platformunda VBA ile makro yazmayı** adım adım anlatır. İlk dokümanda ne yapacağımızı ve neden VBA kullandığımızı netleştiriyoruz.
 
+> **Bu bölümde:** Rehberin hedefi; VBA nedir; 3DExperience'ta neler yapılır; senaryo örnekleri; rehber yapısı.
+
 **Bu dokümanda:** Rehberin hedefi; VBA nedir; 3DExperience’ta neler yapılır; senaryo örnekleri; rehber yapısı.
+
+> **İlk adım:** Bu dokümanı okuduktan sonra **2. dokümana** ([02-Ortam-Kurulumu.md](02-Ortam-Kurulumu.md)) geçin; oradaki “Uygulamalı alıştırma” ile ilk makroyu yazıp F5 ile çalıştırın.
 
 ════════════════════════════════════════════════════════════════════════════════
 
@@ -216,7 +220,7 @@ Bu liste sizin ilk makro fikrinizi netleştirmenize yardımcı olur; 6. ve 8. do
 
 ## Örnek: Önce kayıt, sonra kod – Önerilen yol
 
-Yeni bir işlemde hangi API’nin kullanıldığını bilmiyorsanız: (1) Makro kaydını başlatın. (2) İşlemi 3DExperience’ta elle bir kez yapın. (3) Kaydı durdurun. (4) Oluşan kodu inceleyin; Application, Document, Part, Parameters, Shapes vb. nesne ve metod isimlerini not alın. (5) Bu isimleri **VBA_API_REFERENCE.md** veya Help metinlerinde arayarak tam imzaları ve alternatiflerini görün. (6) Kodu sadeleştirip Nothing kontrolleri ve Option Explicit ekleyin. Bu yol, 7. dokümanda detaylı anlatılır.
+Yeni bir işlemde hangi API’nin kullanıldığını bilmiyorsanız: (1) Makro kaydını başlatın. (2) İşlemi 3DExperience’ta elle bir kez yapın. (3) Kaydı durdurun. (4) Oluşan kodu inceleyin; Application, Document, Part, Parameters, Shapes vb. nesne ve metod isimlerini not alın. (5) Bu isimleri **docs/VBA_API_REFERENCE.md** veya Help metinlerinde arayarak tam imzaları ve alternatiflerini görün. (6) Kodu sadeleştirip Nothing kontrolleri ve Option Explicit ekleyin. Bu yol, 7. dokümanda detaylı anlatılır.
 
 ════════════════════════════════════════════════════════════════════════════════
 
@@ -236,6 +240,24 @@ Bu rehber **VBA** odaklıdır çünkü: (1) 3DExperience ile birlikte gelir, ek 
 - **10 → 11:** Örnek projeden resmi kurallar ve hazırlık fazlarına.
 
 Bu sıra takip edildiğinde adım adım 3DExperience VBA ile makro yazma becerisi oluşur.
+
+════════════════════════════════════════════════════════════════════════════════
+
+## Uygulamalı alıştırma – Yaparak öğren
+
+**Amaç:** Giriş dokümanını tamamladıktan sonra bir sonraki adıma geçip ilk makroyu yazmak ve çalıştırmak.  
+**Süre:** Yaklaşık 15 dakika (2. dokümandaki alıştırma ile birlikte).  
+**Gereksinim:** Bu dokümanı okumuş olmak; 3DExperience kurulu olmalı (veya kurulum adımlarını 2. dokümanda yapacaksınız).
+
+| Adım | Ne yapacaksınız | Kontrol |
+|------|------------------|--------|
+| **1** | Bu dokümanı (1. Giriş) sonuna kadar okuyun. | Rehberin hedefini ve VBA’nın nerede kullanıldığını anladınız mı? |
+| **2** | **2. dokümana** geçin: [02-Ortam-Kurulumu.md](02-Ortam-Kurulumu.md). | 02-Ortam-Kurulumu sayfasını açtınız mı? |
+| **3** | 02. dokümanda **“Uygulamalı alıştırma – Yaparak öğren”** bölümünü bulun. | Başlığı gördünüz mü? |
+| **4** | Oradaki adımları sırayla uygulayın: 3DExperience açın, VBA editörünü açın (Alt+F11), yeni modül ekleyin, `MsgBox "Merhaba, 3DExperience VBA!"` içeren ilk makroyu yazın. | Kod modüle yapıştırıldı / yazıldı mı? |
+| **5** | **F5** ile makroyu çalıştırın. | Mesaj kutusunda “Merhaba, 3DExperience VBA!” görünüyor mu? |
+
+**Beklenen sonuç:** 2. dokümandaki alıştırmayı tamamladığınızda ekranda bir mesaj kutusu görünmeli; böylece “ilk makroyu yazıp çalıştırma” hedefine ulaşmış olursunuz. İsterseniz 02’deki F8 (Step Into) adımını da deneyerek satır satır çalışmayı gözlemleyin.
 
 ════════════════════════════════════════════════════════════════════════════════
 

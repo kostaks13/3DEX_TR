@@ -6,7 +6,9 @@
 ╚══════════════════════════════════════════════════════════════════════════════╝
 ```
 
-Bu doküman, **Help/text/** ve **VBA_CALL_LIST.txt** içinde arama yaparken kullanabileceğiniz **grep** (veya **ripgrep `rg`**) örneklerini listeler. Terminalde proje kökünden veya Help klasöründen çalıştırın.
+Bu doküman, **Help/text/** ve **VBA_CALL_LIST.txt** içinde arama yaparken kullanabileceğiniz **grep** (veya **ripgrep `rg`**) örneklerini listeler. Terminalde **proje kökünden** veya **Help** klasöründen çalıştırın.
+
+> **İpucu:** Önce hangi dosyada arayacağınızı bilmiyorsanız aşağıdaki *"Belirli bir konuyu hangi dosyada bulacağınız"* tablosunu kullanın.
 
 ---
 
@@ -104,4 +106,4 @@ VS Code, Cursor veya Notepad++ kullanıyorsanız:
 
 - **Help dosyalarını ne zaman kullanacağınız:** [Guidelines/17-Help-Dosyalarini-Kullanma.md](Guidelines/17-Help-Dosyalarini-Kullanma.md)
 - **Sık kullanılan API özeti:** [SIK_KULLANILAN_API.txt](SIK_KULLANILAN_API.txt)
-- **API referansı (proje kökü):** [VBA_API_REFERENCE.md](../VBA_API_REFERENCE.md)
+- **API referansı (proje kökü):** [VBA_API_REFERENCE.md](../docs/VBA_API_REFERENCE.md)

@@ -597,6 +597,22 @@ End Sub
 
 ════════════════════════════════════════════════════════════════════════════════
 
+## Uygulamalı alıştırma – Yaparak öğren
+
+**Amaç:** FileSystem ile klasör/dosya kontrolü ve (isteğe bağlı) Editor-level servis denemesi.  
+**Süre:** Yaklaşık 15 dakika.
+
+| Adım | Ne yapacaksınız | Kontrol |
+|------|------------------|--------|
+| **1** | Yeni Sub: `FileSystemAlistirma`. GetObject → oApp. `Set oFS = oApp.FileSystem`. Nothing kontrolü. Varsa `oFS.Exists("C:\Temp")` veya `oFS.GetFolder("C:\Temp")` ile klasör var mı kontrol edin; sonucu MsgBox ile gösterin. | FileSystem alındı mı? |
+| **2** | Help veya docs/VBA_API_REFERENCE.md içinde **FileSystem** metodlarını arayın (Exists, GetFile, GetFolder, CreateFolder vb.). En az bir metod imzasını not alın. | API referansı kullanıldı mı? |
+| **3** | (İsteğe bağlı) Part açıkken `Set oEditor = oApp.ActiveEditor`, `Set oSvc = oEditor.GetService("InertiaService")` (veya sürümünüzde geçerli servis adı) deneyin. Nothing kontrolü yapın; servis alındıysa MsgBox "Servis alindi". | Editor-level servis denendi mi? |
+| **4** | GetSessionService’i **Editor işi bittikten sonra** çağırmak gerektiğini hatırlayın: Önce Part/Product işlerinizi yapın, en sonda Session servisi kullanın. Mevcut bir makronuzda sırayı kontrol edin. | Servis sırası doğru mu? |
+
+**Beklenen sonuç:** FileSystem ile en az bir kontrol; isteğe bağlı GetService denemesi.
+
+════════════════════════════════════════════════════════════════════════════════
+
 ## Sonraki adım
 
 **Tüm rehber:** [README](README.md). İlgili: [13](13-Erisim-ve-Kullanim-Rehberi.md) (erişim tabloları), [14](14-VBA-ve-Excel-Etkilesimi.md) (Excel), [15](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md) (dosya diyalogları). Servis adları ve metod imzaları: **VBA_API_REFERENCE.md** ve **Help/text/**.

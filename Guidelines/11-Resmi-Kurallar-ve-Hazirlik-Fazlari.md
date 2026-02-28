@@ -835,4 +835,23 @@ Bu doküman, yukarıdaki kaynaklardan özetlenmiştir; tam ve güncel kurallar i
 
 **Tüm rehber listesi:** [README](README.md). İlgili: [12](12-Servisler-ve-Yapilabilecek-Islemler.md) servisler, [13](13-Erisim-ve-Kullanim-Rehberi.md) erişim, [14](14-VBA-ve-Excel-Etkilesimi.md) Excel, [15](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md) dosya diyalogları, [16](16-Iyilestirme-Onerileri.md) iyileştirme.
 
+════════════════════════════════════════════════════════════════════════════════
+
+## Uygulamalı alıştırma – Yaparak öğren
+
+**Amaç:** Design → Draft → Harden → Finalize fazlarını kendi makronuzda uygulamak.  
+**Süre:** Yaklaşık 20 dakika.
+
+| Adım | Ne yapacaksınız | Kontrol |
+|------|------------------|--------|
+| **1** | Daha önce yazdığınız bir makroyu (örn. parametre oku) açın. Başlığa **Purpose**, **Assumptions**, **Language**, **Release**, **Regional Settings** ekleyin. | Başlık tam mı? |
+| **2** | [VBA-Kod-Checklist.md](VBA-Kod-Checklist.md) açın. Bölüm 1 (Modül başlığı) ve 2 (Option Explicit, değişkenler) maddelerini makronuzda işaretleyin. Eksik varsa tamamlayın. | Zorunlu maddeler ✓ mi? |
+| **3** | Bölüm 3 (On Error) ve 4 (Nothing, Update) maddelerini kontrol edin. GetObject/ActiveDocument/GetItem sonrası Nothing var mı? Update döngü dışında mı? | Hata ve API kuralları uygun mu? |
+| **4** | Makro başlığına **3 satırlık kullanım yönergesi** ekleyin: (1) Ne açılacak, (2) Makro nasıl çalıştırılacak, (3) Bitti nasıl anlaşılacak. | Kullanım yönergesi yazıldı mı? |
+| **5** | Varsa sabit yolları (dosya, log) **Const** ile modül başına alın; isimlendirme BÜYÜK_HARF_ALT_CIZGI olsun. | Const kullanıldı mı? |
+
+**Beklenen sonuç:** Bir makro başlık, checklist ve 3 satırlık kullanım ile Finalize’a yaklaştı.
+
+════════════════════════════════════════════════════════════════════════════════
+
 **Gezinme:** Önceki: [10-Ornek-Proje](10-Ornek-Proje-Bastan-Sona-Bir-Makro.md) | [Rehber listesi](README.md) | Sonraki: [12-Servisler](12-Servisler-ve-Yapilabilecek-Islemler.md) →

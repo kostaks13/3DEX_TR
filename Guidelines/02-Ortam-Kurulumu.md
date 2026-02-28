@@ -230,6 +230,27 @@ Büyük projelerde modülleri işlevine göre ayırabilirsiniz: bir modül “Pa
 
 ════════════════════════════════════════════════════════════════════════════════
 
+════════════════════════════════════════════════════════════════════════════════
+
+## Uygulamalı alıştırma – Yaparak öğren
+
+**Amaç:** İlk makroyu sıfırdan yazıp çalıştırmak; F5 ve F8 ile farkı görmak.  
+**Süre:** Yaklaşık 10 dakika.
+
+| Adım | Ne yapacaksınız | Kontrol |
+|------|------------------|--------|
+| **1** | 3DExperience’ı açın; bir rol seçin (örn. Mechanical Designer). | Uygulama açık mı? |
+| **2** | **Alt+F11** (veya Tools → Macro → Edit Macro) ile VBA editörünü açın. | Sol tarafta proje ağacı görünüyor mu? |
+| **3** | **Insert → Module** ile yeni modül ekleyin. Kod penceresine `Option Explicit` yazın, alt satıra `Sub IlkMakrom()` yazın (bilerek yanlış: sonunda fazladan `m`). | — |
+| **4** | **F5** ile çalıştırmayı deneyin. Makro listesinde “IlkMakrom” görünür; çalıştırınca boş bir makro çalışır. Sonra Sub adını `IlkMakrom` → `IlkMakro` yapıp içine `MsgBox "Merhaba"` ekleyin. | Sub adını düzelttiniz mi? |
+| **5** | Sub adını `IlkMakrom` → `IlkMakro` yapıp içine `MsgBox "Merhaba, 3DExperience VBA!"` yazın. **F5** ile çalıştırın. | Mesaj kutusu “Merhaba, 3DExperience VBA!” gösteriyor mu? |
+| **6** | İmleci `MsgBox` satırına getirip **F8**’e iki kez basın (Step Into). Satırın sarı ile vurgulandığını görün; F8 ile tek tek ilerleyin. | Adım adım çalıştığını gördünüz mü? |
+| **7** | **File → Save** ile projeyi kaydedin. | Proje kaydedildi mi? |
+
+**Beklenen sonuç:** Mesaj kutusunda “Merhaba, 3DExperience VBA!” görünmeli; F8 ile satır satır ilerleme deneyimlendi.
+
+════════════════════════════════════════════════════════════════════════════════
+
 ## Kontrol listesi
 
 - [ ] 3DExperience açılıyor ve bir rol seçiliyor  

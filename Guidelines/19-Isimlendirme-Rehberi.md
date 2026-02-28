@@ -136,6 +136,22 @@ Const ERR_INVALID_INPUT As Long = 9002
 - [ ] Parametreler anlamlı; nesne parametrelerinde o öneki (isteğe bağlı).
 - [ ] Hata etiketleri kısa ve anlamlı; özel hata numaraları Const ile tanımlı.
 
+════════════════════════════════════════════════════════════════════════════════
+
+## Uygulamalı alıştırma – Yaparak öğren
+
+**Amaç:** Mevcut bir makrodaki isimleri bu rehbere göre gözden geçirmek.  
+**Süre:** Yaklaşık 10 dakika.
+
+| Adım | Ne yapacaksınız | Kontrol |
+|------|------------------|--------|
+| **1** | Yazdığınız bir makroyu açın. Değişken listesine bakın (Dim satırları). Önekler (b, d, s, i, o, c) kullanılmış mı? Eksikse en az 2 değişkene uygun önek ekleyin (örn. `ad` → `sAd`, `sayi` → `iSayi`). | Önekler uygulandı mı? |
+| **2** | Const kullandıysanız isimleri BÜYÜK_HARF_ALT_CIZGI yapın (örn. `logPath` → `LOG_PATH`). Sub/Function adlarında fiil ve mixed case var mı? (örn. `GetActivePart`, `UpdateParameterValue`). | Const ve Sub/Function isimleri rehbere uygun mu? |
+| **3** | “Kaçınılacaklar” listesini okuyun. Makronuzda anlamsız kısaltma (x, tmp, obj1), tek harf (döngü dışında) veya gereksiz Variant var mı? Varsa birini düzeltin. | Kaçınılacaklar temizlendi mi? |
+| **4** | Hata etiketi kullanıyorsanız (HataYakala:) kısa ve anlamlı mı? Sonunda `:` olduğundan emin olun. | Etiket isimlendirmesi doğru mu? |
+
+**Beklenen sonuç:** En az bir isimlendirme iyileştirmesi yapıldı; özet tablo ve kaçınılacaklar kontrol edildi.
+
 ------------------------------------------------------------
 
 ## İlgili dokümanlar

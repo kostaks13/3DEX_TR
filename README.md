@@ -1,8 +1,14 @@
-# 3DExperience VBA Macro – Rehber ve Referans
+<div align="center">
 
-**Anahtar kelimeler:** 3DExperience, VBA, macro, Dassault Systèmes, CATIA, automation, 3DEX, makro rehberi.
+# 3DExperience VBA Macro
 
-**Rehber sürümü:** v1.2
+### Rehber ve Referans
+
+*3DExperience (Dassault Systèmes) platformunda VBA ile makro yazmayı sıfırdan, adım adım öğrenin.*
+
+`v1.2` · **Türkçe** · 3DEX · CATIA · Otomasyon
+
+---
 
 ```
 ██████╗ ██████╗ ███████╗██╗  ██╗     ████████╗██████╗ 
@@ -13,29 +19,57 @@
 ╚═════╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝   ╚═╝  ╚═╝
 ```
 
-**3DExperience** (Dassault Systèmes) platformunda **VBA ile makro** yazmak için sıfırdan rehber, API referansı ve yardımcı dokümanlar. Yeni başlayanlar için adım adım anlatım, sık kullanılan kalıplar ve resmi Help dokümanlarıyla uyumlu içerik.
+**Sıfırdan ileri seviyeye** — tekrarlayan işleri otomatikleştirin, parametreleri yönetin, raporlar üretin.
+
+</div>
+
+---
+
+## Neden bu rehber?
+
+| Ne sunar? | Açıklama |
+| :--- | :--- |
+| **19 doküman** | VBA temellerinden nesne modeline, hata yakalama ve resmi kurallara kadar adım adım rehber. |
+| **10+ örnek makro** | Kopyala–yapıştır çalışan `.bas` dosyaları; Part, parametre, Shapes, dosya, log örnekleri. |
+| **Help uyumlu** | Dassault Systèmes Automation Guidelines ve 3DEXPERIENCE MACRO HAZIRLIK YÖNERGESİ ile uyumlu içerik. |
+| **Uygulamalı alıştırmalar** | Her dokümanda "Yaparak öğren" bölümü; kendi ortamınızda deneyerek ilerleyin. |
+
+---
+
+## Hemen başla
+
+İki yol: **rehberi sırayla takip et** veya **ilk makroyu hemen çalıştır**. Tıklanabilir linkler için hemen altındaki **Hızlı erişim** satırını kullanın.
+
+```
+  Yeni başlıyorsanız                          Zaten VBA biliyorsanız
+  ───────────────────                        ────────────────────────
+  1. Rehberi aç  →  2. 01’den ilerle  →      1. İlk 5 dk sayfası  →
+     [Rehber (01→19)](Guidelines/README.md)     [QUICK_START](docs/QUICK_START.md)
+  3. İlk makroyu 02’de yaz, F5 ile çalıştır   2. Örnek makrodan birini aç  →
+                                                 [Examples](Examples/README.md)
+```
+
+**Hızlı erişim:** [Rehber](Guidelines/README.md) · [İlk 5 dk](docs/QUICK_START.md) · [Örnek makrolar](Examples/README.md) · [API referansı](docs/VBA_API_REFERENCE.md) · [Checklist](Guidelines/VBA-Kod-Checklist.md) · [Sorun giderme](docs/TROUBLESHOOTING.md)
 
 ---
 
 ## İçindekiler
 
 | Bölüm | Açıklama |
-|-------|----------|
+| :--- | :--- |
 | [**Guidelines**](Guidelines/README.md) | 19 dokümanlık kod yazma rehberi (VBA temelleri, nesne modeli, makro kayıt, hata yakalama, örnek projeler, resmi kurallar, isimlendirme) |
-| [**VBA API Referansı**](VBA_API_REFERENCE.md) | Sık kullanılan API imzaları + açıklamalar; tam liste `Help/VBA_CALL_LIST.txt` ve `Help/text/` |
 | [**Examples**](Examples/README.md) | Çalıştırılabilir örnek makrolar (`.bas`); rehberle uyumlu |
 | [**Help**](Help/) | Ham API (`VBA_CALL_LIST.txt`), özet (`SIK_KULLANILAN_API.txt`), arama rehberi (`ARAMA_REHBERI.md`), `text/` (metin dosyaları); PDF’ler isteğe bağlı eklenebilir |
-| [**QUICK_START**](QUICK_START.md) | İlk 5 dakikada tek sayfa hızlı başlangıç |
-| [**Terimler**](GLOSSARY.md) | Sözlük (Part, Parameter, Nothing, Update, Editor/Session-level vb.) |
-| [**SSS / FAQ**](FAQ.md) | Sık sorulan sorular |
-| [**Sorun giderme**](TROUBLESHOOTING.md) | Hata senaryoları ve çözüm önerileri |
+| [**Docs**](docs/) | [API referansı](docs/VBA_API_REFERENCE.md), [hızlı başlangıç](docs/QUICK_START.md), [hızlı referans](docs/CHEATSHEET.md), [terimler](docs/GLOSSARY.md), [FAQ](docs/FAQ.md), [sorun giderme](docs/TROUBLESHOOTING.md), [sürüm notları](docs/CHANGELOG.md) |
 
 ---
 
 ## Hızlı başlangıç
 
+> **Başlamak için:** Rehberi sırayla takip edin veya hızlı denemek için [docs/QUICK_START.md](docs/QUICK_START.md) ve [Examples/](Examples/README.md) kullanın.
+
 1. **Rehberi takip et:** [Guidelines/README.md](Guidelines/README.md) → 1. dokümandan başlayıp sırayla ilerleyin.
-2. **API’ye bak:** [VBA_API_REFERENCE.md](VBA_API_REFERENCE.md) (varsa) veya `Help/VBA_CALL_LIST.txt`, `Help/text/` içindeki dosyalar.
+2. **API’ye bak:** [docs/VBA_API_REFERENCE.md](docs/VBA_API_REFERENCE.md) veya `Help/VBA_CALL_LIST.txt`, `Help/text/` içindeki dosyalar.
 3. **Sık hataları özetle:** [Guidelines/18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](Guidelines/18-Sik-Hatalar-ve-Dikkat-Edilecekler.md).
 4. **Teslim / kod incelemesi öncesi:** [Guidelines/VBA-Kod-Checklist.md](Guidelines/VBA-Kod-Checklist.md) dosyasındaki zorunlu ve önerilen maddeleri mutlaka kontrol edin (Option Explicit, Nothing, tek Update, başlık, On Error).
 
@@ -45,29 +79,16 @@
 
 ```
 .
-├── README.md                 ← Bu dosya (proje sayfası)
-├── QUICK_START.md            ← İlk 5 dakika hızlı başlangıç
-├── GLOSSARY.md               ← Terimler sözlüğü
-├── FAQ.md                    ← Sık sorulan sorular
-├── TROUBLESHOOTING.md        ← Sorun giderme
-├── VBA_API_REFERENCE.md      ← API referansı (sık kullanılan imzalar + Help kaynakları)
+├── README.md                  ← Bu dosya (proje sayfası)
 ├── .gitignore
 ├── LICENSE
-├── Guidelines/                ← Kod yazma rehberi (19 doküman + önceki/sonraki gezinme)
-│   ├── README.md
-│   ├── 01-Giris…md … 18-Sik-Hatalar…md
-│   └── VBA-Kod-Checklist.md   ← Teslim öncesi mutlaka kontrol et
+├── Guidelines/                ← Kod yazma rehberi (19 doküman + VBA-Kod-Checklist)
 ├── Examples/                  ← Örnek makrolar (.bas)
-│   ├── README.md
-│   └── *.bas
-└── Help/                      ← Referans ve ham veri
-    ├── VBA_CALL_LIST.txt      ← Çağrılabilir API listesi
-    ├── SIK_KULLANILAN_API.txt ← Sık kullanılan API özeti
-    ├── ARAMA_REHBERI.md       ← grep/arama örnekleri
-    ├── API_REPORT.csv
-    ├── text/                  ← Resmi Help’ten üretilmiş metin (.txt) dosyaları
-    └── *.pdf                  ← (İsteğe bağlı) Resmi Help PDF’leri buraya eklenebilir
+├── Help/                      ← API listeleri, arama rehberi, text/
+└── docs/                      ← API referansı, hızlı başlangıç, terimler, FAQ, sorun giderme, CHANGELOG
 ```
+
+> **Bakım:** Tüm Markdown linklerini kontrol etmek için `npm install` sonrası `npm run check-links` çalıştırın → [scripts/check-links.sh](scripts/check-links.sh).
 
 ---
 
@@ -83,3 +104,9 @@
 - **16–19:** İyileştirme önerileri, Help dosyalarını kullanma, sık hatalar ve dikkat noktaları, isimlendirme rehberi.
 
 Tam liste ve tablolar: **[Guidelines/README.md](Guidelines/README.md)**.
+
+---
+
+**Gezinme:** [Docs](docs/README.md) · [Rehber](Guidelines/README.md) · [Örnek makrolar](Examples/README.md) · [Help](Help/)
+
+*Anahtar kelimeler: 3DExperience, VBA, macro, Dassault Systèmes, CATIA, automation, 3DEX, makro rehberi.*

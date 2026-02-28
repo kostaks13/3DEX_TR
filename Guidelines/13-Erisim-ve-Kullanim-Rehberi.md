@@ -307,6 +307,22 @@ oApp.SystemService                   → Environ, ConcatenatePaths
 
 ════════════════════════════════════════════════════════════════════════════════
 
+## Uygulamalı alıştırma – Yaparak öğren
+
+**Amaç:** “Neye nereden erişilir?” tablosunu kullanarak kısa kodla Part → Parameters ve Part → Shapes erişimi.  
+**Süre:** Yaklaşık 10 dakika. **Gereksinim:** Part belgesi açık.
+
+| Adım | Ne yapacaksınız | Kontrol |
+|------|------------------|--------|
+| **1** | Bu dokümandaki “Parametreler nerede?” satırına bakın. Bir Sub’ta oApp → oDoc → oPart alın; `Set oParams = oPart.Parameters`. Count’u MsgBox ile gösterin. | Parametre sayısı görünüyor mu? |
+| **2** | “Şekiller nerede?” satırına bakın. `Set oShapes = oPart.Shapes` (veya MainBody.Shapes). Count’u MsgBox ile gösterin. | Shapes sayısı görünüyor mu? |
+| **3** | Aynı makroda “Dosya var mı nerede?” satırını kullanın: `Set oFS = oApp.FileSystem`, `MsgBox "C:\Temp var mi: " & oFS.Exists("C:\Temp")`. | FileSystem.Exists sonucu doğru mu? |
+| **4** | Tablodaki “Kütle hesabı nerede?” veya “PLM araması nerede?” satırına bakın; hangi nesneden (ActiveEditor vs Application) hangi GetService/GetSessionService çağrıldığını not alın. | Editor vs Session ayrımı net mi? |
+
+**Beklenen sonuç:** Parametre ve Shapes sayısı mesajda; FileSystem.Exists sonucu; erişim tablosu kullanıldı.
+
+════════════════════════════════════════════════════════════════════════════════
+
 ## 5. İlgili dokümanlar
 
 **Tüm rehber:** [README](README.md). Konuya göre: [06](06-3DExperience-Nesne-Modeli.md) (hiyerarşi), [08](08-Sik-Kullanilan-APIler.md) (API örnekleri), [12](12-Servisler-ve-Yapilabilecek-Islemler.md) (servisler), [14](14-VBA-ve-Excel-Etkilesimi.md) (Excel), [15](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md) (dosya diyalogları), [18](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md) (sık hatalar ve dikkat noktaları). İmzalar: **VBA_API_REFERENCE.md**. **Help dosyalarını ne zaman/nasıl kullanacağınız** için **17. doküman:** [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md).

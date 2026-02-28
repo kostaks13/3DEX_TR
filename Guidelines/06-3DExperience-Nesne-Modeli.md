@@ -471,6 +471,26 @@ Kullanıcının ekranda seçtiği nesnelere erişmek için **ActiveEditor.Select
 
 ════════════════════════════════════════════════════════════════════════════════
 
+════════════════════════════════════════════════════════════════════════════════
+
+## Uygulamalı alıştırma – Yaparak öğren
+
+**Amaç:** GetObject → ActiveDocument → GetItem("Part") zincirini yazıp çalıştırmak; Nothing kontrollerini uygulamak.  
+**Süre:** Yaklaşık 15 dakika. **Gereksinim:** 3DExperience açık, bir Part belgesi açık olmalı.
+
+| Adım | Ne yapacaksınız | Kontrol |
+|------|------------------|--------|
+| **1** | Yeni modülde `Sub NesneZinciriAlistirmasi()` yazın. `On Error GoTo HataYakala` ekleyin. `Dim oApp As Object`, `Set oApp = GetObject(, "CATIA.Application")`. Alt satırda `If oApp Is Nothing Then MsgBox "Uygulama yok": Exit Sub`. | 3DExperience açıksa mesaj çıkmamalı. |
+| **2** | `Dim oDoc As Object`, `Set oDoc = oApp.ActiveDocument`. `If oDoc Is Nothing Then MsgBox "Belge yok": Exit Sub`. Çalıştırın (Part açıkken “Belge yok” çıkmamalı). | Belge kontrolü çalışıyor mu? |
+| **3** | `Dim oPart As Object`, `Set oPart = oDoc.GetItem("Part")`. `If oPart Is Nothing Then Set oPart = oDoc`. `If oPart Is Nothing Then MsgBox "Part alinamadi": Exit Sub`. | Part açıkken oPart Nothing olmamalı. |
+| **4** | Başarılıysa `MsgBox "Belge adi: " & oDoc.Name & vbCrLf & "Part alindi: " & (Not oPart Is Nothing)` yazın. F5 ile çalıştırın. | Belge adı ve “Part alindi: True” görünüyor mu? |
+| **5** | 3DExperience’ta Part’ı kapatıp (veya Drawing/Montaj açıp) makroyu tekrar çalıştırın. “Belge yok” veya “Part alinamadi” mesajı almalısınız; hata penceresi çıkmamalı. | Nothing kontrolleri hata vermeden çıkış sağlıyor mu? |
+| **6** | En alta `Exit Sub` ve `HataYakala: MsgBox "Hata " & Err.Number & " " & Err.Description` ekleyin. | On Error bloğu var mı? |
+
+**Beklenen sonuç:** Part açıkken belge adı ve Part alındı mesajı; belge/Part yokken anlamlı uyarı ve makro güvenli çıkış.
+
+════════════════════════════════════════════════════════════════════════════════
+
 ## Kontrol listesi
 
 - [ ] Application nesnesini (GetObject veya Application) alabiliyorum  
