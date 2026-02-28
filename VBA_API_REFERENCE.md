@@ -124,7 +124,7 @@ Aşağıdaki tabloda günlük makro yazarken en çok ihtiyaç duyacağınız API
 
 ## Rehberle ilişki
 
-- **Nesne modeli ve erişim:** [Guidelines/06-3DExperience-Nesne-Modeli.md](Guidelines/06-3DExperience-Nesne-Modeli.md), [13-Erisim-ve-Kullanim-Rehberi.md](Guidelines/13-Erisim-ve-Kullanim-Rehberi.md)
+- **Nesne modeli ve erişim:** [Guidelines/06-3DExperience-Nesne-Modeli.md](Guidelines/06-3DExperience-Nesne-Modeli.md), [Guidelines/13-Erisim-ve-Kullanim-Rehberi.md](Guidelines/13-Erisim-ve-Kullanim-Rehberi.md)
 - **Sık kullanılan API örnekleri:** [Guidelines/08-Sik-Kullanilan-APIler.md](Guidelines/08-Sik-Kullanilan-APIler.md)
 - **Help dosyalarını ne zaman/nasıl kullanacağınız:** [Guidelines/17-Help-Dosyalarini-Kullanma.md](Guidelines/17-Help-Dosyalarini-Kullanma.md)
 

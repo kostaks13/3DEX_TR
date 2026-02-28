@@ -8,7 +8,7 @@
 
 Kodlamaya **yeni başlayan** biri için, **3DExperience VBA** ile makro yazmayı adım adım anlatan **19 dokümanlık** rehber seti. **Proje sayfası (GitHub/GitLab):** repository kökündeki [README.md](../README.md). İçerik, proje kökündeki **Help** klasöründeki resmi dokümanlarla (**Help-Automation Development Guidelines**, **3DEXPERIENCE MACRO HAZIRLIK YÖNERGESİ**, **Help-Native Apps Automation** vb.) uyumlu ve genişletilmiştir.
 
-**Nasıl ilerlenir:** Aşağıdaki tablodan dokümanları **sırayla** (01 → 18) takip edin; belirli bir konu arıyorsanız doğrudan ilgili dokümana atlayabilirsiniz.
+**Nasıl ilerlenir:** Aşağıdaki tablodan dokümanları **sırayla** (01 → 19) takip edin; belirli bir konu arıyorsanız doğrudan ilgili dokümana atlayabilirsiniz.
 
 ════════════════════════════════════════════════════════════════════════════════
 
