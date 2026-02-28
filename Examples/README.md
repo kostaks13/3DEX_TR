@@ -12,7 +12,7 @@ Bu klasörde **3DExperience VBA** rehberindeki (Guidelines 08 ve 10) örnek makr
 
 **Bu sayfada:** [Kullanım (3 adım)](#kullanım-3-adım) · [Önerilen sıra](#önerilen-sıra-yeni-başlıyorsanız) · [Kategoriye göre](#kategoriye-göre-örnekler) · [Dosyalar](#dosyalar) · [Notlar](#notlar)
 
-**Öne çıkan:** [AktifParcaBilgisi.bas](AktifParcaBilgisi.bas) (ilk makro) · [ParametreOkuVeGoster.bas](ParametreOkuVeGoster.bas) · [ParametreYaz.bas](ParametreYaz.bas) · [SadecePartKontrol.bas](SadecePartKontrol.bas)
+**Öne çıkan:** [AktifParcaBilgisi.bas](AktifParcaBilgisi.bas) (ilk makro) · [ParametreOkuVeGoster.bas](ParametreOkuVeGoster.bas) · [ParametreYaz.bas](ParametreYaz.bas) · [SadecePartKontrol.bas](SadecePartKontrol.bas) · [ParametreleriExceleYaz.bas](ParametreleriExceleYaz.bas) · [ExceldenPartaParametreYaz.bas](ExceldenPartaParametreYaz.bas) (Excel↔Part) · [FileDialogParametreListesiYaz.bas](FileDialogParametreListesiYaz.bas) · [FileSystemDosyaBilgisi.bas](FileSystemDosyaBilgisi.bas) (dosya boyutu)
 
 ---
 
@@ -39,7 +39,7 @@ Bu klasörde **3DExperience VBA** rehberindeki (Guidelines 08 ve 10) örnek makr
 | 2 | ParametreOkuVeGoster.bas | Parametre okuma; InputBox ile kullanıcı girişi. |
 | 3 | ParametreYaz.bas | Parametre yazma + **tek** Update. |
 | 4 | SadecePartKontrol.bas | Belge türü kontrolü; hata vermeden çıkış. |
-| — | Diğerleri | Shapes, dosyaya yazma, log, modüler yapı (GetActivePart), takas, min/max. |
+| — | Diğerleri | Shapes, dosyaya yazma, log, modüler yapı (GetActivePart), takas, min/max, **Excel** (ParametreleriExceleYaz), **FileDialog** (FileDialogParametreListesiYaz). |
 
 ---
 
@@ -52,9 +52,11 @@ Bu klasörde **3DExperience VBA** rehberindeki (Guidelines 08 ve 10) örnek makr
 | **Shapes** | ShapesBilgisi | Shapes sayısı ve isim listesi. |
 | **Drawing** | DrawingSayfaVeGorusumSayisi | Drawing belgesi; Sheets, Views sayısı. |
 | **Product / BOM** | BomListesiChildren | Montajda Children ile alt bileşen listesi. |
-| **FileSystem** | FileSystemKlasorKontrol | Klasör var mı kontrolü (FolderExists). |
-| **Dosya** | ParametreListesiniDosyayaYaz | Parametreleri dosyaya yazma. |
+| **FileSystem** | FileSystemKlasorKontrol, FileSystemDosyaBilgisi, FileSystemKlasorListele | Klasör var mı; dosya var mı / boyut; klasördeki dosya listesi. |
+| **Dosya** | ParametreListesiniDosyayaYaz, FileDialogParametreListesiYaz, FileDialogDosyaAcOku, KlasorSecParametreListesiYaz | Parametreleri dosyaya yazma; FileDialog ile kayıt/klasör seçimi; dosya açıp okuma. |
+| **Excel** | ParametreleriExceleYaz, ExceldenPartaParametreYaz | Part → Excel; Excel → Part (Rehber 14). |
 | **Log** | LogOrnekMakro | Log dosyasına START/END yazma. |
+| **Servisler (Rehber 12)** | InertiaServiceKutleGoster, VisuServicesKameraListesi, HybridBodiesListele | InertiaService; VisuServices Cameras; Part HybridBodies/HybridShapes. |
 | **Modüler** | GetActivePart_AnaParametreListesi | Ortak GetActivePart() + ana parametre listesi. |
 
 **Ortam notu:** Örnekler 3DExperience R2024x (veya uyumlu sürüm), Windows üzerinde test edilmiştir. API isimleri sürüme göre değişebilir; kendi ortamınızda makro kaydı ile doğrulayın.
@@ -78,13 +80,42 @@ Bu klasörde **3DExperience VBA** rehberindeki (Guidelines 08 ve 10) örnek makr
 | **DrawingSayfaVeGorusumSayisi.bas** | Aktif Drawing’de sayfa sayısı ve ilk sayfadaki görünüm sayısını gösterir. | Açık Drawing (.CATDrawing). | MsgBox: sayfa sayısı, ilk sayfa Views sayısı. |
 | **BomListesiChildren.bas** | Aktif Product’taki alt bileşenleri (Children) listeler. | Açık Product (.CATProduct). | MsgBox: bileşen sayısı + ilk 20 ad. |
 | **FileSystemKlasorKontrol.bas** | Kullanıcının girdiği klasör yolunun var olup olmadığını kontrol eder. | 3DExperience açık; FileSystem API mevcut. | MsgBox: "Klasör mevcut" / "bulunamadı". |
+| **ParametreleriExceleYaz.bas** | Aktif parçanın parametre listesini Excel'e yazar (A: Parametre, B: Değer); C:\Temp\ParametreListe.xlsx kaydeder. | Açık Part; Excel yüklü. | Excel açılır, liste yazılır, dosya kaydedilir; MsgBox "… yazıldı: …". |
+| **FileDialogParametreListesiYaz.bas** | FileDialog (Kaydet) ile kullanıcının seçtiği yere parametre listesini (Parametre;Değer) yazar. | Açık Part; Excel yüklü (FileDialog için). | Kaydet diyaloğu açılır; seçilen .txt/.csv dosyasına liste yazılır veya "İptal edildi.". |
+| **ExceldenPartaParametreYaz.bas** | Excel dosyasında (A: parametre adı, B: değer) satırları okuyup Part parametrelerini günceller; Update çağırır. | Açık Part; C:\Temp\ParametreGiris.xlsx mevcut (veya yolu değiştirin). | MsgBox "… Part'a yazıldı"; modelde değerler güncellenir. |
+| **FileSystemDosyaBilgisi.bas** | Kullanıcının girdiği dosya yolunun var olup olmadığını ve boyutunu (byte) gösterir. | 3DExperience açık; FileSystem API. | MsgBox: "Dosya: … Boyut: N byte" veya "Dosya bulunamadı". |
+| **FileDialogDosyaAcOku.bas** | FileDialog (Aç) ile kullanıcı .txt/.xlsx seçer; makro dosyayı açar ve ilk satırları MsgBox ile gösterir. | Açık Part; FileDialog API. | Aç diyaloğu; seçilen dosyadan ilk satırlar mesajda. |
+| **KlasorSecParametreListesiYaz.bas** | FileDialog (Klasör seçici, msoFileDialogFolderPicker) ile klasör seçtirir; parametre listesini seçilen klasöre yazar. | Açık Part; FileDialog API. | Klasör seçici; seçilen klasöre parametre listesi .txt. |
+| **FileSystemKlasorListele.bas** | Kullanıcının girdiği klasördeki dosyaları listeler (ad, boyut). | 3DExperience açık; FileSystem API. | MsgBox: dosya adı + boyut listesi. |
+| **InertiaServiceKutleGoster.bas** | Aktif editörde InertiaService alır; kütle bilgisi için Help referansı verir (API sürüme göre değişir). | Part/Product penceresi aktif. | MsgBox: "InertiaService alındı" + API notu. |
+| **HybridBodiesListele.bas** | Part.HybridBodies ve her body içindeki HybridShapes isimlerini listeler. | Açık Part. | MsgBox: body adları + shape adları. |
+| **VisuServicesKameraListesi.bas** | GetSessionService("VisuServices"), Cameras koleksiyonu; kamera adlarını listeler. | 3DExperience açık. | MsgBox: kamera sayısı + ad listesi. |
+
+---
+
+## Eklenebilecek örnekler (fikir listesi)
+
+Rehberde anlatılıp henüz ayrı bir `.bas` örneği olmayan konular. İhtiyaca göre eklenebilir.
+
+| Konu | Açıklama | Rehber |
+|------|----------|--------|
+| ~~Excel'den Part'a parametre yazma~~ | ✅ [ExceldenPartaParametreYaz.bas](ExceldenPartaParametreYaz.bas) eklendi. | 14 |
+| ~~FileDialog ile dosya açma~~ | ✅ [FileDialogDosyaAcOku.bas](FileDialogDosyaAcOku.bas) eklendi. | 15 |
+| ~~FileDialog ile klasör seçme~~ | ✅ [KlasorSecParametreListesiYaz.bas](KlasorSecParametreListesiYaz.bas) eklendi. | 15 |
+| ~~FileSystem: dosya var mı / boyut~~ | ✅ [FileSystemDosyaBilgisi.bas](FileSystemDosyaBilgisi.bas) eklendi. | 12 |
+| ~~FileSystem: klasördeki dosya listesi~~ | ✅ [FileSystemKlasorListele.bas](FileSystemKlasorListele.bas) eklendi. | 12 |
+| ~~InertiaService – kütle~~ | ✅ [InertiaServiceKutleGoster.bas](InertiaServiceKutleGoster.bas) eklendi. | 12 |
+| ~~HybridBodies / Bodies listesi~~ | ✅ [HybridBodiesListele.bas](HybridBodiesListele.bas) eklendi. | 12 |
+| ~~VisuServices – kamera listesi~~ | ✅ [VisuServicesKameraListesi.bas](VisuServicesKameraListesi.bas) eklendi. | 12 |
+
+*İşaretli (✅) satırlar projeye eklenmiş örneklerdir.*
 
 ---
 
 ## Notlar
 
 - **API isimleri** (GetItem, Parameters, Shapes vb.) 3DExperience sürümüne göre değişebilir. Kendi ortamınızda makro kaydı yapıp üretilen kodu bu örneklerle karşılaştırın.
-- **Yol:** `ParametreListesiniDosyayaYaz` içindeki `C:\Temp` yolunu kendi ortamınıza göre değiştirin.
+- **Yol:** `ParametreListesiniDosyayaYaz` ve `ParametreleriExceleYaz` içindeki `C:\Temp` (veya varsayılan dosya adı) yolunu kendi ortamınıza göre değiştirin. `FileDialogParametreListesiYaz` kayıt yerini kullanıcı seçer.
 - Tam rehber ve API referansı için proje kökündeki [README.md](../README.md), [VBA_API_REFERENCE.md](../docs/VBA_API_REFERENCE.md) ve [Guidelines/README.md](../Guidelines/README.md) dosyalarına bakın.
 
 ---

@@ -840,7 +840,8 @@ Bu doküman, yukarıdaki kaynaklardan özetlenmiştir; tam ve güncel kurallar i
 ## Uygulamalı alıştırma – Yaparak öğren
 
 **Amaç:** Design → Draft → Harden → Finalize fazlarını kendi makronuzda uygulamak.  
-**Süre:** Yaklaşık 20 dakika.
+**Süre:** Yaklaşık 20 dakika.  
+**Zorluk:** İleri
 
 | Adım | Ne yapacaksınız | Kontrol |
 |------|------------------|--------|
@@ -854,4 +855,9 @@ Bu doküman, yukarıdaki kaynaklardan özetlenmiştir; tam ve güncel kurallar i
 
 ════════════════════════════════════════════════════════════════════════════════
 
-**Gezinme:** Önceki: [10-Ornek-Proje](10-Ornek-Proje-Bastan-Sona-Bir-Makro.md) | [Rehber listesi](README.md) | Sonraki: [12-Servisler](12-Servisler-ve-Yapilabilecek-Islemler.md) →
+---
+
+### Gezinme
+
+| [← Önceki: 10 Örnek proje](10-Ornek-Proje-Bastan-Sona-Bir-Makro.md) | [Rehber listesi](README.md) | [Sonraki: 12 Servisler →](12-Servisler-ve-Yapilabilecek-Islemler.md) |
+| :--- | :--- | :--- |

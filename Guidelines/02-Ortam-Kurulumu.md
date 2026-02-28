@@ -9,9 +9,9 @@
 
 3DExperience VBA ile kod yazabilmek için doğru ortamı kurmanız ve makro güvenlik ayarlarını yapmanız gerekir. Bu dokümanda adım adım ilerliyoruz.
 
-**Bu dokümanda:** Ortam gereksinimleri; VBA editörü ve makro güvenliği; ilk makro (MsgBox, InputBox); Language/Release başlığı; F5/F8.
+**Bu dokümanda:** Ortam gereksinimleri · VBA editörü ve makro güvenliği · ilk makro (MsgBox, InputBox) · Language/Release başlığı · F5/F8.
 
-════════════════════════════════════════════════════════════════════════════════
+---
 
 ## Gereksinimler
 
@@ -235,7 +235,8 @@ Büyük projelerde modülleri işlevine göre ayırabilirsiniz: bir modül “Pa
 ## Uygulamalı alıştırma – Yaparak öğren
 
 **Amaç:** İlk makroyu sıfırdan yazıp çalıştırmak; F5 ve F8 ile farkı görmak.  
-**Süre:** Yaklaşık 10 dakika.
+**Süre:** Yaklaşık 10 dakika.  
+**Zorluk:** Başlangıç
 
 | Adım | Ne yapacaksınız | Kontrol |
 |------|------------------|--------|
@@ -265,4 +266,9 @@ Büyük projelerde modülleri işlevine göre ayırabilirsiniz: bir modül “Pa
 
 **3. doküman:** [03-VBA-Temelleri-Degiskenler-ve-Veritipleri.md](03-VBA-Temelleri-Degiskenler-ve-Veritipleri.md) — Değişkenler, veri tipleri ve `Option Explicit` kullanımı.
 
-**Gezinme:** Önceki: [01-Giris](01-Giris-Neden-3DExperience-VBA.md) | [Rehber listesi](README.md) | Sonraki: [03-Degiskenler](03-VBA-Temelleri-Degiskenler-ve-Veritipleri.md) →
+---
+
+### Gezinme
+
+| [← Önceki: 01 Giriş](01-Giris-Neden-3DExperience-VBA.md) | [Rehber listesi](README.md) | [Sonraki: 03 Değişkenler →](03-VBA-Temelleri-Degiskenler-ve-Veritipleri.md) |
+| :--- | :--- | :--- |

@@ -9,13 +9,12 @@
 
 Bu rehber, kodlamaya yeni başlayan biri için **3DExperience platformunda VBA ile makro yazmayı** adım adım anlatır. İlk dokümanda ne yapacağımızı ve neden VBA kullandığımızı netleştiriyoruz.
 
-> **Bu bölümde:** Rehberin hedefi; VBA nedir; 3DExperience'ta neler yapılır; senaryo örnekleri; rehber yapısı.
 
-**Bu dokümanda:** Rehberin hedefi; VBA nedir; 3DExperience’ta neler yapılır; senaryo örnekleri; rehber yapısı.
+**Bu dokümanda:** Rehberin hedefi · VBA nedir · 3DExperience'ta neler yapılır · senaryo örnekleri · rehber yapısı.
 
 > **İlk adım:** Bu dokümanı okuduktan sonra **2. dokümana** ([02-Ortam-Kurulumu.md](02-Ortam-Kurulumu.md)) geçin; oradaki “Uygulamalı alıştırma” ile ilk makroyu yazıp F5 ile çalıştırın.
 
-════════════════════════════════════════════════════════════════════════════════
+---
 
 ## Bu rehber kimler için?
 
@@ -247,6 +246,7 @@ Bu sıra takip edildiğinde adım adım 3DExperience VBA ile makro yazma beceris
 
 **Amaç:** Giriş dokümanını tamamladıktan sonra bir sonraki adıma geçip ilk makroyu yazmak ve çalıştırmak.  
 **Süre:** Yaklaşık 15 dakika (2. dokümandaki alıştırma ile birlikte).  
+**Zorluk:** Başlangıç  
 **Gereksinim:** Bu dokümanı okumuş olmak; 3DExperience kurulu olmalı (veya kurulum adımlarını 2. dokümanda yapacaksınız).
 
 | Adım | Ne yapacaksınız | Kontrol |
@@ -263,6 +263,11 @@ Bu sıra takip edildiğinde adım adım 3DExperience VBA ile makro yazma beceris
 
 ## Sonraki adım
 
-**2. doküman:** [02-Ortam-Kurulumu.md](02-Ortam-Kurulumu.md) — 3DExperience'ı açıp VBA editörüne girmeyi ve ilk makroyu çalıştırmayı öğreneceksiniz. **Sık hatalar ve dikkat edilecekler:** [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md).
+**Sonraki doküman:** [02-Ortam-Kurulumu](02-Ortam-Kurulumu.md) — 3DExperience'ı açıp VBA editörüne girmeyi ve ilk makroyu çalıştırmayı öğreneceksiniz.
 
-**Gezinme:** [Rehber listesi](README.md) | Sonraki: [02-Ortam-Kurulumu](02-Ortam-Kurulumu.md) →
+---
+
+### Gezinme
+
+| [Rehber listesi](README.md) | Sonraki: [02 Ortam kurulumu →](02-Ortam-Kurulumu.md) |
+| :--- | :--- |

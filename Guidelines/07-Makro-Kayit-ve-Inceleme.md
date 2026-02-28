@@ -324,7 +324,8 @@ Kayıt sırasında sadece bir öğe seçildiyse kod `Item(1)` veya `Item(2)` gib
 ## Uygulamalı alıştırma – Yaparak öğren
 
 **Amaç:** Makro kaydı yapmak, üretilen kodu bulmak ve sadeleştirmek.  
-**Süre:** Yaklaşık 20 dakika. **Gereksinim:** 3DExperience açık, bir Part belgesi açık (en az bir parametre içersin).
+**Süre:** Yaklaşık 20 dakika. **Gereksinim:** 3DExperience açık, bir Part belgesi açık (en az bir parametre içersin).  
+**Zorluk:** Orta
 
 | Adım | Ne yapacaksınız | Kontrol |
 |------|------------------|--------|
@@ -360,7 +361,7 @@ Kayıt sırasında sadece bir öğe seçildiyse kod `Item(1)` veya `Item(2)` gib
 
 1. **Application** → **ActiveDocument** → **GetItem("Part")** (veya Product/DrawingRoot). Kayıt sırasında yaptığınız işleme göre zincir uzar.  
 2. Tekrarlayan blokları döngüye alın; sabit değerleri değişkene/Const’a çevirin; gereksiz satırları kaldırın; Option Explicit ve Nothing kontrolleri ekleyin.  
-3. Proje **docs/VBA_API_REFERENCE.md**, **Help/VBA_CALL_LIST.txt**, **Help/text/** ve [ARAMA_REHBERI.md](../Help/ARAMA_REHBERI.md) ile grep/arama yapın; sürüme göre API adı değişmiş olabilir.
+3. Proje **docs/VBA_API_REFERENCE.md** ve Help klasöründeki **resmi PDF'ler** (Native Apps Automation, Automation Reference) ile [ARAMA_REHBERI.md](../Help/ARAMA_REHBERI.md) rehberine göre PDF'de Ctrl+F araması yapın; sürüme göre API adı değişmiş olabilir.
 
 </details>
 
@@ -370,4 +371,9 @@ Kayıt sırasında sadece bir öğe seçildiyse kod `Item(1)` veya `Item(2)` gib
 
 **8. doküman:** [08-Sik-Kullanilan-APIler.md](08-Sik-Kullanilan-APIler.md) — Parça, geometri ve çizimle ilgili sık kullanılan API’ler ve kısa örnekler. **Help:** [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md). **Sık hatalar:** [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md).
 
-**Gezinme:** Önceki: [06-Nesne-Modeli](06-3DExperience-Nesne-Modeli.md) | [Rehber listesi](README.md) | Sonraki: [08-Sik-Kullanilan-APIler](08-Sik-Kullanilan-APIler.md) →
+---
+
+### Gezinme
+
+| [← Önceki: 06 Nesne modeli](06-3DExperience-Nesne-Modeli.md) | [Rehber listesi](README.md) | [Sonraki: 08 Sık API'ler →](08-Sik-Kullanilan-APIler.md) |
+| :--- | :--- | :--- |

@@ -8,11 +8,18 @@
 
 Kodlamaya **yeni başlayan** biri için, **3DExperience VBA** ile makro yazmayı adım adım anlatan **19 dokümanlık** rehber seti. **Proje sayfası (GitHub/GitLab):** repository kökündeki [README.md](../README.md). İçerik, proje kökündeki **Help** klasöründeki resmi dokümanlarla (**Help-Automation Development Guidelines**, **3DEXPERIENCE MACRO HAZIRLIK YÖNERGESİ**, **Help-Native Apps Automation** vb.) uyumlu ve genişletilmiştir.
 
-> **Nasıl ilerlenir:** Aşağıdaki tablodan dokümanları **sırayla** (01 → 19) takip edin; belirli bir konu arıyorsanız doğrudan ilgili dokümana atlayabilirsiniz. **02–19** numaralı dokümanların her birinde **"Uygulamalı alıştırma – Yaparak öğren"** bölümü vardır.
+> **Rehberi sırayla takip et:** Aşağıdaki tablodan dokümanları **01 → 19** sırasıyla takip edin. İlk makroyu [02-Ortam-Kurulumu](02-Ortam-Kurulumu.md) içinde yazıp F5 ile çalıştırın. Belirli bir konu arıyorsanız doğrudan ilgili dokümana atlayabilirsiniz. **02–19** numaralı dokümanların her birinde **"Uygulamalı alıştırma – Yaparak öğren"** bölümü vardır.
 
-**Bu sayfada:** [Dokümanlar (01–19)](#dokümanlar-sırayla-takip-edin) · [Nasıl kullanılır?](#nasıl-kullanılır) · [Konuya göre atlama](#belirli-konu-arıyorsanız) · [Hızlı erişim](#hızlı-erişim)
+<details>
+<summary><strong>Bu sayfada atla →</strong></summary>
 
-════════════════════════════════════════════════════════════════════════════════
+- [Dokümanlar (01–19)](#dokümanlar-sırayla-takip-edin) · [Nasıl kullanılır?](#nasıl-kullanılır) · [Konuya göre atlama](#belirli-konu-arıyorsanız) · [Hızlı erişim](#hızlı-erişim)
+
+</details>
+
+**Hızlı atla:** [01](01-Giris-Neden-3DExperience-VBA.md) · [02](02-Ortam-Kurulumu.md) · [03](03-VBA-Temelleri-Degiskenler-ve-Veritipleri.md) · [04](04-VBA-Temelleri-Kosullar-ve-Donguler.md) · [05](05-VBA-Temelleri-Prosedurler-ve-Fonksiyonlar.md) · [06](06-3DExperience-Nesne-Modeli.md) · [07](07-Makro-Kayit-ve-Inceleme.md) · [08](08-Sik-Kullanilan-APIler.md) · [09](09-Hata-Yakalama-ve-Debug.md) · [10](10-Ornek-Proje-Bastan-Sona-Bir-Makro.md) · [11](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) · [12](12-Servisler-ve-Yapilabilecek-Islemler.md) · [13](13-Erisim-ve-Kullanim-Rehberi.md) · [14](14-VBA-ve-Excel-Etkilesimi.md) · [15](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md) · [16](16-Iyilestirme-Onerileri.md) · [17](17-Help-Dosyalarini-Kullanma.md) · [18](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md) · [19](19-Isimlendirme-Rehberi.md)
+
+---
 
 ## Dokümanlar (sırayla takip edin)
 
@@ -67,7 +74,7 @@ Yukarıdaki tablodan ilgili dokümanı açın veya aşağıdaki eşleşmeyi kull
 | İhtiyaç | Bağlantı |
 |---------|----------|
 | Teslim / kod incelemesi öncesi checklist | [VBA-Kod-Checklist.md](VBA-Kod-Checklist.md) (Option Explicit, Nothing, tek Update, başlık, On Error) |
-| API imzaları ve detay | Proje kökü: `docs/VBA_API_REFERENCE.md` · `Help/VBA_CALL_LIST.txt` · `Help/text/` |
+| API imzaları ve detay | Proje kökü: `docs/VBA_API_REFERENCE.md` · Help klasörü: resmi PDF'ler (Native Apps Automation, Automation Reference) |
 | Çalıştırılabilir örnek makrolar | [Examples/](../Examples/README.md) (`.bas` dosyaları) |
 | Help dosyalarını ne zaman/nasıl kullanacağınız | [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md) |
 | Sık hatalar ve dikkat edilecekler | [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md) |
@@ -75,7 +82,12 @@ Yukarıdaki tablodan ilgili dokümanı açın veya aşağıdaki eşleşmeyi kull
 
 ---
 
-**Gezinme:** [Ana sayfa](../README.md) · [Docs](../docs/README.md) · [Örnek makrolar](../Examples/README.md)
+### Gezinme
+
+| [Ana sayfa](../README.md) | [Docs](../docs/README.md) | [Örnek makrolar](../Examples/README.md) | [Help](../Help/) |
+| :--- | :--- | :--- | :--- |
+
+**Rehber sırası:** [01 Giriş](01-Giris-Neden-3DExperience-VBA.md) → [02 Ortam](02-Ortam-Kurulumu.md) → [03 Değişkenler](03-VBA-Temelleri-Degiskenler-ve-Veritipleri.md) → … → [19 İsimlendirme](19-Isimlendirme-Rehberi.md)
 
 ---
 
@@ -87,22 +99,22 @@ Tüm dokümanlar **3DExperience VBA** özelinde yazılmıştır; örnekler ve te
 
 | Doküman | Örnek türü |
 |---------|------------|
-| 01 | Senaryo tabloları, kavramsal “parça adı göster”, otomasyon türleri |
-| 02 | İlk MsgBox, InputBox, Language/Release başlığı, F5/F8 |
-| 03 | Değişken tipleri, Set, Const, Variant, Date, önekli isimler |
-| 04 | If/Else, Select Case, For/For Each, Do While, Nothing kontrolü, Exit For |
-| 05 | Sub/Function, parametreler, ByVal/ByRef, Optional, Call |
-| 06 | GetObject, ActiveDocument, Part/Product/Drawing, Shapes, FileSystem, GetSessionService |
-| 07 | Kayıt çıktısı, sadeleştirme, Nothing kontrolü, tek Update, sabit→değişken |
-| 08 | Parametre okuma/yazma, Shapes döngüsü, Drawing Sheets/Views, Product Children, GetService |
-| 09 | On Error GoTo, Resume Next, Err.Number, breakpoint, Immediate, LogYaz |
-| 10 | Tam makro iskeletleri: bilgi göster, parametre oku/yaz, listele, dosyaya yaz, log, modüler yapı |
-| 11 | Başlık, cross-platform, Err.Raise, Design/Draft/Harden/Finalize, risk matrisi, 3 satır kullanım |
+| [01](01-Giris-Neden-3DExperience-VBA.md) | Senaryo tabloları, kavramsal “parça adı göster”, otomasyon türleri |
+| [02](02-Ortam-Kurulumu.md) | İlk MsgBox, InputBox, Language/Release başlığı, F5/F8 |
+| [03](03-VBA-Temelleri-Degiskenler-ve-Veritipleri.md) | Değişken tipleri, Set, Const, Variant, Date, önekli isimler |
+| [04](04-VBA-Temelleri-Kosullar-ve-Donguler.md) | If/Else, Select Case, For/For Each, Do While, Nothing kontrolü, Exit For |
+| [05](05-VBA-Temelleri-Prosedurler-ve-Fonksiyonlar.md) | Sub/Function, parametreler, ByVal/ByRef, Optional, Call |
+| [06](06-3DExperience-Nesne-Modeli.md) | GetObject, ActiveDocument, Part/Product/Drawing, Shapes, FileSystem, GetSessionService |
+| [07](07-Makro-Kayit-ve-Inceleme.md) | Kayıt çıktısı, sadeleştirme, Nothing kontrolü, tek Update, sabit→değişken |
+| [08](08-Sik-Kullanilan-APIler.md) | Parametre okuma/yazma, Shapes döngüsü, Drawing Sheets/Views, Product Children, GetService |
+| [09](09-Hata-Yakalama-ve-Debug.md) | On Error GoTo, Resume Next, Err.Number, breakpoint, Immediate, LogYaz |
+| [10](10-Ornek-Proje-Bastan-Sona-Bir-Makro.md) | Tam makro iskeletleri: bilgi göster, parametre oku/yaz, listele, dosyaya yaz, log, modüler yapı |
+| [11](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) | Başlık, cross-platform, Err.Raise, Design/Draft/Harden/Finalize, risk matrisi, 3 satır kullanım |
 
-| 12–15 | Servisler, erişim tabloları, Excel, dosya diyalogları (12–15. dokümanlar) |
-| 16 | İyileştirme önerileri, kontrol listesi (kalite, performans, bakım, test, UX, dağıtım) |
-| 17 | Help dosyalarını ne zaman/nasıl kullanacağınız, hangi dosya hangi aşamada |
-| 18 | Sık yapılan hatalar, dikkat edilecek özel noktalar (Nothing, Update, On Error, V5 API, locale) |
+| [12](12-Servisler-ve-Yapilabilecek-Islemler.md)–[15](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md) | Servisler, erişim tabloları, Excel, dosya diyalogları (12–15. dokümanlar) |
+| [16](16-Iyilestirme-Onerileri.md) | İyileştirme önerileri, kontrol listesi (kalite, performans, bakım, test, UX, dağıtım) |
+| [17](17-Help-Dosyalarini-Kullanma.md) | Help dosyalarını ne zaman/nasıl kullanacağınız, hangi dosya hangi aşamada |
+| [18](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md) | Sık yapılan hatalar, dikkat edilecek özel noktalar (Nothing, Update, On Error, V5 API, locale) |
 
 Bu dağılım, belirli bir örnek türünü nerede bulacağınızı hızlıca göstermek içindir.
 
@@ -110,21 +122,21 @@ Bu dağılım, belirli bir örnek türünü nerede bulacağınızı hızlıca g�
 
 ## Başlamak için en kısa yol
 
-1. **01–02** ile giriş ve ortam kurulumunu yapın; ilk MsgBox makrosunu çalıştırın.  
-2. **03–05** ile değişken, koşul, döngü ve Sub/Function temellerini öğrenin.  
-3. **06** ile Application → Document → Part/Product/Drawing zincirini ve nesne modelini inceleyin.  
-4. **07** ile makro kaydı yapıp üretilen kodu sadeleştirmeyi deneyin.  
-5. **08** ile parametre, Shapes, Drawing, Product API örneklerini inceleyin.  
-6. **09** ile On Error ve debug (breakpoint, Immediate) kullanımını öğrenin.  
-7. **10** ile baştan sona birkaç tam makro örneğini kopyalayıp kendi ihtiyacınıza uyarlayın.  
-8. **11** ile resmi kurallar (başlık, isimlendirme, Design/Draft/Harden/Finalize) ve kontrol listelerini uygulayın.  
-9. **12** ile servisler (Editor/Session) ve yapılabilecek işlemlerin detaylı listesi ile kod örneklerini inceleyin.  
-10. **13** ile “neye nereden erişilir, neyi nasıl kullanırsın” tablolarını ve kod kalıplarını kullanın (hızlı referans).  
-11. **14** ile VBA’dan Excel’e veri yazma/okuma (Part ↔ Excel).  
-12. **15** ile dosya seçtirme ve kaydetme diyalogları (FileDialog, GetOpenFileName/GetSaveFileName).  
-13. **16** ile kod kalitesi, performans, bakım, test ve dağıtım için iyileştirme önerilerini ve isteğe bağlı kontrol listesini uygulayın.  
-14. **17** ile Help klasöründeki dosyaları **ne zaman ve nasıl** kullanacağınızı (hangi dosya, hangi aşama, arama yöntemleri) öğrenin.  
-15. **18** ile **sık yapılan hataları** ve **dikkat edilmesi gereken özel noktaları** (Nothing, Update, On Error, V5 API, locale, servis sırası vb.) inceleyin.
+1. [**01**](01-Giris-Neden-3DExperience-VBA.md)–[**02**](02-Ortam-Kurulumu.md) ile giriş ve ortam kurulumunu yapın; ilk MsgBox makrosunu çalıştırın.  
+2. [**03**](03-VBA-Temelleri-Degiskenler-ve-Veritipleri.md)–[**05**](05-VBA-Temelleri-Prosedurler-ve-Fonksiyonlar.md) ile değişken, koşul, döngü ve Sub/Function temellerini öğrenin.  
+3. [**06**](06-3DExperience-Nesne-Modeli.md) ile Application → Document → Part/Product/Drawing zincirini ve nesne modelini inceleyin.  
+4. [**07**](07-Makro-Kayit-ve-Inceleme.md) ile makro kaydı yapıp üretilen kodu sadeleştirmeyi deneyin.  
+5. [**08**](08-Sik-Kullanilan-APIler.md) ile parametre, Shapes, Drawing, Product API örneklerini inceleyin.  
+6. [**09**](09-Hata-Yakalama-ve-Debug.md) ile On Error ve debug (breakpoint, Immediate) kullanımını öğrenin.  
+7. [**10**](10-Ornek-Proje-Bastan-Sona-Bir-Makro.md) ile baştan sona birkaç tam makro örneğini kopyalayıp kendi ihtiyacınıza uyarlayın.  
+8. [**11**](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) ile resmi kurallar (başlık, isimlendirme, Design/Draft/Harden/Finalize) ve kontrol listelerini uygulayın.  
+9. [**12**](12-Servisler-ve-Yapilabilecek-Islemler.md) ile servisler (Editor/Session) ve yapılabilecek işlemlerin detaylı listesi ile kod örneklerini inceleyin.  
+10. [**13**](13-Erisim-ve-Kullanim-Rehberi.md) ile “neye nereden erişilir, neyi nasıl kullanırsın” tablolarını ve kod kalıplarını kullanın (hızlı referans).  
+11. [**14**](14-VBA-ve-Excel-Etkilesimi.md) ile VBA’dan Excel’e veri yazma/okuma (Part ↔ Excel).  
+12. [**15**](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md) ile dosya seçtirme ve kaydetme diyalogları (FileDialog, GetOpenFileName/GetSaveFileName).  
+13. [**16**](16-Iyilestirme-Onerileri.md) ile kod kalitesi, performans, bakım, test ve dağıtım için iyileştirme önerilerini ve isteğe bağlı kontrol listesini uygulayın.  
+14. [**17**](17-Help-Dosyalarini-Kullanma.md) ile Help klasöründeki dosyaları **ne zaman ve nasıl** kullanacağınızı (hangi dosya, hangi aşama, arama yöntemleri) öğrenin.  
+15. [**18**](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md) ile **sık yapılan hataları** ve **dikkat edilmesi gereken özel noktaları** (Nothing, Update, On Error, V5 API, locale, servis sırası vb.) inceleyin.
 
 Bu sırayla ilerlediğinizde toplam rehber **5000 satır civarı** örnek ve açıklama içerir; her dokümanda birden fazla VBA kodu ve senaryo bulunur.
 
@@ -165,4 +177,4 @@ Toplamda **150’den fazla** ayrı örnek veya kod blokları rehberde yer alır;
 - **Başlık örnekleri:** Language, Release, Purpose, Assumptions, Copyright.  
 - **Kullanım yönergeleri:** 3 satırlık talimat, dağıtım notu, sonraki adım önerileri.
 
-Tüm bu içerikler 3DExperience VBA bağlamında yazılmıştır; API isimleri sürüme göre **docs/VBA_API_REFERENCE.md** ve **Help/text/** ile doğrulanmalıdır.
+Tüm bu içerikler 3DExperience VBA bağlamında yazılmıştır; API isimleri sürüme göre **docs/VBA_API_REFERENCE.md** ve Help klasöründeki **resmi PDF'lerle** doğrulanmalıdır.

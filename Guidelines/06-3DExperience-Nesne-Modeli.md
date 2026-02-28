@@ -120,7 +120,7 @@ For i = 1 To oShapes.Count
 Next i
 ```
 
-`VBA_CALL_LIST.txt` / `VBA_API_REFERENCE.md` içinde `Part`, `Shapes`, `Item` gibi sınıf ve metodları arayarak doğru API’yi bulun.
+Help klasöründeki **Help-Native Apps Automation.pdf** veya **Help-Automation Reference.pdf** içinde (Ctrl+F) `Part`, `Shapes`, `Item` arayarak doğru API'yi bulun; özet için `VBA_API_REFERENCE.md` kullanın.
 
 ════════════════════════════════════════════════════════════════════════════════
 
@@ -162,7 +162,7 @@ Set oSheets = oDrawing.Sheets
 
 1. **Her zaman Nothing kontrolü:** `If oDoc Is Nothing Then Exit Sub` gibi.  
 2. **Belge türü kontrolü:** Parça mı, montaj mı, çizim mi buna göre farklı nesnelere geçin.  
-3. **Referans dokümanı:** Bu projedeki `VBA_API_REFERENCE.md` ve `Help/text/` altındaki metinler, hangi sınıfta hangi property/method olduğunu gösterir; sürümünüzle eşleştirin.
+3. **Referans dokümanı:** Bu projedeki `VBA_API_REFERENCE.md` ve Help klasöründeki **resmi PDF'ler** (Help-Native Apps Automation, Help-Automation Reference), hangi sınıfta hangi property/method olduğunu gösterir; sürümünüzle eşleştirin.
 
 ════════════════════════════════════════════════════════════════════════════════
 
@@ -476,7 +476,8 @@ Kullanıcının ekranda seçtiği nesnelere erişmek için **ActiveEditor.Select
 ## Uygulamalı alıştırma – Yaparak öğren
 
 **Amaç:** GetObject → ActiveDocument → GetItem("Part") zincirini yazıp çalıştırmak; Nothing kontrollerini uygulamak.  
-**Süre:** Yaklaşık 15 dakika. **Gereksinim:** 3DExperience açık, bir Part belgesi açık olmalı.
+**Süre:** Yaklaşık 15 dakika. **Gereksinim:** 3DExperience açık, bir Part belgesi açık olmalı.  
+**Zorluk:** Orta
 
 | Adım | Ne yapacaksınız | Kontrol |
 |------|------------------|--------|
@@ -521,4 +522,9 @@ Kullanıcının ekranda seçtiği nesnelere erişmek için **ActiveEditor.Select
 
 **7. doküman:** [07-Makro-Kayit-ve-Inceleme.md](07-Makro-Kayit-ve-Inceleme.md) — Makro kaydetme ve oluşan kodu inceleyip düzenleme.
 
-**Gezinme:** Önceki: [05-Prosedurler](05-VBA-Temelleri-Prosedurler-ve-Fonksiyonlar.md) | [Rehber listesi](README.md) | Sonraki: [07-Makro-Kayit](07-Makro-Kayit-ve-Inceleme.md) →
+---
+
+### Gezinme
+
+| [← Önceki: 05 Prosedürler](05-VBA-Temelleri-Prosedurler-ve-Fonksiyonlar.md) | [Rehber listesi](README.md) | [Sonraki: 07 Makro kayıt →](07-Makro-Kayit-ve-Inceleme.md) |
+| :--- | :--- | :--- |

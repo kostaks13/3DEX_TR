@@ -2,7 +2,7 @@
 
 ```
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║  Sık kullanılan API imzaları  |  Help: VBA_CALL_LIST.txt, text/               ║
+║  Sık kullanılan API imzaları  |  Help: resmi PDF'ler (Native Apps Automation, Automation Reference)  ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 ```
 
@@ -14,11 +14,8 @@ Bu sayfa **3DExperience VBA** makro geliştirirken kullanılan API’lere yönle
 
 | Kaynak | Açıklama |
 |--------|----------|
-| [**Help/VBA_CALL_LIST.txt**](../Help/VBA_CALL_LIST.txt) | Çağrılabilir API listesi (method imzaları, VBA karşılıkları) |
-| [**Help/SIK_KULLANILAN_API.txt**](../Help/SIK_KULLANILAN_API.txt) | Sık kullanılan API özet listesi |
-| [**Help/API_REPORT.csv**](../Help/API_REPORT.csv) | API raporu (ek kaynak) |
-| [**Help/text/**](../Help/text/) | Resmi Help dokümanlarından üretilmiş metin dosyaları |
-| [**Help/ARAMA_REHBERI.md**](../Help/ARAMA_REHBERI.md) | Help ve VBA_CALL_LIST içinde grep/arama örnekleri |
+| **Help klasörü (PDF)** | Resmi referans PDF'leri: *Help-Native Apps Automation.pdf*, *Help-Automation Reference.pdf*, *Help-Common Services.pdf* — API imzaları, nesne modeli, servis listesi. |
+| [**Help/ARAMA_REHBERI.md**](../Help/ARAMA_REHBERI.md) | Hangi konuyu hangi PDF'te bulacağınız; PDF'de arama (Ctrl+F) rehberi. |
 
 ---
 
@@ -49,13 +46,13 @@ Bu sayfa **3DExperience VBA** makro geliştirirken kullanılan API’lere yönle
 | Shapes döngüsü | `For i = 1 To oPart.Shapes.Count` … `Set oSh = oPart.Shapes.Item(i)` |
 | Editor servis | `Set oEditor = oApp.ActiveEditor` → `Set oSvc = oEditor.GetService("InertiaService")` |
 
-Tam imzalar ve sürüme özel API adları için **Help/VBA_CALL_LIST.txt** ve **Help/text/** içinde arama yapın; [Help/ARAMA_REHBERI.md](../Help/ARAMA_REHBERI.md) ile grep örneklerini kullanabilirsiniz.
+Tam imzalar ve sürüme özel API adları için Help klasöründeki **resmi PDF'leri** (Native Apps Automation, Automation Reference) kullanın; [Help/ARAMA_REHBERI.md](../Help/ARAMA_REHBERI.md) ile hangi konunun hangi PDF'te olduğunu ve PDF'de nasıl arayacağınızı bulabilirsiniz.
 
 ---
 
 ## Sık kullanılan API'ler (imza + açıklama)
 
-Aşağıdaki tabloda günlük makro yazarken en çok ihtiyaç duyacağınız API'ler, VBA imzası ve kısa açıklama ile verilmiştir. İsimler sürüme göre değişebilir; şüphede **Help/VBA_CALL_LIST.txt** ve **Help/text/** ile doğrulayın.
+Aşağıdaki tabloda günlük makro yazarken en çok ihtiyaç duyacağınız API'ler, VBA imzası ve kısa açıklama ile verilmiştir. İsimler sürüme göre değişebilir; şüphede Help klasöründeki **resmi PDF'lerle** (Native Apps Automation, Automation Reference) doğrulayın.
 
 ### Uygulama ve belge erişimi
 

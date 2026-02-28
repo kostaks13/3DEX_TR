@@ -434,7 +434,8 @@ Bu sayede makrolarınız hem elle hem otomatik test suite’lerde daha tutarlı 
 ## Uygulamalı alıştırma – Yaparak öğren
 
 **Amaç:** If, For ve Do döngülerini tek bir makroda uygulamak.  
-**Süre:** Yaklaşık 15 dakika.
+**Süre:** Yaklaşık 15 dakika.  
+**Zorluk:** Başlangıç
 
 | Adım | Ne yapacaksınız | Kontrol |
 |------|------------------|--------|
@@ -462,4 +463,9 @@ Bu sayede makrolarınız hem elle hem otomatik test suite’lerde daha tutarlı 
 
 **5. doküman:** [05-VBA-Temelleri-Prosedurler-ve-Fonksiyonlar.md](05-VBA-Temelleri-Prosedurler-ve-Fonksiyonlar.md) — Sub, Function ve parametreler.
 
-**Gezinme:** Önceki: [03-Degiskenler](03-VBA-Temelleri-Degiskenler-ve-Veritipleri.md) | [Rehber listesi](README.md) | Sonraki: [05-Prosedurler](05-VBA-Temelleri-Prosedurler-ve-Fonksiyonlar.md) →
+---
+
+### Gezinme
+
+| [← Önceki: 03 Değişkenler](03-VBA-Temelleri-Degiskenler-ve-Veritipleri.md) | [Rehber listesi](README.md) | [Sonraki: 05 Prosedürler →](05-VBA-Temelleri-Prosedurler-ve-Fonksiyonlar.md) |
+| :--- | :--- | :--- |

@@ -422,7 +422,8 @@ End Sub
 ## Uygulamalı alıştırma – Yaparak öğren
 
 **Amaç:** On Error GoTo kullanmak, kesme noktası ve Immediate ile debug yapmak.  
-**Süre:** Yaklaşık 15 dakika.
+**Süre:** Yaklaşık 15 dakika.  
+**Zorluk:** Orta
 
 | Adım | Ne yapacaksınız | Kontrol |
 |------|------------------|--------|
@@ -466,4 +467,9 @@ End Sub
 
 **10. doküman:** [10-Ornek-Proje-Bastan-Sona-Bir-Makro.md](10-Ornek-Proje-Bastan-Sona-Bir-Makro.md) — Baştan sona örnek makro ve yazım kuralları özeti.
 
-**Gezinme:** Önceki: [08-Sik-Kullanilan-APIler](08-Sik-Kullanilan-APIler.md) | [Rehber listesi](README.md) | Sonraki: [10-Ornek-Proje](10-Ornek-Proje-Bastan-Sona-Bir-Makro.md) →
+---
+
+### Gezinme
+
+| [← Önceki: 08 Sık API'ler](08-Sik-Kullanilan-APIler.md) | [Rehber listesi](README.md) | [Sonraki: 10 Örnek proje →](10-Ornek-Proje-Bastan-Sona-Bir-Makro.md) |
+| :--- | :--- | :--- |

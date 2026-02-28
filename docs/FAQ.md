@@ -46,7 +46,7 @@ Aktif belge Part değildir (çizim veya montaj açık olabilir). Önce `oDoc.Get
 ## API ve Help
 
 **İstediğim API’nin tam imzasını nerede bulurum?**  
-[VBA_API_REFERENCE.md](VBA_API_REFERENCE.md) (sık kullanılanlar); tam liste için [Help/VBA_CALL_LIST.txt](../Help/VBA_CALL_LIST.txt) ve [Help/text/](../Help/). Arama: [Help/ARAMA_REHBERI.md](../Help/ARAMA_REHBERI.md).
+[VBA_API_REFERENCE.md](VBA_API_REFERENCE.md) (sık kullanılanlar); tam liste ve detay için Help klasöründeki **resmi PDF'leri** (Native Apps Automation, Automation Reference) kullanın. Hangi konunun hangi PDF'te olduğu: [Help/ARAMA_REHBERI.md](../Help/ARAMA_REHBERI.md).
 
 ### Editor-level ve Session-level servis farkı ne?
 

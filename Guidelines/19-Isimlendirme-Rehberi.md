@@ -141,7 +141,8 @@ Const ERR_INVALID_INPUT As Long = 9002
 ## Uygulamalı alıştırma – Yaparak öğren
 
 **Amaç:** Mevcut bir makrodaki isimleri bu rehbere göre gözden geçirmek.  
-**Süre:** Yaklaşık 10 dakika.
+**Süre:** Yaklaşık 10 dakika.  
+**Zorluk:** Orta
 
 | Adım | Ne yapacaksınız | Kontrol |
 |------|------------------|--------|
@@ -158,4 +159,9 @@ Const ERR_INVALID_INPUT As Long = 9002
 
 **Tüm rehber:** [README](README.md). **Değişkenler ve önekler:** [03-VBA-Temelleri-Degiskenler-ve-Veritipleri.md](03-VBA-Temelleri-Degiskenler-ve-Veritipleri.md). **Resmi kurallar:** [11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md). **Checklist (bölüm 5, 13):** [VBA-Kod-Checklist.md](VBA-Kod-Checklist.md).
 
-**Gezinme:** Önceki: [18-Sik-Hatalar](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md) | [Rehber listesi](README.md) | Sonraki: — (rehber sonu)
+---
+
+### Gezinme
+
+| [← Önceki: 18 Sık hatalar](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md) | [Rehber listesi](README.md) | Rehber sonu |
+| :--- | :--- | :--- |

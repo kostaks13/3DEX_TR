@@ -86,7 +86,7 @@ End Sub
 
 ════════════════════════════════════════════════════════════════════════════════
 
-## Resmi isimlendirme önekleri (Help-Automation Development Guidelines)
+## Resmi isimlendirme önekleri (Help – Automation Development Guidelines)
 
 Dassault Systèmes **Automation Development Guidelines** dokümanında VBA/VBScript için **tip önekleri** önerilir. Değişken adının başına tek harf ekleyerek tipi anında tanırsınız:
 
@@ -99,7 +99,7 @@ Dassault Systèmes **Automation Development Guidelines** dokümanında VBA/VBScr
 | **o** | Object | oPart, oDoc, oSketch1 |
 | **c** | Collection | cDrwViews, cShapes |
 
-Sabitler için: Tamamı **büyük harf**, bileşenler **alt çizgi** ile ayrılır. Örnek: `MAX_VALUE`, `LOG_PATH`, `DEFAULT_BODY_NAME`.
+**Sabitler için:** Tamamı **büyük harf**, bileşenler **alt çizgi** ile ayrılır. Örnek: `MAX_VALUE`, `LOG_PATH`, `DEFAULT_BODY_NAME`.
 
 **Tüm isimlendirme kuralları (modül, dosya, Sub/Function, parametre, etiket) tek yerde:** [19-Isimlendirme-Rehberi.md](19-Isimlendirme-Rehberi.md).
 
@@ -325,7 +325,8 @@ End Sub
 ## Uygulamalı alıştırma – Yaparak öğren
 
 **Amaç:** Değişken tanımlama, önek kullanımı ve `Set` ile nesne atamayı uygulamak.  
-**Süre:** Yaklaşık 10 dakika.
+**Süre:** Yaklaşık 10 dakika.  
+**Zorluk:** Başlangıç
 
 | Adım | Ne yapacaksınız | Kontrol |
 |------|------------------|--------|
@@ -369,4 +370,9 @@ End Sub
 
 **4. doküman:** [04-VBA-Temelleri-Kosullar-ve-Donguler.md](04-VBA-Temelleri-Kosullar-ve-Donguler.md) — If, Select Case, For ve Do döngüleri.
 
-**Gezinme:** Önceki: [02-Ortam-Kurulumu](02-Ortam-Kurulumu.md) | [Rehber listesi](README.md) | Sonraki: [04-Kosullar-ve-Donguler](04-VBA-Temelleri-Kosullar-ve-Donguler.md) →
+---
+
+### Gezinme
+
+| [← Önceki: 02 Ortam](02-Ortam-Kurulumu.md) | [Rehber listesi](README.md) | [Sonraki: 04 Koşullar →](04-VBA-Temelleri-Kosullar-ve-Donguler.md) |
+| :--- | :--- | :--- |

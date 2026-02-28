@@ -329,7 +329,8 @@ End Sub
 ## Uygulamalı alıştırma – Yaparak öğren
 
 **Amaç:** Excel’i başlatıp bir hücreye yazmak; (isteğe bağlı) Part parametresini Excel’e yazmak.  
-**Süre:** Yaklaşık 15 dakika. **Gereksinim:** Excel kurulu; isteğe bağlı: Part açık.
+**Süre:** Yaklaşık 15 dakika. **Gereksinim:** Excel kurulu; isteğe bağlı: Part açık.  
+**Zorluk:** Orta
 
 | Adım | Ne yapacaksınız | Kontrol |
 |------|------------------|--------|
@@ -347,4 +348,9 @@ End Sub
 
 **Tüm rehber:** [README](README.md). İlgili: [13](13-Erisim-ve-Kullanim-Rehberi.md) (erişim), [15](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md) (dosya seç/kaydet diyaloğu), [10](10-Ornek-Proje-Bastan-Sona-Bir-Makro.md) (parametre → dosya örnekleri).
 
-**Gezinme:** Önceki: [13-Erisim](13-Erisim-ve-Kullanim-Rehberi.md) | [Rehber listesi](README.md) | Sonraki: [15-Dosya-Diyaloglar](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md) →
+---
+
+### Gezinme
+
+| [← Önceki: 13 Erişim](13-Erisim-ve-Kullanim-Rehberi.md) | [Rehber listesi](README.md) | [Sonraki: 15 Dosya diyalogları →](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md) |
+| :--- | :--- | :--- |

@@ -600,7 +600,8 @@ End Sub
 ## Uygulamalı alıştırma – Yaparak öğren
 
 **Amaç:** FileSystem ile klasör/dosya kontrolü ve (isteğe bağlı) Editor-level servis denemesi.  
-**Süre:** Yaklaşık 15 dakika.
+**Süre:** Yaklaşık 15 dakika.  
+**Zorluk:** İleri
 
 | Adım | Ne yapacaksınız | Kontrol |
 |------|------------------|--------|
@@ -615,7 +616,12 @@ End Sub
 
 ## Sonraki adım
 
-**Tüm rehber:** [README](README.md). İlgili: [13](13-Erisim-ve-Kullanim-Rehberi.md) (erişim tabloları), [14](14-VBA-ve-Excel-Etkilesimi.md) (Excel), [15](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md) (dosya diyalogları). Servis adları ve metod imzaları: **VBA_API_REFERENCE.md** ve **Help/text/**.
+**Tüm rehber:** [README](README.md). İlgili: [13](13-Erisim-ve-Kullanim-Rehberi.md) (erişim tabloları), [14](14-VBA-ve-Excel-Etkilesimi.md) (Excel), [15](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md) (dosya diyalogları). Servis adları ve metod imzaları: **VBA_API_REFERENCE.md** ve Help klasöründeki **resmi PDF'ler** (Help-Common Services, Help-Native Apps Automation).
 
-**Gezinme:** Önceki: [11-Resmi-Kurallar](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) | [Rehber listesi](README.md) | Sonraki: [13-Erisim](13-Erisim-ve-Kullanim-Rehberi.md) →
+---
+
+### Gezinme
+
+| [← Önceki: 11 Resmi kurallar](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) | [Rehber listesi](README.md) | [Sonraki: 13 Erişim →](13-Erisim-ve-Kullanim-Rehberi.md) |
+| :--- | :--- | :--- |
 

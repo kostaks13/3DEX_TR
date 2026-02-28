@@ -143,7 +143,8 @@ Rehber özeti ve tüm doküman listesi için [README](README.md).
 ## Uygulamalı alıştırma – Sırayla yapın
 
 **Amaç:** Bu dokümandaki örnekleri sırayla kopyalayıp çalıştırarak baştan sona makro yazma pratiği.  
-**Süre:** Her örnek 5–15 dakika. **Gereksinim:** 3DExperience açık, Part belgesi açık.
+**Süre:** Her örnek 5–15 dakika. **Gereksinim:** 3DExperience açık, Part belgesi açık.  
+**Zorluk:** Orta
 
 | Sıra | Yapacağınız | Dokümandaki bölüm | Beklenen sonuç |
 |------|-------------|-------------------|----------------|
@@ -161,7 +162,7 @@ Rehber özeti ve tüm doküman listesi için [README](README.md).
 ## Sonraki adımlar
 
 - Proje **docs/VBA_API_REFERENCE.md** dosyasında ihtiyacınız olan sınıf ve metodu bulun.  
-- **Help/text/** altındaki metinlerde ilgili bölümleri okuyun (hangi dosyayı ne zaman açacağınız için **17. doküman:** [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md)).  
+- Help klasöründeki **resmi PDF'lerde** ilgili bölümleri okuyun (hangi PDF'i ne zaman açacağınız için **17. doküman:** [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md)).  
 - Küçük bir görev seçip (ör. “bir parametreyi okuyup mesajla göster”) makroyu yazın, çalıştırın; gerekirse 9. dokümandaki debug yöntemleriyle hatayı bulun.  
 - **Erişim/kullanım** için [13-Erisim-ve-Kullanim-Rehberi.md](13-Erisim-ve-Kullanim-Rehberi.md); **Excel** için [14-VBA-ve-Excel-Etkilesimi.md](14-VBA-ve-Excel-Etkilesimi.md); **dosya seç/kaydet diyaloğu** için [15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md); **iyileştirme önerileri** için [16-Iyilestirme-Onerileri.md](16-Iyilestirme-Onerileri.md); **sık hatalar ve dikkat edilecekler** için [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md) kullanın.
 
@@ -773,4 +774,9 @@ Baştan sona bir makro yazarken izlenecek adımların özeti:
 
 ════════════════════════════════════════════════════════════════════════════════
 
-**Gezinme:** Önceki: [09-Hata-Yakalama](09-Hata-Yakalama-ve-Debug.md) | [Rehber listesi](README.md) | Sonraki: [11-Resmi-Kurallar](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) →
+---
+
+### Gezinme
+
+| [← Önceki: 09 Hata yakalama](09-Hata-Yakalama-ve-Debug.md) | [Rehber listesi](README.md) | [Sonraki: 11 Resmi kurallar →](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) |
+| :--- | :--- | :--- |

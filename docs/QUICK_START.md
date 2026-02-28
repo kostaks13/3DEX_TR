@@ -8,6 +8,8 @@
 
 Tek sayfada: **3 adım** + tek çalışan makro. Detaylı rehber için [Guidelines/README.md](../Guidelines/README.md) ve [Examples/](../Examples/README.md) kullanın.
 
+> **Hızlı yol:** 3DExperience ve bir Part belgesi açıksa doğrudan [Tek örnek makro](#tek-örnek-makro-kopyala-yapıştır) bölümündeki kodu kopyalayıp VBA modülüne yapıştırın, F5 ile çalıştırın.
+
 **Bu sayfada:** [3 adım](#3-adım) · [Tek örnek makro](#tek-örnek-makro-kopyala-yapıştır) · [Sonraki adımlar](#sonraki-adımlar)
 
 ---
@@ -21,6 +23,8 @@ Tek sayfada: **3 adım** + tek çalışan makro. Detaylı rehber için [Guidelin
 1. **3DExperience**’ı açın; bir **Part** belgesi açın (veya yeni parça oluşturun).  
 2. **Tools → Macro → Edit** (veya **Alt+F11**) ile VBA editörünü açın. Sol tarafta projeye sağ tıklayıp **Insert → Module** ile yeni modül ekleyin. Aşağıdaki kodu modüle yapıştırın.  
 3. **F5** (veya Run) ile makroyu çalıştırın. Mesaj kutusunda belge adı görünmelidir.
+
+> **İpucu:** İlk kez VBA editörü açıyorsanız makro güvenlik ayarının makro çalıştırmaya izin verdiğinden emin olun (Tools → Options → Security).
 
 ---
 
@@ -54,9 +58,12 @@ End Sub
 
 ## Sonraki adımlar
 
-- Daha fazla örnek: [Examples/README.md](../Examples/README.md)  
-- Parametre okuma/yazma: [VBA_API_REFERENCE.md](VBA_API_REFERENCE.md), [Guidelines/08-Sik-Kullanilan-APIler.md](../Guidelines/08-Sik-Kullanilan-APIler.md)  
-- Rehberin tamamı: [Guidelines/README.md](../Guidelines/README.md)
+| Ne yapmak istiyorsunuz? | Nereye gidin |
+| :--- | :--- |
+| Daha fazla örnek makro | [Examples/README.md](../Examples/README.md) |
+| Parametre okuma/yazma | [VBA_API_REFERENCE.md](VBA_API_REFERENCE.md) · [08-Sik-Kullanilan-APIler](../Guidelines/08-Sik-Kullanilan-APIler.md) |
+| Rehberi sırayla takip | [Guidelines/README.md](../Guidelines/README.md) |
+| Terimler (Part, Update, Nothing) | [GLOSSARY.md](GLOSSARY.md) |
 
 ---
 

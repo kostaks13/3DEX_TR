@@ -347,7 +347,8 @@ End Function
 ## Uygulamalı alıştırma – Yaparak öğren
 
 **Amaç:** Sub/Function tanımlamak, parametre geçmek ve Optional kullanmak.  
-**Süre:** Yaklaşık 15 dakika.
+**Süre:** Yaklaşık 15 dakika.  
+**Zorluk:** Başlangıç
 
 | Adım | Ne yapacaksınız | Kontrol |
 |------|------------------|--------|
@@ -374,4 +375,9 @@ End Function
 
 **6. doküman:** [06-3DExperience-Nesne-Modeli.md](06-3DExperience-Nesne-Modeli.md) — Uygulama, belge, parça hiyerarşisi ve erişim.
 
-**Gezinme:** Önceki: [04-Kosullar-ve-Donguler](04-VBA-Temelleri-Kosullar-ve-Donguler.md) | [Rehber listesi](README.md) | Sonraki: [06-Nesne-Modeli](06-3DExperience-Nesne-Modeli.md) →
+---
+
+### Gezinme
+
+| [← Önceki: 04 Koşullar](04-VBA-Temelleri-Kosullar-ve-Donguler.md) | [Rehber listesi](README.md) | [Sonraki: 06 Nesne modeli →](06-3DExperience-Nesne-Modeli.md) |
+| :--- | :--- | :--- |

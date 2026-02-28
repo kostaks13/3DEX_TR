@@ -1,6 +1,6 @@
 # 8. Sık Kullanılan API’ler
 
-Bu dokümanda 3DExperience VBA ile sık karşılaşacağınız **parça**, **geometri** ve **çizim** tarafı API kullanımlarına kısa örnekler verilir. Tam liste ve parametreler için projedeki **VBA_API_REFERENCE.md** ve **Help/text/** dosyalarına bakın. **Help dosyalarını hangi aşamada nasıl kullanacağınız** için **17. doküman:** [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md).
+Bu dokümanda 3DExperience VBA ile sık karşılaşacağınız **parça**, **geometri** ve **çizim** tarafı API kullanımlarına kısa örnekler verilir. Tam liste ve parametreler için projedeki **VBA_API_REFERENCE.md** ve Help klasöründeki **resmi PDF'lere** (Native Apps Automation, Automation Reference) bakın. **Help PDF'lerini hangi aşamada nasıl kullanacağınız** için **17. doküman:** [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md).
 
 **Neye nereden erişilir ve neyi nasıl kullanırsın?** — Erişim yolları (VBA) ve kullanım tabloları için **13. doküman:** [13-Erisim-ve-Kullanim-Rehberi.md](13-Erisim-ve-Kullanim-Rehberi.md). **Sık hatalar ve dikkat edilecekler** (Nothing, Update, V5 API vb.) için **18. doküman:** [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md).
 
@@ -613,7 +613,8 @@ End Sub
 ## Uygulamalı alıştırma – Yaparak öğren
 
 **Amaç:** Part’tan parametre okumak, tek parametre yazmak ve Shapes sayısını göstermek.  
-**Süre:** Yaklaşık 20 dakika. **Gereksinim:** 3DExperience açık, en az bir parametre içeren Part belgesi açık.
+**Süre:** Yaklaşık 20 dakika. **Gereksinim:** 3DExperience açık, en az bir parametre içeren Part belgesi açık.  
+**Zorluk:** Orta
 
 | Adım | Ne yapacaksınız | Kontrol |
 |------|------------------|--------|
@@ -658,6 +659,11 @@ End Sub
 
 **9. doküman:** [09-Hata-Yakalama-ve-Debug.md](09-Hata-Yakalama-ve-Debug.md) — On Error, kesme noktası ve Immediate penceresi.
 
-**Gezinme:** Önceki: [07-Makro-Kayit](07-Makro-Kayit-ve-Inceleme.md) | [Rehber listesi](README.md) | Sonraki: [09-Hata-Yakalama](09-Hata-Yakalama-ve-Debug.md) →
+---
+
+### Gezinme
+
+| [← Önceki: 07 Makro kayıt](07-Makro-Kayit-ve-Inceleme.md) | [Rehber listesi](README.md) | [Sonraki: 09 Hata yakalama →](09-Hata-Yakalama-ve-Debug.md) |
+| :--- | :--- | :--- |
 
 **İlgili:** [12-Servisler-ve-Yapilabilecek-Islemler.md](12-Servisler-ve-Yapilabilecek-Islemler.md) (servisler, işlem detayı) · [15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md) (dosya seç/kaydet diyaloğu).
