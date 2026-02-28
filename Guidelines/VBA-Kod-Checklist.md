@@ -165,61 +165,6 @@
 
 ════════════════════════════════════════════════════════════════════════════════
 
-## 13. Geliştirme önerileri (ek)
-
-İleri seviye kalite, tekrar kullanılabilirlik ve takip için ek maddeler. Hepsi **önerilen (○)**.
-
-### 13.1 Şablon ve snippet kütüphanesi
-
-| # | Madde | Zorunlu | Not |
-|---|--------|:-------:|-----|
-| 13.1.1 | **Modül şablonu** kullanılıyor: aynı başlık (Purpose, Assumptions, Language, Release, Regional Settings) ve Option Explicit ile başlayan tek bir şablon .bas veya snippet. | ○ | Templates/MacroBaslik.bas veya editör snippet. |
-| 13.1.2 | **Ortak kalıplar** modüle alınmış: GetObject + Nothing, GetActivePart, LogSatir vb. ortak .bas modülünde; diğer makrolar referans alıyor veya içeri aktarıyor. | ○ | Common/AppHelpers.bas, Common/LogHelpers.bas. |
-| 13.1.3 | **Hata numarası sabitleri** tek yerde: 9000–9999 arası özel hata kodları Const veya Enum ile tanımlı; makrolar arası tutarlılık. | ○ | Public Const ERR_PARAM_NOT_FOUND As Long = 9001 |
-
-### 13.2 Sürüm ve değişiklik takibi
-
-| # | Madde | Zorunlu | Not |
-|---|--------|:-------:|-----|
-| 13.2.1 | **CHANGELOG** veya makro başlığında revizyon listesi tutuluyor; ne zaman ne değişti yazılı. | ○ | CHANGELOG.md veya başlıkta ## [1.2] – 2025-03-01. |
-| 13.2.2 | **Sürüm–API matrisi** var: hangi 3DExperience sürümünde hangi API çalışıyor tablo veya yorumda; R2023x/R2024x farkları belirtilmiş. | ○ | ' Tested: R2024x; GetItem("Part") R2023x'te farklı olabilir. |
-| 13.2.3 | **Revizyon etiketi** her teslimde mevcut: en az bir `' REV x.y – YYYY-MM-DD` satırı; dağıtım paketinde hangi revizyon gittiği belli. | ○ | 11. doküman Finalize ile uyumlu. |
-
-### 13.3 Test ve senaryo listesi
-
-| # | Madde | Zorunlu | Not |
-|---|--------|:-------:|-----|
-| 13.3.1 | **Senaryo listesi** yazılmış: belge yok, yanlış tür, 0/1/N parametre, iptal, çok uzun isim vb.; UAT veya regresyon için kullanılıyor. | ○ | Checklist 10. bölümü genişletilmiş hali. |
-| 13.3.2 | **Örnek belge seti** var: boş part, tek parametreli part, büyük part gibi test dosyaları tek klasörde (örn. TestData/). | ○ | TestData/EmptyPart.CATPart, TestData/LargePart.CATPart. |
-| 13.3.3 | **Süre eşiği** dokümante: "X saniyeden uzun sürerse darboğaz araştırılmalı" ve ölçüm yöntemi yorumda veya dokümanda. | ○ | 12.3 (10K+ occurrence) ile uyumlu. |
-
-### 13.4 Dokümantasyon ve dağıtım
-
-| # | Madde | Zorunlu | Not |
-|---|--------|:-------:|-----|
-| 13.4.1 | **Tek sayfa "nasıl çalıştırılır"** var: 1) Hangi workbench, hangi belge 2) Makro nasıl başlatılır 3) Beklenen çıktı / hata mesajları (PDF veya Wiki). | ○ | 11. doküman 3 satırlık yönergeyi genişletir. |
-| 13.4.2 | **Bağımlılık listesi** yazılmış: bu makro hangi .bas modüllerine ve harici dosyalara (Excel, config) bağımlı. | ○ | Dependencies: AppHelpers.bas, C:\Config\macro.ini. |
-| 13.4.3 | **Dağıtım paketi kontrolü**: doğru .bas, güncel kullanım notu, yetkiler ve varsayılan yollar tek yerde (README veya DAĞITIM.txt). | ○ | Checklist 11. bölümü uygulaması. |
-
-### 13.5 Proje ve repo yapısı
-
-| # | Madde | Zorunlu | Not |
-|---|--------|:-------:|-----|
-| 13.5.1 | **İsimlendirme kuralı** tutarlı: makro ve .bas adları için kural (örn. ProjeAdi_Islev.bas); arama ve filtreleme kolay. | ○ | Acme_ParametreListesi.bas, Acme_ExcelExport.bas. |
-| 13.5.2 | **Klasör ayrımı** kullanılıyor: Examples, Common, Templates, TestData ayrı; proje kökü sade. | ○ | Mevcut Examples/ yapısına Common/, Templates/ eklenebilir. |
-| 13.5.3 | **Sürüm kontrolü (Git)** kullanılıyor: anlamlı commit mesajları, gerekirse branch (release/1.2). | ○ | git commit -m "ParametreYaz: InputBox iptal (REV 1.2)". |
-
-### 13.6 İsteğe bağlı ek kontrol (geliştirme)
-
-- [ ] Ortak başlık ve hata yakalama kalıbı şablondan geliyor.
-- [ ] Özel hata numaraları tek yerde (Const/Enum) tanımlı.
-- [ ] CHANGELOG veya revizyon listesi güncel.
-- [ ] Test senaryoları listesi yazıldı; örnek belge seti (varsa) kullanıldı.
-- [ ] Tek sayfa "nasıl çalıştırılır" ve bağımlılık listesi var.
-- [ ] Dosya/modül isimlendirme kuralı tutarlı; gerekirse Common/Templates klasörleri kullanılıyor.
-
-════════════════════════════════════════════════════════════════════════════════
-
 ## Özet: Zorunlu minimum (tek sayfa)
 
 Aşağıdakilerin **hepsi** işaretli olmalı:
@@ -239,4 +184,4 @@ Aşağıdakilerin **hepsi** işaretli olmalı:
 
 ════════════════════════════════════════════════════════════════════════════════
 
-**İlgili dokümanlar:** [11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) (TAMAM/HAZIR, kod sunum) · [19-Isimlendirme-Rehberi.md](19-Isimlendirme-Rehberi.md) (isimlendirme özeti) · [16-Iyilestirme-Onerileri.md](16-Iyilestirme-Onerileri.md) (iyileştirme + §9 geliştirme önerileri) · [09-Hata-Yakalama-ve-Debug.md](09-Hata-Yakalama-ve-Debug.md) (On Error, log). **Tüm rehber:** [README](README.md).
+**İlgili dokümanlar:** [11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) (TAMAM/HAZIR, kod sunum) · [19-Isimlendirme-Rehberi.md](19-Isimlendirme-Rehberi.md) (isimlendirme özeti) · [16-Iyilestirme-Onerileri.md](16-Iyilestirme-Onerileri.md) (iyileştirme önerileri) · [09-Hata-Yakalama-ve-Debug.md](09-Hata-Yakalama-ve-Debug.md) (On Error, log). **Tüm rehber:** [README](README.md).

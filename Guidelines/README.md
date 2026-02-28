@@ -40,47 +40,37 @@ Kodlamaya **yeni başlayan** biri için, **3DExperience VBA** ile makro yazmayı
 
 ## Nasıl kullanılır?
 
-- **Sıfırdan başlıyorsanız:** 1. dokümandan başlayıp sırayla 10’a kadar ilerleyin; kurumsal standartlar için 11’i, servisler ve işlem detayı için 12’yi okuyun.  
-- **Belirli konu arıyorsanız:** Yukarıdaki tablodan ilgili dokümanı açın. **“Buna nereden erişirim, bunu nasıl kullanırım?”** için **13. doküman**; **VBA’dan Excel’e veri yazma/okuma** için **14. doküman**; **dosya seçtirme / kaydetme diyaloğu** için **15. doküman**; **kod ve süreç iyileştirme önerileri** için **16. doküman** kullanın.  
-- **Resmi kurallar ve fazlar:** Help’e dayalı özet ve kontrol listeleri için **11. doküman** kullanın.  
-- **VBA kodu checklist (detaylı):** Teslim veya kod incelemesi öncesi **mutlaka** **[VBA-Kod-Checklist.md](VBA-Kod-Checklist.md)** dosyasındaki zorunlu ve önerilen maddeleri işaretleyin (Option Explicit, Nothing, tek Update, başlık, On Error).  
-- **API detayı için:** Proje kökündeki **VBA_API_REFERENCE.md** (varsa) veya **Help/VBA_CALL_LIST.txt** ve **Help/text/** klasöründeki metinleri kullanın.
-- **Çalıştırılabilir örnek makrolar:** Proje kökündeki **[Examples/](../Examples/README.md)** klasöründe `.bas` dosyaları bulunur.  
-- **Help dosyalarını ne zaman/nasıl kullanacağınız:** **[17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md)** — Help klasörü yapısı, hangi dosyayı hangi aşamada açacağınız, arama yöntemleri.  
-- **Sık hatalar ve dikkat edilecekler:** **[18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md)** — Option Explicit, Nothing/Update, On Error, V5 API, InputBox iptal, locale, servis sırası vb.
-- **İsimlendirme (değişken, Sub/Function, modül, dosya):** **[19-Isimlendirme-Rehberi.md](19-Isimlendirme-Rehberi.md)** — Özet tablo, önekler, kaçınılacaklar, kontrol listesi.
+### Sıfırdan başlıyorsanız
+
+1. dokümandan başlayıp **sırayla 10'a** kadar ilerleyin. Kurumsal standartlar için **11**, servisler ve işlem detayı için **12**'yi okuyun.
+
+### Belirli konu arıyorsanız
+
+Yukarıdaki tablodan ilgili dokümanı açın veya aşağıdaki eşleşmeyi kullanın:
+
+| Konu | Doküman |
+|------|---------|
+| Buna nereden erişirim, nasıl kullanırım? | [13-Erisim-ve-Kullanim-Rehberi.md](13-Erisim-ve-Kullanim-Rehberi.md) |
+| VBA'dan Excel'e veri yazma/okuma | [14-VBA-ve-Excel-Etkilesimi.md](14-VBA-ve-Excel-Etkilesimi.md) |
+| Dosya seçtirme / kaydetme diyaloğu | [15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md) |
+| Kod ve süreç iyileştirme önerileri | [16-Iyilestirme-Onerileri.md](16-Iyilestirme-Onerileri.md) |
+| Resmi kurallar ve hazırlık fazları | [11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) |
+
+### Hızlı erişim
+
+| İhtiyaç | Bağlantı |
+|---------|----------|
+| Teslim / kod incelemesi öncesi checklist | [VBA-Kod-Checklist.md](VBA-Kod-Checklist.md) (Option Explicit, Nothing, tek Update, başlık, On Error) |
+| API imzaları ve detay | Proje kökü: `VBA_API_REFERENCE.md` · `Help/VBA_CALL_LIST.txt` · `Help/text/` |
+| Çalıştırılabilir örnek makrolar | [Examples/](../Examples/README.md) (`.bas` dosyaları) |
+| Help dosyalarını ne zaman/nasıl kullanacağınız | [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md) |
+| Sık hatalar ve dikkat edilecekler | [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md) |
+| İsimlendirme (değişken, Sub/Function, modül, dosya) | [19-Isimlendirme-Rehberi.md](19-Isimlendirme-Rehberi.md) |
+
+---
+
 
 Tüm dokümanlar **3DExperience VBA** özelinde yazılmıştır; örnekler ve terimler bu platforma göredir. Help klasöründeki PDF’ler (Automation Development Guidelines, 3DEXPERIENCE MACRO HAZIRLIK YÖNERGESİ, Native Apps Automation vb.) tam ve güncel referanstır.
-
-════════════════════════════════════════════════════════════════════════════════
-
-## Hızlı referans – Sık kullanılan kalıplar
-
-| İhtiyaç | Örnek kod (kavramsal) |
-|--------|------------------------|
-| Uygulama al | `Set oApp = GetObject(, "CATIA.Application")` |
-| Aktif belge | `Set oDoc = oApp.ActiveDocument` |
-| Part al | `Set oPart = oDoc.GetItem("Part")` veya `Set oPart = oDoc` |
-| Parametre oku | `Set oParam = oPart.Parameters.Item("Length.1")` → `dVal = oParam.Value` |
-| Parametre yaz | `oParam.Value = 50.5` → `oPart.Update` |
-| Shapes döngüsü | `For i = 1 To oPart.Shapes.Count` … `Set oSh = oPart.Shapes.Item(i)` |
-| Hata yakala | `On Error GoTo HataYakala` … `Exit Sub` … `HataYakala: MsgBox Err.Description` |
-| Nothing kontrolü | `If oDoc Is Nothing Then MsgBox "Belge yok.": Exit Sub` |
-
-Bu kalıplar sürüme göre değişebilir; tam API için **VBA_API_REFERENCE.md** ve **Help/text/** kullanın.
-
-════════════════════════════════════════════════════════════════════════════════
-
-## Doküman satır sayıları (rehber genişliği)
-
-Rehber seti, girişten resmi kurallara kadar **binlerce satır** örnek ve açıklama içerir. Her dokümanda:
-
-- Temel kavramlar ve kurallar  
-- 3DExperience’a özel VBA örnekleri  
-- Help dokümanlarından alıntılar ve uyumlu kod blokları  
-- Kontrol listeleri ve sonraki adım önerileri  
-
-bulunur. Baştan sona takip edildiğinde sıfırdan makro yazıp dağıtım öncesi kontrol listesini uygulayabilecek seviyeye gelirsiniz.
 
 ════════════════════════════════════════════════════════════════════════════════
 

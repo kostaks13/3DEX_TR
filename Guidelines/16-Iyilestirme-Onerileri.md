@@ -101,61 +101,6 @@ Kodunuzu teslim etmeden veya paylaşmadan önce aşağıdakilerden ihtiyacınız
 
 ════════════════════════════════════════════════════════════════════════════════
 
-## 9. Geliştirme önerileri (ek)
-
-Daha ileri seviye kalite, tekrar kullanılabilirlik ve takip için ek öneriler:
-
-### 9.1 Şablon ve snippet kütüphanesi
-
-| Öneri | Açıklama | Örnek |
-|-------|----------|--------|
-| **Modül şablonu kullanın** | Her yeni makroda aynı başlık (Purpose, Assumptions, Language, Release, Regional Settings) ve Option Explicit ile başlayın; bu bloğu tek bir “şablon .bas” veya snippet olarak saklayın. | `Templates/MacroBaslik.bas` veya editör snippet. |
-| **Ortak kalıpları modüle alın** | GetObject + Nothing kontrolü, GetActivePart, LogSatir gibi tekrarlayan blokları **ortak bir .bas modülüne** taşıyın; diğer makrolar bu modülü referans alsın veya kodu içeri aktarsın. | `Common/AppHelpers.bas`, `Common/LogHelpers.bas`. |
-| **Hata numarası sabitleri** | 9000–9999 arası özel hata kodlarını tek yerde **Const** veya Enum ile tanımlayın; makrolar arası tutarlılık sağlar. | `Public Const ERR_PARAM_NOT_FOUND As Long = 9001` |
-
-### 9.2 Sürüm ve değişiklik takibi
-
-| Öneri | Açıklama | Örnek |
-|-------|----------|--------|
-| **CHANGELOG tutun** | Kurumsal veya çok makro projelerinde kök dizinde **CHANGELOG.md** veya makro başlığında revizyon listesi tutun; ne zaman ne değişti görünsün. | `## [1.2] – 2025-03-01 / Parametre adı boş kontrolü eklendi.` |
-| **Sürüm–API matrisi** | Hangi 3DExperience sürümünde hangi API’nin çalıştığını bir tabloda (veya yorumda) not edin; R2023x / R2024x farkları varsa belirtin. | `' Tested: R2024x; GetItem("Part") R2023x'te farklı olabilir.` |
-| **Revizyon etiketi zorunlu yapın** | Teslimde her makroda en az bir `' REV x.y – YYYY-MM-DD` satırı olsun; dağıtım paketinde hangi revizyonun gittiği belli olsun. | 11. doküman Finalize maddesiyle uyumlu. |
-
-### 9.3 Test ve senaryo listesi
-
-| Öneri | Açıklama | Örnek |
-|-------|----------|--------|
-| **Senaryo listesi dokümanı** | Her makro için “Test senaryoları” listesi yazın: belge yok, yanlış tür, 0/1/N parametre, iptal, çok uzun isim vb.; UAT veya regresyon için kullanın. | Checklist 10. bölümü genişletilmiş hali. |
-| **Örnek belge seti** | Test için “boş part”, “tek parametreli part”, “100+ shape’li part” gibi örnek belgeleri bir klasörde toplayın; yeni sürümde aynı setle deneyin. | `TestData/EmptyPart.CATPart`, `TestData/LargePart.CATPart`. |
-| **Süre eşiği notu** | “Bu makro X saniyeden uzun sürerse darboğaz araştırılmalı” gibi bir eşik ve ölçüm yöntemini yorumda veya dokümanda belirtin. | 12.3 (10K+ occurrence) ile uyumlu. |
-
-### 9.4 Dokümantasyon ve dağıtım
-
-| Öneri | Açıklama | Örnek |
-|-------|----------|--------|
-| **Tek sayfa “nasıl çalıştırılır”** | Her makro için **tek sayfalık** talimat: 1) Hangi workbench, hangi belge 2) Makro nasıl başlatılır 3) Beklenen çıktı / hata mesajları. PDF veya Wiki’ye koyun. | 11. doküman 3 satırlık yönergeyi genişletir. |
-| **Bağımlılık listesi** | Bu makro hangi diğer .bas modüllerine veya harici dosyalara (Excel, config) bağımlı; liste halinde yazın. | `Dependencies: AppHelpers.bas, C:\Config\macro.ini`. |
-| **Dağıtım paketi kontrolü** | Dağıtırken: doğru .bas dosyaları, güncel kullanım notu, gerekli yetkiler ve varsayılan yollar listesi tek yerde (ör. README veya paket içi DAĞITIM.txt) olsun. | Checklist 11. bölümü uygulaması. |
-
-### 9.5 Proje ve repo yapısı
-
-| Öneri | Açıklama | Örnek |
-|-------|----------|--------|
-| **İsimlendirme kuralı** | Makro ve .bas dosya adları için tutarlı kural: örn. `ProjeAdi_Islev.bas` veya `Modul_ParametreYaz.bas`; arama ve filtreleme kolaylaşır. | `Acme_ParametreListesi.bas`, `Acme_ExcelExport.bas`. |
-| **Klasör ayrımı** | Örnek makrolar (Examples), ortak modüller (Common), şablonlar (Templates), test verisi (TestData) ayrı klasörlerde; proje kökü sade kalsın. | Mevcut Examples/ yapısına Common/, Templates/ eklenebilir. |
-| **Git / sürüm kontrolü** | Kod ve dokümantasyonu Git’te tutun; .bas ve .md için anlamlı commit mesajları ve gerekirse branch (örn. release/1.2) kullanın. | `git commit -m "ParametreYaz: InputBox iptal kontrolü (REV 1.2)"`. |
-
-### 9.6 İsteğe bağlı ek kontrol listesi
-
-- [ ] Ortak başlık ve hata yakalama kalıbı şablondan geliyor.
-- [ ] Özel hata numaraları tek yerde (Const/Enum) tanımlı.
-- [ ] CHANGELOG veya revizyon listesi güncel.
-- [ ] Test senaryoları listesi yazıldı; örnek belge seti (varsa) kullanıldı.
-- [ ] Tek sayfa “nasıl çalıştırılır” ve bağımlılık listesi var.
-- [ ] Dosya/modül isimlendirme kuralı tutarlı; gerekirse Common/Templates klasörleri kullanılıyor.
-
-════════════════════════════════════════════════════════════════════════════════
-
 ## İlgili dokümanlar
 
 **Tüm rehber:** [README](README.md). İlgili: [11](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) (zorunlu kurallar, TAMAM/HAZIR), [09](09-Hata-Yakalama-ve-Debug.md) (On Error, log), [10](10-Ornek-Proje-Bastan-Sona-Bir-Makro.md) (rollback, kod kalıpları).

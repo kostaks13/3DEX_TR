@@ -2,7 +2,7 @@
 
 **Anahtar kelimeler:** 3DExperience, VBA, macro, Dassault Systèmes, CATIA, automation, 3DEX, makro rehberi.
 
-**Rehber sürümü:** v1.1 — [CHANGELOG.md](CHANGELOG.md) içinde sürüm notları.
+**Rehber sürümü:** v1.1
 
 ```
 ██████╗ ██████╗ ███████╗██╗  ██╗     ████████╗██████╗ 
@@ -50,7 +50,6 @@
 ├── GLOSSARY.md               ← Terimler sözlüğü
 ├── FAQ.md                    ← Sık sorulan sorular
 ├── TROUBLESHOOTING.md        ← Sorun giderme
-├── CHANGELOG.md              ← Sürüm notları
 ├── VBA_API_REFERENCE.md      ← API referansı (sık kullanılan imzalar + Help kaynakları)
 ├── .gitignore
 ├── LICENSE
@@ -84,32 +83,3 @@
 - **16–18:** İyileştirme önerileri, Help dosyalarını kullanma, sık hatalar ve dikkat noktaları.
 
 Tam liste ve tablolar: **[Guidelines/README.md](Guidelines/README.md)**.
-
----
-
-## Gereksinimler
-
-- **3DExperience** (Native Client) kurulu ve lisanslı ortam.
-- Makro yazmak için **VBA** editörü erişimi (Tools → Macro → Edit vb.).
-- Rehber ve Help metinleri için herhangi bir metin/markdown okuyucu.
-
----
-
-## Katkı ve lisans
-
-- **Katkı:** Hata düzeltmesi veya öneri için Issue açabilir veya Merge Request gönderebilirsiniz.
-- **Lisans:** Proje içeriği eğitim ve referans amaçlıdır. 3DExperience ve ilgili ticari markalar Dassault Systèmes’e aittir. Dokümanların kullanım koşulları için repository’deki `LICENSE` dosyasına bakın.
-
----
-
-## Dağıtım ve PDF
-
-- Rehberi **tek PDF** olarak dışa aktarmak isterseniz: tüm **Guidelines/*.md** dosyalarını [pandoc](https://pandoc.org/) veya bir Markdown→PDF aracıyla birleştirebilirsiniz. Örnek: `pandoc Guidelines/*.md -o Rehber_3DExperience_VBA.pdf` (başlık ve içindekiler için ek seçenekler gerekebilir).
-- Offline veya yazdırma için tek PDF kullanışlıdır; güncel ve aranabilir içerik için repository’deki Markdown dosyalarını kullanın.
-
----
-
-## Bağlantılar
-
-- [Dassault Systèmes 3DExperience](https://www.3ds.com/products-services/3dexperience/)
-- Rehberin tamamı: **[Guidelines/README.md](Guidelines/README.md)**
