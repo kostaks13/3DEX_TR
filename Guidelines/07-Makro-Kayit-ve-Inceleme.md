@@ -315,3 +315,5 @@ Kayıt sırasında sadece bir öğe seçildiyse kod `Item(1)` veya `Item(2)` gib
 ## Sonraki adım
 
 **8. doküman:** [08-Sik-Kullanilan-APIler.md](08-Sik-Kullanilan-APIler.md) — Parça, geometri ve çizimle ilgili sık kullanılan API’ler ve kısa örnekler. **Help:** [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md). **Sık hatalar:** [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md).
+
+**Gezinme:** ← [06-Nesne-Modeli](06-3DExperience-Nesne-Modeli.md) | [Rehber listesi](README.md) | Sonraki: [08-Sik-Kullanilan-APIler](08-Sik-Kullanilan-APIler.md) →

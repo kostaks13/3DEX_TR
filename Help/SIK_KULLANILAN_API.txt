@@ -1,0 +1,62 @@
+================================================================================
+  SIK KULLANILAN API ÖZET LİSTESİ – 3DExperience VBA
+  Tam liste: VBA_CALL_LIST.txt  |  Detay: Help/text/*.txt
+================================================================================
+
+Uygulama ve belge
+-----------------
+GetObject(, "CATIA.Application")   -> Çalışan uygulamaya bağlan
+oApp.ActiveDocument               -> Aktif belge (Nothing olabilir)
+oApp.Documents                    -> Açık belgeler koleksiyonu
+oDoc.GetItem("Part")              -> Part nesnesi (parça belgesi)
+oDoc.GetItem("Product")          -> Product (montaj)
+oDoc.GetItem("DrawingRoot")       -> Drawing kök (çizim)
+oDoc.Name                         -> Belge adı
+oDoc.FullName                     -> Tam dosya yolu
+
+Part – Parça
+------------
+oPart.Parameters                  -> Parametre koleksiyonu
+oPart.Parameters.Item("Length.1") -> İsimle parametre
+oPart.Parameters.Item(i)          -> İndeksle parametre (1'den başlar)
+oPart.Parameters.Count            -> Parametre sayısı
+oParam.Value                      -> Parametre değeri (okuma/yazma)
+oParam.Name                       -> Parametre adı
+oPart.Update                      -> Değişiklikleri uygula (döngü dışında bir kez)
+oPart.Shapes                      -> Şekiller koleksiyonu (veya MainBody.Shapes)
+oPart.MainBody                    -> Ana gövde
+oShapes.Count                     -> Şekil sayısı
+oShapes.Item(i)                   -> İndeksle şekil
+oShape.Name                       -> Şekil adı
+
+Product – Montaj
+----------------
+oProduct.Children                 -> Alt bileşenler
+oProduct.Children.Item("isim")   -> İsimle bileşen
+oProduct.Children.Item(i)        -> İndeksle bileşen
+
+Drawing – Çizim
+---------------
+oDrawing.Sheets                   -> Sayfalar
+oDrawing.Sheets.ActiveSheet      -> Aktif sayfa
+oSheet.Views                      -> Görünümler
+oView.Dimensions                  -> Ölçüler (varsa)
+
+Editor ve servisler
+-------------------
+oApp.ActiveEditor                 -> Aktif editör
+oEditor.GetService("ServisAdi")  -> Editor-level servis (InertiaService vb.)
+oApp.GetSessionService("ServisAdi") -> Session-level servis (SearchService vb.)
+
+Dosya
+-----
+oApp.FileSystem                   -> FileSystem nesnesi (CreateFolder, FileExists, OpenAsTextStream vb.)
+
+Koleksiyon ortak
+----------------
+.Count                            -> Eleman sayısı
+.Item(i)  veya  .Item("isim")     -> Eleman (çoğunda 1 tabanlı indeks)
+
+================================================================================
+Sürüme göre API adları değişebilir; VBA_CALL_LIST.txt ve Help/text/ ile doğrulayın.
+================================================================================

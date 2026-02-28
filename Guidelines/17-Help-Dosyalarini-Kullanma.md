@@ -84,3 +84,5 @@ Proje kökünde ayrıca **VBA_API_REFERENCE.md** vardır; Help ve VBA_CALL_LIST/
 ## İlgili dokümanlar
 
 **Tüm rehber:** [README](README.md). **Resmi kurallar özeti:** [11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md). **Nesne modeli / erişim:** [06-3DExperience-Nesne-Modeli.md](06-3DExperience-Nesne-Modeli.md), [13-Erisim-ve-Kullanim-Rehberi.md](13-Erisim-ve-Kullanim-Rehberi.md). **Sık hatalar ve dikkat edilecekler:** [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md). **API listesi (proje kökü):** VBA_API_REFERENCE.md.
+
+**Gezinme:** ← [16-Iyilestirme](16-Iyilestirme-Onerileri.md) | [Rehber listesi](README.md) | Sonraki: [18-Sik-Hatalar](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md) →

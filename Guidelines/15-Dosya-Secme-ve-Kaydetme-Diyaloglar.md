@@ -390,3 +390,5 @@ End Sub
 ## İlgili dokümanlar
 
 **Tüm rehber:** [README](README.md). İlgili: [13](13-Erisim-ve-Kullanim-Rehberi.md) (erişim, FileSystem), [14](14-VBA-ve-Excel-Etkilesimi.md) (Excel, SaveAs).
+
+**Gezinme:** ← [14-Excel](14-VBA-ve-Excel-Etkilesimi.md) | [Rehber listesi](README.md) | Sonraki: [16-Iyilestirme](16-Iyilestirme-Onerileri.md) →

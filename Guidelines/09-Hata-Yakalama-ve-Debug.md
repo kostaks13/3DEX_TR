@@ -421,3 +421,5 @@ End Sub
 ## Sonraki adım
 
 **10. doküman:** [10-Ornek-Proje-Bastan-Sona-Bir-Makro.md](10-Ornek-Proje-Bastan-Sona-Bir-Makro.md) — Baştan sona örnek makro ve yazım kuralları özeti.
+
+**Gezinme:** ← [08-Sik-Kullanilan-APIler](08-Sik-Kullanilan-APIler.md) | [Rehber listesi](README.md) | Sonraki: [10-Ornek-Proje](10-Ornek-Proje-Bastan-Sona-Bir-Makro.md) →

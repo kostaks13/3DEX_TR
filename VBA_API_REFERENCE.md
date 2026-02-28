@@ -9,8 +9,10 @@ Bu sayfa **3DExperience VBA** makro geliştirirken kullanılan API’lere yönle
 | Kaynak | Açıklama |
 |--------|----------|
 | [**Help/VBA_CALL_LIST.txt**](Help/VBA_CALL_LIST.txt) | Çağrılabilir API listesi (method imzaları, VBA karşılıkları) |
+| [**Help/SIK_KULLANILAN_API.txt**](Help/SIK_KULLANILAN_API.txt) | Sık kullanılan API özet listesi |
 | [**Help/API_REPORT.csv**](Help/API_REPORT.csv) | API raporu (ek kaynak) |
-| [**Help/text/**](Help/text/) | Resmi Help dokümanlarından üretilmiş metin dosyaları (Automation, Native Apps, Common Services vb.) |
+| [**Help/text/**](Help/text/) | Resmi Help dokümanlarından üretilmiş metin dosyaları |
+| [**Help/ARAMA_REHBERI.md**](Help/ARAMA_REHBERI.md) | Help ve VBA_CALL_LIST içinde grep/arama örnekleri |
 
 ---
 
@@ -26,7 +28,76 @@ Bu sayfa **3DExperience VBA** makro geliştirirken kullanılan API’lere yönle
 | Shapes döngüsü | `For i = 1 To oPart.Shapes.Count` … `Set oSh = oPart.Shapes.Item(i)` |
 | Editor servis | `Set oEditor = oApp.ActiveEditor` → `Set oSvc = oEditor.GetService("InertiaService")` |
 
-Tam imzalar ve sürüme özel API adları için **Help/VBA_CALL_LIST.txt** ve **Help/text/** içinde arama yapın.
+Tam imzalar ve sürüme özel API adları için **Help/VBA_CALL_LIST.txt** ve **Help/text/** içinde arama yapın; [Help/ARAMA_REHBERI.md](Help/ARAMA_REHBERI.md) ile grep örneklerini kullanabilirsiniz.
+
+---
+
+## Sık kullanılan API'ler (imza + açıklama)
+
+Aşağıdaki tabloda günlük makro yazarken en çok ihtiyaç duyacağınız API'ler, VBA imzası ve kısa açıklama ile verilmiştir. İsimler sürüme göre değişebilir; şüphede **Help/VBA_CALL_LIST.txt** ve **Help/text/** ile doğrulayın.
+
+### Uygulama ve belge erişimi
+
+| API | VBA imzası / kullanım | Açıklama |
+|-----|------------------------|----------|
+| **GetObject** | `Set oApp = GetObject(, "CATIA.Application")` | Çalışan 3DExperience oturumuna bağlanır. İlk parametre boş bırakılır. |
+| **ActiveDocument** | `Set oDoc = oApp.ActiveDocument` | Aktif (ön plandaki) belgeyi döndürür. Açık belge yoksa Nothing. |
+| **Documents** | `oApp.Documents` | Tüm açık belgelerin koleksiyonu. Count, Item(i) ile kullanılır. |
+| **GetItem** | `Set oPart = oDoc.GetItem("Part")` | Belge içinde isimle nesne alır. "Part", "Product", "DrawingRoot" vb. |
+| **Name** | `sAd = oDoc.Name` | Belge/nesne adı (dosya adı veya görünen ad). |
+| **FullName** | `sYol = oDoc.FullName` | Belgenin tam dosya yolu (varsa). |
+
+### Part – Parça
+
+| API | VBA imzası / kullanım | Açıklama |
+|-----|------------------------|----------|
+| **Part (nesne)** | `Set oPart = oDoc` veya `oDoc.GetItem("Part")` | Parça belgesinin kök nesnesi. |
+| **Parameters** | `Set oParams = oPart.Parameters` | Parametre koleksiyonu (uzunluk, açı vb.). |
+| **Parameters.Item** | `Set oParam = oParams.Item("Length.1")` veya `Item(i)` | İsim veya indeks ile parametre alır. |
+| **Parameter.Value** | `dVal = oParam.Value` / `oParam.Value = 50.5` | Parametre değerini okur veya yazar. |
+| **Parameter.Name** | `sAd = oParam.Name` | Parametre adı. |
+| **Update** | `oPart.Update` | Part üzerinde yapılan değişiklikleri uygular. Döngü dışında **bir kez** çağrılmalı. |
+| **Shapes** | `Set oShapes = oPart.Shapes` (veya `oPart.MainBody.Shapes`) | Parçadaki şekiller (Pad, Pocket, Sketch vb.). |
+| **Shapes.Count** | `iCount = oShapes.Count` | Şekil sayısı. |
+| **Shapes.Item** | `Set oSh = oShapes.Item(i)` | İndeks ile şekil alır (1'den başlar). |
+| **MainBody** | `Set oBody = oPart.MainBody` | Ana gövde nesnesi. |
+
+### Product – Montaj
+
+| API | VBA imzası / kullanım | Açıklama |
+|-----|------------------------|----------|
+| **Children** | `oProduct.Children` | Alt bileşenler (occurrence) koleksiyonu. |
+| **Children.Item** | `Set oChild = oProduct.Children.Item("Parça1")` veya `Item(i)` | İsim veya indeks ile alt bileşen. |
+
+### Drawing – Çizim
+
+| API | VBA imzası / kullanım | Açıklama |
+|-----|------------------------|----------|
+| **Sheets** | `oDrawing.Sheets` | Çizim sayfaları koleksiyonu. |
+| **ActiveSheet** | `Set oSheet = oDrawing.Sheets.ActiveSheet` | Aktif sayfa. |
+| **Views** | `oSheet.Views` | Sayfadaki görünümler. |
+| **Dimensions** | `oView.Dimensions` | Görünümdeki ölçüler (varsa). |
+
+### Editor ve servisler
+
+| API | VBA imzası / kullanım | Açıklama |
+|-----|------------------------|----------|
+| **ActiveEditor** | `Set oEditor = oApp.ActiveEditor` | Aktif editör penceresi. |
+| **GetService** | `Set oSvc = oEditor.GetService("InertiaService")` | Editor-level servis alır (Part/Product/Drawing bağlamında). |
+| **GetSessionService** | `Set oSvc = oApp.GetSessionService("SearchService")` | Oturum genelinde servis (PLM arama, açma vb.). Editor-level iş bitmeden çağırılmamalı. |
+
+### Dosya ve ortam
+
+| API | VBA imzası / kullanım | Açıklama |
+|-----|------------------------|----------|
+| **FileSystem** | `Set oFS = oApp.FileSystem` | Dosya/klasör işlemleri (CreateFolder, FileExists, OpenAsTextStream vb.). |
+
+### Koleksiyon ortakları
+
+| API | Kullanım | Açıklama |
+|-----|----------|----------|
+| **Count** | `i = oColl.Count` | Koleksiyon eleman sayısı (çoğunda property). |
+| **Item** | `Set oElem = oColl.Item(i)` veya `Item("isim")` | İndeks (1 tabanlı) veya isimle eleman. |
 
 ---
 

@@ -1,5 +1,9 @@
 # 3DExperience VBA Macro – Rehber ve Referans
 
+**Anahtar kelimeler:** 3DExperience, VBA, macro, Dassault Systèmes, CATIA, automation, 3DEX, makro rehberi.
+
+**Rehber sürümü:** v1.0 (Guidelines 18 doküman + örnek kod + Help özeti).
+
 ```
 ██████╗ ██████╗ ███████╗██╗  ██╗     ████████╗██████╗ 
 ╚════██╗██╔══██╗██╔════╝╚██╗██╔╝     ╚══██╔══╝██╔══██╗
@@ -18,8 +22,9 @@
 | Bölüm | Açıklama |
 |-------|----------|
 | [**Guidelines**](Guidelines/README.md) | 18 dokümanlık kod yazma rehberi (VBA temelleri, nesne modeli, makro kayıt, hata yakalama, örnek projeler, resmi kurallar) |
-| [**VBA API Referansı**](VBA_API_REFERENCE.md) | Çağrılabilir API listesi (varsa); yoksa `Help/VBA_CALL_LIST.txt` ve `Help/text/` kullanın |
-| [**Help**](Help/) | Ham API listesi (`VBA_CALL_LIST.txt`), rapor (`API_REPORT.csv`) ve PDF’lerden çevrilmiş metin dosyaları (`text/`) |
+| [**VBA API Referansı**](VBA_API_REFERENCE.md) | Sık kullanılan API imzaları + açıklamalar; tam liste `Help/VBA_CALL_LIST.txt` ve `Help/text/` |
+| [**Examples**](Examples/README.md) | Çalıştırılabilir örnek makrolar (`.bas`); rehberle uyumlu |
+| [**Help**](Help/) | Ham API (`VBA_CALL_LIST.txt`), özet (`SIK_KULLANILAN_API.txt`), arama rehberi (`ARAMA_REHBERI.md`), `text/` |
 
 ---
 
@@ -36,18 +41,23 @@
 ```
 .
 ├── README.md                 ← Bu dosya (proje sayfası)
-├── VBA_API_REFERENCE.md      ← API referansı (isteğe bağlı; yoksa Help/ kullanın)
+├── VBA_API_REFERENCE.md      ← API referansı (sık kullanılan imzalar + Help kaynakları)
 ├── .gitignore
 ├── LICENSE
-├── Guidelines/               ← Kod yazma rehberi (18 doküman + checklist)
-│   ├── README.md             ← Rehber giriş ve doküman listesi
-│   ├── 01-Giris-Neden-3DExperience-VBA.md … 18-Sik-Hatalar-ve-Dikkat-Edilecekler.md
+├── Guidelines/                ← Kod yazma rehberi (18 doküman + önceki/sonraki gezinme)
+│   ├── README.md
+│   ├── 01-Giris…md … 18-Sik-Hatalar…md
 │   └── VBA-Kod-Checklist.md
-└── Help/                     ← Referans ve ham veri
+├── Examples/                  ← Örnek makrolar (.bas)
+│   ├── README.md
+│   └── *.bas
+└── Help/                      ← Referans ve ham veri
     ├── VBA_CALL_LIST.txt      ← Çağrılabilir API listesi
+    ├── SIK_KULLANILAN_API.txt ← Sık kullanılan API özeti
+    ├── ARAMA_REHBERI.md       ← grep/arama örnekleri
     ├── API_REPORT.csv
-    ├── *.pdf                  ← Resmi Help PDF’leri (Automation, Native Apps, Common Services vb.)
-    └── text/                  ← Aynı içeriğin metin (.txt) versiyonları
+    ├── *.pdf                  ← Resmi Help PDF’leri (isteğe bağlı)
+    └── text/                  ← Metin (.txt) versiyonları
 ```
 
 ---
@@ -79,6 +89,13 @@ Tam liste ve tablolar: **[Guidelines/README.md](Guidelines/README.md)**.
 
 - **Katkı:** Hata düzeltmesi veya öneri için Issue açabilir veya Merge Request gönderebilirsiniz.
 - **Lisans:** Proje içeriği eğitim ve referans amaçlıdır. 3DExperience ve ilgili ticari markalar Dassault Systèmes’e aittir. Dokümanların kullanım koşulları için repository’deki `LICENSE` dosyasına bakın.
+
+---
+
+## Dağıtım ve PDF
+
+- Rehberi **tek PDF** olarak dışa aktarmak isterseniz: tüm **Guidelines/*.md** dosyalarını [pandoc](https://pandoc.org/) veya bir Markdown→PDF aracıyla birleştirebilirsiniz. Örnek: `pandoc Guidelines/*.md -o Rehber_3DExperience_VBA.pdf` (başlık ve içindekiler için ek seçenekler gerekebilir).
+- Offline veya yazdırma için tek PDF kullanışlıdır; güncel ve aranabilir içerik için repository’deki Markdown dosyalarını kullanın.
 
 ---
 

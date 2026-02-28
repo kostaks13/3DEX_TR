@@ -583,3 +583,5 @@ End Sub
 
 **Tüm rehber:** [README](README.md). İlgili: [13](13-Erisim-ve-Kullanim-Rehberi.md) (erişim tabloları), [14](14-VBA-ve-Excel-Etkilesimi.md) (Excel), [15](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md) (dosya diyalogları). Servis adları ve metod imzaları: **VBA_API_REFERENCE.md** ve **Help/text/**.
 
+**Gezinme:** ← [11-Resmi-Kurallar](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) | [Rehber listesi](README.md) | Sonraki: [13-Erisim](13-Erisim-ve-Kullanim-Rehberi.md) →
+

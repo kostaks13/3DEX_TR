@@ -720,3 +720,5 @@ Baştan sona bir makro yazarken izlenecek adımların özeti:
 8. **Hata yakala:** On Error GoTo; Exit Sub; mesaj veya log.  
 9. **Başlık:** Language, Release, Purpose, Assumptions.  
 10. **Test:** F5, F8, Immediate penceresi; dağıtım öncesi kontrol listesi (11. doküman).
+
+**Gezinme:** ← [09-Hata-Yakalama](09-Hata-Yakalama-ve-Debug.md) | [Rehber listesi](README.md) | Sonraki: [11-Resmi-Kurallar](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) →

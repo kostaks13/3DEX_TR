@@ -102,3 +102,5 @@ Kodunuzu teslim etmeden veya paylaşmadan önce aşağıdakilerden ihtiyacınız
 ## İlgili dokümanlar
 
 **Tüm rehber:** [README](README.md). İlgili: [11](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) (zorunlu kurallar, TAMAM/HAZIR), [09](09-Hata-Yakalama-ve-Debug.md) (On Error, log), [10](10-Ornek-Proje-Bastan-Sona-Bir-Makro.md) (rollback, kod kalıpları).
+
+**Gezinme:** ← [15-Dosya-Diyaloglar](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md) | [Rehber listesi](README.md) | Sonraki: [17-Help-Dosyalari](17-Help-Dosyalarini-Kullanma.md) →

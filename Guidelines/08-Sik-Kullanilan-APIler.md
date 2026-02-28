@@ -611,4 +611,6 @@ End Sub
 
 **9. doküman:** [09-Hata-Yakalama-ve-Debug.md](09-Hata-Yakalama-ve-Debug.md) — On Error, kesme noktası ve Immediate penceresi.
 
+**Gezinme:** ← [07-Makro-Kayit](07-Makro-Kayit-ve-Inceleme.md) | [Rehber listesi](README.md) | Sonraki: [09-Hata-Yakalama](09-Hata-Yakalama-ve-Debug.md) →
+
 **İlgili:** [12-Servisler-ve-Yapilabilecek-Islemler.md](12-Servisler-ve-Yapilabilecek-Islemler.md) (servisler, işlem detayı) · [15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md) (dosya seç/kaydet diyaloğu).

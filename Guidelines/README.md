@@ -43,7 +43,8 @@ Kodlamaya **yeni başlayan** biri için, **3DExperience VBA** ile makro yazmayı
 - **Belirli konu arıyorsanız:** Yukarıdaki tablodan ilgili dokümanı açın. **“Buna nereden erişirim, bunu nasıl kullanırım?”** için **13. doküman**; **VBA’dan Excel’e veri yazma/okuma** için **14. doküman**; **dosya seçtirme / kaydetme diyaloğu** için **15. doküman**; **kod ve süreç iyileştirme önerileri** için **16. doküman** kullanın.  
 - **Resmi kurallar ve fazlar:** Help’e dayalı özet ve kontrol listeleri için **11. doküman** kullanın.  
 - **VBA kodu checklist (detaylı):** Teslim veya kod incelemesi öncesi **[VBA-Kod-Checklist.md](VBA-Kod-Checklist.md)** dosyasındaki maddeleri işaretleyin.  
-- **API detayı için:** Proje kökündeki **VBA_API_REFERENCE.md** (varsa) veya **Help/VBA_CALL_LIST.txt** ve **Help/text/** klasöründeki metinleri kullanın.  
+- **API detayı için:** Proje kökündeki **VBA_API_REFERENCE.md** (varsa) veya **Help/VBA_CALL_LIST.txt** ve **Help/text/** klasöründeki metinleri kullanın.
+- **Çalıştırılabilir örnek makrolar:** Proje kökündeki **[Examples/](../Examples/README.md)** klasöründe `.bas` dosyaları bulunur.  
 - **Help dosyalarını ne zaman/nasıl kullanacağınız:** **[17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md)** — Help klasörü yapısı, hangi dosyayı hangi aşamada açacağınız, arama yöntemleri.  
 - **Sık hatalar ve dikkat edilecekler:** **[18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md)** — Option Explicit, Nothing/Update, On Error, V5 API, InputBox iptal, locale, servis sırası vb.
 

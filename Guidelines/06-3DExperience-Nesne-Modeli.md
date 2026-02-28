@@ -475,3 +475,5 @@ Kullanıcının ekranda seçtiği nesnelere erişmek için **ActiveEditor.Select
 ## Sonraki adım
 
 **7. doküman:** [07-Makro-Kayit-ve-Inceleme.md](07-Makro-Kayit-ve-Inceleme.md) — Makro kaydetme ve oluşan kodu inceleyip düzenleme.
+
+**Gezinme:** ← [05-Prosedurler](05-VBA-Temelleri-Prosedurler-ve-Fonksiyonlar.md) | [Rehber listesi](README.md) | Sonraki: [07-Makro-Kayit](07-Makro-Kayit-ve-Inceleme.md) →

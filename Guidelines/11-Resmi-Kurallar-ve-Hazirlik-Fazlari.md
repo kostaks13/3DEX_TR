@@ -823,3 +823,5 @@ Finalize fazında başlığa veya ayrı bir “Changelog” bölümüne versiyon
 Bu doküman, yukarıdaki kaynaklardan özetlenmiştir; tam ve güncel kurallar için ilgili PDF’lere bakın.
 
 **Tüm rehber listesi:** [README](README.md). İlgili: [12](12-Servisler-ve-Yapilabilecek-Islemler.md) servisler, [13](13-Erisim-ve-Kullanim-Rehberi.md) erişim, [14](14-VBA-ve-Excel-Etkilesimi.md) Excel, [15](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md) dosya diyalogları, [16](16-Iyilestirme-Onerileri.md) iyileştirme.
+
+**Gezinme:** ← [10-Ornek-Proje](10-Ornek-Proje-Bastan-Sona-Bir-Makro.md) | [Rehber listesi](README.md) | Sonraki: [12-Servisler](12-Servisler-ve-Yapilabilecek-Islemler.md) →
