@@ -1,6 +1,7 @@
 Attribute VB_Name = "ParametreYaz"
 Option Explicit
 
+' Örnek: ParametreYaz | Rehber: 08 | Parametre
 ' Purpose: Kullanıcıdan parametre adı ve değer alır; Part'ta günceller.
 ' Assumptions: 3DExperience açık, aktif belge Part; parametre yazılabilir.
 ' Language: VBA  |  Release: 3DEXPERIENCE R2024x

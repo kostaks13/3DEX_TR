@@ -349,6 +349,23 @@ Kayıt sırasında sadece bir öğe seçildiyse kod `Item(1)` veya `Item(2)` gib
 
 ════════════════════════════════════════════════════════════════════════════════
 
+## Kendinizi test edin
+
+1. **Makro kaydından sonra** üretilen kodda genelde ilk gördüğünüz nesne zinciri nedir? (Application → ? → ?)  
+2. Kayıt kodu çok uzun veya tekrarlıysa **ne yapmalısınız** (sadeleştirme adımları)?  
+3. Kayıtta görünen bir **method adı** Help’te yok; nerede arayabilirsiniz?
+
+<details>
+<summary>Yanıtlar (tıklayarak açın)</summary>
+
+1. **Application** → **ActiveDocument** → **GetItem("Part")** (veya Product/DrawingRoot). Kayıt sırasında yaptığınız işleme göre zincir uzar.  
+2. Tekrarlayan blokları döngüye alın; sabit değerleri değişkene/Const’a çevirin; gereksiz satırları kaldırın; Option Explicit ve Nothing kontrolleri ekleyin.  
+3. Proje **docs/VBA_API_REFERENCE.md**, **Help/VBA_CALL_LIST.txt**, **Help/text/** ve [ARAMA_REHBERI.md](../Help/ARAMA_REHBERI.md) ile grep/arama yapın; sürüme göre API adı değişmiş olabilir.
+
+</details>
+
+════════════════════════════════════════════════════════════════════════════════
+
 ## Sonraki adım
 
 **8. doküman:** [08-Sik-Kullanilan-APIler.md](08-Sik-Kullanilan-APIler.md) — Parça, geometri ve çizimle ilgili sık kullanılan API’ler ve kısa örnekler. **Help:** [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md). **Sık hatalar:** [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md).

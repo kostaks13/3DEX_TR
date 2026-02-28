@@ -1,6 +1,7 @@
 Attribute VB_Name = "LogOrnekMakro"
 Option Explicit
 
+' Örnek: LogOrnekMakro | Rehber: 09, 10 | Log
 ' ============================================================
 ' Purpose: Log dosyasına başlangıç/bitiş ve hata satırı yazar
 '          (log pattern örneği).

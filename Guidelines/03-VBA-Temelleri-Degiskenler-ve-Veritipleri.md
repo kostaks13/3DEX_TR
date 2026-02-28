@@ -348,6 +348,23 @@ End Sub
 
 ════════════════════════════════════════════════════════════════════════════════
 
+## Kendinizi test edin
+
+1. **VBA'da nesne atamak için hangi anahtar sözcük kullanılır?** (Dim / Set / Const)  
+2. **Option Explicit** modül başında olmazsa ne risk vardır?  
+3. **Long** ile **Double** arasındaki fark nedir (kullanım açısından)?
+
+<details>
+<summary>Yanıtlar (tıklayarak açın)</summary>
+
+1. **Set** — Nesne atamada `Set oDoc = oApp.ActiveDocument` kullanılır; `Dim` sadece tanımlar.  
+2. Yazım hatası yapılan değişkenler tanımsız kabul edilir; hata vermeden yanlış çalışabilir.  
+3. Long tam sayı (integer); Double ondalıklı sayı (float). Uzunluk, açı gibi değerler için Double kullanılır.
+
+</details>
+
+════════════════════════════════════════════════════════════════════════════════
+
 ## Sonraki adım
 
 **4. doküman:** [04-VBA-Temelleri-Kosullar-ve-Donguler.md](04-VBA-Temelleri-Kosullar-ve-Donguler.md) — If, Select Case, For ve Do döngüleri.

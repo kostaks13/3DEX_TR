@@ -1,6 +1,7 @@
 Attribute VB_Name = "ShapesBilgisi"
 Option Explicit
 
+' Örnek: ShapesBilgisi | Rehber: 08 | Shapes
 ' Purpose: Aktif parçadaki Shapes sayısı ve ilk 10 şeklin adını gösterir.
 ' Assumptions: 3DExperience açık, aktif belge Part.
 ' Language: VBA  |  Release: 3DEXPERIENCE R2024x

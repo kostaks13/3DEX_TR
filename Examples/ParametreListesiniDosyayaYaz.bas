@@ -1,6 +1,7 @@
 Attribute VB_Name = "ParametreListesiniDosyayaYaz"
 Option Explicit
 
+' Örnek: ParametreListesiniDosyayaYaz | Rehber: 08, 10 | Dosya
 ' ============================================================
 ' Purpose: Aktif parçanın parametre listesini CSV formatında
 '          (Parametre;Değer) dosyaya yazar.

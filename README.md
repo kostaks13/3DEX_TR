@@ -25,6 +25,30 @@
 
 ---
 
+## Nasıl kullanılır?
+
+| Adım | Ne yapmalı? |
+| :--- | :--- |
+| **1** | Rehberi açıp 01. dokümandan başlayarak sırayla ilerleyin. |
+| **2** | Her dokümanda "Uygulamalı alıştırma" bölümünü kendi ortamınızda yapın. |
+| **3** | İlk makroyu 02. dokümanda yazıp F5 ile çalıştırın; sonra örneklerden birini deneyin. |
+| **4** | API veya terimlerde takılırsanız [Help](Help/) ve [docs/GLOSSARY.md](docs/GLOSSARY.md) kullanın. |
+
+---
+
+## Ne sunar? (özet)
+
+| Özellik | Açıklama |
+| :--- | :--- |
+| **Rehber** | 19 doküman: VBA temelleri → nesne modeli → makro kayıt → hata yakalama → örnek proje → resmi kurallar → isimlendirme. |
+| **Örnekler** | Part, parametre, Shapes, dosyaya yazma, log, modüler yapı; her biri çalıştırılabilir `.bas`. |
+| **Referans** | API referansı, hızlı başlangıç, terimler (TR↔EN), sorun giderme, checklist. |
+| **Bakım** | `npm run check-links` ile link kontrolü; CI/CD (GitHub Actions) ile otomatik kontroller. |
+
+**Bu sayfada:** [Neden bu rehber?](#neden-bu-rehber) · [Hemen başla](#hemen-başla) · [İçindekiler](#i̇çindekiler) · [Hızlı başlangıç](#hızlı-başlangıç) · [Proje yapısı](#proje-yapısı) · [Guidelines özeti](#guidelines-rehber-özeti)
+
+---
+
 ## Neden bu rehber?
 
 | Ne sunar? | Açıklama |
@@ -38,18 +62,16 @@
 
 ## Hemen başla
 
-İki yol: **rehberi sırayla takip et** veya **ilk makroyu hemen çalıştır**. Tıklanabilir linkler için hemen altındaki **Hızlı erişim** satırını kullanın.
+> **Yeni başlıyorsanız:** Rehberi 01’den itibaren sırayla takip edin; ilk makroyu 02’de yazıp F5 ile çalıştırın.  
+> **Zaten VBA biliyorsanız:** [İlk 5 dk](docs/QUICK_START.md) veya [örnek makrolardan](Examples/README.md) birini açıp hemen deneyin.
 
-```
-  Yeni başlıyorsanız                          Zaten VBA biliyorsanız
-  ───────────────────                        ────────────────────────
-  1. Rehberi aç  →  2. 01’den ilerle  →      1. İlk 5 dk sayfası  →
-     [Rehber (01→19)](Guidelines/README.md)     [QUICK_START](docs/QUICK_START.md)
-  3. İlk makroyu 02’de yaz, F5 ile çalıştır   2. Örnek makrodan birini aç  →
-                                                 [Examples](Examples/README.md)
-```
+| Yeni başlıyorsanız | Zaten VBA biliyorsanız |
+| :--- | :--- |
+| [Rehber (01→19)](Guidelines/README.md) → 02’de ilk makro, F5 | [İlk 5 dk](docs/QUICK_START.md) |
+| [İlerleme listesi](docs/ILERLEME-LISTESI.md) (süre, zorluk, checklist) | [Örnek makrolar](Examples/README.md) |
+| | [API referansı](docs/VBA_API_REFERENCE.md) · [Checklist](Guidelines/VBA-Kod-Checklist.md) |
 
-**Hızlı erişim:** [Rehber](Guidelines/README.md) · [İlk 5 dk](docs/QUICK_START.md) · [Örnek makrolar](Examples/README.md) · [API referansı](docs/VBA_API_REFERENCE.md) · [Checklist](Guidelines/VBA-Kod-Checklist.md) · [Sorun giderme](docs/TROUBLESHOOTING.md)
+**Tüm linkler:** [Rehber](Guidelines/README.md) · [İlerleme](docs/ILERLEME-LISTESI.md) · [İlk 5 dk](docs/QUICK_START.md) · [Örnekler](Examples/README.md) · [API](docs/VBA_API_REFERENCE.md) · [Checklist](Guidelines/VBA-Kod-Checklist.md) · [Sorun giderme](docs/TROUBLESHOOTING.md)
 
 ---
 

@@ -3,9 +3,15 @@
   "private": true,
   "description": "3DExperience VBA Macro rehberi – dokümantasyon",
   "scripts": {
-    "check-links": "bash scripts/check-links.sh"
+    "check-links": "bash scripts/check-links.sh",
+    "lint:md": "markdownlint-cli2 '**/*.md' '#node_modules'",
+    "spell": "cspell '**/*.md' --no-progress",
+    "prepare": "husky"
   },
   "devDependencies": {
-    "markdown-link-check": "^3.11.0"
+    "markdown-link-check": "^3.11.0",
+    "markdownlint-cli2": "^0.14.0",
+    "cspell": "^8.0.0",
+    "husky": "^9.0.0"
   }
 }

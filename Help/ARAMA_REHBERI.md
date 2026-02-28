@@ -104,6 +104,8 @@ VS Code, Cursor veya Notepad++ kullanıyorsanız:
 
 ## İlgili dokümanlar
 
-- **Help dosyalarını ne zaman kullanacağınız:** [Guidelines/17-Help-Dosyalarini-Kullanma.md](Guidelines/17-Help-Dosyalarini-Kullanma.md)
+- **Help dosyalarını ne zaman kullanacağınız:** [Guidelines/17-Help-Dosyalarini-Kullanma.md](../Guidelines/17-Help-Dosyalarini-Kullanma.md)
 - **Sık kullanılan API özeti:** [SIK_KULLANILAN_API.txt](SIK_KULLANILAN_API.txt)
 - **API referansı (proje kökü):** [VBA_API_REFERENCE.md](../docs/VBA_API_REFERENCE.md)
+
+**Gezinme:** [Ana sayfa](../README.md) · [Docs](../docs/README.md) · [Rehber](../Guidelines/README.md) · [Örnek makrolar](../Examples/README.md)

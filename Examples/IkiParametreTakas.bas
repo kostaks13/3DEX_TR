@@ -1,6 +1,7 @@
 Attribute VB_Name = "IkiParametreTakas"
 Option Explicit
 
+' Örnek: IkiParametreTakas | Rehber: 08 | Parametre
 ' Purpose: Length.1 ve Length.2 parametrelerinin değerini takas eder.
 ' Assumptions: 3DExperience açık, aktif belge Part; Length.1 ve Length.2 mevcut.
 ' Language: VBA  |  Release: 3DEXPERIENCE R2024x

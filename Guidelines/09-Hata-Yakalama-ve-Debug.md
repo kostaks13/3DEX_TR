@@ -445,6 +445,23 @@ End Sub
 
 ════════════════════════════════════════════════════════════════════════════════
 
+## Kendinizi test edin
+
+1. **On Error GoTo Etiket** kullandığınızda, hata olmadan normal çıkış için nereye **Exit Sub** koymalısınız?  
+2. **On Error Resume Next** sonrası hatayı nasıl kontrol edersiniz?  
+3. F8 (Step Into) ile hangi satırda **durduğunuzu** nasıl görürsünüz?
+
+<details>
+<summary>Yanıtlar (tıklayarak açın)</summary>
+
+1. Hata yakalama bloğundan **önce**, normal akışın bittiği yerde — böylece hata olmasa da Etiket'e düşülmez.  
+2. Hata oluşan satırdan sonra `If Err.Number <> 0 Then` kontrolü yapılır; gerekirse mesaj gösterilip `Err.Clear` veya çıkış.  
+3. Çalıştırılacak satır **sarı** (veya vurgulu) renkle işaretlenir; F8 her basışta bir sonraki satıra geçer.
+
+</details>
+
+════════════════════════════════════════════════════════════════════════════════
+
 ## Sonraki adım
 
 **10. doküman:** [10-Ornek-Proje-Bastan-Sona-Bir-Makro.md](10-Ornek-Proje-Bastan-Sona-Bir-Makro.md) — Baştan sona örnek makro ve yazım kuralları özeti.

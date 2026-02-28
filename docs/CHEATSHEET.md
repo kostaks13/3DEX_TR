@@ -8,6 +8,8 @@
 
 Tek sayfada **sık kullanılan kalıplar**. Detay için [Guidelines/README.md](../Guidelines/README.md) ve [VBA_API_REFERENCE.md](VBA_API_REFERENCE.md).
 
+**Bu sayfada:** [Uygulama → Part zinciri](#uygulama--part-zinciri) · [Parametre](#parametre-okuma--yazma) · [Hata yakalama](#hata-yakalama-özet) · [Döngü](#koleksiyon-döngüsü-parametreler) · [Kısa terimler](#kısa-terimler)
+
 ---
 
 ## Uygulama → Part zinciri
@@ -73,3 +75,7 @@ Next i
 | **GetItem("Part")** | Aktif belgeden Part nesnesi; Part değilse Nothing döner. |
 
 Tam liste: [GLOSSARY.md](GLOSSARY.md).
+
+---
+
+**Gezinme:** [Ana sayfa](../README.md) · [Docs](README.md) · [Rehber](../Guidelines/README.md) · [Örnek makrolar](../Examples/README.md) · [QUICK_START](QUICK_START.md) · [VBA_API_REFERENCE](VBA_API_REFERENCE.md)

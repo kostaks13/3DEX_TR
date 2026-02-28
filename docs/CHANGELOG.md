@@ -10,6 +10,15 @@ Rehber ve proje içeriğinde yapılan **önemli güncellemelerin** kısa listesi
 
 ---
 
+## [v1.3] – CI/CD, öğrenme, örnekler, terim eşlemesi
+
+- **CI/CD:** GitHub Actions workflow (`.github/workflows/check-links.yml`) — push/PR'da link kontrolü. Markdown lint (markdownlint-cli2) ve yazım kontrolü (cspell) script'leri; `.markdownlint.json`, `cspell.json` yapılandırması. [MAINTENANCE.md](MAINTENANCE.md) — bakım komutları, pre-commit notu.
+- **İçerik ve öğrenme:** [ILERLEME-LISTESI.md](ILERLEME-LISTESI.md) — doküman süre/zorluk tablosu, ilerleme checklist. Guidelines 03, 06, 09'a "Kendinizi test edin" (soru + `<details>` yanıtlar). TROUBLESHOOTING'a karar ağacı (hangi bölüme bakılacağı). Guidelines/README'da süre ve zorluk için İlerleme listesi linki.
+- **Örnekler:** Examples/README'da "Kategoriye göre örnekler" tablosu (Zincir/Kontrol, Parametre, Shapes, Dosya, Log, Modüler); ortam notu (R2024x, Windows, API sürüme göre değişir).
+- **Terim eşlemesi:** GLOSSARY'de tüm terimlere **EN** (İngilizce) sütunu eklendi; TR ↔ EN eşlemesi.
+
+---
+
 ## [v1.2] – Örnekler checklist uyumu, başlık tutarlılığı, dokümantasyon, uygulamalı alıştırmalar
 
 - **UI / Görünüm:** Tüm ana sayfalara tutarlı başlık blokları (┌──┐), blockquote vurguları ve "Gezinme" linkleri eklendi. README’de hızlı başlangıç ve link kontrolü için kısa çağrı kutuları; docs/, QUICK_START, FAQ, GLOSSARY, TROUBLESHOOTING, CHEATSHEET, CHANGELOG’da ortak görsel dil.

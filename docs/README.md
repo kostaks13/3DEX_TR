@@ -8,9 +8,13 @@
 
 Bu klasörde **3DExperience VBA** rehberiyle birlikte kullanacağınız yardımcı dokümanlar bulunur.
 
+**Bu sayfada:** [Dosya listesi](#dosya-listesi) (aşağıdaki tablo)
+
 **Hızlı linkler:** [İlk 5 dk](QUICK_START.md) · [Tek sayfa referans](CHEATSHEET.md) · [Sorun giderme](TROUBLESHOOTING.md) · [SSS](FAQ.md) · [Terimler](GLOSSARY.md)
 
 ---
+
+## Dosya listesi
 
 | Dosya | Açıklama |
 |-------|----------|
@@ -21,7 +25,9 @@ Bu klasörde **3DExperience VBA** rehberiyle birlikte kullanacağınız yardımc
 | [FAQ.md](FAQ.md) | Sık sorulan sorular |
 | [TROUBLESHOOTING.md](TROUBLESHOOTING.md) | Hata senaryoları ve çözüm önerileri |
 | [CHANGELOG.md](CHANGELOG.md) | Sürüm notları |
+| [ILERLEME-LISTESI.md](ILERLEME-LISTESI.md) | Doküman süre/zorluk tablosu, ilerleme checklist |
+| [MAINTENANCE.md](MAINTENANCE.md) | Bakım: link check, lint, spell, CI, pre-commit |
 
 ---
 
-**Gezinme:** [Ana sayfa](../README.md) · [Rehber (Guidelines)](../Guidelines/README.md) · [Örnek makrolar](../Examples/README.md)
+**Gezinme:** [Ana sayfa](../README.md) · [Rehber (Guidelines)](../Guidelines/README.md) · [Örnek makrolar](../Examples/README.md) · [Help](../Help/)

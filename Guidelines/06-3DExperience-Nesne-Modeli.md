@@ -500,6 +500,23 @@ Kullanıcının ekranda seçtiği nesnelere erişmek için **ActiveEditor.Select
 
 ════════════════════════════════════════════════════════════════════════════════
 
+## Kendinizi test edin
+
+1. **Part nesnesine ulaşmak için tipik zincir nedir?** (Uygulama → ? → ?)  
+2. **Aktif belge çizim (Drawing) ise** `GetItem("Part")` ne döner?  
+3. **Editor-level** servis ile **Session-level** servis farkı nedir?
+
+<details>
+<summary>Yanıtlar (tıklayarak açın)</summary>
+
+1. **Application** (GetObject) → **ActiveDocument** → **GetItem("Part")** (veya "Product", "DrawingRoot").  
+2. **Nothing** — Part sadece Part belgesinde vardır; Drawing'de Part nesnesi yoktur.  
+3. Editor-level: aktif Part/Product/Drawing'e bağlı (InertiaService vb.). Session-level: oturum geneli (Search, belge açma vb.); editor işi bittikten sonra kullanılmalı.
+
+</details>
+
+════════════════════════════════════════════════════════════════════════════════
+
 ## Sonraki adım
 
 **7. doküman:** [07-Makro-Kayit-ve-Inceleme.md](07-Makro-Kayit-ve-Inceleme.md) — Makro kaydetme ve oluşan kodu inceleyip düzenleme.

@@ -10,13 +10,17 @@ Kodlamaya **yeni başlayan** biri için, **3DExperience VBA** ile makro yazmayı
 
 > **Nasıl ilerlenir:** Aşağıdaki tablodan dokümanları **sırayla** (01 → 19) takip edin; belirli bir konu arıyorsanız doğrudan ilgili dokümana atlayabilirsiniz. **02–19** numaralı dokümanların her birinde **"Uygulamalı alıştırma – Yaparak öğren"** bölümü vardır.
 
+**Bu sayfada:** [Dokümanlar (01–19)](#dokümanlar-sırayla-takip-edin) · [Nasıl kullanılır?](#nasıl-kullanılır) · [Konuya göre atlama](#belirli-konu-arıyorsanız) · [Hızlı erişim](#hızlı-erişim)
+
 ════════════════════════════════════════════════════════════════════════════════
 
 ## Dokümanlar (sırayla takip edin)
 
-| # | Dosya | İçerik |
-|---|-------|--------|
-| 1 | [01-Giris-Neden-3DExperience-VBA.md](01-Giris-Neden-3DExperience-VBA.md) | Giriş – Neden 3DExperience VBA? (Dassault bakışı, desteklenen diller, bölgesel ayarlar) |
+**Açıklamalar:** **Süre** = tahmini okuma süresi. **Zorluk:** Başlangıç / Orta / İleri.
+
+| # | Dosya | İçerik | Süre | Zorluk |
+|---|-------|--------|------|--------|
+| 1 | [01-Giris-Neden-3DExperience-VBA.md](01-Giris-Neden-3DExperience-VBA.md) | Giriş – Neden 3DExperience VBA? (Dassault bakışı, desteklenen diller, bölgesel ayarlar) | ~15 dk | Başlangıç |
 | 2 | [02-Ortam-Kurulumu.md](02-Ortam-Kurulumu.md) | Ortam kurulumu (Language/Release başlığı, makro konumu, dağıtım) |
 | 3 | [03-VBA-Temelleri-Degiskenler-ve-Veritipleri.md](03-VBA-Temelleri-Degiskenler-ve-Veritipleri.md) | VBA temelleri – Değişkenler ve veri tipleri (resmi önekler: b, d, s, i, o, c) |
 | 4 | [04-VBA-Temelleri-Kosullar-ve-Donguler.md](04-VBA-Temelleri-Kosullar-ve-Donguler.md) | VBA temelleri – Koşullar ve döngüler |
@@ -35,6 +39,8 @@ Kodlamaya **yeni başlayan** biri için, **3DExperience VBA** ile makro yazmayı
 | 17 | [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md) | **Help içindeki dosyaları ne zaman ve nasıl kullanacaksınız** — Help klasörü yapısı, hangi dosya ne işe yarar, aşamaya göre kullanım, arama yöntemleri |
 | 18 | [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md) | **Sık yapılan hatalar ve dikkat edilmesi gereken özel noktalar** — Nothing/Update/On Error, V5 API, InputBox iptal, locale, servis sırası, özet tablo |
 | 19 | [19-Isimlendirme-Rehberi.md](19-Isimlendirme-Rehberi.md) | **İsimlendirme rehberi** — Değişken önekleri, Const, Sub/Function, modül, .bas dosyası, parametre, hata etiketi; özet tablo ve kaçınılacaklar |
+
+**Süre ve zorluk:** Tahmini okuma süresi ve zorluk seviyesi için [İlerleme listesi](../docs/ILERLEME-LISTESI.md) sayfasındaki tabloyu kullanın (Süre: ~10–40 dk | Zorluk: Başlangıç / Orta / İleri).
 
 ════════════════════════════════════════════════════════════════════════════════
 

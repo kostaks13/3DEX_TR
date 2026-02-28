@@ -1,6 +1,7 @@
 Attribute VB_Name = "GetActivePart_AnaParametreListesi"
 Option Explicit
 
+' Örnek: GetActivePart_AnaParametreListesi | Rehber: 08, 10 | Modüler
 ' Purpose: Modüler yapı örneği – GetActivePart ortak fonksiyonu ve tüm parametreleri listeleyen AnaParametreListesi.
 ' Assumptions: 3DExperience açık, aktif belge Part.
 ' Language: VBA  |  Release: 3DEXPERIENCE R2024x

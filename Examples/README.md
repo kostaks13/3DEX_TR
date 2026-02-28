@@ -10,6 +10,8 @@ Bu klasörde **3DExperience VBA** rehberindeki (Guidelines 08 ve 10) örnek makr
 
 > **İlk kez kullanıyorsanız:** Aşağıdaki **Önerilen sıra** tablosundan 1 → 2 → 3 → 4 ile başlayın.
 
+**Bu sayfada:** [Kullanım (3 adım)](#kullanım-3-adım) · [Önerilen sıra](#önerilen-sıra-yeni-başlıyorsanız) · [Kategoriye göre](#kategoriye-göre-örnekler) · [Dosyalar](#dosyalar) · [Notlar](#notlar)
+
 **Öne çıkan:** [AktifParcaBilgisi.bas](AktifParcaBilgisi.bas) (ilk makro) · [ParametreOkuVeGoster.bas](ParametreOkuVeGoster.bas) · [ParametreYaz.bas](ParametreYaz.bas) · [SadecePartKontrol.bas](SadecePartKontrol.bas)
 
 ---
@@ -41,6 +43,24 @@ Bu klasörde **3DExperience VBA** rehberindeki (Guidelines 08 ve 10) örnek makr
 
 ---
 
+## Kategoriye göre örnekler
+
+| Kategori | Örnekler | Açıklama |
+|----------|----------|----------|
+| **Zincir / Kontrol** | AktifParcaBilgisi, SadecePartKontrol | Application → Document → Part; belge türü kontrolü. |
+| **Parametre** | ParametreOkuVeGoster, ParametreYaz, IkiParametreTakas, MinMaxParametreDeger, GetActivePart_AnaParametreListesi | Okuma, yazma, takas, min/max, listeleme. |
+| **Shapes** | ShapesBilgisi | Shapes sayısı ve isim listesi. |
+| **Drawing** | DrawingSayfaVeGorusumSayisi | Drawing belgesi; Sheets, Views sayısı. |
+| **Product / BOM** | BomListesiChildren | Montajda Children ile alt bileşen listesi. |
+| **FileSystem** | FileSystemKlasorKontrol | Klasör var mı kontrolü (FolderExists). |
+| **Dosya** | ParametreListesiniDosyayaYaz | Parametreleri dosyaya yazma. |
+| **Log** | LogOrnekMakro | Log dosyasına START/END yazma. |
+| **Modüler** | GetActivePart_AnaParametreListesi | Ortak GetActivePart() + ana parametre listesi. |
+
+**Ortam notu:** Örnekler 3DExperience R2024x (veya uyumlu sürüm), Windows üzerinde test edilmiştir. API isimleri sürüme göre değişebilir; kendi ortamınızda makro kaydı ile doğrulayın.
+
+---
+
 ## Dosyalar
 
 | Dosya | Ne yapar | Gereksinim | Beklenen çıktı |
@@ -55,6 +75,9 @@ Bu klasörde **3DExperience VBA** rehberindeki (Guidelines 08 ve 10) örnek makr
 | **IkiParametreTakas.bas** | Length.1 ve Length.2 değerlerini takas eder. | Açık Part, Length.1 ve Length.2 var. | MsgBox "Takas edildi."; modelde değerler yer değişir. |
 | **LogOrnekMakro.bas** | Log dosyasına START/END (ve hata durumunda END ERR) yazar. | C:\Temp yazılabilir. | C:\Temp\macro_log.txt içinde tarih + mesaj satırları. |
 | **MinMaxParametreDeger.bas** | Tüm parametreler arasında min ve max sayısal değeri bulur. | Açık Part, en az bir parametre. | MsgBox: "Min: … Max: …". |
+| **DrawingSayfaVeGorusumSayisi.bas** | Aktif Drawing’de sayfa sayısı ve ilk sayfadaki görünüm sayısını gösterir. | Açık Drawing (.CATDrawing). | MsgBox: sayfa sayısı, ilk sayfa Views sayısı. |
+| **BomListesiChildren.bas** | Aktif Product’taki alt bileşenleri (Children) listeler. | Açık Product (.CATProduct). | MsgBox: bileşen sayısı + ilk 20 ad. |
+| **FileSystemKlasorKontrol.bas** | Kullanıcının girdiği klasör yolunun var olup olmadığını kontrol eder. | 3DExperience açık; FileSystem API mevcut. | MsgBox: "Klasör mevcut" / "bulunamadı". |
 
 ---
 

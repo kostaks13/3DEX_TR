@@ -637,6 +637,23 @@ End Sub
 
 ════════════════════════════════════════════════════════════════════════════════
 
+## Kendinizi test edin
+
+1. **Parametre değerini yazdıktan sonra** mutlaka çağırmanız gereken tek metod nedir ve nerede çağrılmalı (döngü içinde mi, dışında mı)?  
+2. Drawing belgesinde **sayfa (sheet) listesine** hangi nesne zinciri ile erişirsiniz? (Document → ? → Sheets)  
+3. **Product** (montaj) içindeki alt bileşenler koleksiyonunun API adı nedir?
+
+<details>
+<summary>Yanıtlar (tıklayarak açın)</summary>
+
+1. **oPart.Update** — Tüm parametre/şekil değişikliklerinden **sonra**, döngü **dışında** bir kez çağrılmalı.  
+2. **oDoc** → **GetItem("DrawingRoot")** → **oDraw.Sheets**. Her sheet’te Views, Scale vb. erişilir.  
+3. **Children** — `oProduct.Children` ile montajdaki alt bileşenlere erişilir; BOM veya ağaç dolaşımında kullanılır.
+
+</details>
+
+════════════════════════════════════════════════════════════════════════════════
+
 ## Sonraki adım
 
 **9. doküman:** [09-Hata-Yakalama-ve-Debug.md](09-Hata-Yakalama-ve-Debug.md) — On Error, kesme noktası ve Immediate penceresi.

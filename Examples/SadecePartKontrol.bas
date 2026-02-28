@@ -1,6 +1,7 @@
 Attribute VB_Name = "SadecePartKontrol"
 Option Explicit
 
+' Örnek: SadecePartKontrol | Rehber: 06, 08 | Zincir/Kontrol
 ' Purpose: Aktif belgenin Part olup olmadığını kontrol eder; Part değilse uyarır.
 ' Assumptions: 3DExperience açık; açık belge olabilir veya olmayabilir.
 ' Language: VBA  |  Release: 3DEXPERIENCE R2024x

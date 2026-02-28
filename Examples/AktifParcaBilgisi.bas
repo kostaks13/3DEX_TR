@@ -1,6 +1,7 @@
 Attribute VB_Name = "AktifParcaBilgisi"
 Option Explicit
 
+' Örnek: AktifParcaBilgisi | Rehber: 06, 08 | Zincir/Kontrol
 ' ============================================================
 ' Purpose: Aktif parça belgesinin adı, tam yolu ve Shapes
 '          sayısını gösterir.

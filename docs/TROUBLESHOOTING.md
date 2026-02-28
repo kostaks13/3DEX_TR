@@ -12,6 +12,27 @@ Makro yazarken **sık karşılaşılan hata ve davranış senaryoları** ile ola
 
 ---
 
+## Karar ağacı – Hangi bölüme bakmalıyım?
+
+```
+Makro çalışmıyor mu?
+├── EVET → Makro listede görünmüyor mu?
+│          ├── EVET → [Makro listede görünmüyor](#makro-listede-görünmüyor--çalıştıramıyorum)
+│          └── HAYIR → [Makro hiç çalışmıyor](#makro-hiç-çalışmıyor--sub-or-function-not-defined)
+│
+└── HAYIR → "Object variable not set" / Nothing hatası alıyor musunuz?
+            ├── EVET → [Nothing hatası](#object-variable-not-set--nothing-hatası)
+            └── HAYIR → GetItem("Part") Part bulamıyor / hata mı?
+                        ├── EVET → [GetItem Part](#getitempart-part-bulamıyor--hata-veriyor)
+                        └── HAYIR → Update çağırdınız ama ekranda değişiklik yok mu?
+                                    ├── EVET → [Update sonrası](#update-çağırdım-ama-ekranda-değişiklik-görünmüyor)
+                                    └── HAYIR → Parametre bulunamadı / dosya yazma hatası?
+                                                ├── Parametre → [Parametre bulunamadı](#parametre-bulunamadı--parametre-adı-yanlış)
+                                                └── Dosya → [Dosya yazma](#dosyaya-yazarken-hata-permission-denied--path-not-found)
+```
+
+---
+
 ## Makro hiç çalışmıyor / “Sub or Function not defined”
 
 > **Hızlı kontrol:** Makro güvenliği açık mı? Kodu doğru modüle mi yapıştırdınız? Tüm değişkenler `Dim` ile tanımlı mı?
@@ -91,4 +112,4 @@ Makro yazarken **sık karşılaşılan hata ve davranış senaryoları** ile ola
 
 ---
 
-**İlgili:** [FAQ.md](FAQ.md) · [CHEATSHEET.md](CHEATSHEET.md) · [Guidelines/18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](../Guidelines/18-Sik-Hatalar-ve-Dikkat-Edilecekler.md)
+**Gezinme:** [Ana sayfa](../README.md) · [Docs](README.md) · [Rehber](../Guidelines/README.md) · [Örnek makrolar](../Examples/README.md) · [FAQ](FAQ.md) · [CHEATSHEET](CHEATSHEET.md) · [18-Sik-Hatalar](../Guidelines/18-Sik-Hatalar-ve-Dikkat-Edilecekler.md)

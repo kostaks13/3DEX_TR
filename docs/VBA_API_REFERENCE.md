@@ -130,6 +130,6 @@ Aşağıdaki tabloda günlük makro yazarken en çok ihtiyaç duyacağınız API
 
 ---
 
-**Gezinme:** [Docs](README.md) · [Rehber](../Guidelines/README.md) · [Örnek makrolar](../Examples/README.md) · [Arama rehberi](../Help/ARAMA_REHBERI.md)
+**Gezinme:** [Ana sayfa](../README.md) · [Docs](README.md) · [Rehber](../Guidelines/README.md) · [Örnek makrolar](../Examples/README.md) · [CHEATSHEET](CHEATSHEET.md) · [Arama rehberi](../Help/ARAMA_REHBERI.md)
 
 *API isimleri 3DExperience sürümüne göre değişir; güncel referans için Help klasöründeki dosyaları kullanın.*

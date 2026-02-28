@@ -1,6 +1,7 @@
 Attribute VB_Name = "MinMaxParametreDeger"
 Option Explicit
 
+' Örnek: MinMaxParametreDeger | Rehber: 08 | Parametre
 ' Purpose: Aktif parçadaki tüm parametreler arasında min ve max sayısal değeri bulup gösterir.
 ' Assumptions: 3DExperience açık, aktif belge Part; en az bir parametre var.
 ' Language: VBA  |  Release: 3DEXPERIENCE R2024x

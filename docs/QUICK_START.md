@@ -8,7 +8,7 @@
 
 Tek sayfada: **3 adım** + tek çalışan makro. Detaylı rehber için [Guidelines/README.md](../Guidelines/README.md) ve [Examples/](../Examples/README.md) kullanın.
 
-**Bu sayfada:** 3 adım · Kopyala–yapıştır makro · Sonraki adımlar
+**Bu sayfada:** [3 adım](#3-adım) · [Tek örnek makro](#tek-örnek-makro-kopyala-yapıştır) · [Sonraki adımlar](#sonraki-adımlar)
 
 ---
 
@@ -60,4 +60,4 @@ End Sub
 
 ---
 
-**İlgili:** [CHEATSHEET.md](CHEATSHEET.md) · [VBA_API_REFERENCE.md](VBA_API_REFERENCE.md)
+**Gezinme:** [Ana sayfa](../README.md) · [Docs](README.md) · [Rehber](../Guidelines/README.md) · [Örnek makrolar](../Examples/README.md) · [CHEATSHEET](CHEATSHEET.md) · [VBA_API_REFERENCE](VBA_API_REFERENCE.md)

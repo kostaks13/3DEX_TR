@@ -754,4 +754,23 @@ Baştan sona bir makro yazarken izlenecek adımların özeti:
 9. **Başlık:** Language, Release, Purpose, Assumptions.  
 10. **Test:** F5, F8, Immediate penceresi; dağıtım öncesi kontrol listesi (11. doküman).
 
+════════════════════════════════════════════════════════════════════════════════
+
+## Kendinizi test edin
+
+1. **Design/Draft/Harden/Finalize** fazlarından “kod taslağı yazılıyor, henüz çalıştırılmıyor” hangi fazda?  
+2. Parametre değeri yazıp **Update çağırmadan** makroyu durdursanız modelde değişiklik görünür mü?  
+3. Teslim öncesi kontrol için hangi dokümandaki checklist’i kullanmalısınız?
+
+<details>
+<summary>Yanıtlar (tıklayarak açın)</summary>
+
+1. **Draft** — Taslak kod yazılır; Design ihtiyaç/akış, Harden test/sertleştirme, Finalize teslim/dağıtım.  
+2. **Hayır** — Part’ta değişiklikler ancak **oPart.Update** çağrıldığında uygulanır; yoksa bellek/görüntü güncellenmez.  
+3. **[VBA-Kod-Checklist.md](VBA-Kod-Checklist.md)** — Option Explicit, Nothing/Count, tek Update, başlık (Language, Release), On Error vb. zorunlu ve önerilen maddeler.
+
+</details>
+
+════════════════════════════════════════════════════════════════════════════════
+
 **Gezinme:** Önceki: [09-Hata-Yakalama](09-Hata-Yakalama-ve-Debug.md) | [Rehber listesi](README.md) | Sonraki: [11-Resmi-Kurallar](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) →
