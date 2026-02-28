@@ -1,11 +1,25 @@
 # 3DExperience VBA Macro – Rehber ve Referans
 
 ```
-   ###   ##    ###   #   #         #####  ###
-     #   #  #   #     # #            #    #  #
-   ###   #  #   ###    #            #    ###
-     #   #  #   #     # #            #    #  #
-   ###   ##    ###   #   #  _____   #    #   #
+ 333333333333333   DDDDDDDDDDDDD      EEEEEEEEEEEEEEEEEEEEEEXXXXXXX       XXXXXXX                        TTTTTTTTTTTTTTTTTTTTTTTRRRRRRRRRRRRRRRRR
+3:::::::::::::::33 D::::::::::::DDD   E::::::::::::::::::::EX:::::X       X:::::X                        T:::::::::::::::::::::TR::::::::::::::::R
+3::::::33333::::::3D:::::::::::::::DD E::::::::::::::::::::EX:::::X       X:::::X                        T:::::::::::::::::::::TR::::::RRRRRR:::::R
+3333333     3:::::3DDD:::::DDDDD:::::DEE::::::EEEEEEEEE::::EX::::::X     X::::::X                        T:::::TT:::::::TT:::::TRR:::::R     R:::::R
+            3:::::3  D:::::D    D:::::D E:::::E       EEEEEEXXX:::::X   X:::::XXX                        TTTTTT  T:::::T  TTTTTT  R::::R     R:::::R
+            3:::::3  D:::::D     D:::::DE:::::E                X:::::X X:::::X                                   T:::::T          R::::R     R:::::R
+    33333333:::::3   D:::::D     D:::::DE::::::EEEEEEEEEE       X:::::X:::::X                                    T:::::T          R::::RRRRRR:::::R
+    3:::::::::::3    D:::::D     D:::::DE:::::::::::::::E        X:::::::::X                                     T:::::T          R:::::::::::::RR
+    33333333:::::3   D:::::D     D:::::DE:::::::::::::::E        X:::::::::X                                     T:::::T          R::::RRRRRR:::::R
+            3:::::3  D:::::D     D:::::DE::::::EEEEEEEEEE       X:::::X:::::X                                    T:::::T          R::::R     R:::::R
+            3:::::3  D:::::D     D:::::DE:::::E                X:::::X X:::::X                                   T:::::T          R::::R     R:::::R
+            3:::::3  D:::::D    D:::::D E:::::E       EEEEEEXXX:::::X   X:::::XXX                                T:::::T          R::::R     R:::::R
+3333333     3:::::3DDD:::::DDDDD:::::DEE::::::EEEEEEEE:::::EX::::::X     X::::::X                              TT:::::::TT      RR:::::R     R:::::R
+3::::::33333::::::3D:::::::::::::::DD E::::::::::::::::::::EX:::::X       X:::::X                              T:::::::::T      R::::::R     R:::::R
+3:::::::::::::::33 D::::::::::::DDD   E::::::::::::::::::::EX:::::X       X:::::X                              T:::::::::T      R::::::R     R:::::R
+ 333333333333333   DDDDDDDDDDDDD      EEEEEEEEEEEEEEEEEEEEEEXXXXXXX       XXXXXXX                              TTTTTTTTTTT      RRRRRRRR     RRRRRRR
+                                                                                 ________________________
+                                                                                 _::::::::::::::::::::::_
+                                                                                 ________________________
 ```
 
 **3DExperience** (Dassault Systèmes) platformunda **VBA ile makro** yazmak için sıfırdan rehber, API referansı ve yardımcı dokümanlar. Yeni başlayanlar için adım adım anlatım, sık kullanılan kalıplar ve resmi Help dokümanlarıyla uyumlu içerik.
