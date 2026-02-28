@@ -2,9 +2,11 @@ Attribute VB_Name = "AktifParcaBilgisi"
 Option Explicit
 
 ' ============================================================
-' Örnek: Aktif parça belgesinin bilgisini göster
-' 3DExperience açık olmalı, aktif belge bir Part olmalı.
+' Purpose: Aktif parça belgesinin adı, tam yolu ve Shapes
+'          sayısını gösterir.
+' Assumptions: 3DExperience açık, aktif belge Part.
 ' Language: VBA  |  Release: 3DEXPERIENCE R2024x
+' Regional Settings: English (United States).
 ' ============================================================
 
 Sub AktifParcaBilgisi()

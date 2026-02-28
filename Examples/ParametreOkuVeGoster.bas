@@ -1,8 +1,10 @@
 Attribute VB_Name = "ParametreOkuVeGoster"
 Option Explicit
 
-' Language: VBA  |  Release: 3DEXPERIENCE R2024x
 ' Purpose: Aktif parçada belirtilen parametrenin değerini okur ve gösterir.
+' Assumptions: 3DExperience açık, aktif belge Part; parametre adı kullanıcıdan alınır.
+' Language: VBA  |  Release: 3DEXPERIENCE R2024x
+' Regional Settings: English (United States) – sayı formatı.
 
 Sub ParametreOkuVeGoster()
     Dim oApp As Object

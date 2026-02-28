@@ -2,7 +2,7 @@
 
 **Anahtar kelimeler:** 3DExperience, VBA, macro, Dassault Systèmes, CATIA, automation, 3DEX, makro rehberi.
 
-**Rehber sürümü:** v1.1
+**Rehber sürümü:** v1.2
 
 ```
 ██████╗ ██████╗ ███████╗██╗  ██╗     ████████╗██████╗ 
@@ -24,7 +24,7 @@
 | [**Guidelines**](Guidelines/README.md) | 19 dokümanlık kod yazma rehberi (VBA temelleri, nesne modeli, makro kayıt, hata yakalama, örnek projeler, resmi kurallar, isimlendirme) |
 | [**VBA API Referansı**](VBA_API_REFERENCE.md) | Sık kullanılan API imzaları + açıklamalar; tam liste `Help/VBA_CALL_LIST.txt` ve `Help/text/` |
 | [**Examples**](Examples/README.md) | Çalıştırılabilir örnek makrolar (`.bas`); rehberle uyumlu |
-| [**Help**](Help/) | Ham API (`VBA_CALL_LIST.txt`), özet (`SIK_KULLANILAN_API.txt`), arama rehberi (`ARAMA_REHBERI.md`), `text/` |
+| [**Help**](Help/) | Ham API (`VBA_CALL_LIST.txt`), özet (`SIK_KULLANILAN_API.txt`), arama rehberi (`ARAMA_REHBERI.md`), `text/` (metin dosyaları); PDF’ler isteğe bağlı eklenebilir |
 | [**QUICK_START**](QUICK_START.md) | İlk 5 dakikada tek sayfa hızlı başlangıç |
 | [**Terimler**](GLOSSARY.md) | Sözlük (Part, Parameter, Nothing, Update, Editor/Session-level vb.) |
 | [**SSS / FAQ**](FAQ.md) | Sık sorulan sorular |
@@ -65,8 +65,8 @@
     ├── SIK_KULLANILAN_API.txt ← Sık kullanılan API özeti
     ├── ARAMA_REHBERI.md       ← grep/arama örnekleri
     ├── API_REPORT.csv
-    ├── *.pdf                  ← Resmi Help PDF’leri (isteğe bağlı)
-    └── text/                  ← Metin (.txt) versiyonları
+    ├── text/                  ← Resmi Help’ten üretilmiş metin (.txt) dosyaları
+    └── *.pdf                  ← (İsteğe bağlı) Resmi Help PDF’leri buraya eklenebilir
 ```
 
 ---
@@ -80,6 +80,6 @@
 - **11:** Resmi kurallar ve hazırlık fazları (Design/Draft/Harden/Finalize).
 - **12–13:** Servisler (Editor/Session), erişim ve kullanım rehberi.
 - **14–15:** VBA–Excel etkileşimi, dosya seçme/kaydetme diyalogları.
-- **16–18:** İyileştirme önerileri, Help dosyalarını kullanma, sık hatalar ve dikkat noktaları.
+- **16–19:** İyileştirme önerileri, Help dosyalarını kullanma, sık hatalar ve dikkat noktaları, isimlendirme rehberi.
 
 Tam liste ve tablolar: **[Guidelines/README.md](Guidelines/README.md)**.

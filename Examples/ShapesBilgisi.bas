@@ -1,11 +1,15 @@
 Attribute VB_Name = "ShapesBilgisi"
 Option Explicit
 
-' Language: VBA  |  Release: 3DEXPERIENCE R2024x
 ' Purpose: Aktif parçadaki Shapes sayısı ve ilk 10 şeklin adını gösterir.
+' Assumptions: 3DExperience açık, aktif belge Part.
+' Language: VBA  |  Release: 3DEXPERIENCE R2024x
+' Regional Settings: English (United States).
 
 Sub ShapesBilgisi()
+    On Error GoTo HataYakala
     Dim oApp As Object
+    Dim oDoc As Object
     Dim oPart As Object
     Dim oShapes As Object
     Dim oShape As Object
@@ -13,11 +17,13 @@ Sub ShapesBilgisi()
     Dim iMax As Long
     Dim sOut As String
 
-    On Error GoTo HataYakala
     Set oApp = GetObject(, "CATIA.Application")
-    If oApp Is Nothing Then Exit Sub
-    Set oPart = oApp.ActiveDocument.GetItem("Part")
-    If oPart Is Nothing Then Exit Sub
+    If oApp Is Nothing Then MsgBox "3DExperience açık değil.": Exit Sub
+    Set oDoc = oApp.ActiveDocument
+    If oDoc Is Nothing Then MsgBox "Açık belge yok.": Exit Sub
+    Set oPart = oDoc.GetItem("Part")
+    If oPart Is Nothing Then Set oPart = oDoc
+    If oPart Is Nothing Then MsgBox "Bu belge Part değil.": Exit Sub
     Set oShapes = oPart.Shapes
     If oShapes Is Nothing Then MsgBox "Shapes yok.": Exit Sub
 

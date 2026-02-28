@@ -1,8 +1,13 @@
 Attribute VB_Name = "LogOrnekMakro"
 Option Explicit
 
+' ============================================================
+' Purpose: Log dosyasına başlangıç/bitiş ve hata satırı yazar
+'          (log pattern örneği).
+' Assumptions: 3DExperience açık; C:\Temp mevcut ve yazılabilir.
 ' Language: VBA  |  Release: 3DEXPERIENCE R2024x
-' Purpose: Log dosyasına başlangıç/bitiş ve hata satırı yazar (log pattern örneği).
+' Regional Settings: English (United States) – tarih/saat.
+' ============================================================
 
 Private Const LOG_PATH As String = "C:\Temp\macro_log.txt"
 
@@ -20,8 +25,11 @@ End Sub
 
 Private Sub LogSatir(sDosya As String, sMesaj As String)
     Dim iFile As Integer
+    On Error Resume Next
     iFile = FreeFile
     Open sDosya For Append As #iFile
+    If Err.Number <> 0 Then Exit Sub
     Print #iFile, Format(Now, "yyyy-mm-dd hh:nn:ss") & "  " & sMesaj
     Close #iFile
+    On Error GoTo 0
 End Sub

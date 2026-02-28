@@ -1,8 +1,10 @@
 Attribute VB_Name = "ParametreYaz"
 Option Explicit
 
-' Language: VBA  |  Release: 3DEXPERIENCE R2024x
 ' Purpose: Kullanıcıdan parametre adı ve değer alır; Part'ta günceller.
+' Assumptions: 3DExperience açık, aktif belge Part; parametre yazılabilir.
+' Language: VBA  |  Release: 3DEXPERIENCE R2024x
+' Regional Settings: English (United States) – sayı formatı.
 
 Sub ParametreYaz()
     Dim oApp As Object

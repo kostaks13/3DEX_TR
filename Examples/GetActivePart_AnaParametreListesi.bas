@@ -1,8 +1,10 @@
 Attribute VB_Name = "GetActivePart_AnaParametreListesi"
 Option Explicit
 
+' Purpose: Modüler yapı örneği – GetActivePart ortak fonksiyonu ve tüm parametreleri listeleyen AnaParametreListesi.
+' Assumptions: 3DExperience açık, aktif belge Part.
 ' Language: VBA  |  Release: 3DEXPERIENCE R2024x
-' Modüler yapı örneği: GetActivePart ortak fonksiyon + AnaParametreListesi.
+' Regional Settings: English (United States) – sayı formatı.
 
 Private Function GetActivePart() As Object
     Dim oApp As Object
@@ -19,6 +21,7 @@ Private Function GetActivePart() As Object
 End Function
 
 Sub AnaParametreListesi()
+    On Error GoTo HataYakala
     Dim oPart As Object
     Dim oParams As Object
     Dim i As Long
@@ -33,7 +36,10 @@ Sub AnaParametreListesi()
     For i = 1 To oParams.Count
         On Error Resume Next
         sOut = sOut & oParams.Item(i).Name & " = " & oParams.Item(i).Value & vbCrLf
-        On Error GoTo 0
+        On Error GoTo HataYakala
     Next i
     MsgBox sOut
+    Exit Sub
+HataYakala:
+    MsgBox "Hata (" & Err.Number & "): " & Err.Description
 End Sub
