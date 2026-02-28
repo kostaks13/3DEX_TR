@@ -309,4 +309,4 @@ oApp.SystemService                   → Environ, ConcatenatePaths
 
 **Tüm rehber:** [README](README.md). Konuya göre: [06](06-3DExperience-Nesne-Modeli.md) (hiyerarşi), [08](08-Sik-Kullanilan-APIler.md) (API örnekleri), [12](12-Servisler-ve-Yapilabilecek-Islemler.md) (servisler), [14](14-VBA-ve-Excel-Etkilesimi.md) (Excel), [15](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md) (dosya diyalogları), [18](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md) (sık hatalar ve dikkat noktaları). İmzalar: **VBA_API_REFERENCE.md**. **Help dosyalarını ne zaman/nasıl kullanacağınız** için **17. doküman:** [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md).
 
-**Gezinme:** ← [12-Servisler](12-Servisler-ve-Yapilabilecek-Islemler.md) | [Rehber listesi](README.md) | Sonraki: [14-Excel](14-VBA-ve-Excel-Etkilesimi.md) →
+**Gezinme:** Önceki: [12-Servisler](12-Servisler-ve-Yapilabilecek-Islemler.md) | [Rehber listesi](README.md) | Sonraki: [14-Excel](14-VBA-ve-Excel-Etkilesimi.md) →

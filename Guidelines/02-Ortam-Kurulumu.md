@@ -241,4 +241,4 @@ Büyük projelerde modülleri işlevine göre ayırabilirsiniz: bir modül “Pa
 
 **3. doküman:** [03-VBA-Temelleri-Degiskenler-ve-Veritipleri.md](03-VBA-Temelleri-Degiskenler-ve-Veritipleri.md) — Değişkenler, veri tipleri ve `Option Explicit` kullanımı.
 
-**Gezinme:** ← [01-Giris](01-Giris-Neden-3DExperience-VBA.md) | [Rehber listesi](README.md) | Sonraki: [03-VBA-Temelleri-Degiskenler](03-VBA-Temelleri-Degiskenler-ve-Veritipleri.md) →
+**Gezinme:** Önceki: [01-Giris](01-Giris-Neden-3DExperience-VBA.md) | [Rehber listesi](README.md) | Sonraki: [03-Degiskenler](03-VBA-Temelleri-Degiskenler-ve-Veritipleri.md) →

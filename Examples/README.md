@@ -1,10 +1,21 @@
 # Örnek Makrolar
 
+```
+================================================================================
+  Çalıştırılabilir .bas örnekleri  |  Rehber 08 + 10 ile uyumlu
+================================================================================
+```
+
 Bu klasörde **3DExperience VBA** rehberindeki (Guidelines 08 ve 10) örnek makroların çalıştırılabilir kopyaları bulunur. Her dosya `.bas` formatındadır; 3DExperience VBA editörüne modül olarak aktarabilir veya içeriği kopyalayıp kendi modülünüze yapıştırabilirsiniz.
 
 ---
 
-## Kullanım (3 satır)
+## Kullanım (3 adım)
+
+```
+  [1] 3DExperience aç   ──►  [2] VBA Editör: Modül ekle, .bas yapıştır   ──►  [3] F5 ile çalıştır
+       Part belgesi aç         (Tools → Macro → Edit)                           Mesaj / dosya çıktısı
+```
 
 1. **3DExperience** açın; gerekirse bir **Part** belgesi açın.
 2. **Tools → Macro → Edit** (veya eşdeğeri) ile VBA editörünü açın; yeni modül ekleyip ilgili `.bas` dosyasının içeriğini yapıştırın.

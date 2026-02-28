@@ -8,6 +8,12 @@ Makro çalışırken hata almak normaldir. Bu dokümanda **hata yakalama** (On E
 
 VBA’da hata oluşunca çalışma durur ve hata mesajı çıkar. Bunu **yönetmek** için **On Error** kullanırız.
 
+```
+  Sub başlar  ──►  On Error GoTo HataYakala  ──►  işlemler  ──►  Exit Sub  ──►  normal çıkış
+       │                    │                        │
+       │                    └── hata olursa ─────────┴────────►  HataYakala:  ──►  MsgBox  ──►  çıkış
+```
+
 ### On Error GoTo etiket
 
 Belirli bir satıra atlayıp orada mesaj gösterip çıkış yapabilirsiniz:
@@ -422,4 +428,4 @@ End Sub
 
 **10. doküman:** [10-Ornek-Proje-Bastan-Sona-Bir-Makro.md](10-Ornek-Proje-Bastan-Sona-Bir-Makro.md) — Baştan sona örnek makro ve yazım kuralları özeti.
 
-**Gezinme:** ← [08-Sik-Kullanilan-APIler](08-Sik-Kullanilan-APIler.md) | [Rehber listesi](README.md) | Sonraki: [10-Ornek-Proje](10-Ornek-Proje-Bastan-Sona-Bir-Makro.md) →
+**Gezinme:** Önceki: [08-Sik-Kullanilan-APIler](08-Sik-Kullanilan-APIler.md) | [Rehber listesi](README.md) | Sonraki: [10-Ornek-Proje](10-Ornek-Proje-Bastan-Sona-Bir-Makro.md) →

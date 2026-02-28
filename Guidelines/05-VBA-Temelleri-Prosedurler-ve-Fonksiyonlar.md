@@ -351,4 +351,4 @@ End Function
 
 **6. doküman:** [06-3DExperience-Nesne-Modeli.md](06-3DExperience-Nesne-Modeli.md) — Uygulama, belge, parça hiyerarşisi ve erişim.
 
-**Gezinme:** ← [04-Kosullar-ve-Donguler](04-VBA-Temelleri-Kosullar-ve-Donguler.md) | [Rehber listesi](README.md) | Sonraki: [06-Nesne-Modeli](06-3DExperience-Nesne-Modeli.md) →
+**Gezinme:** Önceki: [04-Kosullar-ve-Donguler](04-VBA-Temelleri-Kosullar-ve-Donguler.md) | [Rehber listesi](README.md) | Sonraki: [06-Nesne-Modeli](06-3DExperience-Nesne-Modeli.md) →

@@ -328,4 +328,4 @@ End Sub
 
 **Tüm rehber:** [README](README.md). İlgili: [13](13-Erisim-ve-Kullanim-Rehberi.md) (erişim), [15](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md) (dosya seç/kaydet diyaloğu), [10](10-Ornek-Proje-Bastan-Sona-Bir-Makro.md) (parametre → dosya örnekleri).
 
-**Gezinme:** ← [13-Erisim](13-Erisim-ve-Kullanim-Rehberi.md) | [Rehber listesi](README.md) | Sonraki: [15-Dosya-Diyaloglar](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md) →
+**Gezinme:** Önceki: [13-Erisim](13-Erisim-ve-Kullanim-Rehberi.md) | [Rehber listesi](README.md) | Sonraki: [15-Dosya-Diyaloglar](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md) →

@@ -4,6 +4,20 @@ Kodlamaya yeni başlarken **makro kaydı** çok işe yarar: 3DExperience’ta ya
 
 ------------------------------------------------------------
 
+```
+  Kayıt öncesi          Kayıt                 Kayıt sonrası
+  (hangi iş?)    ──►  Start Recording   ──►  Stop Recording
+       │                    │                        │
+       │              İşlemleri yap                  │
+       │              (parça aç, parametre            │
+       │               değiştir, tıkla...)            ▼
+       │                                        Kodu bul (Alt+F11)
+       │                                        ──►  İncele  ──►  Sadeleştir (Option Explicit, Nothing, tek Update)
+       └──────────────────────────────────────────────────────────────────────────────────────────────────►  Kullan / genelleştir
+```
+
+------------------------------------------------------------
+
 ## Makro kaydı nasıl açılır?
 
 1. 3DExperience’ı açın ve ilgili rolü seçin (ör. Mechanical Designer).  
@@ -316,4 +330,4 @@ Kayıt sırasında sadece bir öğe seçildiyse kod `Item(1)` veya `Item(2)` gib
 
 **8. doküman:** [08-Sik-Kullanilan-APIler.md](08-Sik-Kullanilan-APIler.md) — Parça, geometri ve çizimle ilgili sık kullanılan API’ler ve kısa örnekler. **Help:** [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md). **Sık hatalar:** [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md).
 
-**Gezinme:** ← [06-Nesne-Modeli](06-3DExperience-Nesne-Modeli.md) | [Rehber listesi](README.md) | Sonraki: [08-Sik-Kullanilan-APIler](08-Sik-Kullanilan-APIler.md) →
+**Gezinme:** Önceki: [06-Nesne-Modeli](06-3DExperience-Nesne-Modeli.md) | [Rehber listesi](README.md) | Sonraki: [08-Sik-Kullanilan-APIler](08-Sik-Kullanilan-APIler.md) →

@@ -293,4 +293,4 @@ Const LOG_PATH As String = "C:\Temp\macro_log.txt"
 
 **Hata yakalama ve debug:** [09-Hata-Yakalama-ve-Debug.md](09-Hata-Yakalama-ve-Debug.md). **Resmi kurallar ve kontrol listesi:** [11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md). **Detaylı checklist:** [VBA-Kod-Checklist.md](VBA-Kod-Checklist.md). **İyileştirme önerileri:** [16-Iyilestirme-Onerileri.md](16-Iyilestirme-Onerileri.md). **Help dosyalarını kullanma:** [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md). **Tüm rehber:** [README](README.md).
 
-**Gezinme:** ← [17-Help-Dosyalari](17-Help-Dosyalarini-Kullanma.md) | [Rehber listesi](README.md)
+**Gezinme:** Önceki: [17-Help-Dosyalari](17-Help-Dosyalarini-Kullanma.md) | [Rehber listesi](README.md)

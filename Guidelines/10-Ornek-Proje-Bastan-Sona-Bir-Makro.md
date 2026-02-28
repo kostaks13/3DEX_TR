@@ -13,6 +13,19 @@ Bu son dokümanda, önceki dokümanlarda öğrendiklerinizi kullanarak **baştan
 
 Bu iskeleti kendi ihtiyacınıza göre (parametre değiştirme, çizim sayfası işleme vb.) genişletebilirsiniz.
 
+```
+  GetObject → oApp   ──►   ActiveDocument → oDoc   ──►   GetItem("Part") → oPart
+       │                          │                              │
+       │ Nothing?                 │ Nothing?                     │ Nothing?
+       ▼                          ▼                              ▼
+  [1] Uygulama al            [2] Belge al                   [3] Part al
+                                                                  │
+                                                                  ├── .Parameters, .Shapes, .Name …
+                                                                  │
+                                                                  ▼
+  [4] İşlem (oku/yaz/listele)   ──►   [5] (gerekirse) oPart.Update   ──►   [6] MsgBox / çıkış
+```
+
 ------------------------------------------------------------
 
 ## Tam örnek makro (iskelet)
@@ -721,4 +734,4 @@ Baştan sona bir makro yazarken izlenecek adımların özeti:
 9. **Başlık:** Language, Release, Purpose, Assumptions.  
 10. **Test:** F5, F8, Immediate penceresi; dağıtım öncesi kontrol listesi (11. doküman).
 
-**Gezinme:** ← [09-Hata-Yakalama](09-Hata-Yakalama-ve-Debug.md) | [Rehber listesi](README.md) | Sonraki: [11-Resmi-Kurallar](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) →
+**Gezinme:** Önceki: [09-Hata-Yakalama](09-Hata-Yakalama-ve-Debug.md) | [Rehber listesi](README.md) | Sonraki: [11-Resmi-Kurallar](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) →

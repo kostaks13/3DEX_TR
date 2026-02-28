@@ -1,5 +1,11 @@
 # VBA API Referansı – 3DEX_TR
 
+```
+================================================================================
+  Sık kullanılan API imzaları  |  Help: VBA_CALL_LIST.txt, text/
+================================================================================
+```
+
 Bu sayfa **3DExperience VBA** makro geliştirirken kullanılan API’lere yönlendirme ve kısa açıklamalar içerir. Tam liste ve imzalar proje içindeki aşağıdaki kaynaklarda bulunur.
 
 ---
@@ -13,6 +19,21 @@ Bu sayfa **3DExperience VBA** makro geliştirirken kullanılan API’lere yönle
 | [**Help/API_REPORT.csv**](Help/API_REPORT.csv) | API raporu (ek kaynak) |
 | [**Help/text/**](Help/text/) | Resmi Help dokümanlarından üretilmiş metin dosyaları |
 | [**Help/ARAMA_REHBERI.md**](Help/ARAMA_REHBERI.md) | Help ve VBA_CALL_LIST içinde grep/arama örnekleri |
+
+---
+
+## Erişim zinciri (özet diyagram)
+
+```
+  GetObject(,"CATIA.Application")  ──►  oApp
+           │
+           ├── .ActiveDocument     ──►  oDoc   ──►  .GetItem("Part")     ──►  oPart  ──►  .Parameters, .Shapes, .Update
+           │                                └──►  .GetItem("Product")   ──►  oProduct ──►  .Children
+           │                                └──►  .GetItem("DrawingRoot") ──►  oDraw  ──►  .Sheets, .Views
+           │
+           ├── .ActiveEditor      ──►  oEditor  ──►  .GetService("...")   (Editor-level servis)
+           └── .GetSessionService("...")         (Session-level servis)
+```
 
 ---
 

@@ -228,6 +228,15 @@ Gereksinimin hangi “dünyada” (Part Design, GSD, Assembly, Simulation vb.) �
 
 ## 5. Kod taslağı fazları: Design → Draft → Harden → Finalize
 
+```
+  Design          Draft           Harden           Finalize
+  (akış, risk)    (iskelet,       (null, Update,   (inceleme,
+   pseudo-code)    Option Expl.)   log, Timer)      yorum, 3 satır kullanım)
+       │                │                │                │
+       └────────────────┴────────────────┴────────────────┘
+                         Makro olgunlaşma akışı
+```
+
 ### 5.1 Design (akış tasarımı)
 
 - **High-level pseudo-code** — Her satır tek iş: “Geometrical Set’i bul”, “Nokta oluştur”, “Update”.  
@@ -824,4 +833,4 @@ Bu doküman, yukarıdaki kaynaklardan özetlenmiştir; tam ve güncel kurallar i
 
 **Tüm rehber listesi:** [README](README.md). İlgili: [12](12-Servisler-ve-Yapilabilecek-Islemler.md) servisler, [13](13-Erisim-ve-Kullanim-Rehberi.md) erişim, [14](14-VBA-ve-Excel-Etkilesimi.md) Excel, [15](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md) dosya diyalogları, [16](16-Iyilestirme-Onerileri.md) iyileştirme.
 
-**Gezinme:** ← [10-Ornek-Proje](10-Ornek-Proje-Bastan-Sona-Bir-Makro.md) | [Rehber listesi](README.md) | Sonraki: [12-Servisler](12-Servisler-ve-Yapilabilecek-Islemler.md) →
+**Gezinme:** Önceki: [10-Ornek-Proje](10-Ornek-Proje-Bastan-Sona-Bir-Makro.md) | [Rehber listesi](README.md) | Sonraki: [12-Servisler](12-Servisler-ve-Yapilabilecek-Islemler.md) →

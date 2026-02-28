@@ -329,4 +329,4 @@ End Sub
 
 **4. doküman:** [04-VBA-Temelleri-Kosullar-ve-Donguler.md](04-VBA-Temelleri-Kosullar-ve-Donguler.md) — If, Select Case, For ve Do döngüleri.
 
-**Gezinme:** ← [02-Ortam-Kurulumu](02-Ortam-Kurulumu.md) | [Rehber listesi](README.md) | Sonraki: [04-Kosullar-ve-Donguler](04-VBA-Temelleri-Kosullar-ve-Donguler.md) →
+**Gezinme:** Önceki: [02-Ortam-Kurulumu](02-Ortam-Kurulumu.md) | [Rehber listesi](README.md) | Sonraki: [04-Kosullar-ve-Donguler](04-VBA-Temelleri-Kosullar-ve-Donguler.md) →

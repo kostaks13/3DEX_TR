@@ -8,6 +8,22 @@ Bu dokümanda **servisler** (Editor-level ve Session-level) ile **yapılabilecek
 
 **Service** (servis), nesneden bağımsız işlemler sunan bir soyut nesnedir. İki tür vardır:
 
+```
+  ┌─────────────────────────────────────────────────────────────────────────────────────────┐
+  │  EDITOR-LEVEL (ActiveEditor.GetService("..."))                                           │
+  │  Aktif editör + aktif Part/Product/Drawing'e bağlı. Örn: InertiaService, MeasureService.  │
+  │  Kütle, ölçü, çizim işlemleri.                                                           │
+  └─────────────────────────────────────────────────────────────────────────────────────────┘
+                                          │
+                                          │  Önce bunu bitir, sonra session-level kullan.
+                                          ▼
+  ┌─────────────────────────────────────────────────────────────────────────────────────────┐
+  │  SESSION-LEVEL (Application.GetSessionService("..."))                                     │
+  │  Oturum geneli; açık belgeden bağımsız. Örn: Search, PLMOpenService, PLMNewService,      │
+  │  VisuServices (katman/kamera). PLM arama, belge aç/yeni oluştur.                         │
+  └─────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
 - **Session-level servis:** Oturum genelinde, **aktif editör veya açık belgeden bağımsız** işlemler (PLM arama, yeni belge açma, malzeme atama, kamera/katman yönetimi vb.). Erişim: **Application.GetSessionService("ServisTanimi")**.
 - **Editor-level servis:** Aktif editördeki **belirli PLM kök nesnesine** (Part, Product, Drawing) bağlı işlemler. Örneğin kütle hesaplama (InertiaService) aktif parça/montaj için geçerlidir. Erişim: **ActiveEditor.GetService("ServisTanimi")**.
 
@@ -583,5 +599,5 @@ End Sub
 
 **Tüm rehber:** [README](README.md). İlgili: [13](13-Erisim-ve-Kullanim-Rehberi.md) (erişim tabloları), [14](14-VBA-ve-Excel-Etkilesimi.md) (Excel), [15](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md) (dosya diyalogları). Servis adları ve metod imzaları: **VBA_API_REFERENCE.md** ve **Help/text/**.
 
-**Gezinme:** ← [11-Resmi-Kurallar](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) | [Rehber listesi](README.md) | Sonraki: [13-Erisim](13-Erisim-ve-Kullanim-Rehberi.md) →
+**Gezinme:** Önceki: [11-Resmi-Kurallar](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) | [Rehber listesi](README.md) | Sonraki: [13-Erisim](13-Erisim-ve-Kullanim-Rehberi.md) →
 
