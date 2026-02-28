@@ -4,9 +4,11 @@
   Konu: Dim, Set, veri tipleri, Option Explicit, önekler (b, d, s, i, o, c), Const
 ```
 
+**Bu dokümanda:** Dim, Set, veri tipleri; Option Explicit; resmi önekler (b, d, s, i, o, c); Const; 3DExperience tarzı örnekler.
+
 Kod yazarken bilgiyi geçici olarak saklamak için **değişken** kullanırız. Bu dokümanda değişken tanımlama ve veri tiplerini 3DExperience VBA bağlamında öğreneceksiniz.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Değişken nedir?
 
@@ -28,7 +30,7 @@ End Sub
 - `ad = "Parça_01"` → Bu değişkene değer atar.  
 - `&` → Metinleri birleştirir.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Sık kullanılan veri tipleri
 
@@ -44,7 +46,7 @@ End Sub
 
 3DExperience’ta parça, montaj, çizim gibi şeylere erişirken çoğu zaman **Object** kullanırız; `Set` ile atama yaparız (aşağıda örnek var).
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Option Explicit kullanın
 
@@ -56,7 +58,7 @@ Option Explicit
 
 Böylece yazım hatası yaptığınızda (örneğin `Parca` yerine `Parca1` yazarsanız) VBA sizi uyarır; bu da hatayı azaltır. Yeni modül açtığınızda **Tools** → **Options** → **Editor** içinde **Require Variable Declaration** işaretli olsa da, manuel yazmak iyi alışkanlıktır.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Nesne değişkeni ve Set
 
@@ -74,7 +76,7 @@ End Sub
 
 3DExperience’tan gelen her “şey” (Part, Product, Drawing vb.) bir nesnedir; ilerideki dokümanlarda hep `Set` ile atayacağız.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Değişken isimlendirme (kısa özet)
 
@@ -82,7 +84,7 @@ End Sub
 - Anlamlı isim verin: `parcaAdi`, `olcuDegeri`, `sayac`.  
 - 3DExperience nesneleri için birçok örnekte `o` öneki kullanılır: `oParca`, `oDoc`, `oApp`.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Resmi isimlendirme önekleri (Help-Automation Development Guidelines)
 
@@ -99,7 +101,7 @@ Dassault Systèmes **Automation Development Guidelines** dokümanında VBA/VBScr
 
 Sabitler için: Tamamı **büyük harf**, bileşenler **alt çizgi** ile ayrılır. Örnek: `MAX_VALUE`, `LOG_PATH`, `DEFAULT_BODY_NAME`.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Basit hesaplama
 
@@ -121,7 +123,7 @@ End Sub
 
 Burada sadece sayısal değişkenler kullanılıyor; 3DExperience’tan henüz veri almıyoruz. Bunu bir sonraki aşamalarda nesne modeli ile birleştireceğiz.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Resmi öneklerle 3DExperience tarzı değişkenler
 
@@ -154,7 +156,7 @@ Sub OrnekOnekliDegiskenler()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Sabit (Const) kullanımı
 
@@ -176,7 +178,7 @@ Sub SabitOrnek()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Variant (dikkatli kullanın)
 
@@ -192,7 +194,7 @@ Sub VariantOrnek()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Tarih ve saat (Date tipi)
 
@@ -208,7 +210,7 @@ End Sub
 
 Log dosyası veya rapor başlığında tarih/saat yazarken bu yapı kullanılır.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Birden fazla değişkeni tek satırda tanımlama
 
@@ -229,7 +231,7 @@ End Sub
 
 Dikkat: `Dim i, j As Long` yazarsanız sadece `j` Long olur, `i` Variant kalır; bu yüzden her değişkene açıkça tip yazmak daha güvenlidir.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Metin birleştirme (&) ve satır sonu (vbCrLf)
 
@@ -249,7 +251,7 @@ End Sub
 
 Log veya rapor metninde çok satırlı çıktı oluştururken bu yapı kullanılır.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Sayıyı metne çevirme (CStr, Format)
 
@@ -266,7 +268,7 @@ End Sub
 
 Format ile ondalık basamak sayısı veya tarih/saat biçimi belirlenir.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Enum (sabit listesi) – Okunabilir kod
 
@@ -288,7 +290,7 @@ End Sub
 
 3DExperience’ta belge türü kontrolünde sayı yerine böyle sabitler kullanılabilir (API’nin DocumentType değerleri ile eşleştirilir).
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Type (kullanıcı tanımlı tip) – İlgili verileri gruplama
 
@@ -308,13 +310,13 @@ Sub TypeOrnek()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Empty ve Null (Variant durumları)
 
 **Variant** bazen **Empty** (henüz atanmamış) veya **Null** (veri yok) değer alır. Kontrol için **IsEmpty** ve **IsNull** kullanılır; 3DExperience API’sinden dönen bazı değerler Null olabilir, bu yüzden Optional parametre veya veritabanı alanlarıyla uğraşırken bu kontroller işe yarar.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Kontrol listesi
 
@@ -323,7 +325,7 @@ End Sub
 - [ ] Nesne atarken `Set` kullanacağımı biliyorum  
 - [ ] Modül başına `Option Explicit` yazıyorum  
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Sonraki adım
 

@@ -6,7 +6,7 @@
 
 3DExperience’ta her şey **nesne** (object) hiyerarşisi içindedir. Makro yazarken önce **uygulama**ya, sonra **açık belge**ye, oradan **parça**, **montaj** veya **çizim** nesnelerine ulaşırsınız. Bu dokümanda bu yapıyı öğreneceksiniz.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Hiyerarşi özeti
 
@@ -31,7 +31,7 @@ Application (3DExperience uygulaması)
 
 **“Neye nereden erişilir, neyi nasıl kullanırım?”** sorusunun tablo ve kod kalıplarıyla yanıtı için **13. doküman:** [13-Erisim-ve-Kullanim-Rehberi.md](13-Erisim-ve-Kullanim-Rehberi.md). **Help dosyalarını hangi aşamada nasıl kullanacağınız** için **17. doküman:** [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md).
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Uygulama nesnesini alma
 
@@ -60,7 +60,7 @@ Set oApp = Application   ' 3DExperience VBA içinden bazen bu kullanılır
 
 Hangi yöntemin geçerli olduğu 3DExperience sürümüne ve rolüne göre değişir; dokümantasyon veya kayıt edilmiş makroyu kontrol edin.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Aktif belge ve türü
 
@@ -91,7 +91,7 @@ Set oPart = oDoc   ' veya oDoc.GetItem("Part") vb. (sürüme göre API farklı o
 
 Proje içindeki `VBA_API_REFERENCE.md` ve Help dosyalarında ilgili sınıfların tam API’si listelenir; sürümünüze göre `Part`, `Product`, `DrawingRoot` nasıl alınır oradan bakılmalıdır.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Parça (Part) içinde dolaşma
 
@@ -120,7 +120,7 @@ Next i
 
 `VBA_CALL_LIST.txt` / `VBA_API_REFERENCE.md` içinde `Part`, `Shapes`, `Item` gibi sınıf ve metodları arayarak doğru API’yi bulun.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Montaj (Product) ve çocuklar
 
@@ -139,7 +139,7 @@ For Each oChild In oChildren
 Next oChild
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Çizim (Drawing)
 
@@ -154,7 +154,7 @@ Set oSheets = oDrawing.Sheets
 ' oSheets.Item(1).Views vb.
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Önemli noktalar
 
@@ -162,7 +162,7 @@ Set oSheets = oDrawing.Sheets
 2. **Belge türü kontrolü:** Parça mı, montaj mı, çizim mi buna göre farklı nesnelere geçin.  
 3. **Referans dokümanı:** Bu projedeki `VBA_API_REFERENCE.md` ve `Help/text/` altındaki metinler, hangi sınıfta hangi property/method olduğunu gösterir; sürümünüzle eşleştirin.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Application nesnesinin yapısı (Help-Native Apps Automation)
 
@@ -179,7 +179,7 @@ Set oSheets = oDrawing.Sheets
 
 Editör seviyesi servisler için **ActiveEditor** üzerinden **GetService(ad)** kullanılır: örn. CATDrawingService, InertiaService, MeasureService, PLMProductService.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 3DExperience otomasyon hiyerarşi ağacı (özet)
 
@@ -216,7 +216,7 @@ CATIA (Application)
 
 Bu ağaç, “nesneye nereden ulaşırım?” sorusunda yol haritasıdır; tam API listesi için `VBA_API_REFERENCE.md` ve Help PDF’lerine bakın.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Tam makro – Uygulama → Belge → Part iskeleti
 
@@ -267,7 +267,7 @@ End Sub
 
 Bu iskeleti kopyalayıp kendi iş mantığınızı (parametre okuma, geometri ekleme vb.) ekleyebilirsiniz.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: ActiveEditor ve ActiveObject (CATIA referansı)
 
@@ -293,7 +293,7 @@ Sub EditorVeActiveObjectOrnek()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: FileSystem ile dosya kontrolü (taşınabilir kod)
 
@@ -319,7 +319,7 @@ Sub DosyaVarMiOrnek()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: GetSessionService – SearchService fikri
 
@@ -345,7 +345,7 @@ Sub SessionServiceOrnek()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: HybridBodies ve HybridShapes (GSD)
 
@@ -379,7 +379,7 @@ End Sub
 
 API isimleri (HybridBodies, HybridShapes) sürüme göre değişebilir; kayıt veya referanstan kontrol edin.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Drawing – Sheets ve ActiveSheet
 
@@ -408,7 +408,7 @@ Sub CizimSayfalariOrnek()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Product – Root ve Occurrences
 
@@ -428,7 +428,7 @@ Sub ProductRootOrnek()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Bodies (OrderedGeometricalSets) – Part Design
 
@@ -449,25 +449,25 @@ Sub BodiesOrnek()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Application.Documents – Açık belgeler listesi
 
 Bazen aktif belge yerine **tüm açık belgeleri** taramak gerekir. **Application.Documents** (veya **Documents** koleksiyonu) açık belgeleri verir; Count ve Item(i) ile döngü yapılır. API adı sürüme göre değişir; “Documents”, “OpenDocuments” vb. Help’te aranmalıdır.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Editor.GetService – Editor-level servis
 
 Aktif editördeki **Part** veya **Product**’a bağlı servisler **ActiveEditor.GetService("ServisAdi")** ile alınır. Örnek servis isimleri: InertiaService, MeasureService, DrawingService. Bu servisler o anda düzenlenen kök nesneye (Part/Product/Drawing) özeldir; oturum genelinde değil.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Selection – Aktif seçim (kavramsal)
 
 Kullanıcının ekranda seçtiği nesnelere erişmek için **ActiveEditor.Selection** veya **Document.Selection** kullanılır (sürüme göre). Count ve Item(i) ile seçili elemanlar taranır; Filter veya Search ile belirli tipte nesne aranabilir. Tam API için Help-Native Apps Automation ve VBA_API_REFERENCE.md içinde “Selection” araması yapın.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Kontrol listesi
 
@@ -476,7 +476,7 @@ Kullanıcının ekranda seçtiği nesnelere erişmek için **ActiveEditor.Select
 - [ ] Part / Product / Drawing ayrımını biliyorum  
 - [ ] Koleksiyonda For veya For Each ile dolaşacağımı biliyorum  
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Sonraki adım
 

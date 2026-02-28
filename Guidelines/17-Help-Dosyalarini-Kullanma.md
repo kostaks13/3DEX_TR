@@ -1,8 +1,10 @@
 # 17. Help İçindeki Dosyaları Ne Zaman ve Nasıl Kullanacaksınız?
 
+**Bu dokümanda:** Help klasörü yapısı; hangi dosya ne zaman kullanılır; arama yöntemleri (grep, editör); aşamaya göre kullanım.
+
 Bu doküman, proje kökündeki **Help** klasöründeki dosyaların **ne işe yaradığını**, **hangi aşamada** ve **nasıl** kullanılacağını özetler. Rehberdeki diğer dokümanlar (01-18) sık sık "Help'e bakın", "VBA_API_REFERENCE.md ve Help/text/" der; burada hepsini tek yerde topluyoruz.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Help klasörünün yapısı
 
@@ -25,7 +27,7 @@ Help/
 
 Proje kökünde ayrıca **VBA_API_REFERENCE.md** vardır; Help ve VBA_CALL_LIST/API_REPORT'tan üretilmiş, okunaklı API referansıdır.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Hangi dosyayı ne zaman kullanacaksınız?
 
@@ -40,7 +42,7 @@ Proje kökünde ayrıca **VBA_API_REFERENCE.md** vardır; Help ve VBA_CALL_LIST/
 | **Hata yönetimi, log, Err.Raise** (resmi öneriler) | **Help-Automation Development Guidelines.txt**, **Help-3DEXPERIENCE MACRO HAZIRLIK YÖNERGESİ.txt** | 9. ve 11. dokümanlarda hata/log tasarımı yaparken. |
 | **Çağrılabilir API listesi** (ham liste) | **Help/VBA_CALL_LIST.txt** | VBA_API_REFERENCE.md yeterli değilse; script ile referans üretirken. |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Nasıl kullanacaksınız?
 
@@ -69,7 +71,7 @@ Proje kökünde ayrıca **VBA_API_REFERENCE.md** vardır; Help ve VBA_CALL_LIST/
 | **12 (Servisler)** | Help-Common Services.txt, Help-Native Apps Automation (Service Identifier, GetSessionService). |
 | **13-16 (Erişim, Excel, Dosya, İyileştirme)** | Gerekirse VBA_API_REFERENCE.md ve Help-Native Apps Automation (erişim yolu); diğerleri rehberde yeterli. |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Özet: "Şimdi ne yapayım?"
 
@@ -79,7 +81,7 @@ Proje kökünde ayrıca **VBA_API_REFERENCE.md** vardır; Help ve VBA_CALL_LIST/
 4. **Servis kullanacağım (GetSessionService, GetService)** → 12. doküman + **Help-Common Services.txt**, **Help-Native Apps Automation.txt** (Service Identifier).
 5. **Teslim / kurumsal standart** → 11. doküman + **Help-3DEXPERIENCE MACRO HAZIRLIK YÖNERGESİ.txt** (fazlar, TAMAM/HAZIR).
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## İlgili dokümanlar
 

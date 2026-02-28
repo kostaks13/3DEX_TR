@@ -1,8 +1,10 @@
 # 15. Dosya Seçtirme ve Kaydetme Diyalogları
 
+**Bu dokümanda:** FileDialog (aç/kaydet/klasör); GetOpenFileName/GetSaveFileName (Windows API); tam akış örnekleri.
+
 Makroda kullanıcının **dosya seçmesi** (açılacak veya işlenecek dosya) veya **kaydetme yeri ve adı belirlemesi** için diyalog pencereleri kullanılır. Bu dokümanda **dosya açma diyaloğu**, **dosya kaydetme diyaloğu** ve **klasör seçme** yöntemleri anlatılır.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 1. Yöntemlerin özeti
 
@@ -15,7 +17,7 @@ Makroda kullanıcının **dosya seçmesi** (açılacak veya işlenecek dosya) ve
 
 3DExperience VBA ortamında **FileDialog** bazen kullanılamayabilir (Application farklı olduğu için). Bu yüzden **Windows API** ile GetOpenFileName / GetSaveFileName kullanımı aşağıda ayrıca verilir; bu yöntem sadece Windows’ta çalışır ancak 3DExperience VBA’da genelde kullanılabilir.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 2. FileDialog ile dosya seçtirme (Office)
 
@@ -71,7 +73,7 @@ End Sub
 
 **Özellikler:** `.Title`, `.InitialFileName`, `.Filters.Add "Açıklama", "*.uzanti"`, `.AllowMultiSelect`, `.Show` (‑1 = Tamam), `.SelectedItems(1)` (seçilen yol).
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 3. FileDialog ile dosya kaydetme
 
@@ -105,7 +107,7 @@ Sub DosyaKaydetFileDialog()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 4. FileDialog ile klasör seçme
 
@@ -135,7 +137,7 @@ Sub KlasorSecFileDialog()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 5. Windows API ile dosya seçtirme (GetOpenFileName)
 
@@ -213,7 +215,7 @@ End Sub
 
 **Filtre formatı:** Metinde `|` ile ayrılmış çiftler: "Açıklama|*.uzanti". API’de `|` yerine `Chr(0)` konur; sonuna bir `Chr(0)` daha eklenir.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 6. Windows API ile dosya kaydetme (GetSaveFileName)
 
@@ -265,7 +267,7 @@ Sub OrnekDosyaKaydet()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 7. InputBox ile basit yol girişi
 
@@ -284,7 +286,7 @@ Sub DosyaYoluInputBox()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 8. Tam akış örneği: Dosya seç → Excel’de aç → Bir hücreyi oku
 
@@ -322,7 +324,7 @@ Sub DosyaSecSonraExcelAc()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 9. Tam akış örneği: Veriyi hazırla → Kaydet diyaloğu → Kaydet
 
@@ -363,7 +365,7 @@ Sub VeriHazirlaSonraKaydetDiyalog()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 10. Özet tablo
 
@@ -376,7 +378,7 @@ End Sub
 | Seçilen dosyayı açmak | Seçilen yol → Workbooks.Open(sYol) veya 3DExperience API |
 | Seçilen yola kaydetmek | Seçilen yol → SaveAs(sYol) veya Open ... For Output / Print # |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 11. Dikkat edilecekler
 
@@ -385,7 +387,7 @@ End Sub
 - Kullanıcı diyaloğu iptal ederse seçim döndürülmez; dönen dizi boş veya API 0 döner. Her zaman **boş/iptal** kontrolü yapın.
 - Filtre metninde **|** karakteri API’de **Chr(0)** ile değiştirilip sonuna **Chr(0)** eklenir.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## İlgili dokümanlar
 

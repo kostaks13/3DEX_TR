@@ -1,8 +1,10 @@
 # 4. VBA Temelleri – Koşullar ve Döngüler
 
+**Bu dokümanda:** If, Select Case; For, For Each, Do; Nothing kontrolü; 3DExperience'a uyarlanmış döngü örnekleri.
+
 Programda “eğer şu olursa bunu yap” ve “bir işi N kez tekrarla” demek için **koşul** ve **döngü** yapılarını kullanırız. 3DExperience makrolarında sık karşılaşacaksınız.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Koşul: If / Then / Else
 
@@ -28,7 +30,7 @@ End Sub
 - **And** / **Or:** Birden fazla koşulu birleştirir: `If sayi > 0 And sayi < 100 Then`  
 - 3DExperience’ta örnek: “Belge açık mı?”, “Parça var mı?” gibi kontrollerde kullanılır.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Select Case (çoklu seçim)
 
@@ -52,7 +54,7 @@ Sub SelectCaseOrnek()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## For döngüsü (belirli sayıda tekrar)
 
@@ -69,7 +71,7 @@ End Sub
 
 3DExperience’ta: “Tüm parçaları tara”, “1’den 10’a kadar ölçü güncelle” gibi senaryolarda kullanılır.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## For Each (koleksiyonda dolaşma)
 
@@ -89,7 +91,7 @@ End Sub
 
 Gerçek kullanımda `oKoleksiyon` yerine Part’ın Shapes’i, Product’ın Children’ı vb. gelecek.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Do döngüsü (koşula bağlı tekrar)
 
@@ -110,7 +112,7 @@ End Sub
 - **Do Until** koşul doğru olana kadar döner: `Do Until sayac >= 3`  
 - Sonsuz döngüye düşmemek için koşulun bir yerde sağlanacağından emin olun.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 3DExperience’a uyarlanmış örnek fikirleri
 
@@ -120,7 +122,7 @@ End Sub
 
 Bu yapıları 6. ve 8. dokümanlarda nesne modeli ve API örnekleriyle birleştireceğiz.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: 3DExperience tarzı Nothing kontrolü
 
@@ -146,7 +148,7 @@ End Sub
 
 Gerçek kodda `Set oDoc = oApp.ActiveDocument` sonrası aynı `If oDoc Is Nothing` kontrolü yapılır.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: For döngüsü ile 1’den N’e işlem
 
@@ -166,7 +168,7 @@ End Sub
 
 3DExperience’ta: `For i = 1 To oShapes.Count` ile tüm şekilleri tarayabilirsiniz.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Do While ile “koşul sağlanana kadar” döngü
 
@@ -185,7 +187,7 @@ End Sub
 
 Dikkat: Koşulun bir gün sağlanacağından emin olun; yoksa sonsuz döngü oluşur.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: And / Or ile bileşik koşul
 
@@ -208,7 +210,7 @@ End Sub
 
 3DExperience’ta: “Belge açık **ve** parça **ve** read-only değil” gibi kontrollerde kullanılır.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Select Case ile belge türüne göre işlem
 
@@ -235,7 +237,7 @@ Sub BelgeTuruneGoreIslem()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: For Each ile koleksiyon dolaşma (kavramsal)
 
@@ -257,7 +259,7 @@ Sub ForEachKoleksiyonOrnek()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Do Until – “Koşul sağlanana kadar” alternatif
 
@@ -274,7 +276,7 @@ Sub DoUntilOrnek()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: İç içe For – Parametre ve şekil indeksleri
 
@@ -298,7 +300,7 @@ End Sub
 
 3DExperience’ta: Sheets sayısı kadar dış döngü, her sayfada Views sayısı kadar iç döngü kullanılabilir.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Exit For – Döngüden erken çıkış
 
@@ -316,7 +318,7 @@ End Sub
 
 Örnek senaryo: Parametreler arasında “Length.1” adını bulunca döngüden çıkıp o parametreyi güncellemek.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Koşulda String karşılaştırma (StrComp, =)
 
@@ -333,7 +335,7 @@ End Sub
 
 3DExperience’ta parametre adı veya belge adı karşılaştırmalarında bu yapı kullanılır.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: For Step – İkişer veya geriye sayma
 
@@ -351,7 +353,7 @@ Sub ForStepOrnek()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: İç içe If – Çoklu koşul
 
@@ -373,7 +375,7 @@ Sub IcIceIfOrnek()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Boolean değişken ile bayrak (flag)
 
@@ -393,7 +395,7 @@ Sub BayrakOrnek()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: For döngüsünde Step -1 (geriye sayma)
 
@@ -408,7 +410,7 @@ Sub GeriyeSayOrnek()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Test edilebilirlik notu (Help’ten)
 
@@ -419,7 +421,7 @@ End Sub
 
 Bu sayede makrolarınız hem elle hem otomatik test suite’lerde daha tutarlı çalışır.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Kontrol listesi
 
@@ -429,7 +431,7 @@ Bu sayede makrolarınız hem elle hem otomatik test suite’lerde daha tutarlı 
 - [ ] For Each ... Next ile koleksiyon döngüsü kuracağımı biliyorum  
 - [ ] Do While / Do Until farkını biliyorum  
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Sonraki adım
 

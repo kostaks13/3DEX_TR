@@ -1,8 +1,10 @@
 # 5. VBA Temelleri – Prosedürler ve Fonksiyonlar
 
+**Bu dokümanda:** Sub ve Function; parametreler (ByVal/ByRef, Optional); 3DExperience iskelet örnekleri; Public/Private, Exit Sub.
+
 Kodu **parçalara bölmek** için **Sub** (prosedür) ve **Function** (fonksiyon) kullanırız. Böylece kod tekrarı azalır ve makro daha okunabilir olur.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Sub (prosedür)
 
@@ -26,7 +28,7 @@ End Sub
 `AnaIslem` çalışınca önce “Başladı”, sonra `ParcaKontrolEt` çağrılır, en sonda “Bitti” görünür.  
 3DExperience’ta: “Belgeyi aç”, “Ölçüleri güncelle”, “Rapor yaz” gibi adımları ayrı Sub’lara bölebilirsiniz.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Function (fonksiyon)
 
@@ -50,7 +52,7 @@ End Sub
 
 3DExperience’ta: “Parça adını getir”, “Ölçü değerini oku”, “Birim dönüştür” gibi işlerde Function kullanılır.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Parametreler (argümanlar)
 
@@ -73,7 +75,7 @@ End Sub
 
 3DExperience’ta: parça adı, ölçü adı, dosya yolu gibi bilgileri parametre olarak geçirirsiniz.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Optional ve varsayılan değer
 
@@ -90,7 +92,7 @@ Sub Test()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Özet tablo
 
@@ -100,7 +102,7 @@ End Sub
 | Dönüş | Yok | Var (tip belirtilir) |
 | Çağrı | `IslemAdi` veya `Call IslemAdi` | `sonuc = FonksiyonAdi(...)` |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 3DExperience’ta kullanım örneği (iskelet)
 
@@ -132,7 +134,7 @@ End Sub
 
 Bu yapıyı 6. dokümanda **nesne modeli** ile somutlaştıracağız.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Parametreli Sub – Belge adı yazdırma
 
@@ -159,7 +161,7 @@ Sub CagiranSub()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Function – Birim dönüştürme (mm → inch)
 
@@ -182,7 +184,7 @@ Sub BirimTest()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Function – Boolean döndüren (geçerli mi?)
 
@@ -208,7 +210,7 @@ Sub Kullanim()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Call ile Sub çağrısı
 
@@ -225,7 +227,7 @@ Sub TumAdimlar()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Prosedür/fonksiyon başlığı (Help’ten)
 
@@ -249,11 +251,11 @@ End Function
 
 Bu, kodun bakımını ve yeniden kullanımını kolaylaştırır.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Kontrol listesi
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Function – String döndüren (parametre adı listesi)
 
@@ -273,7 +275,7 @@ Function ParametreAdlariniGetir(oParams As Object) As String
 End Function
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: ByRef – Çağıran tarafın değişkenini güncelleme
 
@@ -292,7 +294,7 @@ Sub TestByRef()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Optional – İsteğe bağlı parametre
 
@@ -304,7 +306,7 @@ Sub MesajOptional(Optional ByVal sMetin As String = "Varsayılan")
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Public vs Private – Görünürlük
 
@@ -320,7 +322,7 @@ Private Sub YardimciSub()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Exit Sub / Exit Function – Erken çıkış
 
@@ -338,14 +340,14 @@ Function ParametreVarMi(oPart As Object, sAd As String) As Boolean
 End Function
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 - [ ] Sub tanımlayıp başka Sub’dan çağırabiliyorum  
 - [ ] Function yazıp dönüş değerini kullanabiliyorum  
 - [ ] Parametreli Sub/Function yazabiliyorum  
 - [ ] Optional parametre kullanımını biliyorum  
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Sonraki adım
 

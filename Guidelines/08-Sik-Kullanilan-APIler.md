@@ -4,13 +4,15 @@ Bu dokümanda 3DExperience VBA ile sık karşılaşacağınız **parça**, **geo
 
 **Neye nereden erişilir ve neyi nasıl kullanırsın?** — Erişim yolları (VBA) ve kullanım tabloları için **13. doküman:** [13-Erisim-ve-Kullanim-Rehberi.md](13-Erisim-ve-Kullanim-Rehberi.md). **Sık hatalar ve dikkat edilecekler** (Nothing, Update, V5 API vb.) için **18. doküman:** [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md).
 
-------------------------------------------------------------
+**Bu dokümanda:** Part, Parameters, Shapes; Drawing (Sheets, Views); Product (Children); Editor-level ve Session-level servis; kod örnekleri.
+
+════════════════════════════════════════════════════════════════════════════════
 
 ## Genel kural: Nesneye nasıl ulaşılır?
 
 Önce **Application** → **ActiveDocument**; belge türüne göre **Part**, **Product** veya **Drawing** nesnesini alırsınız. Tüm aşağıdaki örnekler bu zincirin devamıdır; sürüme göre property/method isimleri değişebilir.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Parça (Part) – Belge ve gövde
 
@@ -30,7 +32,7 @@ Bu dokümanda 3DExperience VBA ile sık karşılaşacağınız **parça**, **geo
 
 Referansta **Part**, **Shape**, **Parameters**, **Body** sınıflarını arayın; `GetItem`, `Item`, `Count` kullanımını inceleyin.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Parametre okuma ve yazma
 
@@ -47,7 +49,7 @@ oPart.Update           ' Güncelleme (gerekirse)
 
 `VBA_API_REFERENCE.md` içinde **Parameter**, **Parameters**, **Value** geçen metodlara bakın.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Shapes (şekiller) üzerinde döngü
 
@@ -65,7 +67,7 @@ Next i
 
 Koleksiyonlarda **Item(1)** çoğu yerde 1’den başlar; **For Each** de kullanılabilir (referansta ilgili sınıflarda `__iter__` veya koleksiyon açıklamalarına bakın).
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Çizim (Drawing) – Sayfalar ve görünümler
 
@@ -84,7 +86,7 @@ Set oViews = oSheet.Views
 
 Referansta **DrawingSheet**, **DrawingView**, **DrawingViews** gibi sınıfları arayın.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Çizimde ölçü (Dimension) ve metin
 
@@ -92,7 +94,7 @@ Referansta **DrawingSheet**, **DrawingView**, **DrawingViews** gibi sınıfları
 - **DrawingTexts:** Metinler — `oView.DrawingTexts` veya benzeri.  
 - Yeni ölçü/metin ekleme: İlgili koleksiyonun **Add** metoduna bakın (`VBA_API_REFERENCE.md` içinde “Add” ve “DrawingDimension” / “DrawingText” araması yapın).
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Montaj (Product) – Bileşenler
 
@@ -106,7 +108,7 @@ For Each oChild In oProduct.Children
 Next oChild
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Ortak pattern’ler
 
@@ -120,7 +122,7 @@ Next oChild
 
 Tüm bu sınıf ve metodların tam imzaları **VBA_API_REFERENCE.md** içinde “Ne yapar” ve “Örnek” ile listelenmiştir; sürümünüze uygun olanı seçin.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Editor-level vs Session-level servis (Help’ten)
 
@@ -133,7 +135,7 @@ Tüm bu sınıf ve metodların tam imzaları **VBA_API_REFERENCE.md** içinde �
 
 Servis tanımlayıcıları (GetService / GetSessionService’e verilecek string) Help’teki “Service Identifier” tablolarında listelenir; projedeki **VBA_API_REFERENCE.md** içinde de ilgili sınıflar aranabilir.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Tam makro – Tüm parametreleri listele
 
@@ -183,7 +185,7 @@ HataYakala:
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Parametre değeri oku – İsimle
 
@@ -220,7 +222,7 @@ Sub ParametreDegeriOku()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Shapes döngüsü – İsim ve tip
 
@@ -253,7 +255,7 @@ Sub ShapesListele()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Çizim – Aktif sayfa ve görünüm sayısı
 
@@ -287,7 +289,7 @@ Sub CizimSayfaVeGorusSayisi()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Montaj – Children döngüsü
 
@@ -320,7 +322,7 @@ Sub MontajBilesenListele()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: GetService (Editor) – InertiaService fikri
 
@@ -350,7 +352,7 @@ Sub KutleBilgisiAl()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Parametre adına göre filtreleme (Like / Left)
 
@@ -383,7 +385,7 @@ Sub LengthParametreleriniGuncelle()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Çizimde görünüm ölçeği (Scale)
 
@@ -413,7 +415,7 @@ End Sub
 
 Property adı (Scale, ScaleValue vb.) sürüme göre değişir; referansta DrawingView araması yapın.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Parametre adını Name property’sinden okuma
 
@@ -433,13 +435,13 @@ Sub ParametreAdiOrnek()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: GetItem ile isim veya indeks
 
 Çoğu koleksiyonda **Item** hem indeks (1’den başlayan sayı) hem isim (string) alır: `Item(1)` veya `Item("Length.1")`. İsim kullanırken yazım hatası veya farklı dilde isimlendirme (locale) konusuna dikkat edin.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Koleksiyon Count kontrolü
 
@@ -458,7 +460,7 @@ Sub GuvenliCountOrnek()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Parametre tipi kontrolü (Double vs Integer)
 
@@ -475,19 +477,19 @@ Sub ParametreTipOrnek()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Çizimde Dimensions koleksiyonu (kavramsal)
 
 Bir görünümdeki ölçüler **Dimensions** (veya benzeri) koleksiyonunda tutulur. Count ve Item(i) ile döngü; her ölçünün metni, değeri veya birimi property’lerden okunur/yazılır. Tam API adları sürüme göre değişir; VBA_API_REFERENCE.md içinde “Dimension”, “DrawingDimension” araması yapın.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Product – Occurrence vs Component
 
 Montajda bazen **Occurrence** (örnek) ve **Component** (tanım) ayrımı yapılır. Aynı parçanın montajda birden fazla örneği olabilir; her biri bir occurrence’dır. API’de **RepInstances**, **Children**, **Occurrences** gibi koleksiyon isimleri kullanılır; Help’teki “Product”, “VPMOccurrence” bölümlerine bakın.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Yapılabilecek işlemler – Kısa detay
 
@@ -514,7 +516,7 @@ Aşağıdaki işlemler **Part**, **Product** ve **Drawing** ile sık yapılır. 
 
 - **FileSystem:** GetFile, GetFolder, Exists, dosya boyutu (Size), klasördeki dosyalar (Files). **SystemService:** Environ, ConcatenatePaths.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Servisler özeti ve kod kalıbı
 
@@ -566,7 +568,7 @@ Sub SessionServiceKalip()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: FileSystem ile metin dosyasına satır ekleme (OpenAsTextStream)
 
@@ -604,7 +606,7 @@ End Sub
 
 *(OpenAsTextStream parametreleri sürüme göre değişir; ForAppend = 2 genelde ekleme modudur. VBA_API_REFERENCE veya Help’te TextStream açın.)*
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Kontrol listesi
 
@@ -614,7 +616,7 @@ End Sub
 - [ ] Product Children ile bileşen listesini alabileceğimi biliyorum  
 - [ ] GetService (editor) ile GetSessionService (session) farkını biliyorum  
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Sonraki adım
 

@@ -1,16 +1,16 @@
 # 3DExperience VBA – Sıfırdan Kod Yazma Rehberi
 
 ```
-================================================================================
-  18 dokümanlık rehber seti  |  Help uyumlu
-================================================================================
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  18 dokümanlık rehber seti  |  Help uyumlu                                   ║
+╚══════════════════════════════════════════════════════════════════════════════╝
 ```
 
 Kodlamaya **yeni başlayan** biri için, **3DExperience VBA** ile makro yazmayı adım adım anlatan **18 dokümanlık** rehber seti. **Proje sayfası (GitHub/GitLab):** repository kökündeki [README.md](../README.md). İçerik, proje kökündeki **Help** klasöründeki resmi dokümanlarla (**Help-Automation Development Guidelines**, **3DEXPERIENCE MACRO HAZIRLIK YÖNERGESİ**, **Help-Native Apps Automation** vb.) uyumlu ve genişletilmiştir.
 
 **Nasıl ilerlenir:** Aşağıdaki tablodan dokümanları **sırayla** (01 → 18) takip edin; belirli bir konu arıyorsanız doğrudan ilgili dokümana atlayabilirsiniz.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Dokümanlar (sırayla takip edin)
 
@@ -35,7 +35,7 @@ Kodlamaya **yeni başlayan** biri için, **3DExperience VBA** ile makro yazmayı
 | 17 | [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md) | **Help içindeki dosyaları ne zaman ve nasıl kullanacaksınız** — Help klasörü yapısı, hangi dosya ne işe yarar, aşamaya göre kullanım, arama yöntemleri |
 | 18 | [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md) | **Sık yapılan hatalar ve dikkat edilmesi gereken özel noktalar** — Nothing/Update/On Error, V5 API, InputBox iptal, locale, servis sırası, özet tablo |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Nasıl kullanılır?
 
@@ -50,7 +50,7 @@ Kodlamaya **yeni başlayan** biri için, **3DExperience VBA** ile makro yazmayı
 
 Tüm dokümanlar **3DExperience VBA** özelinde yazılmıştır; örnekler ve terimler bu platforma göredir. Help klasöründeki PDF’ler (Automation Development Guidelines, 3DEXPERIENCE MACRO HAZIRLIK YÖNERGESİ, Native Apps Automation vb.) tam ve güncel referanstır.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Hızlı referans – Sık kullanılan kalıplar
 
@@ -67,7 +67,7 @@ Tüm dokümanlar **3DExperience VBA** özelinde yazılmıştır; örnekler ve te
 
 Bu kalıplar sürüme göre değişebilir; tam API için **VBA_API_REFERENCE.md** ve **Help/text/** kullanın.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Doküman satır sayıları (rehber genişliği)
 
@@ -80,7 +80,7 @@ Rehber seti, girişten resmi kurallara kadar **binlerce satır** örnek ve açı
 
 bulunur. Baştan sona takip edildiğinde sıfırdan makro yazıp dağıtım öncesi kontrol listesini uygulayabilecek seviyeye gelirsiniz.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek makro türleri (dokümanlarda dağılım)
 
@@ -105,7 +105,7 @@ bulunur. Baştan sona takip edildiğinde sıfırdan makro yazıp dağıtım önc
 
 Bu dağılım, belirli bir örnek türünü nerede bulacağınızı hızlıca göstermek içindir.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Başlamak için en kısa yol
 
@@ -127,7 +127,7 @@ Bu dağılım, belirli bir örnek türünü nerede bulacağınızı hızlıca g�
 
 Bu sırayla ilerlediğinizde toplam rehber **5000 satır civarı** örnek ve açıklama içerir; her dokümanda birden fazla VBA kodu ve senaryo bulunur.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Doküman başına örnek sayısı (yaklaşık)
 
@@ -154,7 +154,7 @@ Bu sırayla ilerlediğinizde toplam rehber **5000 satır civarı** örnek ve aç
 
 Toplamda **150’den fazla** ayrı örnek veya kod blokları rehberde yer alır; tekrarlar ve varyasyonlarla birlikte toplam satır sayısı 5000’e ulaşır.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## İçerik türleri
 

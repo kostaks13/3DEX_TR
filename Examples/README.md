@@ -1,9 +1,9 @@
 # Örnek Makrolar
 
 ```
-================================================================================
-  Çalıştırılabilir .bas örnekleri  |  Rehber 08 + 10 ile uyumlu
-================================================================================
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  Çalıştırılabilir .bas örnekleri  |  Rehber 08 + 10 ile uyumlu               ║
+╚══════════════════════════════════════════════════════════════════════════════╝
 ```
 
 Bu klasörde **3DExperience VBA** rehberindeki (Guidelines 08 ve 10) örnek makroların çalıştırılabilir kopyaları bulunur. Her dosya `.bas` formatındadır; 3DExperience VBA editörüne modül olarak aktarabilir veya içeriği kopyalayıp kendi modülünüze yapıştırabilirsiniz.
@@ -25,14 +25,18 @@ Bu klasörde **3DExperience VBA** rehberindeki (Guidelines 08 ve 10) örnek makr
 
 ## Dosyalar
 
-| Dosya | Ne yapar | Gereksinim |
-|-------|----------|------------|
-| **AktifParcaBilgisi.bas** | Aktif belgenin adı, tam yolu ve (Part ise) Shapes sayısını MsgBox ile gösterir. | Açık Part belgesi. |
-| **ParametreOkuVeGoster.bas** | Kullanıcıdan parametre adı (örn. Length.1) alır; değerini mesajla gösterir. | Açık Part, parametre adı. |
-| **ParametreYaz.bas** | Kullanıcıdan parametre adı ve yeni değer alır; Part'ta günceller ve Update çağırır. | Açık Part, yazılabilir parametre. |
-| **ShapesBilgisi.bas** | Shapes sayısı ve ilk 10 şeklin adını listeler. | Açık Part. |
-| **ParametreListesiniDosyayaYaz.bas** | Tüm parametreleri `Parametre;Değer` formatında `C:\Temp\parametre_listesi.txt` dosyasına yazar. | Açık Part; C:\Temp yazılabilir olmalı. |
-| **GetActivePart_AnaParametreListesi.bas** | Ortak `GetActivePart()` fonksiyonu + tüm parametreleri mesajda listeleyen `AnaParametreListesi` makrosu (modüler yapı örneği). | Açık Part. |
+| Dosya | Ne yapar | Gereksinim | Beklenen çıktı |
+|-------|----------|------------|----------------|
+| **AktifParcaBilgisi.bas** | Aktif belgenin adı, tam yolu ve (Part ise) Shapes sayısını MsgBox ile gösterir. | Açık Part belgesi. | MsgBox: belge adı, tam yol, Shapes sayısı. |
+| **ParametreOkuVeGoster.bas** | Kullanıcıdan parametre adı (örn. Length.1) alır; değerini mesajla gösterir. | Açık Part, parametre adı. | MsgBox: "Length.1 = 100" benzeri. |
+| **ParametreYaz.bas** | Kullanıcıdan parametre adı ve yeni değer alır; Part'ta günceller ve Update çağırır. | Açık Part, yazılabilir parametre. | MsgBox: "… güncellendi."; modelde değer değişir. |
+| **ShapesBilgisi.bas** | Shapes sayısı ve ilk 10 şeklin adını listeler. | Açık Part. | MsgBox: "Shapes sayısı: N" + ilk 10 ad. |
+| **ParametreListesiniDosyayaYaz.bas** | Tüm parametreleri `Parametre;Değer` formatında `C:\Temp\parametre_listesi.txt` dosyasına yazar. | Açık Part; C:\Temp yazılabilir. | Dosyada "Parametre;Değer" satırları; MsgBox "Liste yazıldı: …". |
+| **GetActivePart_AnaParametreListesi.bas** | Ortak `GetActivePart()` + tüm parametreleri mesajda listeleyen `AnaParametreListesi`. | Açık Part. | MsgBox: parametre sayısı + ad = değer listesi. |
+| **SadecePartKontrol.bas** | Aktif belgenin Part olup olmadığını kontrol eder; Part değilse uyarır. | 3DExperience açık. | Part açıksa: "Parça belgesi hazır: …"; değilse uyarı. |
+| **IkiParametreTakas.bas** | Length.1 ve Length.2 değerlerini takas eder. | Açık Part, Length.1 ve Length.2 var. | MsgBox "Takas edildi."; modelde değerler yer değişir. |
+| **LogOrnekMakro.bas** | Log dosyasına START/END (ve hata durumunda END ERR) yazar. | C:\Temp yazılabilir. | C:\Temp\macro_log.txt içinde tarih + mesaj satırları. |
+| **MinMaxParametreDeger.bas** | Tüm parametreler arasında min ve max sayısal değeri bulur. | Açık Part, en az bir parametre. | MsgBox: "Min: … Max: …". |
 
 ---
 

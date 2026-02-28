@@ -1,9 +1,9 @@
 # Help ve API Listesinde Arama Rehberi
 
 ```
-================================================================================
-  grep / rg ile Help ve VBA_CALL_LIST.txt içinde arama örnekleri
-================================================================================
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  grep / rg ile Help ve VBA_CALL_LIST.txt içinde arama örnekleri              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
 ```
 
 Bu doküman, **Help/text/** ve **VBA_CALL_LIST.txt** içinde arama yaparken kullanabileceğiniz **grep** (veya **ripgrep `rg`**) örneklerini listeler. Terminalde proje kökünden veya Help klasöründen çalıştırın.

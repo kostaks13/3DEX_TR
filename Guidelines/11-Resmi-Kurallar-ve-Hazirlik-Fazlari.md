@@ -1,8 +1,10 @@
 # 11. Resmi Kurallar ve Hazırlık Fazları (Help Referansı)
 
+**Bu dokümanda:** Kod sunum kuralları; Design/Draft/Harden/Finalize fazları; TAMAM/HAZIR listesi; Err.Raise, başlık, isimlendirme.
+
 Bu doküman, **Help** klasöründeki resmi dokümanlardan özetlenmiştir: **Help-Automation Development Guidelines.pdf** ve **3DEXPERIENCE MACRO HAZIRLIK YÖNERGESİ.pdf**. Kodlamaya başladıktan sonra bu kuralları uygulayarak makrolarınızı kurumsal standartlara yaklaştırabilirsiniz. **Help içindeki dosyaları ne zaman ve nasıl kullanacağınız** (hangi dosyayı hangi aşamada açacağınız, arama yöntemleri) için **17. doküman:** [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md).
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 1. Kod sunum kuralları (Automation Development Guidelines)
 
@@ -64,7 +66,7 @@ End Sub
 
 **Sabitler:** Tamamı büyük harf, bileşenler alt çizgi ile ayrılmış. Örnek: `MAX_VALUE`, `LOG_PATH`.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 2. Genel programlama kuralları (Help’ten)
 
@@ -139,7 +141,7 @@ Dim sFilePath As String
 sFilePath = CATIA.SystemService.ConcatenatePaths(sRootPath, "drw/myData.txt")
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 3. İhtiyaç analizi çerçevesi (3DEXPERIENCE MACRO HAZIRLIK YÖNERGESİ)
 
@@ -199,7 +201,7 @@ Kodu yazmadan önce “ne, neden, hangi kısıtlarla?” sorularını yanıtlama
 
 Bu form doldurulmadan teknik tasarıma (modül seçimi vb.) geçilmemeli; eksik alan varsa kullanıcıdan netleştirme istenir.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 4. Modül ve API eşleştirme matrisi (Help’ten)
 
@@ -224,7 +226,7 @@ Gereksinimin hangi “dünyada” (Part Design, GSD, Assembly, Simulation vb.) �
 - **Session-level:** Yeni nesne yaratma, PLM arama, malzeme kütüphanesi, toplu kaydetme. Ağ gecikmesi ve PLM doğrulaması olur.  
 - **Kural:** Editor-level servis içinde session-level servis çağrısı yapmayın; kilitleşme riski doğar.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 5. Kod taslağı fazları: Design → Draft → Harden → Finalize
 
@@ -272,7 +274,7 @@ Gereksinimin hangi “dünyada” (Part Design, GSD, Assembly, Simulation vb.) �
 - **Dağıtım** — “Makro %CATStartupPath%\Macros\ konumuna kopyalanacak.”  
 - **Kullanım (3 satır)** — “GSD aktifken çalıştır → Part güncel → ‘Done’ mesajı.”
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 6. Hata sınıflandırması ve log (Help’ten)
 
@@ -292,7 +294,7 @@ Gereksinimin hangi “dünyada” (Part Design, GSD, Assembly, Simulation vb.) �
 - Düzey: INFO, WARN, ERROR, CRIT tag’leri.  
 - Her makro başında: `"--- START v1.3 ---"` satırı.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 7. TAMAM / HAZIR kontrol listesi (özet)
 
@@ -317,7 +319,7 @@ Gereksinimin hangi “dünyada” (Part Design, GSD, Assembly, Simulation vb.) �
 - Dokümantasyon: 7 bölümlü teslim paketi; kullanım adımları; en az 1 “sonraki adım” önerisi.  
 - Paydaş: Talep sahibi “Çalıştı” (UAT PASS) onayı verdi.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 8. Örnek: Tam başlık ve Option Explicit (uyumlu kod)
 
@@ -368,7 +370,7 @@ End Sub
 
 Bu örnekte: 4 boşluk girinti, önekli değişkenler (o, i, s), tek başlık bloğu, On Error GoTo, Nothing kontrolleri ve tek bir Exit Sub kullanılmıştır.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 9. Örnek: Cross-Platform – FileSystem ve ConcatenatePaths
 
@@ -402,7 +404,7 @@ End Sub
 
 Dosya var mı kontrolü için `oApp.FileSystem.Exists(sFull)` kullanılabilir (FileSystem API’sine bakın).
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 10. Örnek: InputBox varsayılan değer (test edilebilirlik)
 
@@ -420,7 +422,7 @@ Sub TestEdilebilirInput()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 11. Örnek: Err.Raise ile test senaryosunda hata (Help’ten)
 
@@ -443,7 +445,7 @@ End Sub
 
 Çağıran kodda `On Error GoTo` ile 9999 veya 9001 yakalanıp log’a yazılabilir.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 12. Örnek: Design fazı – Pseudo-code
 
@@ -462,7 +464,7 @@ Design fazında önce yüksek seviye adımlar yazılır; sonra her biri kod sat�
 
 Bu liste “Draft” fazında `Dim`, `Set`, `For ... Next` ve `On Error GoTo` ile VBA’ya çevrilir.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 13. Örnek: Harden fazı – Tek Update ve Timer
 
@@ -495,7 +497,7 @@ Sub HardenPhaseExample()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 14. Örnek: Finalize – Versiyon etiketi ve dağıtım notu
 
@@ -507,7 +509,7 @@ Kod başlığına versiyon ve dağıtım bilgisi eklenir:
 ' -- Kullanım: 1) GSD veya Part Design aktif. 2) Part açık. 3) Makroyu çalıştır; "Done" mesajı görünce işlem tamam.
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 15. Örnek: Log satırı formatı (TSV)
 
@@ -522,7 +524,7 @@ Help’teki log tasarımına uygun örnek satırlar:
 
 Kodda `LogYaz "ERROR", 9100, "Length.1 bulunamadı", "Part=" & oDoc.Name` gibi bir yardımcı Sub ile bu satırlar üretilir.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 16. Örnek: Modül matrisi kullanımı
 
@@ -535,7 +537,7 @@ Kodda `LogYaz "ERROR", 9100, "Length.1 bulunamadı", "Part=" & oDoc.Name` gibi b
 
 Sonuç: Part.Parameters.Item("...").Value ataması ve döngü sonunda tek Part.Update kullanılır; KnowledgeFactory bu senaryoda gerekmez.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 17. Örnek: Katman A–E formu (kısa doldurma)
 
@@ -551,7 +553,7 @@ Sonuç: Part.Parameters.Item("...").Value ataması ve döngü sonunda tek Part.U
 
 Bu form doldurulduktan sonra Draft fazına geçilir.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 18. Örnek: Girinti ve satır uzunluğu (4 boşluk, 80 karakter)
 
@@ -566,7 +568,7 @@ Sub UzunSatirOrnek()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 19. Örnek: Sub/Function başlık yorumu (amaç, parametreler, dönüş)
 
@@ -588,7 +590,7 @@ Function GetParameterCount() As Long
 End Function
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 20. Örnek: V5 API’den kaçınma (yasak / farklı API)
 
@@ -603,7 +605,7 @@ Help’e göre aşağıdaki gibi **eski V5** çağrıları 3DExperience’ta kul
 
 Kayıt edilmiş makroda bu tür isimler görürseniz Help-Native Apps Automation ve VBA_API_REFERENCE.md ile doğru sınıfı bulun.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 21. Örnek: Rollback stratejisi (kavramsal)
 
@@ -615,7 +617,7 @@ Hata durumunda yapılan değişiklikleri geri almak için tasarım aşamasında 
 
 Kodda: `On Error GoTo Rollback` ve `Rollback:` etiketinde saklanan değerleri geri yazma veya log’a “ROLLBACK” yazma.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 22. Örnek: 7 bölümlü teslim paketi (kurumsal)
 
@@ -629,11 +631,11 @@ Kurumsal teslimatta aşağıdaki bölümlerin doldurulması önerilir (Help – 
 6. **Dağıtım** — Nereye kopyalanacak, hangi rol/güvenlik.  
 7. **Sonraki adım** — Opsiyonel iyileştirmeler (log rotasyonu, timeout ayarı vb.).
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 **Sık yapılan hatalar ve dikkat edilmesi gereken özel noktalar** (Nothing, Update, On Error, V5 API, InputBox iptal, locale vb.) için **18. doküman:** [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md).
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 23. Örnek: Kod inceleme kontrol listesi (Finalize)
 
@@ -648,7 +650,7 @@ Dağıtım öncesi kod incelemesinde şunları kontrol edin:
 - [ ] Değişken isimleri önekli (o, d, s, i, b, c) veya en azından anlamlı.  
 - [ ] Her Sub/Function için kısa **Purpose** (ve gerekirse Params, Return) yorumu var.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 24. Örnek: Risk matrisi satırları (Design fazı)
 
@@ -664,7 +666,7 @@ Tasarım aşamasında risk matrisine eklenecek örnek satırlar:
 
 Bu tabloyu ihtiyacınıza göre genişletebilirsiniz; 11. dokümandaki Katman D (Kısıtlar ve riskler) ile uyumludur.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 25. Örnek: 3 satırlık kullanım yönergesi (Finalize)
 
@@ -676,7 +678,7 @@ Help’teki “3 satırlık kullanım” önerisine uygun örnek metin:
 
 Bu metni makro teslim paketine veya başlık yorumuna ekleyin.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 26. Örnek: Sabit (Const) isimlendirme – Büyük harf ve alt çizgi
 
@@ -688,7 +690,7 @@ Const DEFAULT_TOLERANCE As Double = 0.001
 Const LOG_FILE_PATH As String = "C:\Temp\macro_log.txt"
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 27. Örnek: Sub/Function adı – Mixed case fiil
 
@@ -700,7 +702,7 @@ Sub GetActivePart()
 Function ComputeTotalMass() As Double
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 28. Örnek: Değişken yorumu – Aynı satırda kısa açıklama
 
@@ -712,7 +714,7 @@ Dim iCount As Long   ' Parametre sayısı
 Dim sLogPath As String   ' Log dosyası yolu
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 29. Örnek: Katman B – Teknik kapsam (form doldurma)
 
@@ -724,13 +726,13 @@ Dim sLogPath As String   ' Log dosyası yolu
 - **Girdi:** Metin/CSV dosyası (parametre adı; değer).  
 - **Çıktı:** Part güncel; isteğe bağlı log dosyası.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 30. Örnek: Log dosyası rotasyonu (5 MB’a ulaşınca _old)
 
 Help’teki log tasarımında dosya belirli boyuta (örn. 5 MB) ulaşınca _old yapılıp yeni dosya açılır. VBA’da **FileLen** ile dosya boyutu alınabilir; 5 MB’ı aşarsa dosyayı yeniden adlandırıp yeni dosya açılır (kod örneği bu dokümanın kapsamı dışında; mantık olarak Finalize fazında eklenebilir).
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 31. Örnek: Kod başlığı – Copyright (telif)
 
@@ -743,7 +745,7 @@ Dassault ürünü içinde teslim edilen script’lerde **Copyright** satırı zo
 ' Release: 3DEXPERIENCE R2024x
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 32. Örnek: Regional Settings yorumu
 
@@ -754,7 +756,7 @@ Makro hangi bölgesel ayarda (locale) kaydedildi/yazıldı ise bunu belirtin; fa
 ' Not: Farklı dil/bölge ortamında test edilmedi.
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 33. Örnek: Assumptions (varsayımlar) – Başlıkta
 
@@ -764,7 +766,7 @@ Teslim edilen script’lerde **Assumptions** alanı doldurulmalıdır: Hangi wor
 ' Assumptions: Part Design veya GSD açık; aktif belge Part; en az bir HybridBody mevcut.
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 34. Örnek: Katman C – Operasyon (form doldurma)
 
@@ -776,13 +778,13 @@ Teslim edilen script’lerde **Assumptions** alanı doldurulmalıdır: Hangi wor
 - **Kritik yol:** Dosya açma, Parameters.Item, Part.Update.  
 - **Performans sınırı:** Parametre sayısı 1000’i aşmamalı (isteğe bağlı).
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 35. Örnek: TAMAM/HAZIR – Geniş listeden seçmeler
 
 Kurumsal teslimatta ek olarak şunlar önerilir: **Err.Raise 9000–9999** ile özel hata; **log dosyası** konumu ve rotasyonu; **rollback** tanımı; **Timer** ile süre raporu; **Workbench** varlığı testi; **versiyon etiketi** ve **değişiklik günlüğü**; **7 bölümlü teslim paketi**; **talep sahibi onayı** (UAT PASS).
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 36. Örnek: Kod sunum – 80 karakter satır sınırı
 
@@ -793,7 +795,7 @@ MsgBox "Bu çok uzun bir mesaj satırıdır ve 80 karakteri aşmamak için " & _
        "alt satıra bölünmüştür."
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 37. Örnek: Yorum hizası – İç içe bloklarda
 
@@ -809,7 +811,7 @@ Sub Ornek()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 38. Örnek: Versiyon etiketi – Değişiklik günlüğü
 
@@ -821,7 +823,7 @@ Finalize fazında başlığa veya ayrı bir “Changelog” bölümüne versiyon
 ' -- REV 1.2 – 2025-02-28: Log seviyesi (INFO/ERROR) eklendi.
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Referanslar
 

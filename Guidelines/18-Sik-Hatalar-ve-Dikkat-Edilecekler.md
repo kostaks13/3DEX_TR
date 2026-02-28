@@ -1,14 +1,16 @@
 # 18. Sık Yapılan Hatalar ve Dikkat Edilmesi Gereken Özel Noktalar
 
 ```
-================================================================================
-  Sık yapılan hatalar + dikkat edilmesi gereken özel noktalar (3DExperience VBA)
-================================================================================
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  Sık yapılan hatalar + dikkat edilmesi gereken özel noktalar (3DExperience VBA)║
+╚══════════════════════════════════════════════════════════════════════════════╝
 ```
+
+**Bu dokümanda:** Sık yapılan hatalar (Option Explicit, Nothing, Update, V5 API, On Error, InputBox iptal…); dikkat edilecek özel noktalar (locale, servis sırası…); özet tablo.
 
 Bu dokümanda 3DExperience VBA makrolarında **sık karşılaşılan hatalar** ve **özel dikkat gerektiren noktalar** toplu halde listelenir. Rehberin diğer bölümlerinde (özellikle 9, 11, checklist) dağınık geçen kurallar burada tek yerde toplanmıştır.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 1. Sık yapılan hatalar
 
@@ -28,7 +30,7 @@ Sub Ornek()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 1.2 On Error kullanmamak veya tüm makro boyunca Resume Next
 
@@ -45,7 +47,7 @@ HataYakala:
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 1.3 Nothing / Count kontrolü yapmamak
 
@@ -67,7 +69,7 @@ If oPart Is Nothing Then
 End If
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 1.4 Döngü içinde Part.Update / Update çağırmak
 
@@ -83,7 +85,7 @@ Next i
 oPart.Update   ' <- Sadece bir kez, döngü dışında
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 1.5 Eski V5 API kullanmak
 
@@ -91,7 +93,7 @@ oPart.Update   ' <- Sadece bir kez, döngü dışında
 
 **Doğrusu:** Yeni belge için **PLMNewService** / **PLMOpenService**; geometri için güncel **HybridShapeFactory**; arama için **SearchService** kullanın. API adlarını **VBA_API_REFERENCE.md** ve **Help-Native Apps Automation** ile kontrol edin.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 1.6 InputBox iptal (Cancel) kontrolü yapmamak
 
@@ -107,7 +109,7 @@ If sAd = "" Then
 End If
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 1.7 Koleksiyonda Count = 0 kontrolü yapmamak
 
@@ -124,7 +126,7 @@ End If
 Set oParam = oParams.Item(1)
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 1.8 Exit Sub unutmak (HataYakala’ya düşme)
 
@@ -143,7 +145,7 @@ HataYakala:
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 1.9 Sihirli sayılar ve sabit yolları koda gömmek
 
@@ -156,7 +158,7 @@ Const MAX_ITER As Long = 100
 Const LOG_PATH As String = "C:\Temp\macro_log.txt"
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 1.10 Hassas bilgiyi koda veya log’a yazmak
 
@@ -164,7 +166,7 @@ Const LOG_PATH As String = "C:\Temp\macro_log.txt"
 
 **Doğrusu:** Hassas bilgi koda ve log’a **yazmayın**; gerekirse ortam değişkeni veya harici güvenli config kullanın.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 1.11 GetItem("Part") sonrası doğrudan Part varsaymak
 
@@ -172,7 +174,7 @@ Const LOG_PATH As String = "C:\Temp\macro_log.txt"
 
 **Doğrusu:** `GetItem("Part")` sonrası Nothing kontrolü; parça belgesi değilse `Set oPart = oDoc` deneyin (sadece Part belgesiyse geçerlidir) veya kullanıcıya "Bu belge Part değil" deyip çıkın.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 1.12 Bölgesel ayar (locale) farkını hesaba katmamak
 
@@ -180,7 +182,7 @@ Const LOG_PATH As String = "C:\Temp\macro_log.txt"
 
 **Doğrusu:** Başlıkta **Regional Settings** belirtin; makroyu paylaşırken hangi locale’de test edildiğini yazın. Mümkünse sayı/tarih için tutarlı format kullanın.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 2. Dikkat edilmesi gereken özel noktalar
 
@@ -190,7 +192,7 @@ Const LOG_PATH As String = "C:\Temp\macro_log.txt"
 
 **Özet:** Değişiklik döngüsü **dışında** tek `oPart.Update` (veya eşdeğeri).
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 2.2 Editor-level ve Session-level servis sırası
 
@@ -198,7 +200,7 @@ Const LOG_PATH As String = "C:\Temp\macro_log.txt"
 
 **Özet:** Önce editor-level işinizi bitirin; sonra session-level servise geçin. Aynı akışta ikisini iç içe çağırmayın.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 2.3 FileSystem: Taşınabilirlik
 
@@ -206,7 +208,7 @@ Const LOG_PATH As String = "C:\Temp\macro_log.txt"
 
 **Özet:** Mümkünse **Application.FileSystem** ve **SystemService.ConcatenatePaths** kullanın; yol birleştirmeyi sabit `\` ile yapmayın. Help’e göre taşınabilir script için bu önerilir.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 2.4 Windows API (GetOpenFileName / GetSaveFileName) ve 32/64 bit
 
@@ -214,7 +216,7 @@ Const LOG_PATH As String = "C:\Temp\macro_log.txt"
 
 **Özet:** `#If VBA7 Then ... #Else ... #End If` ile 64 bit için `Declare PtrSafe` ve `LongPtr` kullanın. 32 bit ortamda `LongPtr` yerine **Long** gerekebilir.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 2.5 GetObject vs CreateObject (Application)
 
@@ -222,7 +224,7 @@ Const LOG_PATH As String = "C:\Temp\macro_log.txt"
 
 **Özet:** Uygulama açıkken **GetObject**; kapalıysa (ve bazen otomasyon senaryosunda) **CreateObject**. GetObject başarısız olursa (uygulama yok) Nothing döner; mutlaka kontrol edin.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 2.6 ActiveDocument ve belge türü
 
@@ -230,7 +232,7 @@ Const LOG_PATH As String = "C:\Temp\macro_log.txt"
 
 **Özet:** Her zaman **ActiveDocument Is Nothing** ve (Part/Product/Drawing kullanıyorsanız) **doğru belge türü** kontrolü yapın; yanlış türde anlamlı mesaj verip çıkın.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 2.7 Koleksiyon indeksleri: 1’den başlama
 
@@ -238,7 +240,7 @@ Const LOG_PATH As String = "C:\Temp\macro_log.txt"
 
 **Özet:** Döngüde `For i = 1 To col.Count` kullanın; `Count = 0` ise döngüye girmeyin veya erken çıkın.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 2.8 Hata mesajında Err.Number ve Err.Description
 
@@ -246,7 +248,7 @@ Const LOG_PATH As String = "C:\Temp\macro_log.txt"
 
 **Özet:** Kullanıcıya veya log’a **Err.Number** ve **Err.Description** yazın; mümkünse hangi adımda (belge adı, parametre adı vb.) hata oluştuğunu ekleyin.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 2.9 Kayıt edilmiş kodu olduğu gibi bırakmak
 
@@ -254,7 +256,7 @@ Const LOG_PATH As String = "C:\Temp\macro_log.txt"
 
 **Özet:** Kayıt sonrası **mutlaka** sadeleştirin: Option Explicit ekleyin, değişkenleri tipleyin, her kritik Set sonrası Nothing/Count kontrolü ekleyin, döngü içinde Update varsa dışarı alın, V5 API’leri referansla değiştirin (7. ve 11. doküman).
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 2.10 Servis tanımlayıcı (identifier) yazımı
 
@@ -262,7 +264,7 @@ Const LOG_PATH As String = "C:\Temp\macro_log.txt"
 
 **Özet:** Servis adını **Help-Common Services** veya **Help-Native Apps Automation** içindeki tablolardan kopyalayın; sürüm/rol bazı servisleri kapatabilir.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 3. Özet tablo: Hata / Dikkat noktası → Ne yapmalı?
 
@@ -287,7 +289,7 @@ Const LOG_PATH As String = "C:\Temp\macro_log.txt"
 | Kayıt sonrası | Sadeleştir, Option Explicit, Nothing, Update, V5 kontrolü. |
 | Servis adı | Help’teki identifier’ı birebir kullan. |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## İlgili dokümanlar
 

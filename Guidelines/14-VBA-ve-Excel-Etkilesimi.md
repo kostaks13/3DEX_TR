@@ -2,7 +2,7 @@
 
 3DExperience VBA makrolarından **Excel**’e bağlanıp çalışma kitabı açma, hücre okuma/yazma, kaydetme ve kapatma yapabilirsiniz. Bu dokümanda erişim yolları ve kullanım örnekleri verilir.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 1. Excel’e nereden erişilir?
 
@@ -14,7 +14,7 @@
 
 3DExperience VBA ortamında genelde **late binding** (tüm nesneleri `As Object` ile tanımlama) kullanılır; böylece projeye “Microsoft Excel Object Library” referansı eklemeniz gerekmez.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 2. Temel zincir: Application → Workbook → Worksheet → Range/Cells
 
@@ -27,7 +27,7 @@ oWs.Range("A1") veya oWs.Cells(satir, sutun)  → hücre
 oWs.Range("A1").Value  → okuma/yazma
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 3. Excel’i başlatma ve çalışma kitabı açma
 
@@ -78,7 +78,7 @@ HataYakala:
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 4. Hücre okuma ve yazma
 
@@ -143,7 +143,7 @@ Sub ExcelYazVeKaydet()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 5. Zaten açık Excel’e bağlanma
 
@@ -170,7 +170,7 @@ Sub ExcelAcikOlanaBaglan()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 6. 3DExperience + Excel birlikte: Parametreleri Excel’e yazma
 
@@ -228,7 +228,7 @@ HataYakala:
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 7. Excel’den okuyup Part parametrelerine yazma
 
@@ -284,7 +284,7 @@ Sub ExceldenPartaYaz()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 8. Sık kullanılan Excel nesneleri
 
@@ -298,7 +298,7 @@ End Sub
 | **Range("A1")** | Hücre veya aralık. .Value (okuma/yazma), .Formula. |
 | **Cells(i, j)** | Satır i, sütun j (1’den başlar). .Value. |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 9. Dikkat edilecekler
 
@@ -307,7 +307,7 @@ End Sub
 - **Hata yakalama:** Excel dosyası yok, sayfa yok veya Excel yüklü değilse hata alırsınız; On Error GoTo ve Nothing kontrolleri kullanın.
 - **Referans:** 3DExperience VBA’da Excel kütüphanesi referansı olmayabilir; tüm değişkenleri `As Object` tanımlayarak late binding kullanın.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 10. Özet: Excel erişim ve kullanım
 
@@ -322,7 +322,7 @@ End Sub
 | Kaydetmek | `oWb.SaveAs("C:\yol\dosya.xlsx")` | Yeni dosyaysa SaveAs, mevcut dosyaysa Save |
 | Kapatmak | `oWb.Close SaveChanges:=False` | Sonra oExcel.Quit |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## İlgili dokümanlar
 

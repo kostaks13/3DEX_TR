@@ -1,8 +1,10 @@
 # 13. Neye Nereden Erişilir, Neyi Nasıl Kullanırsın
 
+**Bu dokümanda:** Erişim tabloları (nereden ne alınır); kullanım tabloları; tek sayfa zincir özeti; "nereden alacağım?" cevapları.
+
 Bu dokümanda **hangi nesneye/servise nereden ulaşacağınız** ve **o nesneyi/servisi nasıl kullanacağınız** tek yerde toplanmıştır. Her satırda: erişim yolu (VBA), ne işe yarar, nasıl kullanılır (okuma/yazma/çağrı) ve kısa kod örneği.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 1. Erişim: Nereden ne alınır?
 
@@ -34,7 +36,7 @@ If oPart Is Nothing Then Set oPart = oDoc
 ' Bu noktada oPart kullanılabilir (parça belgesiyse)
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 1.2 Part (parça) altındakiler
 
@@ -73,7 +75,7 @@ For i = 1 To oShapes.Count
 Next i
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 1.3 Product (montaj) altındakiler
 
@@ -106,7 +108,7 @@ Set oRoot = oProductSvc.RootOccurrence
 ' oRoot.Name, oRoot.Occurrences vb.
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 1.4 Drawing (çizim) altındakiler
 
@@ -133,7 +135,7 @@ For i = 1 To oSheets.Count
 Next i
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 1.5 Servisler – Nereden alınır?
 
@@ -162,7 +164,7 @@ If oSvc Is Nothing Then Exit Sub
 ' oSvc ile kütle/atalet işlemleri (API'ye bakın)
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 1.6 FileSystem – Dosya ve klasör
 
@@ -184,7 +186,7 @@ If oFS.Exists("C:\Temp\log.txt") Then
 End If
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 2. Kullanım: Neyi nasıl yaparsın?
 
@@ -199,7 +201,7 @@ Aşağıda **yaygın işlemler** tek tek “neyi kullanırsın” ve “nasıl y
 | Tüm parametreleri listelemek | `oPart.Parameters` → Count, Item(i) | `For i = 1 To oParams.Count` → `Set oP = oParams.Item(i)` → Name, Value |
 | İsme göre parametre aramak | `oParams.Item(sParamAdi)` | On Error ile Nothing kontrolü; yoksa Item bulunamaz. |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 2.2 Shapes / Bodies: Listeleme, sayım
 
@@ -210,7 +212,7 @@ Aşağıda **yaygın işlemler** tek tek “neyi kullanırsın” ve “nasıl y
 | Body listesi | `oPart.Bodies` | Count, Item(i).Name |
 | HybridBody ve içindeki geometriler | `oPart.HybridBodies.Item(i).HybridShapes` | İç içe döngü; her HybridShape.Name |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 2.3 Montaj: BOM, kök, occurrence
 
@@ -220,7 +222,7 @@ Aşağıda **yaygın işlemler** tek tek “neyi kullanırsın” ve “nasıl y
 | Montaj kökü (occurrence ağacı) | `PLMProductService.RootOccurrence` | GetService("PLMProductService") → .RootOccurrence |
 | Belirli bileşeni isimle almak | `oProduct.Children.Item("Parça1")` | Nothing kontrolü |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 2.4 Çizim: Sayfa, görünüm, ölçü
 
@@ -231,7 +233,7 @@ Aşağıda **yaygın işlemler** tek tek “neyi kullanırsın” ve “nasıl y
 | Görünüm ölçeğini okumak | `oView.Scale` (veya benzeri) | Property’yi oku; sürüme göre ad değişir. |
 | Ölçü listesi | `oView.Dimensions` | Count, Item(i); değer/metin property’leri |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 2.5 Servisler: Ne zaman hangisi?
 
@@ -246,7 +248,7 @@ Aşağıda **yaygın işlemler** tek tek “neyi kullanırsın” ve “nasıl y
 | Belge açma (PLM’den) | **PLMOpenService** (Session) | GetSessionService("PLMOpenService") → açma metodu |
 | Kamera / katman listesi | **VisuServices** (Session) | GetSessionService("VisuServices") → .Cameras vb. |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ### 2.6 Dosya: Var mı, listele, yaz
 
@@ -257,7 +259,7 @@ Aşağıda **yaygın işlemler** tek tek “neyi kullanırsın” ve “nasıl y
 | Klasördeki dosyaları listeleme | `oApp.FileSystem.GetFolder(yol).Files` | For Each oFile In oFolder.Files |
 | Metin dosyasına satır yazma | `File.OpenAsTextStream` (FileSystem) veya VBA `Open ... For Append` | FileSystem taşınabilir; Open/Print/Close klasik VBA. |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 3. Tek sayfa özet: Erişim zinciri
 
@@ -286,7 +288,7 @@ oApp.FileSystem                     → oFS → GetFile, GetFolder, Exists
 oApp.SystemService                   → Environ, ConcatenatePaths
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 4. Sık hata: “Nereden alacağım?” cevabı
 
@@ -303,7 +305,7 @@ oApp.SystemService                   → Environ, ConcatenatePaths
 | Excel’e erişim nerede? | `CreateObject("Excel.Application")` veya `GetObject(, "Excel.Application")`; kitap: Workbooks.Open / Add; hücre: Worksheet.Range("A1") veya Cells(satir,sutun). **14. doküman:** [14-VBA-ve-Excel-Etkilesimi.md](14-VBA-ve-Excel-Etkilesimi.md). |
 | Dosya seçtirme / kaydetme diyaloğu nerede? | FileDialog (Excel üzerinden: aç=1, kaydet=2, klasör=4) veya Windows API GetOpenFileName/GetSaveFileName. **15. doküman:** [15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md). |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 5. İlgili dokümanlar
 

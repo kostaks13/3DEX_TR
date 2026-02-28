@@ -1,14 +1,14 @@
 # VBA Kodu İçin Detaylı Checklist
 
 ```
-================================================================================
-  Teslim / kod incelemesi öncesi: zorunlu ve önerilen maddeler (12 bölüm + özet)
-================================================================================
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  Teslim / kod incelemesi öncesi: zorunlu ve önerilen maddeler (13 bölüm + özet)║
+╚══════════════════════════════════════════════════════════════════════════════╝
 ```
 
 3DExperience VBA makrolarını **yazarken**, **teslim etmeden önce** veya **kod incelemesinde** kullanabileceğiniz detaylı kontrol listesi. Her bölümde **zorunlu (✓)** ve **önerilen (○)** maddeler ayrılmıştır. Bkz. [11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md), [16-Iyilestirme-Onerileri.md](16-Iyilestirme-Onerileri.md). **Help dosyalarını ne zaman/nasıl kullanacağınız:** [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md). **Sık hatalar ve dikkat edilecekler:** [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md).
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 1. Modül başlığı ve tanım
 
@@ -22,7 +22,7 @@
 | 1.6 | **Author** ve **Copyright** (teslim/kurumsal kullanımda) doldurulmuş. | ○ | Örnek script’lerde boş bırakılabilir. |
 | 1.7 | Versiyon etiketi veya revizyon satırı var; örn. `' REV 1.2 – 2025-03-01`. | ○ | Dağıtım ve takip için. |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 2. Option Explicit ve değişkenler
 
@@ -34,7 +34,7 @@
 | 2.4 | **Const** ile sabitler tanımlanmış; sihirli sayılar (örn. 100, 0.001) koddan çıkarılmış. | ○ | MAX_ITERATION, LOG_PATH vb. |
 | 2.5 | Uzun satırlar 80 karakteri aşmıyor veya satır devamı `_` ile bölünmüş. | ○ | Help: kod sunum kuralı. |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 3. Hata yönetimi (On Error)
 
@@ -48,7 +48,7 @@
 | 3.6 | Kritik senaryolarda **Err.Raise** (9000–9999) ile özel hata fırlatılıyor (test/otomasyon için). | ○ | Help önerisi. |
 | 3.7 | **On Error Resume Next** sadece tek satır veya çok kısa blokta; tüm makro boyunca açık değil. | ✓ | Hata yönetimi dar tutulmalı. |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 4. 3DExperience API ve nesne erişimi
 
@@ -62,7 +62,7 @@
 | 4.6 | Eski **V5 API** kullanılmıyor: **Documents.Add**, **HybridShapeFactoryOld** vb. | ✓ | 3DExperience’ta desteklenmeyebilir. |
 | 4.7 | **Editor-level** servis kullanılıyorsa aktif pencerenin doğru türde (Part/Product/Drawing) olduğu varsayılıyor veya kontrol ediliyor. | ○ | GetService Nothing dönebilir. |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 5. Kod yapısı ve isimlendirme
 
@@ -74,7 +74,7 @@
 | 5.4 | **Girinti** 4 boşluk; yorumlar `'` ile yazılmış. | ○ | Help: kod sunum. |
 | 5.5 | Her Sub/Function için kısa **başlık yorumu** (amaç, parametreler, dönüş) var. | ○ | Help önerisi. |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 6. Dosya, yol ve dış kaynaklar
 
@@ -85,7 +85,7 @@
 | 6.3 | Sabit yol (C:\Temp vb.) dağıtım notunda veya yorumda belirtilmiş. | ○ | Farklı ortamda değiştirilecek. |
 | 6.4 | **Hassas bilgi** (şifre, token) koda veya log’a yazılmıyor. | ✓ | Güvenlik. |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 7. Kullanıcı arayüzü ve mesajlar
 
@@ -96,7 +96,7 @@
 | 7.3 | Uzun süren işlemlerde (10+ saniye) başta bilgi mesajı veya "X öğe işlenecek" uyarısı var. | ○ | Kullanıcı deneyimi. |
 | 7.4 | **InputBox** iptal (boş dönüş) kontrol ediliyor; anlamlı mesaj veya çıkış yapılıyor. | ✓ | Cancel’a basınca hata vermemeli. |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 8. Log ve izlenebilirlik
 
@@ -106,7 +106,7 @@
 | 8.2 | Log dosyası yolu ve rotasyonu (varsa) dokümante edilmiş. | ○ | Kurumsal senaryoda. |
 | 8.3 | Uzun işlemde **süre** (Timer) ölçülüp log’a veya rapora yazılmış. | ○ | Performans analizi. |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 9. Rollback ve çok adımlı işlemler
 
@@ -115,7 +115,7 @@
 | 9.1 | Birden fazla nesneyi değiştiriyorsa hata durumunda **rollback** (eski değerlere dönme) veya "kısmen uygulandı" uyarısı düşünülmüş. | ○ | Veri tutarlılığı. |
 | 9.2 | Kritik değerler değiştirilmeden önce **eski değer** saklanıyorsa (geri alma için) bu yorumla belirtilmiş. | ○ | Okunabilirlik. |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 10. Test ve senaryolar
 
@@ -126,7 +126,7 @@
 | 10.3 | **Sınır durumlar** denendi: 0 parametre, 1 parametre, kullanıcı iptal (InputBox boş). | ○ | Count = 0, Cancel. |
 | 10.4 | Kod **derleniyor**; manuel çalıştırmada (F5) beklenen davranış görülüyor. | ✓ | Temel geçerlilik. |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 11. Dağıtım ve dokümantasyon
 
@@ -136,7 +136,7 @@
 | 11.2 | Gerekli **yetkiler** (Part yazma, ağ sürücüsüne kaydetme vb.) Assumptions veya ayrı notta yazılmış. | ○ | Dağıtım için. |
 | 11.3 | **Değişiklik günlüğü** veya revizyon notu (kurumsal teslimde) güncel. | ○ | Versiyon takibi. |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 12. Kurumsal / opsiyonel (genişletilmiş)
 
@@ -148,7 +148,62 @@
 | 12.4 | Workbench varlığı veya read-only belge kontrolü (gerekiyorsa) yapılıyor ve loglanıyor. | Güvenlik/lisans. |
 | 12.5 | Talep sahibi / kullanıcı "Çalıştı" (UAT) onayı verdi. | Teslim kriteri. |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
+
+## 13. Geliştirme önerileri (ek)
+
+İleri seviye kalite, tekrar kullanılabilirlik ve takip için ek maddeler. Hepsi **önerilen (○)**.
+
+### 13.1 Şablon ve snippet kütüphanesi
+
+| # | Madde | Zorunlu | Not |
+|---|--------|:-------:|-----|
+| 13.1.1 | **Modül şablonu** kullanılıyor: aynı başlık (Purpose, Assumptions, Language, Release, Regional Settings) ve Option Explicit ile başlayan tek bir şablon .bas veya snippet. | ○ | Templates/MacroBaslik.bas veya editör snippet. |
+| 13.1.2 | **Ortak kalıplar** modüle alınmış: GetObject + Nothing, GetActivePart, LogSatir vb. ortak .bas modülünde; diğer makrolar referans alıyor veya içeri aktarıyor. | ○ | Common/AppHelpers.bas, Common/LogHelpers.bas. |
+| 13.1.3 | **Hata numarası sabitleri** tek yerde: 9000–9999 arası özel hata kodları Const veya Enum ile tanımlı; makrolar arası tutarlılık. | ○ | Public Const ERR_PARAM_NOT_FOUND As Long = 9001 |
+
+### 13.2 Sürüm ve değişiklik takibi
+
+| # | Madde | Zorunlu | Not |
+|---|--------|:-------:|-----|
+| 13.2.1 | **CHANGELOG** veya makro başlığında revizyon listesi tutuluyor; ne zaman ne değişti yazılı. | ○ | CHANGELOG.md veya başlıkta ## [1.2] – 2025-03-01. |
+| 13.2.2 | **Sürüm–API matrisi** var: hangi 3DExperience sürümünde hangi API çalışıyor tablo veya yorumda; R2023x/R2024x farkları belirtilmiş. | ○ | ' Tested: R2024x; GetItem("Part") R2023x'te farklı olabilir. |
+| 13.2.3 | **Revizyon etiketi** her teslimde mevcut: en az bir `' REV x.y – YYYY-MM-DD` satırı; dağıtım paketinde hangi revizyon gittiği belli. | ○ | 11. doküman Finalize ile uyumlu. |
+
+### 13.3 Test ve senaryo listesi
+
+| # | Madde | Zorunlu | Not |
+|---|--------|:-------:|-----|
+| 13.3.1 | **Senaryo listesi** yazılmış: belge yok, yanlış tür, 0/1/N parametre, iptal, çok uzun isim vb.; UAT veya regresyon için kullanılıyor. | ○ | Checklist 10. bölümü genişletilmiş hali. |
+| 13.3.2 | **Örnek belge seti** var: boş part, tek parametreli part, büyük part gibi test dosyaları tek klasörde (örn. TestData/). | ○ | TestData/EmptyPart.CATPart, TestData/LargePart.CATPart. |
+| 13.3.3 | **Süre eşiği** dokümante: "X saniyeden uzun sürerse darboğaz araştırılmalı" ve ölçüm yöntemi yorumda veya dokümanda. | ○ | 12.3 (10K+ occurrence) ile uyumlu. |
+
+### 13.4 Dokümantasyon ve dağıtım
+
+| # | Madde | Zorunlu | Not |
+|---|--------|:-------:|-----|
+| 13.4.1 | **Tek sayfa "nasıl çalıştırılır"** var: 1) Hangi workbench, hangi belge 2) Makro nasıl başlatılır 3) Beklenen çıktı / hata mesajları (PDF veya Wiki). | ○ | 11. doküman 3 satırlık yönergeyi genişletir. |
+| 13.4.2 | **Bağımlılık listesi** yazılmış: bu makro hangi .bas modüllerine ve harici dosyalara (Excel, config) bağımlı. | ○ | Dependencies: AppHelpers.bas, C:\Config\macro.ini. |
+| 13.4.3 | **Dağıtım paketi kontrolü**: doğru .bas, güncel kullanım notu, yetkiler ve varsayılan yollar tek yerde (README veya DAĞITIM.txt). | ○ | Checklist 11. bölümü uygulaması. |
+
+### 13.5 Proje ve repo yapısı
+
+| # | Madde | Zorunlu | Not |
+|---|--------|:-------:|-----|
+| 13.5.1 | **İsimlendirme kuralı** tutarlı: makro ve .bas adları için kural (örn. ProjeAdi_Islev.bas); arama ve filtreleme kolay. | ○ | Acme_ParametreListesi.bas, Acme_ExcelExport.bas. |
+| 13.5.2 | **Klasör ayrımı** kullanılıyor: Examples, Common, Templates, TestData ayrı; proje kökü sade. | ○ | Mevcut Examples/ yapısına Common/, Templates/ eklenebilir. |
+| 13.5.3 | **Sürüm kontrolü (Git)** kullanılıyor: anlamlı commit mesajları, gerekirse branch (release/1.2). | ○ | git commit -m "ParametreYaz: InputBox iptal (REV 1.2)". |
+
+### 13.6 İsteğe bağlı ek kontrol (geliştirme)
+
+- [ ] Ortak başlık ve hata yakalama kalıbı şablondan geliyor.
+- [ ] Özel hata numaraları tek yerde (Const/Enum) tanımlı.
+- [ ] CHANGELOG veya revizyon listesi güncel.
+- [ ] Test senaryoları listesi yazıldı; örnek belge seti (varsa) kullanıldı.
+- [ ] Tek sayfa "nasıl çalıştırılır" ve bağımlılık listesi var.
+- [ ] Dosya/modül isimlendirme kuralı tutarlı; gerekirse Common/Templates klasörleri kullanılıyor.
+
+════════════════════════════════════════════════════════════════════════════════
 
 ## Özet: Zorunlu minimum (tek sayfa)
 
@@ -167,6 +222,6 @@ Aşağıdakilerin **hepsi** işaretli olmalı:
 - [ ] Hata mesajında **Err.Number** ve **Err.Description** kullanılıyor.
 - [ ] **Hassas bilgi** koda/log’a yazılmıyor.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
-**İlgili dokümanlar:** [11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) (TAMAM/HAZIR, kod sunum) · [16-Iyilestirme-Onerileri.md](16-Iyilestirme-Onerileri.md) (iyileştirme önerileri) · [09-Hata-Yakalama-ve-Debug.md](09-Hata-Yakalama-ve-Debug.md) (On Error, log). **Tüm rehber:** [README](README.md).
+**İlgili dokümanlar:** [11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) (TAMAM/HAZIR, kod sunum) · [16-Iyilestirme-Onerileri.md](16-Iyilestirme-Onerileri.md) (iyileştirme önerileri + **§9 ek geliştirme önerileri**: şablon, CHANGELOG, senaryo listesi, proje yapısı) · [09-Hata-Yakalama-ve-Debug.md](09-Hata-Yakalama-ve-Debug.md) (On Error, log). **Tüm rehber:** [README](README.md).

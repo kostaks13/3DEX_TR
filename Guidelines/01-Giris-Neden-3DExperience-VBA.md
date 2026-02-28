@@ -1,14 +1,17 @@
 # 1. Giriş – Neden 3DExperience VBA?
 
 ```
-================================================================================
-  Bu rehber: 3DExperience VBA ile makro yazmayı adım adım anlatan başlangıç rehberi
-================================================================================
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  Bu rehber: 3DExperience VBA ile makro yazmayı adım adım anlatan başlangıç   ║
+║  rehberi                                                                    ║
+╚══════════════════════════════════════════════════════════════════════════════╝
 ```
 
 Bu rehber, kodlamaya yeni başlayan biri için **3DExperience platformunda VBA ile makro yazmayı** adım adım anlatır. İlk dokümanda ne yapacağımızı ve neden VBA kullandığımızı netleştiriyoruz.
 
---------------------------------------------------------------------------------
+**Bu dokümanda:** Rehberin hedefi; VBA nedir; 3DExperience’ta neler yapılır; senaryo örnekleri; rehber yapısı.
+
+════════════════════════════════════════════════════════════════════════════════
 
 ## Bu rehber kimler için?
 
@@ -16,7 +19,7 @@ Bu rehber, kodlamaya yeni başlayan biri için **3DExperience platformunda VBA i
 - 3DExperience (CATIA, DELMIA vb.) kullanıp tekrarlayan işleri otomatikleştirmek isteyenler  
 - VBA’yı sıfırdan, 3DExperience’a özel örneklerle öğrenmek isteyenler  
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## VBA nedir?
 
@@ -25,7 +28,7 @@ Bu rehber, kodlamaya yeni başlayan biri için **3DExperience platformunda VBA i
 - **Avantajlar:** Yazılımın içinden çalışır, kurulumu ayrı değildir; öğrenmesi nispeten kolaydır; 3DExperience’ın tüm nesnelerine (parça, montaj, çizim vb.) doğrudan erişirsiniz.  
 - **Sınır:** Genelde tek bir bilgisayarda, 3DExperience açıkken çalışır; büyük kurumsal otomasyon için C#/VB.NET veya API’ler de kullanılabilir ama başlangıç için VBA yeterlidir.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 3DExperience’ta VBA ile neler yapılabilir?
 
@@ -37,7 +40,7 @@ Bu rehber, kodlamaya yeni başlayan biri için **3DExperience platformunda VBA i
 
 Yani tekrarlayan, kuralı belli işleri **makro** ile otomatikleştirirsiniz. **Servisler** ve **yapılabilecek işlemlerin** detaylı listesi için **12. doküman:** [12-Servisler-ve-Yapilabilecek-Islemler.md](12-Servisler-ve-Yapilabilecek-Islemler.md). **“Buna nereden erişirim, bunu nasıl kullanırım?”** sorusunun tek sayfa cevabı için **13. doküman:** [13-Erisim-ve-Kullanim-Rehberi.md](13-Erisim-ve-Kullanim-Rehberi.md); **Excel** için [14-VBA-ve-Excel-Etkilesimi.md](14-VBA-ve-Excel-Etkilesimi.md); **dosya seç/kaydet diyaloğu** için [15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md). **Help dosyalarını ne zaman/nasıl kullanacağınız** için **17. doküman:** [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md).
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek senaryolar – Ne otomatikleştirilebilir?
 
@@ -79,7 +82,7 @@ Aşağıdaki senaryolar, 3DExperience VBA ile sık karşılaşılan otomasyon fi
 
 Bu tablolar, “ilk hangi makroyu yazayım?” sorusuna yanıt verir; 6–14. dokümanlarda nesne modeli ve API’yi öğrendikten sonra bu senaryolardan birini seçip kodu yazarsınız.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek kod parçası – Sadece fikir (henüz çalıştırmayın)
 
@@ -117,13 +120,13 @@ End Sub
 ```
 Bu örnekte görülen yapı: **Uygulama al → Aktif belge al → Kontrol et → İşle.** Tüm makrolarınızda benzer bir giriş kullanacaksınız.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Rehberin yapısı
 
 Rehber **18 dokümanlıdır**. Tam liste, özet ve bağlantılar **[README](README.md)** sayfasındaki tabloda yer alır. Temel akış 1–10’dur; 11–18 kurallar, servisler, erişim rehberi, Excel, dosya diyalogları, iyileştirme önerileri, Help kullanımı ve sık hatalar/dikkat noktaları için ek dokümanlardır.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Dassault Systèmes resmi bakış (Help referansı)
 
@@ -136,7 +139,7 @@ Rehber **18 dokümanlıdır**. Tam liste, özet ve bağlantılar **[README](READ
 
 Yani 3DExperience tarafında **VBA resmi olarak desteklenen** dillerden biridir; script’lerinizi bu dilde yazarken Help’teki kod sunum ve isimlendirme kurallarına uymanız önerilir.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Desteklenen diller (Help’ten)
 
@@ -151,13 +154,13 @@ Automation Development Guidelines’da **Language** alanı için geçerli değer
 
 Bu rehberde yalnızca **VBA** kullanımı anlatılmaktadır; diğer dillerde de benzer nesne modeli ve API’ler kullanılır.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Bölgesel ayarlar uyarısı
 
 Help’e göre: Belirli bir **locale** (bölgesel ayar) için kaydedilen veya yazılan makrolar, başka bir locale’de **çalışmayabilir**. Etkileşimli ürün dokümantasyonunda anlatılan dil adlarını kullanın (örn. English (United States), French (France)). Makroyu paylaşırken veya dokümante ederken hangi bölgesel ayarda test edildiğini belirtin.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: “Parça adını göster” – Tek satırlık mantık
 
@@ -177,7 +180,7 @@ End Sub
 
 Bu üç adım (uygulama → belge → bilgi) neredeyse tüm makrolarınızda tekrarlanacak.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Hangi işler için makro yazılır?
 
@@ -196,7 +199,7 @@ Aşağıdaki liste, 3DExperience kullanıcılarının sık otomatikleştirdiği 
 
 Bu liste sizin ilk makro fikrinizi netleştirmenize yardımcı olur; 6. ve 8. dokümanlarda nesne modeli ve API kullanımını öğrendikten sonra bu işlerden birini seçip kodu yazabilirsiniz.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Otomasyon türleri (kavramsal)
 
@@ -209,19 +212,19 @@ Bu liste sizin ilk makro fikrinizi netleştirmenize yardımcı olur; 6. ve 8. do
 
 3DExperience VBA ile bu dört türün hepsine dokunabilirsiniz; başlangıçta genelde “etkileşimli + tek belge” ile başlanır.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Önce kayıt, sonra kod – Önerilen yol
 
 Yeni bir işlemde hangi API’nin kullanıldığını bilmiyorsanız: (1) Makro kaydını başlatın. (2) İşlemi 3DExperience’ta elle bir kez yapın. (3) Kaydı durdurun. (4) Oluşan kodu inceleyin; Application, Document, Part, Parameters, Shapes vb. nesne ve metod isimlerini not alın. (5) Bu isimleri **VBA_API_REFERENCE.md** veya Help metinlerinde arayarak tam imzaları ve alternatiflerini görün. (6) Kodu sadeleştirip Nothing kontrolleri ve Option Explicit ekleyin. Bu yol, 7. dokümanda detaylı anlatılır.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Neden VBA, neden C#/Python değil?
 
 Bu rehber **VBA** odaklıdır çünkü: (1) 3DExperience ile birlikte gelir, ek kurulum gerektirmez. (2) Makro kaydı doğrudan VBA kodu üretir; öğrenme hızlanır. (3) Tek bir makinede, etkileşimli kullanım için hızlı geliştirme yapılır. C# veya Python ile otomasyon da mümkündür; ancak COM/API erişimi, ayrı IDE ve dağıtım modeli farklıdır. Kurumsal ve toplu (batch) senaryolarda C#/Python tercih edilebilir; başlangıç için VBA yeterlidir.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Rehberdeki dokümanların birbirine bağlantısı
 
@@ -234,7 +237,7 @@ Bu rehber **VBA** odaklıdır çünkü: (1) 3DExperience ile birlikte gelir, ek 
 
 Bu sıra takip edildiğinde adım adım 3DExperience VBA ile makro yazma becerisi oluşur.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Sonraki adım
 

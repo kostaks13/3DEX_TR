@@ -1,9 +1,9 @@
 # VBA API Referansı – 3DEX_TR
 
 ```
-================================================================================
-  Sık kullanılan API imzaları  |  Help: VBA_CALL_LIST.txt, text/
-================================================================================
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  Sık kullanılan API imzaları  |  Help: VBA_CALL_LIST.txt, text/               ║
+╚══════════════════════════════════════════════════════════════════════════════╝
 ```
 
 Bu sayfa **3DExperience VBA** makro geliştirirken kullanılan API’lere yönlendirme ve kısa açıklamalar içerir. Tam liste ve imzalar proje içindeki aşağıdaki kaynaklarda bulunur.

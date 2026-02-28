@@ -1,8 +1,10 @@
 # 9. Hata Yakalama ve Debug
 
+**Bu dokümanda:** On Error GoTo / Resume Next; Nothing ve belge kontrolü; breakpoint, Immediate, Locals; log tasarımı; Err.Raise, Retry.
+
 Makro çalışırken hata almak normaldir. Bu dokümanda **hata yakalama** (On Error) ve **debug** (kesme noktası, Immediate penceresi) ile hataları bulup düzeltmeyi öğreneceksiniz.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## On Error – Hata yakalama
 
@@ -66,7 +68,7 @@ On Error GoTo 0   ' Sonraki hatalarda normale dön
 
 Sonrasında hata yakalamayı kapatır; hata tekrar mesaj kutusunda görünür.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Nothing ve belge kontrolü
 
@@ -80,7 +82,7 @@ If oDoc Is Nothing Then
 End If
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Kesme noktası (Breakpoint)
 
@@ -91,7 +93,7 @@ Kodu **belirli bir satırda durdurup** değişkenleri incelemek için:
 3. **F8** (Step Into) ile satır satır ilerleyin.  
 4. İmleci bir değişkenin üzerine getirirseniz o anki değeri tooltip’te görürsünüz.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Immediate penceresi (Ctrl+G)
 
@@ -105,17 +107,17 @@ Kodu **belirli bir satırda durdurup** değişkenleri incelemek için:
 
 **Print** yerine **?** kullanılır. Debug sırasında değişkenleri böyle kontrol edin.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Locals penceresi
 
 **View** → **Locals** ile açar. Kod durduğunda o anda geçerli tüm yerel değişkenler ve değerleri listelenir; nesneler açılıp alt property’ler incelenebilir.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 **Sık yapılan hatalar ve dikkat edilmesi gereken özel noktalar** için ayrıca **18. doküman:** [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md).
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## İyi alışkanlıklar
 
@@ -124,7 +126,7 @@ Kodu **belirli bir satırda durdurup** değişkenleri incelemek için:
 3. Uzun makrolarda **Exit Sub** ile erken çıkışları net yazın; böylece hata etiketi sadece gerçek hata için çalışır.  
 4. Mümkünse hata mesajına **nerede** olduğunu ekleyin: `MsgBox "Parametre okunurken hata: " & Err.Description`.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Hata sınıflandırması (3DEXPERIENCE MACRO HAZIRLIK YÖNERGESİ’nden)
 
@@ -141,7 +143,7 @@ Help’teki hazırlık yönergesine göre hatalar seviyeye ayrılabilir; her sev
 
 Kurumsal ortamda **Err.Raise** ile kendi hata numara aralığınızı (örn. 9000–9999) kullanmanız önerilir; böylece VBA/ sistem hata kodlarıyla karışmaz. Detay için **11. doküman** (Resmi Kurallar ve Hazırlık Fazları) ve Help’teki “Hataları Yakala & Günlüğe Kaydet” bölümüne bakın.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Log (günlük) tasarımı önerisi (Help’ten)
 
@@ -154,7 +156,7 @@ Hata ve izlenebilirlik için basit bir log yapısı:
 
 Örnek log satırı: `2025-07-12 10:42:15  ERROR  9100  HybridBodies missing  Part=Wing_Rib_A.CATPart`
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Tam hata yakalama şablonu (Exit Sub ile)
 
@@ -190,7 +192,7 @@ HataYakala:
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: On Error Resume Next ve Err temizleme
 
@@ -213,7 +215,7 @@ Sub GetObjectGuvenli()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Err.Raise ile özel hata (Help önerisi)
 
@@ -232,7 +234,7 @@ End Sub
 
 Çağıran Sub’da `On Error GoTo` ile 9001’i yakalayıp kullanıcıya anlamlı mesaj gösterebilirsiniz.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Basit log dosyasına yazma
 
@@ -261,7 +263,7 @@ HataYakala:
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Immediate penceresinde debug
 
@@ -282,13 +284,13 @@ sAd = "Length.1"
 
 Böylece değişkenleri değiştirip bir sonraki adımda davranışı test edebilirsiniz.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Watch penceresi
 
 Kritik bir değişkenin her adımda değerini izlemek için: **Debug** → **Add Watch** ile değişkeni ekleyin. Kod breakpoint’te durduğunda Watch penceresinde güncel değer görünür; bu özellikle döngü içinde değişen sayaçlar için faydalıdır.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Hata numarasına göre farklı mesaj (Select Case Err.Number)
 
@@ -312,7 +314,7 @@ HataYakala:
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Err.Clear ile hata bilgisini temizleme
 
@@ -330,7 +332,7 @@ Err.Clear
 On Error GoTo 0
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Debug.Print ile pencereye yazma
 
@@ -347,7 +349,7 @@ End Sub
 
 Çalıştırdıktan sonra **Ctrl+G** ile Immediate penceresini açıp çıktıyı görün.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Hata mesajında konum bilgisi
 
@@ -373,7 +375,7 @@ End Sub
 
 [1], [2], [3] gibi etiketler hangi adımda takıldığını gösterir.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Yeniden deneme (Retry) – Basit döngü
 
@@ -395,7 +397,7 @@ Sub RetryOrnek()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Hata seviyesine göre log etiketi (INFO / WARN / ERROR)
 
@@ -413,7 +415,7 @@ End Sub
 ' Kullanım: LogSeviyeli "C:\Temp\log.txt", "ERROR", "Parametre bulunamadı"
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Kontrol listesi
 
@@ -422,7 +424,7 @@ End Sub
 - [ ] Kesme noktası koyup F8 ile adım adım ilerleyebiliyorum  
 - [ ] Immediate penceresinde ? ile değişken değerine bakabiliyorum  
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Sonraki adım
 

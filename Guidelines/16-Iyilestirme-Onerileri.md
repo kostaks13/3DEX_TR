@@ -1,8 +1,10 @@
 # 16. İyileştirme Önerileri
 
+**Bu dokümanda:** Kod kalitesi; performans (tek Update, Timer); bakım ve konfigürasyon; test ve hata senaryoları; kullanıcı deneyimi; dağıtım; isteğe bağlı kontrol listesi.
+
 Makronuz çalıştıktan sonra **kalite**, **bakım kolaylığı** ve **kullanıcı deneyimi**ni artırmak için uygulayabileceğiniz öneriler aşağıda kategorilere ayrılmıştır. Zorunlu değildir; ihtiyaca göre seçin.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 1. Kod kalitesi
 
@@ -14,7 +16,7 @@ Makronuz çalıştıktan sonra **kalite**, **bakım kolaylığı** ve **kullanı
 | **Anlamlı isim kullanın** | Değişken ve prosedür adları ne yaptığını anlatsın; kısaltma yerine tam kelime tercih edin (okunabilirlik için). | `iParametreSayisi` yerine `iCount` sadece sayı için uygun; `sParametreAdi` anlamlı. |
 | **Yorumu güncel tutun** | Kod değişince başlık yorumunu (Purpose, Assumptions) da güncelleyin; eski davranışı anlatan yorumları silin. | Her revizyonda `' REV 1.2 – 2025-03-01: ...` ekleyin. |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 2. Performans
 
@@ -26,7 +28,7 @@ Makronuz çalıştıktan sonra **kalite**, **bakım kolaylığı** ve **kullanı
 | **Süreyi ölçün** | Uzun süren işlemlerde **Timer** ile süreyi ölçüp log’a veya Debug’a yazın; darboğazı tespit edin. | `t0 = Timer` … işlem … `Debug.Print "Süre: "; Timer - t0` |
 | **Dosya/yol kontrolünü başta yapın** | Kaydetmeden önce hedef klasörün var olduğunu veya yazılabilir olduğunu kontrol edin; işlem ortasında hata almayın. | FileSystem.Exists veya API ile klasör kontrolü. |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 3. Bakım ve konfigürasyon
 
@@ -37,7 +39,7 @@ Makronuz çalıştıktan sonra **kalite**, **bakım kolaylığı** ve **kullanı
 | **Varsayılanları dokümante edin** | InputBox’ta varsayılan değer veriyorsanız, bu değerin ne anlama geldiğini yorumda belirtin (test ve bakım için). | `' Varsayılan: "Length.1" – test script’leri bu değeri kullanır.` |
 | **Bağımlılıkları yazın** | Makronun hangi workbench’te, hangi belge türünde çalıştığını Assumptions’ta net yazın. | `' Assumptions: Part Design açık, aktif belge Part.` |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 4. Test ve hata senaryoları
 
@@ -48,7 +50,7 @@ Makronuz çalıştıktan sonra **kalite**, **bakım kolaylığı** ve **kullanı
 | **Hata numarasını mesajda gösterin** | Kullanıcıya sadece “Hata oluştu” değil, **Err.Number** ve **Err.Description** verin; destek ve log analizi kolaylaşır. | `MsgBox "Hata: " & Err.Number & " - " & Err.Description` |
 | **Log’a bağlam ekleyin** | Log satırına hangi belge, hangi parametre veya adım bilgisi eklensin; sonradan hatayı tekrarlamak kolaylaşır. | `LogSatir "ERROR", 9100, "Parametre yok", "Doc=" & oDoc.Name` |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 5. Kullanıcı deneyimi
 
@@ -59,7 +61,7 @@ Makronuz çalıştıktan sonra **kalite**, **bakım kolaylığı** ve **kullanı
 | **Başarı/hata mesajını net verin** | “Bitti” yerine “12 parametre güncellendi” veya “Hata: Length.1 bulunamadı” gibi somut ifade kullanın. | MsgBox içeriğini iş sonucuna göre doldurun. |
 | **3 satırlık kullanım yönergesi** | Dağıtırken kullanıcıya “1) Şunu aç, 2) Makroyu çalıştır, 3) Şu mesajı görünce bitti” şeklinde kısa talimat verin. | 11. dokümanda Finalize maddesi. |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 6. Dağıtım ve güvenlik
 
@@ -70,7 +72,7 @@ Makronuz çalıştıktan sonra **kalite**, **bakım kolaylığı** ve **kullanı
 | **Bölgesel ayarı belirtin** | Hangi dil/locale’de test edildiğini başlıkta yazın; farklı bölgede davranış değişebilir (Help uyarısı). | `' Regional Settings: English (United States)` |
 | **Gerekli yetkiyi dokümante edin** | Makronun “Part yazma”, “ağ sürücüsüne kaydetme” gibi hangi yetkileri gerektirdiğini kısa not edin. | Assumptions veya ayrı “Gereksinimler” bölümü. |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 7. Hata yönetimi ve geri alma
 
@@ -80,7 +82,7 @@ Makronuz çalıştıktan sonra **kalite**, **bakım kolaylığı** ve **kullanı
 | **Err.Raise ile test edilebilir çıkış** | Otomatik test senaryolarında hatanın “hata” olarak tanınması için MsgBox yerine **Err.Raise** kullanın (Help önerisi). | `If ... Then Err.Raise 9001, "MacroAdi", "Açıklama"` |
 | **On Error’ü dar tutun** | **On Error Resume Next** sadece tek satır veya çok kısa blok için kullanın; hemen sonra **Err** kontrolü ve **On Error GoTo 0** yapın. | 9. dokümanda örnek. |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 8. Özet kontrol listesi (isteğe bağlı)
 
@@ -97,7 +99,62 @@ Kodunuzu teslim etmeden veya paylaşmadan önce aşağıdakilerden ihtiyacınız
 - [ ] Versiyon etiketi ve Assumptions güncel.
 - [ ] Bölgesel ayar ve dağıtım notu (gerekirse) yazıldı.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
+
+## 9. Geliştirme önerileri (ek)
+
+Daha ileri seviye kalite, tekrar kullanılabilirlik ve takip için ek öneriler:
+
+### 9.1 Şablon ve snippet kütüphanesi
+
+| Öneri | Açıklama | Örnek |
+|-------|----------|--------|
+| **Modül şablonu kullanın** | Her yeni makroda aynı başlık (Purpose, Assumptions, Language, Release, Regional Settings) ve Option Explicit ile başlayın; bu bloğu tek bir “şablon .bas” veya snippet olarak saklayın. | `Templates/MacroBaslik.bas` veya editör snippet. |
+| **Ortak kalıpları modüle alın** | GetObject + Nothing kontrolü, GetActivePart, LogSatir gibi tekrarlayan blokları **ortak bir .bas modülüne** taşıyın; diğer makrolar bu modülü referans alsın veya kodu içeri aktarsın. | `Common/AppHelpers.bas`, `Common/LogHelpers.bas`. |
+| **Hata numarası sabitleri** | 9000–9999 arası özel hata kodlarını tek yerde **Const** veya Enum ile tanımlayın; makrolar arası tutarlılık sağlar. | `Public Const ERR_PARAM_NOT_FOUND As Long = 9001` |
+
+### 9.2 Sürüm ve değişiklik takibi
+
+| Öneri | Açıklama | Örnek |
+|-------|----------|--------|
+| **CHANGELOG tutun** | Kurumsal veya çok makro projelerinde kök dizinde **CHANGELOG.md** veya makro başlığında revizyon listesi tutun; ne zaman ne değişti görünsün. | `## [1.2] – 2025-03-01 / Parametre adı boş kontrolü eklendi.` |
+| **Sürüm–API matrisi** | Hangi 3DExperience sürümünde hangi API’nin çalıştığını bir tabloda (veya yorumda) not edin; R2023x / R2024x farkları varsa belirtin. | `' Tested: R2024x; GetItem("Part") R2023x'te farklı olabilir.` |
+| **Revizyon etiketi zorunlu yapın** | Teslimde her makroda en az bir `' REV x.y – YYYY-MM-DD` satırı olsun; dağıtım paketinde hangi revizyonun gittiği belli olsun. | 11. doküman Finalize maddesiyle uyumlu. |
+
+### 9.3 Test ve senaryo listesi
+
+| Öneri | Açıklama | Örnek |
+|-------|----------|--------|
+| **Senaryo listesi dokümanı** | Her makro için “Test senaryoları” listesi yazın: belge yok, yanlış tür, 0/1/N parametre, iptal, çok uzun isim vb.; UAT veya regresyon için kullanın. | Checklist 10. bölümü genişletilmiş hali. |
+| **Örnek belge seti** | Test için “boş part”, “tek parametreli part”, “100+ shape’li part” gibi örnek belgeleri bir klasörde toplayın; yeni sürümde aynı setle deneyin. | `TestData/EmptyPart.CATPart`, `TestData/LargePart.CATPart`. |
+| **Süre eşiği notu** | “Bu makro X saniyeden uzun sürerse darboğaz araştırılmalı” gibi bir eşik ve ölçüm yöntemini yorumda veya dokümanda belirtin. | 12.3 (10K+ occurrence) ile uyumlu. |
+
+### 9.4 Dokümantasyon ve dağıtım
+
+| Öneri | Açıklama | Örnek |
+|-------|----------|--------|
+| **Tek sayfa “nasıl çalıştırılır”** | Her makro için **tek sayfalık** talimat: 1) Hangi workbench, hangi belge 2) Makro nasıl başlatılır 3) Beklenen çıktı / hata mesajları. PDF veya Wiki’ye koyun. | 11. doküman 3 satırlık yönergeyi genişletir. |
+| **Bağımlılık listesi** | Bu makro hangi diğer .bas modüllerine veya harici dosyalara (Excel, config) bağımlı; liste halinde yazın. | `Dependencies: AppHelpers.bas, C:\Config\macro.ini`. |
+| **Dağıtım paketi kontrolü** | Dağıtırken: doğru .bas dosyaları, güncel kullanım notu, gerekli yetkiler ve varsayılan yollar listesi tek yerde (ör. README veya paket içi DAĞITIM.txt) olsun. | Checklist 11. bölümü uygulaması. |
+
+### 9.5 Proje ve repo yapısı
+
+| Öneri | Açıklama | Örnek |
+|-------|----------|--------|
+| **İsimlendirme kuralı** | Makro ve .bas dosya adları için tutarlı kural: örn. `ProjeAdi_Islev.bas` veya `Modul_ParametreYaz.bas`; arama ve filtreleme kolaylaşır. | `Acme_ParametreListesi.bas`, `Acme_ExcelExport.bas`. |
+| **Klasör ayrımı** | Örnek makrolar (Examples), ortak modüller (Common), şablonlar (Templates), test verisi (TestData) ayrı klasörlerde; proje kökü sade kalsın. | Mevcut Examples/ yapısına Common/, Templates/ eklenebilir. |
+| **Git / sürüm kontrolü** | Kod ve dokümantasyonu Git’te tutun; .bas ve .md için anlamlı commit mesajları ve gerekirse branch (örn. release/1.2) kullanın. | `git commit -m "ParametreYaz: InputBox iptal kontrolü (REV 1.2)"`. |
+
+### 9.6 İsteğe bağlı ek kontrol listesi
+
+- [ ] Ortak başlık ve hata yakalama kalıbı şablondan geliyor.
+- [ ] Özel hata numaraları tek yerde (Const/Enum) tanımlı.
+- [ ] CHANGELOG veya revizyon listesi güncel.
+- [ ] Test senaryoları listesi yazıldı; örnek belge seti (varsa) kullanıldı.
+- [ ] Tek sayfa “nasıl çalıştırılır” ve bağımlılık listesi var.
+- [ ] Dosya/modül isimlendirme kuralı tutarlı; gerekirse Common/Templates klasörleri kullanılıyor.
+
+════════════════════════════════════════════════════════════════════════════════
 
 ## İlgili dokümanlar
 

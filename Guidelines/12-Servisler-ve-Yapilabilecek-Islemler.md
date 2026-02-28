@@ -1,8 +1,10 @@
 # 12. Servisler ve Yapılabilecek İşlemler (Detay)
 
+**Bu dokümanda:** Session-level ve Editor-level servisler; GetSessionService, GetService; örnekler (VisuServices, Search, PLMOpen, PLMNew); FileSystem, Part/Product/Drawing işlemleri.
+
 Bu dokümanda **servisler** (Editor-level ve Session-level) ile **yapılabilecek işlemler** daha detaylı anlatılır; her biri için kullanım örnekleri ve kod verilir. Kaynak: **Help-Native Apps Automation** (Foundation Object Model Map) ve **Help-Common Services**. **Help dosyalarını hangi aşamada nasıl kullanacağınız** için **17. doküman:** [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md).
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 1. Servis nedir?
 
@@ -29,7 +31,7 @@ Bu dokümanda **servisler** (Editor-level ve Session-level) ile **yapılabilecek
 
 **Önemli kural:** Editor-level bir servis kullanırken **içeriden** session-level servis çağrısı yapmayın; kilitleşme riski vardır. Önce editor-level işinizi bitirip sonra session-level’a geçin.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 2. Session-level servisler (GetSessionService)
 
@@ -157,7 +159,7 @@ Sub PLMNewServiceOrnek()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 3. Editor-level servisler (GetService)
 
@@ -299,7 +301,7 @@ Sub DrawingServiceOrnek()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 4. FileSystem (Application.FileSystem) – Dosya ve klasör
 
@@ -380,7 +382,7 @@ Sub FileSystemKlasorListele()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 5. Yapılabilecek işlemler – Parça (Part)
 
@@ -471,7 +473,7 @@ Sub PartParametreleriCSV()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 6. Yapılabilecek işlemler – Montaj (Product)
 
@@ -516,7 +518,7 @@ Sub ProductBOMListe()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 7. Yapılabilecek işlemler – Çizim (Drawing)
 
@@ -569,7 +571,7 @@ Sub DrawingSayfaVeGorusSayilari()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 8. Yapılabilecek işlemler – Dosya ve ortam
 
@@ -582,7 +584,7 @@ End Sub
 | Ortam değişkeni | **SystemService.Environ("DEĞİŞKEN_ADI")** | Örn. ROOT_FOLDER. |
 | Yol birleştirme | **SystemService.ConcatenatePaths(yol1, yol2)** | Platform uyumlu. |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 9. Özet tablo: Servis erişimi
 
@@ -593,7 +595,7 @@ End Sub
 | **FileSystem** | Application.FileSystem | GetFile, GetFolder, Exists |
 | **SystemService** | Application.SystemService | Environ, ConcatenatePaths |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Sonraki adım
 

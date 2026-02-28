@@ -1,21 +1,24 @@
 # 2. Ortam Kurulumu
 
 ```
-================================================================================
-  Ortam: 3DExperience, VBA editörü, makro güvenliği, ilk makroyu yazıp çalıştırma
-================================================================================
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  Ortam: 3DExperience, VBA editörü, makro güvenliği, ilk makroyu yazıp        ║
+║  çalıştırma                                                                  ║
+╚══════════════════════════════════════════════════════════════════════════════╝
 ```
 
 3DExperience VBA ile kod yazabilmek için doğru ortamı kurmanız ve makro güvenlik ayarlarını yapmanız gerekir. Bu dokümanda adım adım ilerliyoruz.
 
-------------------------------------------------------------
+**Bu dokümanda:** Ortam gereksinimleri; VBA editörü ve makro güvenliği; ilk makro (MsgBox, InputBox); Language/Release başlığı; F5/F8.
+
+════════════════════════════════════════════════════════════════════════════════
 
 ## Gereksinimler
 
 - **3DExperience** (R2024x veya uyumlu sürüm) kurulu ve lisansınızın **Makro / Scripting** yetkisi olmalı.  
 - Windows üzerinde çalışır; VBA editörü 3DExperience ile birlikte gelir, ayrı kurulum gerekmez.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 1. 3DExperience’ı açın
 
@@ -23,7 +26,7 @@
 - Bir **rol** seçin (ör. **Mechanical Designer**, **Assembly Designer**).  
 - İhtiyacınıza göre yeni bir parça veya montaj açın veya mevcut bir belgeyi açın.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 2. VBA editörünü açın
 
@@ -36,7 +39,7 @@ Açılan pencerede:
 - **Orta:** Kod penceresi — burada VBA kodunu yazacaksınız.  
 - **Alt:** Properties (özellikler) — seçili nesnenin özellikleri.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 3. Makro güvenliği
 
@@ -46,7 +49,7 @@ Makroların çalışması için güvenlik ayarı düşük veya orta olmalı (kur
 - **General** / **Security** / **Macro** benzeri bir bölümde **Macro security** veya **Enable macros** seçeneğini açın.  
 - Şirket politikası varsa IT ile “Makro çalıştırma” iznini kontrol edin.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 4. İlk makroyu yazıp çalıştırma
 
@@ -64,7 +67,7 @@ End Sub
 
 Bu, ortamınızın doğru kurulduğunu ve makronun çalıştığını gösterir.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 4b. Örnek 2 – InputBox ile kullanıcıdan veri almak
 
@@ -87,7 +90,7 @@ End Sub
 
 Çalıştırınca bir kutu açılır; kullanıcı metin yazıp OK’e basar. Boş bırakırsa `sAd = ""` olur; buna göre iptal mesajı gösterebilirsiniz.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 4c. Örnek 3 – Birkaç değişken ve mesaj birleştirme
 
@@ -113,7 +116,7 @@ End Sub
 
 `vbCrLf` satır sonu karakteridir; mesaj kutusunda birkaç satır göstermek için kullanılır.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 4d. Örnek 4 – Başlık yorumu ile tam mini makro
 
@@ -135,7 +138,7 @@ End Sub
 
 Bu yapıyı alışkanlık edinin: Her Sub’ın üstüne amaç ve varsayımları kısa yazın.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 5. Makroyu kaydetme
 
@@ -143,7 +146,7 @@ Bu yapıyı alışkanlık edinin: Her Sub’ın üstüne amaç ve varsayımları
 - Proje, 3DExperience oturumunuzla birlikte (veya açık olan belgeyle) kaydedilir.  
 - Bazı sürümlerde makrolar **.CATPart** / **.CATProduct** içinde veya ayrı bir **.vba** projesi olarak saklanır; menüdeki “Save” ile kaydedilen yeri not alın.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 6. Resmi kurallardan: Dil ve sürüm bildirimi (Help referansı)
 
@@ -161,7 +164,7 @@ Bu yapıyı alışkanlık edinin: Her Sub’ın üstüne amaç ve varsayımları
 
 Bunu modülünüzün en üstüne (Option Explicit’ten hemen sonra veya başlık bloğu içinde) ekleyin. Böylece hangi sürümde test edildiği ve hangi dilde yazıldığı kayıtlı olur; API değişikliklerinde referans olur.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 7. Makro konumu ve dağıtım (Hazırlık Yönergesi’nden)
 
@@ -171,7 +174,7 @@ Bunu modülünüzün en üstüne (Option Explicit’ten hemen sonra veya başlı
 - Dağıtım notunu kod başlığına veya ayrı bir “Dağıtım” bölümüne yazın: “Bu makro şu klasöre kopyalanacak: …”
 - Kullanıcıya **3 satırlık kullanım** yönergesi verin: Örn. “GSD aktifken çalıştır → Part güncel → ‘Done’ mesajı görünce işlem tamamlandı.”
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 8. Örnek: Modül başına zorunlu başlık (Language + Release)
 
@@ -187,19 +190,19 @@ Sub OrnekSub()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 9. Örnek: Proje Explorer’da modül adı değiştirme
 
 VBA editöründe sol tarafta **Project Explorer** görünür. Modüle sağ tıklayıp **Properties** (F4) ile **Name** alanından modül adını değiştirebilirsiniz (ör. Module1 → ParametreMakrolari). Bu, büyük projelerde modülleri ayırt etmeyi kolaylaştırır.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 10. Örnek: Makroyu araç çubuğuna veya menüye ekleme
 
 3DExperience’ta **Tools** → **Customize** (veya **Options**) ile yeni bir düğme ekleyip makroyu atayabilirsiniz. Böylece kullanıcı **Alt+F11** açmadan doğrudan düğmeye basarak makroyu çalıştırır. Adımlar sürüme göre değişir; menüde “Macro”, “Command” veya “Script” benzeri bir bölüm arayın.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 11. Örnek: F5 vs F8 – Çalıştır vs Adım adım
 
@@ -208,7 +211,7 @@ VBA editöründe sol tarafta **Project Explorer** görünür. Modüle sağ tıkl
 - **Shift+F8 (Step Over):** Alt prosedürü tek adımda geçer.  
 - Kesme noktası koyduğunuzda F5 ile o satıra kadar çalışır, orada durur; sonra F8 ile devam edebilirsiniz.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 12. Örnek: Dağıtım notu – Kod başlığına ekleme
 
@@ -219,13 +222,13 @@ Help’teki “Finalize” fazında dağıtım konumunu kod başlığına yazın
 ' Kullanım: Part Design veya GSD açık, Part belgesi aktif; makroyu çalıştırın.
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## 13. Örnek: Birden fazla modül – Proje yapısı
 
 Büyük projelerde modülleri işlevine göre ayırabilirsiniz: bir modül “ParametreIslemleri”, bir modül “DosyaVeLog”, bir modül “AnaMakrolar”. AnaMakrolar’daki Sub’lar diğer modüllerdeki Public Sub/Function’ları çağırır. Aynı proje içinde oldukları sürece modül adı ile çağrı gerekmez; doğrudan SubAdi veya FunctionAdi yeterlidir.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Kontrol listesi
 
@@ -235,7 +238,7 @@ Büyük projelerde modülleri işlevine göre ayırabilirsiniz: bir modül “Pa
 - [ ] **F5** ile makro çalışıyor ve mesaj kutusu görünüyor  
 - [ ] Proje kaydedildi  
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Sonraki adım
 

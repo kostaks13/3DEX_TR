@@ -1,8 +1,10 @@
 # 10. Örnek Proje – Baştan Sona Bir Makro
 
+**Bu dokümanda:** Tam makro iskeleti (AktifParcaBilgisi); parametre oku/yaz, listele, dosyaya yaz; modüler yapı (GetActivePart); Design/Draft/Harden/Finalize.
+
 Bu son dokümanda, önceki dokümanlarda öğrendiklerinizi kullanarak **baştan sona** bir makro iskeleti yazıyoruz. Ardından kısa bir **yazım kuralları** özeti veriyoruz.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Senaryo
 
@@ -26,7 +28,7 @@ Bu iskeleti kendi ihtiyacınıza göre (parametre değiştirme, çizim sayfası 
   [4] İşlem (oku/yaz/listele)   ──►   [5] (gerekirse) oPart.Update   ──►   [6] MsgBox / çıkış
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Tam örnek makro (iskelet)
 
@@ -82,7 +84,7 @@ End Sub
 
 **Not:** `GetItem("Part")`, `Shapes`, `Count` gibi isimler 3DExperience sürümüne göre değişebilir. Kendi ortamınızda makro kaydı yapıp üretilen kodu bu iskeletle karşılaştırın; gerekirse referanstaki Part/Shapes API’sine bakın.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Adım adım ne yaptık?
 
@@ -95,7 +97,7 @@ End Sub
 7. **Exit Sub** — Normal çıkışta hata bloğuna düşmemek için.  
 8. **HataYakala:** — Hata numarası ve açıklamasını gösteriyoruz.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Yazım kuralları özeti (guideline)
 
@@ -110,7 +112,7 @@ End Sub
 | **Referans kullanın** | Yeni API kullanırken `VBA_API_REFERENCE.md` ve Help metinlerine bakın. |
 | **Kayıt + sadeleştirme** | Bilmediğiniz işlemde önce makro kaydedin, sonra kodu sadeleştirip genelleştirin. |
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Kod taslağı fazları (Help – 3DEXPERIENCE MACRO HAZIRLIK YÖNERGESİ)
 
@@ -123,7 +125,7 @@ Resmi hazırlık yönergesine göre makro kodu dört fazda olgunlaştırılır:
 
 Bu fazların tam listesi, hata/log/rollback detayları ve dağıtım öncesi kontrol listesi (TAMAM/HAZIR) için **11. doküman:** [11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) ve Help’teki “Kodu Standart Şablona Göre Üret” bölümüne bakın.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Kendi makronuzu büyütmek için
 
@@ -132,11 +134,11 @@ Bu fazların tam listesi, hata/log/rollback detayları ve dağıtım öncesi kon
 - **Montaj:** Product → Children; bileşen ekleme/çıkarma için ilgili Add/Remove metodlarını referansta arayın.  
 - **Dosya:** Yeni belge açma, kaydetme, farklı kaydetme için Application/Document dokümantasyonunu kullanın.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 Rehber özeti ve tüm doküman listesi için [README](README.md).
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Sonraki adımlar
 
@@ -147,7 +149,7 @@ Rehber özeti ve tüm doküman listesi için [README](README.md).
 
 Bu rehber, 3DExperience VBA ile sıfırdan kod yazmaya başlamanız için 18 dokümanlık bir guideline setidir; her doküman bir sonrakine bağlanır ve hepsi 3DExperience VBA’ye özeldir.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## İkinci örnek: Parametre oku ve mesajla göster
 
@@ -199,7 +201,7 @@ HataYakala:
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Üçüncü örnek: Parametre yaz (kullanıcıdan değer al)
 
@@ -253,7 +255,7 @@ HataYakala:
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Dördüncü örnek: Shapes sayısı ve ilk birkaç şeklin adı
 
@@ -295,7 +297,7 @@ HataYakala:
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Beşinci örnek: Modüler yapı – Yardımcı Sub ve Function
 
@@ -343,7 +345,7 @@ End Sub
 
 Bu yapıda `GetActivePart` tekrar kullanılabilir; yeni makrolarda aynı Function’ı çağırabilirsiniz.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Altıncı örnek: Dosyaya parametre listesi yaz
 
@@ -380,7 +382,7 @@ End Sub
 
 `GetActivePart()` kullanmak isterseniz önceki örnekteki Function’ı bu modüle ekleyin.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Yedinci örnek: Tarih/saat ile log satırı
 
@@ -410,7 +412,7 @@ End Sub
 
 Bu yapıyı 9. dokümandaki “Log tasarımı” ile birleştirerek daha zengin log formatı (ERROR/INFO etiketi, kontekst) ekleyebilirsiniz.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Sekizinci örnek: Sadece Part belgesi kontrolü
 
@@ -433,7 +435,7 @@ Sub SadecePartKontrol()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Dokuzuncu örnek: İki parametreyi takas et
 
@@ -462,7 +464,7 @@ Sub IkiParametreTakas()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Onuncu örnek: Minimum–maksimum parametre değeri bul
 
@@ -495,7 +497,7 @@ Sub MinMaxParametreDeger()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## On birinci örnek: Başarı / hata sonunda tek mesaj
 
@@ -521,7 +523,7 @@ HataYakala:
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## On ikinci örnek: Kullanıcıdan iki sayı al ve parametrelere yaz
 
@@ -558,7 +560,7 @@ Sub IkiParametreKullanicidanYaz()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## On üçüncü örnek: Parametre sayısını Function ile döndür
 
@@ -582,7 +584,7 @@ Sub ParametreSayisiGoster()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## On dördüncü örnek: Belge adına göre işlem (Like ile filtre)
 
@@ -604,7 +606,7 @@ Sub SadeceWingParcalarinda()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## On beşinci örnek: Toplu parametre güncelleme – Dizi kullanımı
 
@@ -635,7 +637,7 @@ Sub TopluParametreGuncelle()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## On altıncı örnek: Hata durumunda eski değeri geri yazma (Rollback)
 
@@ -661,7 +663,7 @@ Rollback:
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## On yedinci örnek: Timer ile süre ölçümü (Harden fazı)
 
@@ -679,7 +681,7 @@ Sub SureOlcumOrnek()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## On sekizinci örnek: Sadece sayısal parametreleri listele (tip kontrolü)
 
@@ -705,7 +707,7 @@ Sub SadeceSayisalParametreler()
 End Sub
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## On dokuzuncu örnek: Kısa kullanım yönergesi (3 satır – Finalize)
 
@@ -717,7 +719,7 @@ Her makronun tesliminde kullanıcıya verilecek 3 satırlık talimat (Help – F
 
 Bu metni makro başlığına veya ayrı “Kullanım” dosyasına ekleyin.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Yirminci örnek: Özet – Tüm adımlar tek listede
 

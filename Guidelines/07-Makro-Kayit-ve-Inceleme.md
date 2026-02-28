@@ -1,8 +1,10 @@
 # 7. Makro Kayıt ve İnceleme
 
+**Bu dokümanda:** Makro kaydı açma/durdurma; kaydedilen kodu bulma ve inceleme; sadeleştirme; kayıt sonrası zorunlu düzenlemeler (Option Explicit, Nothing, tek Update).
+
 Kodlamaya yeni başlarken **makro kaydı** çok işe yarar: 3DExperience’ta yaptığınız adımlar VBA koduna dönüşür. Bu kodu inceleyerek hangi API’lerin nasıl kullanıldığını öğrenir ve kendi makronuzu yazarken örnek alırsınız.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ```
   Kayıt öncesi          Kayıt                 Kayıt sonrası
@@ -16,7 +18,7 @@ Kodlamaya yeni başlarken **makro kaydı** çok işe yarar: 3DExperience’ta ya
        └──────────────────────────────────────────────────────────────────────────────────────────────────►  Kullan / genelleştir
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Makro kaydı nasıl açılır?
 
@@ -28,7 +30,7 @@ Kodlamaya yeni başlarken **makro kaydı** çok işe yarar: 3DExperience’ta ya
 
 Kayıt, VBA projesine bir modül ekleyip tüm adımları Sub içinde kod olarak yazar.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Kaydedilen kodu bulma ve açma
 
@@ -36,7 +38,7 @@ Kayıt, VBA projesine bir modül ekleyip tüm adımları Sub içinde kod olarak 
 2. Sol tarafta **Project Explorer**’da yeni bir modül görünür (ör. Module1, RecordedMacro1).  
 3. Modüle çift tıklayın; sağda kaydedilen VBA kodu açılır.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Kayıt çıktısını inceleme
 
@@ -53,7 +55,7 @@ Yapmanız gerekenler:
 2. **Hangi property/method kullanılmış?** İsimleri not alın; `VBA_API_REFERENCE.md` içinde arayın.  
 3. **Sabit değerler:** Sayılar, metinler kayıtta sabit yazılır; bunları ileride değişkene veya parametreye çevirebilirsiniz.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Kayıt kodu nasıl sadeleştirilir?
 
@@ -76,7 +78,7 @@ For i = 1 To oShapes.Count
 Next i
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Kayıtla öğrenme alışkanlığı
 
@@ -84,14 +86,14 @@ Next i
 - Üretilen sınıf/method isimlerini `VBA_API_REFERENCE.md` veya Help’te arayın; benzer işler için nasıl kullanıldığını görün.  
 - Küçük bir **test makrosu** yazıp sadece o birkaç satırı çalıştırarak davranışı doğrulayın.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Dikkat edilecekler
 
 - Kayıt, **o an açık olan belge ve seçime** göre kod üretir. Başka belgede veya farklı seçimle çalıştırırsanız hata alabilirsiniz; bu yüzden kodu genelleştirmek (ActiveDocument, parametreler vb.) önemlidir.  
 - Bazı işlemler kayda **yansımaz** veya farklı API ile yapılır; böyle durumda Help veya API referansına bakın.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Kayıt sonrası zorunlu düzenlemeler (Help’ten)
 
@@ -103,7 +105,7 @@ Next i
 4. **Eski V5 API** kullanımı (Documents.Add, Selection.Search, HybridShapeFactoryOld vb.) 3DExperience’ta yasak veya farklıdır; kayıtta çıkmışsa **Help-Native Apps Automation** ve **VBA_API_REFERENCE.md** ile doğru nesne/service’e geçin.
 5. **Language** ve **Release** başlık yorumunu ekleyin; böylece hangi sürümde kaydedildiği belli olur.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Kayıt öncesi – Kayıtta oluşabilecek kod (kavramsal)
 
@@ -127,7 +129,7 @@ End Sub
 
 Bu kodu alıp Nothing kontrolleri ve Option Explicit ile sadeleştirirsiniz (aşağıdaki “Örnek: Kayıt sonrası sadeleştirilmiş” bölümüne bakın).
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Kayıt sonrası sadeleştirilmiş – Parametre değiştirme
 
@@ -185,7 +187,7 @@ End Sub
 
 Burada: Option Explicit, Language/Release, her Set sonrası Nothing/Count kontrolü, tek Update, On Error GoTo kullanıldı.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Kayıttan döngüye – Birden fazla parametre
 
@@ -228,7 +230,7 @@ End Sub
 
 Döngü içinde **Update** çağrılmadı; sadece en sonda bir kez `oPart.Update` var.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Sabitleri değişkene çevirme
 
@@ -257,7 +259,7 @@ End Sub
 
 Bu pattern’i tüm “sabit değer” yerlerinde uygulayabilirsiniz.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Kayıtta oluşan gereksiz satırları temizleme
 
@@ -275,19 +277,19 @@ Kayıt bazen şunları ekler: fazla **StartWorkbench**, **Selection.Clear**, **W
 oPart.Update
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Kayıt sırasında yapılacak işlem listesi
 
 Kayda başlamadan önce şunları planlayın: (1) Hangi workbench açık olacak? (2) Hangi belge açık olacak? (3) Hangi tek işlem yapılacak? (4) Kayıt bitince tekrarlayan adımları (ör. aynı menüye tıklama) not alın; kodda bunları döngüye çevirebilirsiniz.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Kayıt sonrası değişken tiplendirme
 
 Kayıt `Dim part1` gibi tip belirtmeden yazar; **Option Explicit** ekledikten sonra her değişkeni kullanımına göre tiplendirin: `Dim oPart As Object`, `Dim oParams As Object`, `Dim i As Long` vb. Böylece IntelliSense ve hata kontrolü iyileşir.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Kayıtta oluşan uzun nesne zincirini değişkene atama
 
@@ -309,13 +311,13 @@ If oParams Is Nothing Then Exit Sub
 ' Artık oParams.Item(1) güvenle kullanılır
 ```
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Örnek: Kayıtta sabit indeks – 1’den Count’a genelleme
 
 Kayıt sırasında sadece bir öğe seçildiyse kod `Item(1)` veya `Item(2)` gibi sabit indeks üretir. Bunu **genel** hale getirmek için döngü kullanın: `For i = 1 To oKoleksiyon.Count` ve `Item(i)`. Böylece aynı makro farklı sayıda parametre/shape içeren belgelerde de çalışır.
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Kontrol listesi
 
@@ -324,7 +326,7 @@ Kayıt sırasında sadece bir öğe seçildiyse kod `Item(1)` veya `Item(2)` gib
 - [ ] Kodda Application/Document/Part (veya Product) zincirini tanıyorum  
 - [ ] İlgili method/property isimlerini referans dokümanda arayacağımı biliyorum  
 
-------------------------------------------------------------
+════════════════════════════════════════════════════════════════════════════════
 
 ## Sonraki adım
 
