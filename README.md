@@ -13,10 +13,10 @@
 <div style="text-align: center; font-family: monospace; line-height: 1.2;">
 
 ```
-██████╗ ██████╗ ███████╗██╗  ██╗     ████████╗██████╗ 
+██████╗ ██████╗ ███████╗██╗  ██╗      ████████╗██████╗ 
 ╚════██╗██╔══██╗██╔════╝╚██╗██╔╝     ╚══██╔══╝██╔══██╗
- █████╔╝██║  ██║█████╗   ╚███╔╝         ██║   ██████╔╝
- ╚═══██╗██║  ██║██╔══╝   ██╔██╗         ██║   ██╔══██╗
+█████╔╝██║  ██║█████╗   ╚███╔╝          ██║   ██████╔╝
+╚═══██╗██║  ██║██╔══╝   ██╔██╗          ██║   ██╔══██╗
 ██████╔╝██████╔╝███████╗██╔╝ ██╗███████╗██║   ██║  ██║
 ╚═════╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝   ╚═╝  ╚═╝
 ```
@@ -27,16 +27,16 @@
 
 <table>
 <tr>
-<td width="50%">
+<td width="50%" style="vertical-align: top">
 
 **Yeni başlıyorsanız**  
 → [Rehber 01→19](Guidelines/README.md) · 02'de ilk makro · F5
 
 </td>
-<td width="50%">
+<td width="50%" style="vertical-align: top">
 
 **Zaten biliyorsanız**  
-→ [İlk 5 dk](docs/QUICK_START.md) · [Örnek makrolar](Examples/README.md)
+→ [Örnek makrolar](Examples/README.md)
 
 </td>
 </tr>
@@ -65,7 +65,7 @@
 | :--- | :--- |
 | **Rehber** | 19 doküman: VBA temelleri → nesne modeli → makro kayıt → hata yakalama → örnek proje → resmi kurallar → isimlendirme. |
 | **Örnekler** | Part, parametre, Shapes, dosyaya yazma, log, modüler yapı; her biri çalıştırılabilir `.bas`. |
-| **Referans** | API referansı, hızlı başlangıç, terimler (TR↔EN), sorun giderme, checklist. |
+| **Referans** | API referansı, terimler (TR↔EN), sorun giderme, checklist. |
 | **Bakım** | `npm run check-links` ile link kontrolü; CI/CD (GitHub Actions) ile otomatik kontroller. |
 
 <details>
@@ -94,15 +94,15 @@
 Hangi yoldan gideceğinizi seçin:
 
 > **Yeni başlıyorsanız:** Rehberi 01’den itibaren sırayla takip edin; ilk makroyu 02’de yazıp F5 ile çalıştırın.  
-> **Zaten VBA biliyorsanız:** [İlk 5 dk](docs/QUICK_START.md) veya [örnek makrolardan](Examples/README.md) birini açıp hemen deneyin.
+> **Zaten VBA biliyorsanız:** [Örnek makrolardan](Examples/README.md) birini açıp hemen deneyin.
 
 |  | Yeni başlıyorsanız | Zaten VBA biliyorsanız |
 | :--- | :--- | :--- |
-| **1. adım** | [Rehber (01→19)](Guidelines/README.md) → 02’de ilk makro, F5 | [İlk 5 dk](docs/QUICK_START.md) |
-| **2. adım** | [İlerleme listesi](docs/ILERLEME-LISTESI.md) (süre, zorluk, checklist) | [Örnek makrolar](Examples/README.md) |
+| **1. adım** | [Rehber (01→19)](Guidelines/README.md) → 02’de ilk makro, F5 | [Örnek makrolar](Examples/README.md) |
+| **2. adım** | [İlerleme listesi](docs/ILERLEME-LISTESI.md) (süre, zorluk, checklist) | [API referansı](docs/VBA_API_REFERENCE.md) · [Checklist](Guidelines/VBA-Kod-Checklist.md) |
 | **Referans** | [Terimler](docs/GLOSSARY.md) · [Sorun giderme](docs/TROUBLESHOOTING.md) | [API referansı](docs/VBA_API_REFERENCE.md) · [Checklist](Guidelines/VBA-Kod-Checklist.md) |
 
-**Tüm linkler:** [Rehber](Guidelines/README.md) · [İlerleme](docs/ILERLEME-LISTESI.md) · [İlk 5 dk](docs/QUICK_START.md) · [Örnekler](Examples/README.md) · [API](docs/VBA_API_REFERENCE.md) · [Checklist](Guidelines/VBA-Kod-Checklist.md) · [Sorun giderme](docs/TROUBLESHOOTING.md)
+**Tüm linkler:** [Rehber](Guidelines/README.md) · [İlerleme](docs/ILERLEME-LISTESI.md) · [Örnekler](Examples/README.md) · [API](docs/VBA_API_REFERENCE.md) · [Checklist](Guidelines/VBA-Kod-Checklist.md) · [Sorun giderme](docs/TROUBLESHOOTING.md)
 
 ---
 
@@ -113,15 +113,15 @@ Hangi yoldan gideceğinizi seçin:
 | [**Guidelines**](Guidelines/README.md) | 19 doküman: VBA temelleri → nesne modeli → makro kayıt → hata yakalama → resmi kurallar → isimlendirme |
 | [**Examples**](Examples/README.md) | Çalıştırılabilir örnek makrolar (`.bas`); rehberle uyumlu |
 | [**Help**](Help/) | Resmi PDF'ler; arama rehberi [ARAMA_REHBERI.md](Help/ARAMA_REHBERI.md) |
-| [**Docs**](docs/) | API referansı, hızlı başlangıç, terimler, FAQ, sorun giderme, CHANGELOG |
+| [**Docs**](docs/) | API referansı, terimler, FAQ, sorun giderme, CHANGELOG |
 
-**Hızlı erişim:** [İlk 5 dk](docs/QUICK_START.md) · [Örnekler](Examples/README.md) · [API](docs/VBA_API_REFERENCE.md) · [Checklist](Guidelines/VBA-Kod-Checklist.md) · [Sorun giderme](docs/TROUBLESHOOTING.md)
+**Hızlı erişim:** [Örnekler](Examples/README.md) · [API](docs/VBA_API_REFERENCE.md) · [Checklist](Guidelines/VBA-Kod-Checklist.md) · [Sorun giderme](docs/TROUBLESHOOTING.md)
 
 ---
 
 ## Hızlı başlangıç
 
-> **Başlamak için:** Rehberi sırayla takip edin veya hızlı denemek için [docs/QUICK_START.md](docs/QUICK_START.md) ve [Examples/](Examples/README.md) kullanın.
+> **Başlamak için:** Rehberi sırayla takip edin veya hızlı denemek için [Örnek makrolar](Examples/README.md) kullanın.
 
 1. **Rehberi takip et:** [Guidelines/README.md](Guidelines/README.md) → 1. dokümandan başlayıp sırayla ilerleyin.
 2. **API’ye bak:** [docs/VBA_API_REFERENCE.md](docs/VBA_API_REFERENCE.md) veya Help klasöründeki resmi PDF'ler (Native Apps Automation, Automation Reference vb.).

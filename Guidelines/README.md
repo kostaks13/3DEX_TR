@@ -28,24 +28,24 @@ Kodlamaya **yeni başlayan** biri için, **3DExperience VBA** ile makro yazmayı
 | # | Dosya | İçerik | Süre | Zorluk |
 |---|-------|--------|------|--------|
 | 1 | [01-Giris-Neden-3DExperience-VBA.md](01-Giris-Neden-3DExperience-VBA.md) | Giriş – Neden 3DExperience VBA? (Dassault bakışı, desteklenen diller, bölgesel ayarlar) | ~15 dk | Başlangıç |
-| 2 | [02-Ortam-Kurulumu.md](02-Ortam-Kurulumu.md) | Ortam kurulumu (Language/Release başlığı, makro konumu, dağıtım) |
-| 3 | [03-VBA-Temelleri-Degiskenler-ve-Veritipleri.md](03-VBA-Temelleri-Degiskenler-ve-Veritipleri.md) | VBA temelleri – Değişkenler ve veri tipleri (resmi önekler: b, d, s, i, o, c) |
-| 4 | [04-VBA-Temelleri-Kosullar-ve-Donguler.md](04-VBA-Temelleri-Kosullar-ve-Donguler.md) | VBA temelleri – Koşullar ve döngüler |
-| 5 | [05-VBA-Temelleri-Prosedurler-ve-Fonksiyonlar.md](05-VBA-Temelleri-Prosedurler-ve-Fonksiyonlar.md) | VBA temelleri – Prosedürler ve fonksiyonlar |
-| 6 | [06-3DExperience-Nesne-Modeli.md](06-3DExperience-Nesne-Modeli.md) | 3DExperience nesne modeli (Application, Editor, FileSystem, hiyerarşi ağacı) |
-| 7 | [07-Makro-Kayit-ve-Inceleme.md](07-Makro-Kayit-ve-Inceleme.md) | Makro kayıt ve inceleme |
-| 8 | [08-Sik-Kullanilan-APIler.md](08-Sik-Kullanilan-APIler.md) | Sık kullanılan API’ler |
-| 9 | [09-Hata-Yakalama-ve-Debug.md](09-Hata-Yakalama-ve-Debug.md) | Hata yakalama ve debug (hata sınıflandırması, log tasarımı) |
-| 10 | [10-Ornek-Proje-Bastan-Sona-Bir-Makro.md](10-Ornek-Proje-Bastan-Sona-Bir-Makro.md) | Örnek proje – Baştan sona bir makro (Design/Draft/Harden/Finalize, kontrol listesi) |
-| 11 | [11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) | **Resmi kurallar ve hazırlık fazları** — Help’ten özet: kod sunum, isimlendirme, Option Explicit, hata yönetimi, ihtiyaç analizi, modül matrisi, kod taslağı fazları, hata/log, TAMAM/HAZIR listesi |
-| 12 | [12-Servisler-ve-Yapilabilecek-Islemler.md](12-Servisler-ve-Yapilabilecek-Islemler.md) | **Servisler ve yapılabilecek işlemler** — Editor-level / Session-level servisler (tablo ve kod), FileSystem, Part/Product/Drawing işlemleri detayı |
-| 13 | [13-Erisim-ve-Kullanim-Rehberi.md](13-Erisim-ve-Kullanim-Rehberi.md) | **Neye nereden erişilir, neyi nasıl kullanırsın** — Erişim yolları (VBA) tablosu, kullanım özeti, kod kalıpları, tek sayfa zincir özeti |
-| 14 | [14-VBA-ve-Excel-Etkilesimi.md](14-VBA-ve-Excel-Etkilesimi.md) | **VBA’dan Excel ile etkileşim** — CreateObject/GetObject, çalışma kitabı açma, hücre okuma/yazma, 3DExperience parametrelerini Excel’e yazma / Excel’den Part’a yazma |
-| 15 | [15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md) | **Dosya seçtirme ve kaydetme diyalogları** — FileDialog (aç/kaydet/klasör), GetOpenFileName/GetSaveFileName (Windows API), InputBox ile yol, tam akış örnekleri |
-| 16 | [16-Iyilestirme-Onerileri.md](16-Iyilestirme-Onerileri.md) | **İyileştirme önerileri** — Kod kalitesi, performans, bakım, test, kullanıcı deneyimi, dağıtım; isteğe bağlı kontrol listesi |
-| 17 | [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md) | **Help içindeki dosyaları ne zaman ve nasıl kullanacaksınız** — Help klasörü yapısı, hangi dosya ne işe yarar, aşamaya göre kullanım, arama yöntemleri |
-| 18 | [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md) | **Sık yapılan hatalar ve dikkat edilmesi gereken özel noktalar** — Nothing/Update/On Error, V5 API, InputBox iptal, locale, servis sırası, özet tablo |
-| 19 | [19-Isimlendirme-Rehberi.md](19-Isimlendirme-Rehberi.md) | **İsimlendirme rehberi** — Değişken önekleri, Const, Sub/Function, modül, .bas dosyası, parametre, hata etiketi; özet tablo ve kaçınılacaklar |
+| 2 | [02-Ortam-Kurulumu.md](02-Ortam-Kurulumu.md) | Ortam kurulumu (Language/Release başlığı, makro konumu, dağıtım) | ~10 dk | Başlangıç |
+| 3 | [03-VBA-Temelleri-Degiskenler-ve-Veritipleri.md](03-VBA-Temelleri-Degiskenler-ve-Veritipleri.md) | VBA temelleri – Değişkenler ve veri tipleri (resmi önekler: b, d, s, i, o, c) | ~20 dk | Başlangıç |
+| 4 | [04-VBA-Temelleri-Kosullar-ve-Donguler.md](04-VBA-Temelleri-Kosullar-ve-Donguler.md) | VBA temelleri – Koşullar ve döngüler | ~25 dk | Başlangıç |
+| 5 | [05-VBA-Temelleri-Prosedurler-ve-Fonksiyonlar.md](05-VBA-Temelleri-Prosedurler-ve-Fonksiyonlar.md) | VBA temelleri – Prosedürler ve fonksiyonlar | ~25 dk | Başlangıç |
+| 6 | [06-3DExperience-Nesne-Modeli.md](06-3DExperience-Nesne-Modeli.md) | 3DExperience nesne modeli (Application, Editor, FileSystem, hiyerarşi ağacı) | ~30 dk | Orta |
+| 7 | [07-Makro-Kayit-ve-Inceleme.md](07-Makro-Kayit-ve-Inceleme.md) | Makro kayıt ve inceleme | ~15 dk | Orta |
+| 8 | [08-Sik-Kullanilan-APIler.md](08-Sik-Kullanilan-APIler.md) | Sık kullanılan API’ler | ~35 dk | Orta |
+| 9 | [09-Hata-Yakalama-ve-Debug.md](09-Hata-Yakalama-ve-Debug.md) | Hata yakalama ve debug (hata sınıflandırması, log tasarımı) | ~25 dk | Orta |
+| 10 | [10-Ornek-Proje-Bastan-Sona-Bir-Makro.md](10-Ornek-Proje-Bastan-Sona-Bir-Makro.md) | Örnek proje – Baştan sona bir makro (Design/Draft/Harden/Finalize, kontrol listesi) | ~40 dk | Orta |
+| 11 | [11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) | **Resmi kurallar ve hazırlık fazları** — Help’ten özet: kod sunum, isimlendirme, Option Explicit, hata yönetimi, ihtiyaç analizi, modül matrisi, kod taslağı fazları, hata/log, TAMAM/HAZIR listesi | ~30 dk | İleri |
+| 12 | [12-Servisler-ve-Yapilabilecek-Islemler.md](12-Servisler-ve-Yapilabilecek-Islemler.md) | **Servisler ve yapılabilecek işlemler** — Editor-level / Session-level servisler (tablo ve kod), FileSystem, Part/Product/Drawing işlemleri detayı | ~35 dk | İleri |
+| 13 | [13-Erisim-ve-Kullanim-Rehberi.md](13-Erisim-ve-Kullanim-Rehberi.md) | **Neye nereden erişilir, neyi nasıl kullanırsın** — Erişim yolları (VBA) tablosu, kullanım özeti, kod kalıpları, tek sayfa zincir özeti | ~20 dk | Orta |
+| 14 | [14-VBA-ve-Excel-Etkilesimi.md](14-VBA-ve-Excel-Etkilesimi.md) | **VBA’dan Excel ile etkileşim** — CreateObject/GetObject, çalışma kitabı açma, hücre okuma/yazma, 3DExperience parametrelerini Excel’e yazma / Excel’den Part’a yazma | ~25 dk | Orta |
+| 15 | [15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md) | **Dosya seçtirme ve kaydetme diyalogları** — FileDialog (aç/kaydet/klasör), GetOpenFileName/GetSaveFileName (Windows API), InputBox ile yol, tam akış örnekleri | ~20 dk | Orta |
+| 16 | [16-Iyilestirme-Onerileri.md](16-Iyilestirme-Onerileri.md) | **İyileştirme önerileri** — Kod kalitesi, performans, bakım, test, kullanıcı deneyimi, dağıtım; isteğe bağlı kontrol listesi | ~20 dk | İleri |
+| 17 | [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md) | **Help içindeki dosyaları ne zaman ve nasıl kullanacaksınız** — Help klasörü yapısı, hangi dosya ne işe yarar, aşamaya göre kullanım, arama yöntemleri | ~15 dk | Orta |
+| 18 | [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md) | **Sık yapılan hatalar ve dikkat edilmesi gereken özel noktalar** — Nothing/Update/On Error, V5 API, InputBox iptal, locale, servis sırası, özet tablo | ~25 dk | Orta |
+| 19 | [19-Isimlendirme-Rehberi.md](19-Isimlendirme-Rehberi.md) | **İsimlendirme rehberi** — Değişken önekleri, Const, Sub/Function, modül, .bas dosyası, parametre, hata etiketi; özet tablo ve kaçınılacaklar | ~15 dk | Orta |
 
 **Süre ve zorluk:** Tahmini okuma süresi ve zorluk seviyesi için [İlerleme listesi](../docs/ILERLEME-LISTESI.md) sayfasındaki tabloyu kullanın (Süre: ~10–40 dk | Zorluk: Başlangıç / Orta / İleri).
 
@@ -63,18 +63,18 @@ Yukarıdaki tablodan ilgili dokümanı açın veya aşağıdaki eşleşmeyi kull
 
 | Konu | Doküman |
 |------|---------|
+| Resmi kurallar ve hazırlık fazları | [11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) |
 | Buna nereden erişirim, nasıl kullanırım? | [13-Erisim-ve-Kullanim-Rehberi.md](13-Erisim-ve-Kullanim-Rehberi.md) |
 | VBA'dan Excel'e veri yazma/okuma | [14-VBA-ve-Excel-Etkilesimi.md](14-VBA-ve-Excel-Etkilesimi.md) |
 | Dosya seçtirme / kaydetme diyaloğu | [15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md](15-Dosya-Secme-ve-Kaydetme-Diyaloglar.md) |
 | Kod ve süreç iyileştirme önerileri | [16-Iyilestirme-Onerileri.md](16-Iyilestirme-Onerileri.md) |
-| Resmi kurallar ve hazırlık fazları | [11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md](11-Resmi-Kurallar-ve-Hazirlik-Fazlari.md) |
 
 ### Hızlı erişim
 
 | İhtiyaç | Bağlantı |
 |---------|----------|
 | Teslim / kod incelemesi öncesi checklist | [VBA-Kod-Checklist.md](VBA-Kod-Checklist.md) (Option Explicit, Nothing, tek Update, başlık, On Error) |
-| API imzaları ve detay | Proje kökü: `docs/VBA_API_REFERENCE.md` · Help klasörü: resmi PDF'ler (Native Apps Automation, Automation Reference) |
+| API imzaları ve detay | Proje kökü: [docs/VBA_API_REFERENCE.md](../docs/VBA_API_REFERENCE.md) · Help klasörü: resmi PDF'ler (Native Apps Automation, Automation Reference) |
 | Çalıştırılabilir örnek makrolar | [Examples/](../Examples/README.md) (`.bas` dosyaları) |
 | Help dosyalarını ne zaman/nasıl kullanacağınız | [17-Help-Dosyalarini-Kullanma.md](17-Help-Dosyalarini-Kullanma.md) |
 | Sık hatalar ve dikkat edilecekler | [18-Sik-Hatalar-ve-Dikkat-Edilecekler.md](18-Sik-Hatalar-ve-Dikkat-Edilecekler.md) |

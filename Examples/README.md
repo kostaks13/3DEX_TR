@@ -93,22 +93,9 @@ Bu klasörde **3DExperience VBA** rehberindeki (Guidelines 08 ve 10) örnek makr
 
 ---
 
-## Eklenebilecek örnekler (fikir listesi)
+## Fikir listesi (tamamlandı)
 
-Rehberde anlatılıp henüz ayrı bir `.bas` örneği olmayan konular. İhtiyaca göre eklenebilir.
-
-| Konu | Açıklama | Rehber |
-|------|----------|--------|
-| ~~Excel'den Part'a parametre yazma~~ | ✅ [ExceldenPartaParametreYaz.bas](ExceldenPartaParametreYaz.bas) eklendi. | 14 |
-| ~~FileDialog ile dosya açma~~ | ✅ [FileDialogDosyaAcOku.bas](FileDialogDosyaAcOku.bas) eklendi. | 15 |
-| ~~FileDialog ile klasör seçme~~ | ✅ [KlasorSecParametreListesiYaz.bas](KlasorSecParametreListesiYaz.bas) eklendi. | 15 |
-| ~~FileSystem: dosya var mı / boyut~~ | ✅ [FileSystemDosyaBilgisi.bas](FileSystemDosyaBilgisi.bas) eklendi. | 12 |
-| ~~FileSystem: klasördeki dosya listesi~~ | ✅ [FileSystemKlasorListele.bas](FileSystemKlasorListele.bas) eklendi. | 12 |
-| ~~InertiaService – kütle~~ | ✅ [InertiaServiceKutleGoster.bas](InertiaServiceKutleGoster.bas) eklendi. | 12 |
-| ~~HybridBodies / Bodies listesi~~ | ✅ [HybridBodiesListele.bas](HybridBodiesListele.bas) eklendi. | 12 |
-| ~~VisuServices – kamera listesi~~ | ✅ [VisuServicesKameraListesi.bas](VisuServicesKameraListesi.bas) eklendi. | 12 |
-
-*İşaretli (✅) satırlar projeye eklenmiş örneklerdir.*
+Rehberdeki “eklenebilecek örnekler” fikir listesindeki tüm maddeler projeye eklendi (Excel↔Part, FileDialog, FileSystem, InertiaService, HybridBodies, VisuServices). Tam liste için yukarıdaki [Dosyalar](#dosyalar) tablosuna bakın.
 
 ---
 

@@ -16,7 +16,7 @@
 
 ### Rehberi nereden başlamalıyım?
 
-[Guidelines/README.md](../Guidelines/README.md) → 1. dokümandan (01-Giris) sırayla ilerleyin. Hızlı denemek için [QUICK_START.md](QUICK_START.md) ve [Examples/](../Examples/README.md) kullanın.
+[Guidelines/README.md](../Guidelines/README.md) → 1. dokümandan (01-Giris) sırayla ilerleyin. Hızlı denemek için [Examples/](../Examples/README.md) kullanın.
 
 ### Parametre nasıl değiştirilir?
 
@@ -70,4 +70,4 @@ Editor-level: aktif Part/Product/Drawing’e bağlı (InertiaService vb.). Sessi
 
 ---
 
-**Gezinme:** [Ana sayfa](../README.md) · [Docs](README.md) · [Rehber](../Guidelines/README.md) · [Örnek makrolar](../Examples/README.md) · [QUICK_START](QUICK_START.md) · [CHEATSHEET](CHEATSHEET.md) · [TROUBLESHOOTING](TROUBLESHOOTING.md)
+**Gezinme:** [Ana sayfa](../README.md) · [Docs](README.md) · [Rehber](../Guidelines/README.md) · [Örnek makrolar](../Examples/README.md) · [CHEATSHEET](CHEATSHEET.md) · [TROUBLESHOOTING](TROUBLESHOOTING.md)

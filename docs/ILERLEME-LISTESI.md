@@ -55,4 +55,4 @@ Aşağıdaki kutuları okuyup uyguladıkça işaretleyebilirsiniz.
 
 ---
 
-**İlgili:** [Guidelines/README.md](../Guidelines/README.md) · [QUICK_START.md](QUICK_START.md) · [Examples/README.md](../Examples/README.md)
+**İlgili:** [Guidelines/README.md](../Guidelines/README.md) · [Examples/README.md](../Examples/README.md)

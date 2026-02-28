@@ -78,4 +78,4 @@ Tam liste: [GLOSSARY.md](GLOSSARY.md).
 
 ---
 
-**Gezinme:** [Ana sayfa](../README.md) · [Docs](README.md) · [Rehber](../Guidelines/README.md) · [Örnek makrolar](../Examples/README.md) · [QUICK_START](QUICK_START.md) · [VBA_API_REFERENCE](VBA_API_REFERENCE.md)
+**Gezinme:** [Ana sayfa](../README.md) · [Docs](README.md) · [Rehber](../Guidelines/README.md) · [Örnek makrolar](../Examples/README.md) · [VBA_API_REFERENCE](VBA_API_REFERENCE.md)

@@ -21,7 +21,7 @@ Rehber ve proje içeriğinde yapılan **önemli güncellemelerin** kısa listesi
 
 ## [v1.2] – Örnekler checklist uyumu, başlık tutarlılığı, dokümantasyon, uygulamalı alıştırmalar
 
-- **UI / Görünüm:** Tüm ana sayfalara tutarlı başlık blokları (┌──┐), blockquote vurguları ve "Gezinme" linkleri eklendi. README’de hızlı başlangıç ve link kontrolü için kısa çağrı kutuları; docs/, QUICK_START, FAQ, GLOSSARY, TROUBLESHOOTING, CHEATSHEET, CHANGELOG’da ortak görsel dil.
+- **UI / Görünüm:** Tüm ana sayfalara tutarlı başlık blokları (┌──┐), blockquote vurguları ve "Gezinme" linkleri eklendi. README’de hızlı başlangıç ve link kontrolü için kısa çağrı kutuları; docs/, FAQ, GLOSSARY, TROUBLESHOOTING, CHEATSHEET, CHANGELOG’da ortak görsel dil.
 - **Link kontrolü:** Tüm Markdown dosyalarındaki linkleri kontrol etmek için `scripts/check-links.sh` ve `npm run check-links` eklendi; `markdown-link-check` ile yerel çalıştırma. Yapılandırma: `scripts/mlc-config.json`. README’de kullanım notu.
 - **Sözlük:** [GLOSSARY.md](GLOSSARY.md) genişletildi: ActiveEditor, ByVal/ByRef, Collection, Exit Sub/Exit Function, GetObject, Item, Children, On Error, Option Explicit, Sheets, Views, Value ve E–L bölümü eklendi.
 - **Guidelines 01:** "Uygulamalı alıştırma – Yaparak öğren" bölümü eklendi; 2. dokümana geçiş ve oradaki ilk makro alıştırmasını adım adım yönlendiriyor.
@@ -35,7 +35,7 @@ Rehber ve proje içeriğinde yapılan **önemli güncellemelerin** kısa listesi
 ## [v1.1] – İçerik, örnekler, yapı, kalite
 
 - **İçerik:** [GLOSSARY.md](GLOSSARY.md) (terimler sözlüğü), [FAQ.md](FAQ.md) (sık sorulan sorular), [TROUBLESHOOTING.md](TROUBLESHOOTING.md) (sorun giderme) eklendi.
-- **Örnekler:** [QUICK_START.md](QUICK_START.md) (ilk 5 dakika); Examples’a SadecePartKontrol, IkiParametreTakas, LogOrnekMakro, MinMaxParametreDeger eklendi; her örnek için “Beklenen çıktı” açıklaması.
+- **Örnekler:** Examples’a SadecePartKontrol, IkiParametreTakas, LogOrnekMakro, MinMaxParametreDeger eklendi; her örnek için “Beklenen çıktı” açıklaması.
 - **Yapı:** Her Guidelines dokümanında (01–19) “Bu dokümanda” özeti; README ve Guidelines/README’de VBA-Kod-Checklist vurgusu; 19. doküman (İsimlendirme Rehberi) rehber setine dahil.
 - **Kalite:** CHANGELOG.md; rehber sürümü README’de v1.1 olarak güncellendi. VBA kod blokları rehberde ```vba dil etiketi ile işaretlidir (tutarlı sözdizimi vurgusu).
 
